@@ -1,0 +1,74 @@
+diff --git a/src/cairo-cff-subset.c b/src/cairo-cff-subset.c
+index bd8d5b5f5ab30f527c8284893b4475398e2b9990..9e4a5c7448c41de00c0cf7c248eba054dc1e2ffe 100644
+--- a/src/cairo-cff-subset.c
++++ b/src/cairo-cff-subset.c
+@@ -295,7 +295,6 @@ decode_nibble (int n, char *buf)
+ static unsigned char *
+ decode_real (unsigned char *p, double *real)
+ {
+-    struct lconv *locale_data;
+     const char *decimal_point;
+     int decimal_point_len;
+     int n;
+@@ -305,8 +304,13 @@ decode_real (unsigned char *p, double *real)
+     char *buf = buffer;
+     char *buf_end = buffer + sizeof (buffer);
+ 
++#ifdef ANDROID
++    decimal_point = "."; // Android doesn't implempment localeconv
++#else
++    struct lconv *locale_data;
+     locale_data = localeconv ();
+     decimal_point = locale_data->decimal_point;
++#endif
+     decimal_point_len = strlen (decimal_point);
+ 
+     assert (decimal_point_len != 0);
+diff --git a/src/cairo-output-stream.c b/src/cairo-output-stream.c
+index cc7e300c936036699208b92b1a451fd8668cc546..d7d323751cb2b4c383e38fbdffd1f01f2fb46616 100644
+--- a/src/cairo-output-stream.c
++++ b/src/cairo-output-stream.c
+@@ -303,7 +303,6 @@ _cairo_output_stream_write_hex_string (cairo_output_stream_t *stream,
+ static void
+ _cairo_dtostr (char *buffer, size_t size, double d, cairo_bool_t limited_precision)
+ {
+-    struct lconv *locale_data;
+     const char *decimal_point;
+     int decimal_point_len;
+     char *p;
+@@ -314,8 +313,13 @@ _cairo_dtostr (char *buffer, size_t size, double d, cairo_bool_t limited_precisi
+     if (d == 0.0)
+ 	d = 0.0;
+ 
++#ifdef ANDROID
++    decimal_point = "."; // Android doesn't implempment localeconv
++#else
++    struct lconv *locale_data;
+     locale_data = localeconv ();
+     decimal_point = locale_data->decimal_point;
++#endif
+     decimal_point_len = strlen (decimal_point);
+ 
+     assert (decimal_point_len != 0);
+diff --git a/src/cairo-type1-subset.c b/src/cairo-type1-subset.c
+index 383c99addf878704e0d9698916901d7b57b214cd..f94cb438ab2c95068a205aa1080fcc2dc664f525 100644
+--- a/src/cairo-type1-subset.c
++++ b/src/cairo-type1-subset.c
+@@ -309,12 +309,16 @@ cairo_type1_font_subset_get_matrix (cairo_type1_font_subset_t *font,
+     const char *start, *end, *segment_end;
+     int ret, s_max, i, j;
+     char *s;
+-    struct lconv *locale_data;
+     const char *decimal_point;
+     int decimal_point_len;
+ 
++#ifdef ANDROID
++    decimal_point = "."; // Android doesn't implempment localeconv
++#else
++    struct lconv *locale_data;
+     locale_data = localeconv ();
+     decimal_point = locale_data->decimal_point;
++#endif
+     decimal_point_len = strlen (decimal_point);
+ 
+     assert (decimal_point_len != 0);
