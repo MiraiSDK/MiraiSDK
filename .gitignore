@@ -23,3 +23,10 @@ Pods
 **.tar.gz
 **.tar.xz
 Temp/
+Products/
+DemoProject/**/jni/*.so
+DemoProject/**/obj/local/*
+DemoProject/**/build.xml
+DemoProject/**/local.properties
+DemoProject/**/proguard-project.txt
+DemoProject/**/assets/
