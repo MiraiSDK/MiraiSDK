@@ -1,0 +1,13 @@
+diff --git a/src/cmsio1.c b/src/cmsio1.c
+index e08af468b555b573ed05e6b821d56f4dc67e7dc6..5221074b91977ba2bee79f2191a1b2c1a6b4b3af 100755
+--- a/src/cmsio1.c
++++ b/src/cmsio1.c
+@@ -36,7 +36,7 @@ static int GlobalLanguageCode;   // Language & country descriptors, for ICC 4.0
+ static int GlobalCountryCode;
+ 
+                            
+-#ifdef __BEOS__
++#if  defined(__BEOS__) || defined(ANDROID)
+ #       define USE_CUSTOM_SWAB  1
+ #endif
+ 

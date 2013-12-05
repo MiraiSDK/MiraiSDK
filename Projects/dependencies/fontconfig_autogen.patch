@@ -1,0 +1,13 @@
+diff --git a/autogen.sh b/autogen.sh
+index 29c1fd26c7bd46d39952ec64aae595da2839fdcd..cabb37e5c479152e5235b65ff02448bd20ca64ba 100755
+--- a/autogen.sh
++++ b/autogen.sh
+@@ -20,7 +20,7 @@ TEST_TYPE=-f
+ FILE=fontconfig/fontconfig.h
+ ACLOCAL=${ACLOCAL-aclocal}
+ ACLOCAL_FLAGS="-I m4"
+-LIBTOOLIZE=${LIBTOOLIZE-libtoolize}
++LIBTOOLIZE=glibtoolize # osx doesn't have libtoolize, use brew version, which prefix with 'g'
+ AUTOMAKE=${AUTOMAKE-automake}
+ AUTOHEADER=${AUTOHEADER-autoheader}
+ AUTOCONF=${AUTOCONF-autoconf}

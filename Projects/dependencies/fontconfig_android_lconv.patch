@@ -1,0 +1,22 @@
+diff --git a/src/fcxml.c b/src/fcxml.c
+index 91d166f3873574a4203618bee2ac1fafbfdcd71e..f677cacb7cf39ab401610f6c5e8c39bdc86be53c 100644
+--- a/src/fcxml.c
++++ b/src/fcxml.c
+@@ -1314,6 +1314,9 @@ FcParseInt (FcConfigParse *parse)
+ static double
+ FcStrtod (char *s, char **end)
+ {
++#ifdef ANDROID
++    return strtod (s, end);
++#else
+     struct lconv    *locale_data;
+     char	    *dot;
+     double	    v;
+@@ -1360,6 +1363,7 @@ FcStrtod (char *s, char **end)
+     else
+ 	v = strtod (s, end);
+     return v;
++#endif
+ }
+ 
+ static void
