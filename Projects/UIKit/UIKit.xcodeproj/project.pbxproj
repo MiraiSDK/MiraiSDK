@@ -7,14 +7,27 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		43718E6D18517B7B00850F08 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 43718E6C18517B7B00850F08 /* Cocoa.framework */; };
 		43718E7718517B7B00850F08 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 43718E7518517B7B00850F08 /* InfoPlist.strings */; };
-		43718E7B18517B7B00850F08 /* UIKit.m in Sources */ = {isa = PBXBuildFile; fileRef = 43718E7A18517B7B00850F08 /* UIKit.m */; };
 		43718E8218517B7B00850F08 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 43718E8118517B7B00850F08 /* XCTest.framework */; };
-		43718E8318517B7B00850F08 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 43718E6C18517B7B00850F08 /* Cocoa.framework */; };
 		43718E8618517B7B00850F08 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 43718E6918517B7B00850F08 /* UIKit.framework */; };
 		43718E8C18517B7B00850F08 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 43718E8A18517B7B00850F08 /* InfoPlist.strings */; };
 		43718E8E18517B7B00850F08 /* UIKitTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 43718E8D18517B7B00850F08 /* UIKitTests.m */; };
+		43718E9718517C7200850F08 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 43718E6F18517B7B00850F08 /* Foundation.framework */; };
+		43718E9918517C7A00850F08 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 43718E9818517C7A00850F08 /* QuartzCore.framework */; };
+		43718E9B18517C7F00850F08 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 43718E9A18517C7F00850F08 /* CoreGraphics.framework */; };
+		43718EA018517F0500850F08 /* UIResponder.h in Headers */ = {isa = PBXBuildFile; fileRef = 43718E9E18517F0500850F08 /* UIResponder.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		43718EA118517F0500850F08 /* UIResponder.m in Sources */ = {isa = PBXBuildFile; fileRef = 43718E9F18517F0500850F08 /* UIResponder.m */; };
+		43718EA418517FBA00850F08 /* UIApplication.h in Headers */ = {isa = PBXBuildFile; fileRef = 43718EA218517FBA00850F08 /* UIApplication.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		43718EA518517FBA00850F08 /* UIApplication.m in Sources */ = {isa = PBXBuildFile; fileRef = 43718EA318517FBA00850F08 /* UIApplication.m */; };
+		43718EC018518AB200850F08 /* android_native_app_glue.c in Sources */ = {isa = PBXBuildFile; fileRef = 43718EBE18518AB200850F08 /* android_native_app_glue.c */; };
+		43718EC118518AB200850F08 /* android_native_app_glue.h in Headers */ = {isa = PBXBuildFile; fileRef = 43718EBF18518AB200850F08 /* android_native_app_glue.h */; };
+		43718EC418518FA800850F08 /* UIKit.h in Headers */ = {isa = PBXBuildFile; fileRef = 43718E7918517B7B00850F08 /* UIKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		43718EC518518FB400850F08 /* UIKitDefines.h in Headers */ = {isa = PBXBuildFile; fileRef = 43718E9D18517E5B00850F08 /* UIKitDefines.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		43DFBA511851D89000BA269F /* CoreFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 43DFBA501851D89000BA269F /* CoreFoundation.framework */; };
+		43ECCF0E1851CA9A0076535C /* UIView.h in Headers */ = {isa = PBXBuildFile; fileRef = 43ECCF0C1851CA9A0076535C /* UIView.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		43ECCF0F1851CA9A0076535C /* UIView.m in Sources */ = {isa = PBXBuildFile; fileRef = 43ECCF0D1851CA9A0076535C /* UIView.m */; };
+		43ECCF121851CAA80076535C /* UIWindow.h in Headers */ = {isa = PBXBuildFile; fileRef = 43ECCF101851CAA80076535C /* UIWindow.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		43ECCF131851CAA80076535C /* UIWindow.m in Sources */ = {isa = PBXBuildFile; fileRef = 43ECCF111851CAA80076535C /* UIWindow.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -29,7 +42,6 @@
 
 /* Begin PBXFileReference section */
 		43718E6918517B7B00850F08 /* UIKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = UIKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		43718E6C18517B7B00850F08 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
 		43718E6F18517B7B00850F08 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		43718E7018517B7B00850F08 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
 		43718E7118517B7B00850F08 /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
@@ -37,12 +49,26 @@
 		43718E7618517B7B00850F08 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		43718E7818517B7B00850F08 /* UIKit-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIKit-Prefix.pch"; sourceTree = "<group>"; };
 		43718E7918517B7B00850F08 /* UIKit.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UIKit.h; sourceTree = "<group>"; };
-		43718E7A18517B7B00850F08 /* UIKit.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = UIKit.m; sourceTree = "<group>"; };
 		43718E8018517B7B00850F08 /* UIKitTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = UIKitTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		43718E8118517B7B00850F08 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
 		43718E8918517B7B00850F08 /* UIKitTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "UIKitTests-Info.plist"; sourceTree = "<group>"; };
 		43718E8B18517B7B00850F08 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		43718E8D18517B7B00850F08 /* UIKitTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = UIKitTests.m; sourceTree = "<group>"; };
+		43718E9818517C7A00850F08 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		43718E9A18517C7F00850F08 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		43718E9D18517E5B00850F08 /* UIKitDefines.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UIKitDefines.h; sourceTree = "<group>"; };
+		43718E9E18517F0500850F08 /* UIResponder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UIResponder.h; sourceTree = "<group>"; };
+		43718E9F18517F0500850F08 /* UIResponder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UIResponder.m; sourceTree = "<group>"; };
+		43718EA218517FBA00850F08 /* UIApplication.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UIApplication.h; sourceTree = "<group>"; };
+		43718EA318517FBA00850F08 /* UIApplication.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UIApplication.m; sourceTree = "<group>"; };
+		43718EBE18518AB200850F08 /* android_native_app_glue.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = android_native_app_glue.c; sourceTree = "<group>"; };
+		43718EBF18518AB200850F08 /* android_native_app_glue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = android_native_app_glue.h; sourceTree = "<group>"; };
+		43718EC318518EE300850F08 /* Android.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; name = Android.xcconfig; path = xcconfig/Android.xcconfig; sourceTree = "<group>"; };
+		43DFBA501851D89000BA269F /* CoreFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreFoundation.framework; path = System/Library/Frameworks/CoreFoundation.framework; sourceTree = SDKROOT; };
+		43ECCF0C1851CA9A0076535C /* UIView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UIView.h; sourceTree = "<group>"; };
+		43ECCF0D1851CA9A0076535C /* UIView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UIView.m; sourceTree = "<group>"; };
+		43ECCF101851CAA80076535C /* UIWindow.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UIWindow.h; sourceTree = "<group>"; };
+		43ECCF111851CAA80076535C /* UIWindow.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UIWindow.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -50,7 +76,10 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				43718E6D18517B7B00850F08 /* Cocoa.framework in Frameworks */,
+				43DFBA511851D89000BA269F /* CoreFoundation.framework in Frameworks */,
+				43718E9B18517C7F00850F08 /* CoreGraphics.framework in Frameworks */,
+				43718E9918517C7A00850F08 /* QuartzCore.framework in Frameworks */,
+				43718E9718517C7200850F08 /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -58,7 +87,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				43718E8318517B7B00850F08 /* Cocoa.framework in Frameworks */,
 				43718E8618517B7B00850F08 /* UIKit.framework in Frameworks */,
 				43718E8218517B7B00850F08 /* XCTest.framework in Frameworks */,
 			);
@@ -70,6 +98,7 @@
 		43718E5F18517B7B00850F08 = {
 			isa = PBXGroup;
 			children = (
+				43718EC218518EB600850F08 /* xcconfig */,
 				43718E7218517B7B00850F08 /* UIKit */,
 				43718E8718517B7B00850F08 /* UIKitTests */,
 				43718E6B18517B7B00850F08 /* Frameworks */,
@@ -89,7 +118,9 @@
 		43718E6B18517B7B00850F08 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				43718E6C18517B7B00850F08 /* Cocoa.framework */,
+				43DFBA501851D89000BA269F /* CoreFoundation.framework */,
+				43718E9A18517C7F00850F08 /* CoreGraphics.framework */,
+				43718E9818517C7A00850F08 /* QuartzCore.framework */,
 				43718E8118517B7B00850F08 /* XCTest.framework */,
 				43718E6E18517B7B00850F08 /* Other Frameworks */,
 			);
@@ -109,8 +140,16 @@
 		43718E7218517B7B00850F08 /* UIKit */ = {
 			isa = PBXGroup;
 			children = (
+				43718E9C18517E3400850F08 /* Public Headers */,
 				43718E7918517B7B00850F08 /* UIKit.h */,
-				43718E7A18517B7B00850F08 /* UIKit.m */,
+				43718E9E18517F0500850F08 /* UIResponder.h */,
+				43718E9F18517F0500850F08 /* UIResponder.m */,
+				43718EA218517FBA00850F08 /* UIApplication.h */,
+				43718EA318517FBA00850F08 /* UIApplication.m */,
+				43ECCF0C1851CA9A0076535C /* UIView.h */,
+				43ECCF0D1851CA9A0076535C /* UIView.m */,
+				43ECCF101851CAA80076535C /* UIWindow.h */,
+				43ECCF111851CAA80076535C /* UIWindow.m */,
 				43718E7318517B7B00850F08 /* Supporting Files */,
 			);
 			path = UIKit;
@@ -119,6 +158,8 @@
 		43718E7318517B7B00850F08 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				43718EBE18518AB200850F08 /* android_native_app_glue.c */,
+				43718EBF18518AB200850F08 /* android_native_app_glue.h */,
 				43718E7418517B7B00850F08 /* UIKit-Info.plist */,
 				43718E7518517B7B00850F08 /* InfoPlist.strings */,
 				43718E7818517B7B00850F08 /* UIKit-Prefix.pch */,
@@ -144,6 +185,22 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		43718E9C18517E3400850F08 /* Public Headers */ = {
+			isa = PBXGroup;
+			children = (
+				43718E9D18517E5B00850F08 /* UIKitDefines.h */,
+			);
+			name = "Public Headers";
+			sourceTree = "<group>";
+		};
+		43718EC218518EB600850F08 /* xcconfig */ = {
+			isa = PBXGroup;
+			children = (
+				43718EC318518EE300850F08 /* Android.xcconfig */,
+			);
+			name = xcconfig;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
@@ -151,6 +208,13 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				43718EC418518FA800850F08 /* UIKit.h in Headers */,
+				43ECCF121851CAA80076535C /* UIWindow.h in Headers */,
+				43718EC518518FB400850F08 /* UIKitDefines.h in Headers */,
+				43ECCF0E1851CA9A0076535C /* UIView.h in Headers */,
+				43718EA018517F0500850F08 /* UIResponder.h in Headers */,
+				43718EA418517FBA00850F08 /* UIApplication.h in Headers */,
+				43718EC118518AB200850F08 /* android_native_app_glue.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -165,6 +229,7 @@
 				43718E6518517B7B00850F08 /* Frameworks */,
 				43718E6618517B7B00850F08 /* Headers */,
 				43718E6718517B7B00850F08 /* Resources */,
+				43718EC61851918700850F08 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -244,12 +309,32 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		43718EC61851918700850F08 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "pushd $INSTALL_PATH\nFRAMEWORK_PATH=`pwd`/UIKit.framework\npushd ../../../usr/include\nln -sf $FRAMEWORK_PATH/Headers UIKit\npushd ../lib\nln -sf $FRAMEWORK_PATH/Versions/A/UIKit libUIKit.so\n";
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		43718E6418517B7B00850F08 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				43718E7B18517B7B00850F08 /* UIKit.m in Sources */,
+				43ECCF0F1851CA9A0076535C /* UIView.m in Sources */,
+				43ECCF131851CAA80076535C /* UIWindow.m in Sources */,
+				43718EA518517FBA00850F08 /* UIApplication.m in Sources */,
+				43718EA118517F0500850F08 /* UIResponder.m in Sources */,
+				43718EC018518AB200850F08 /* android_native_app_glue.c in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -322,9 +407,9 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				MACOSX_DEPLOYMENT_TARGET = 10.9;
+				MACOSX_DEPLOYMENT_TARGET = "";
 				ONLY_ACTIVE_ARCH = YES;
-				SDKROOT = macosx;
+				SDKROOT = macosx0.0;
 			};
 			name = Debug;
 		};
@@ -354,21 +439,34 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				MACOSX_DEPLOYMENT_TARGET = 10.9;
-				SDKROOT = macosx;
+				MACOSX_DEPLOYMENT_TARGET = "";
+				SDKROOT = macosx0.0;
 			};
 			name = Release;
 		};
 		43718E9218517B7B00850F08 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 43718EC318518EE300850F08 /* Android.xcconfig */;
 			buildSettings = {
-				COMBINE_HIDPI_IMAGES = YES;
+				COMBINE_HIDPI_IMAGES = NO;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				FRAMEWORK_VERSION = A;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "UIKit/UIKit-Prefix.pch";
 				INFOPLIST_FILE = "UIKit/UIKit-Info.plist";
+				LD_DEPENDENCY_INFO_FILE = "";
+				OTHER_CFLAGS = (
+					"-fobjc-nonfragile-abi",
+					"-fblocks",
+				);
+				OTHER_LDFLAGS = (
+					"-lobjc",
+					"-shared",
+					"-ldispatch",
+					"-landroid",
+					"-llog",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = framework;
 			};
@@ -376,14 +474,27 @@
 		};
 		43718E9318517B7B00850F08 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 43718EC318518EE300850F08 /* Android.xcconfig */;
 			buildSettings = {
-				COMBINE_HIDPI_IMAGES = YES;
+				COMBINE_HIDPI_IMAGES = NO;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				FRAMEWORK_VERSION = A;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "UIKit/UIKit-Prefix.pch";
 				INFOPLIST_FILE = "UIKit/UIKit-Info.plist";
+				LD_DEPENDENCY_INFO_FILE = "";
+				OTHER_CFLAGS = (
+					"-fobjc-nonfragile-abi",
+					"-fblocks",
+				);
+				OTHER_LDFLAGS = (
+					"-lobjc",
+					"-shared",
+					"-ldispatch",
+					"-landroid",
+					"-llog",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = framework;
 			};
@@ -448,6 +559,7 @@
 				43718E9318517B7B00850F08 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		43718E9418517B7B00850F08 /* Build configuration list for PBXNativeTarget "UIKitTests" */ = {
 			isa = XCConfigurationList;
@@ -456,6 +568,7 @@
 				43718E9618517B7B00850F08 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
