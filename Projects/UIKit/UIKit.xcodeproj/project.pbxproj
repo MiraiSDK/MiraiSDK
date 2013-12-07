@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		432FF05F185338BD005486C5 /* UIScreen.h in Headers */ = {isa = PBXBuildFile; fileRef = 432FF05D185338BD005486C5 /* UIScreen.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		432FF060185338BD005486C5 /* UIScreen.m in Sources */ = {isa = PBXBuildFile; fileRef = 432FF05E185338BD005486C5 /* UIScreen.m */; };
+		432FF0621853463E005486C5 /* UIScreenPrivate.h in Headers */ = {isa = PBXBuildFile; fileRef = 432FF06118534615005486C5 /* UIScreenPrivate.h */; };
+		432FF07F1853645D005486C5 /* UIGraphics.h in Headers */ = {isa = PBXBuildFile; fileRef = 432FF07D1853645D005486C5 /* UIGraphics.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		432FF0801853645D005486C5 /* UIGraphics.m in Sources */ = {isa = PBXBuildFile; fileRef = 432FF07E1853645D005486C5 /* UIGraphics.m */; };
 		43718E7718517B7B00850F08 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 43718E7518517B7B00850F08 /* InfoPlist.strings */; };
 		43718E8218517B7B00850F08 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 43718E8118517B7B00850F08 /* XCTest.framework */; };
 		43718E8618517B7B00850F08 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 43718E6918517B7B00850F08 /* UIKit.framework */; };
@@ -41,6 +46,11 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		432FF05D185338BD005486C5 /* UIScreen.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UIScreen.h; sourceTree = "<group>"; };
+		432FF05E185338BD005486C5 /* UIScreen.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UIScreen.m; sourceTree = "<group>"; };
+		432FF06118534615005486C5 /* UIScreenPrivate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UIScreenPrivate.h; sourceTree = "<group>"; };
+		432FF07D1853645D005486C5 /* UIGraphics.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UIGraphics.h; sourceTree = "<group>"; };
+		432FF07E1853645D005486C5 /* UIGraphics.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UIGraphics.m; sourceTree = "<group>"; };
 		43718E6918517B7B00850F08 /* UIKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = UIKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		43718E6F18517B7B00850F08 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		43718E7018517B7B00850F08 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
@@ -150,6 +160,11 @@
 				43ECCF0D1851CA9A0076535C /* UIView.m */,
 				43ECCF101851CAA80076535C /* UIWindow.h */,
 				43ECCF111851CAA80076535C /* UIWindow.m */,
+				432FF05D185338BD005486C5 /* UIScreen.h */,
+				432FF06118534615005486C5 /* UIScreenPrivate.h */,
+				432FF05E185338BD005486C5 /* UIScreen.m */,
+				432FF07D1853645D005486C5 /* UIGraphics.h */,
+				432FF07E1853645D005486C5 /* UIGraphics.m */,
 				43718E7318517B7B00850F08 /* Supporting Files */,
 			);
 			path = UIKit;
@@ -158,8 +173,8 @@
 		43718E7318517B7B00850F08 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				43718EBE18518AB200850F08 /* android_native_app_glue.c */,
 				43718EBF18518AB200850F08 /* android_native_app_glue.h */,
+				43718EBE18518AB200850F08 /* android_native_app_glue.c */,
 				43718E7418517B7B00850F08 /* UIKit-Info.plist */,
 				43718E7518517B7B00850F08 /* InfoPlist.strings */,
 				43718E7818517B7B00850F08 /* UIKit-Prefix.pch */,
@@ -212,9 +227,12 @@
 				43ECCF121851CAA80076535C /* UIWindow.h in Headers */,
 				43718EC518518FB400850F08 /* UIKitDefines.h in Headers */,
 				43ECCF0E1851CA9A0076535C /* UIView.h in Headers */,
+				432FF07F1853645D005486C5 /* UIGraphics.h in Headers */,
 				43718EA018517F0500850F08 /* UIResponder.h in Headers */,
+				432FF05F185338BD005486C5 /* UIScreen.h in Headers */,
 				43718EA418517FBA00850F08 /* UIApplication.h in Headers */,
 				43718EC118518AB200850F08 /* android_native_app_glue.h in Headers */,
+				432FF0621853463E005486C5 /* UIScreenPrivate.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -331,10 +349,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				43ECCF0F1851CA9A0076535C /* UIView.m in Sources */,
+				432FF0801853645D005486C5 /* UIGraphics.m in Sources */,
 				43ECCF131851CAA80076535C /* UIWindow.m in Sources */,
 				43718EA518517FBA00850F08 /* UIApplication.m in Sources */,
 				43718EA118517F0500850F08 /* UIResponder.m in Sources */,
 				43718EC018518AB200850F08 /* android_native_app_glue.c in Sources */,
+				432FF060185338BD005486C5 /* UIScreen.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

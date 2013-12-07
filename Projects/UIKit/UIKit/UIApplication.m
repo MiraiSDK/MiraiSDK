@@ -11,11 +11,15 @@
 #import <CoreGraphics/CoreGraphics.h>
 #import <UIKit/UIWindow.h>
 #import <QuartzCore/QuartzCore.h>
+#import "UIScreenPrivate.h"
+#import "UIGraphics.h"
 
 #include <string.h>
 #include <jni.h>
 #include <android/log.h>
+#import <Foundation/NSObjCRuntime.h>
 #include "android_native_app_glue.h"
+
 @interface TNAndroidLauncher : NSObject
 + (void)launchWithArgc:(int)argc argv:(char *[])argv;
 @end
@@ -57,17 +61,12 @@ static UIApplication *_app;
     return [self.delegate window];
 }
 
-#define  LOG_TAG    "UIApplication"
-#define  LOGI(...)  __android_log_print(ANDROID_LOG_INFO,LOG_TAG,__VA_ARGS__)
-#define  LOGW(...)  __android_log_print(ANDROID_LOG_WARN,LOG_TAG,__VA_ARGS__)
-#define  LOGE(...)  __android_log_print(ANDROID_LOG_ERROR,LOG_TAG,__VA_ARGS__)
-
 - (void)finishLaunching
 {
-    LOGI("in finishLaunching...");
-    LOGI("delegate: %s",[self.delegate description].UTF8String);
+    NSLog(@"in finishLaunching...");
+    NSLog(@"delegate: %s",[self.delegate description].UTF8String);
     if (self.delegate) {
-        LOGI("will coll didfinish");
+        NSLog(@"will coll didfinish");
         [self.delegate application:self didFinishLaunchingWithOptions:nil];
     }
 }
@@ -87,9 +86,9 @@ static struct android_app* app_state;
         if (!didlaunch) {
             didlaunch = YES;
             @autoreleasepool {
-                LOGI("will finish");
+                NSLog(@"will finish");
                 [self finishLaunching];
-                LOGI("did finish");
+                NSLog(@"did finish");
 
             }
         }
@@ -119,20 +118,23 @@ static struct android_app* app_state;
 
                     // Check if we are exiting.
                     if (app_state->destroyRequested != 0) {
-                        LOGI("Engine thread destroy requested!");
+                        NSLog(@"Engine thread destroy requested!");
                         return;
                     }
                 }
+
 
                 /* Now that we've delt with input, draw stuff */
                 if (app_state->window != NULL) {
                     ANativeWindow_Buffer buffer;
                     if (ANativeWindow_lock(app_state->window, &buffer, NULL) < 0) {
-                        LOGW("Unable to lock window buffer");
+                        NSLog(@"Unable to lock window buffer");
                         continue;
                     }
                     
-                    LOGI("Draw frame");
+
+                    
+                    NSLog(@"Draw frame");
                     draw_frame_cgcontext(&buffer);
                     
                     ANativeWindow_unlockAndPost(app_state->window);
@@ -150,7 +152,7 @@ static int32_t handle_input(struct android_app* app, AInputEvent* event) {
         app_has_focus = true;
         return 1;
     } else if (AInputEvent_getType(event) == AINPUT_EVENT_TYPE_KEY) {
-        LOGI("Key event: action=%d keyCode=%d metaState=0x%x",
+        NSLog(@"Key event: action=%d keyCode=%d metaState=0x%x",
              AKeyEvent_getAction(event),
              AKeyEvent_getKeyCode(event),
              AKeyEvent_getMetaState(event));
@@ -175,36 +177,44 @@ static void handle_app_command(struct android_app* app, int32_t cmd) {
     }
 }
 
+static void _NSLog_android_log_handler (NSString *message)
+{
+    __android_log_write(ANDROID_LOG_INFO,"NSLog",[message UTF8String]);
+}
+
 //int main(int argc, char * argv[]);
 void android_main(struct android_app* state)
 {
-    LOGI("on android_main");
+    _NSLog_printf_handler = *_NSLog_android_log_handler;
+    
     app_state = state;
     int argc = 1;
     char * argv[] = {"/data/local/fileName"};
     [NSProcessInfo initializeWithArguments:argv count:argc environment:NULL];
+    NSLog(@"on android_main");
+
     [TNAndroidLauncher launchWithArgc:argc argv:argv];
 }
 
 static void draw_frame_cgcontext(ANativeWindow_Buffer *buffer) {
     CGSize windowSize = CGSizeMake(buffer->width, buffer->height);
     CGRect bounds = CGRectMake(0, 0, windowSize.width, windowSize.height);
-    LOGI("windowSize: width:%.2f, height:%.2f",windowSize.width,windowSize.height);
+    NSLog(@"windowSize: width:%.2f, height:%.2f",windowSize.width,windowSize.height);
     
     // context options
 //    CGColorSpaceRef colorSpace = CGColorSpaceCreateDeviceRGB();
     CGColorSpaceRef colorSpace = CGColorSpaceCreateWithName(kCGColorSpaceGenericRGB);
-    if (colorSpace == NULL) {LOGI("color space is NULL!!!");}
+    if (colorSpace == NULL) {NSLog(@"color space is NULL!!!");}
     
     switch (buffer ->format) {
         case WINDOW_FORMAT_RGBA_8888:
-            LOGI("WINDOW_FORMAT_RGBA_8888");
+            NSLog(@"WINDOW_FORMAT_RGBA_8888");
             break;
         case WINDOW_FORMAT_RGBX_8888:
-            LOGI("WINDOW_FORMAT_RGBX_8888");
+            NSLog(@"WINDOW_FORMAT_RGBX_8888");
             break;
         case WINDOW_FORMAT_RGB_565:
-            LOGI("WINDOW_FORMAT_RGB_565");
+            NSLog(@"WINDOW_FORMAT_RGB_565");
             break;
             
         default:
@@ -223,11 +233,11 @@ static void draw_frame_cgcontext(ANativeWindow_Buffer *buffer) {
                                              bytesPerRow,
                                              colorSpace,
                                              info);
-    
+    UIGraphicsPushContext(ctx);
     UIWindow *window = _app.keyWindow;
+    [window.layer display];
+    UIGraphicsPopContext();
     
-
-    CGContextSetFillColorWithColor(ctx, window.layer.backgroundColor);
     CGContextFillRect(ctx, bounds);
     
 #if BYTEORDER == LITTLEENDIAN
@@ -290,9 +300,13 @@ static void buffTest(ANativeWindow_Buffer *buffer)
 
 int UIApplicationMain(int argc, char *argv[], NSString *principalClassName, NSString *delegateClassName)
 {
-    LOGI("enter UIApplicationMain");
+    NSLog(@"enter UIApplicationMain");
     id<UIApplicationDelegate>delegate = nil;
     @autoreleasepool {
+        if (![UIScreen mainScreen]) {
+            UIScreen *screen = [[UIScreen alloc] initWithAndroidNativeWindow:app_state->window];
+        }
+        
         Class class = principalClassName ? NSClassFromString(principalClassName) : nil;
         if (!class) {}// TODO: load principalClassName from plist
         

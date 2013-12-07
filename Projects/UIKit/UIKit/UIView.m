@@ -8,6 +8,7 @@
 
 #import "UIView.h"
 #import <QuartzCore/CALayer.h>
+#import "UIGraphics.h"
 
 @implementation UIView
 
@@ -43,7 +44,11 @@
 
 - (void)displayLayer:(CALayer *)theLayer
 {
-    
+    CGContextRef ctx = UIGraphicsGetCurrentContext();
+    if (theLayer.backgroundColor) {
+        CGContextSetFillColorWithColor(ctx, theLayer.backgroundColor);
+        CGContextFillRect(ctx, theLayer.frame);
+    }
 }
 
 - (void)drawLayer:(CALayer *)layer inContext:(CGContextRef)ctx

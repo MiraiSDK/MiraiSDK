@@ -11,6 +11,8 @@
 #import <UIKit/UIResponder.h>
 #import <UIKit/UIView.h>
 #import <UIKit/UIWindow.h>
+#import <UIKit/UIScreen.h>
+#import <UIKit/UIGraphics.h>
 
 
 
