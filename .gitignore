@@ -23,7 +23,7 @@ Pods
 **.tar.gz
 **.tar.xz
 Temp/
-Products/
+Products/android/android-toolchain-arm
 DemoProject/**/jni/*.so
 DemoProject/**/obj/local/*
 DemoProject/**/build.xml

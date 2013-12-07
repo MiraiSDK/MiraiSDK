@@ -5,9 +5,7 @@
 //  Created by Chen Yonghui on 11/3/13.
 //  Copyright (c) 2013 Shanghai Tinynetwork. All rights reserved.
 //
-SDKROOT = macosx
 SYMROOT = build-arm-google-android
-GCC_VERSION = org.tiny4.compilers.android.clang.3.3
 CODE_SIGN_IDENTITY[sdk=iphoneos*] =
 DEPLOYMENT_LOCATION = YES
 DSTROOT = /
@@ -18,12 +16,6 @@ EXECUTABLE_PREFIX = lib
 MACOSX_DEPLOYMENT_TARGET=
 
 WRAPPER_EXTENSION = app
-//FRAMEWORK_SEARCH_PATHS = $(inherited) /opt/StellaSDK/arm-google-android2s/usr/frameworks
-//HEADER_SEARCH_PATHS = $(inherited) /opt/StellaSDK/arm-google-android2s/usr/include
-//LIBRARY_SEARCH_PATHS = /opt/StellaSDK/arm-google-android2s/usr/lib /opt/StellaSDK/arm-google-android2s/usr/local/lib
-OTHER_CFLAGS = --sysroot=/Users/chyhfj/Development/MiraSDK/Products/android/android-toolchain-arm/sysroot $(inherited) -fobjc-nonfragile-abi
-//GCC_PRECOMPILE_PREFIX_HEADER = YES
-//GCC_PREFIX_HEADER =
+OTHER_CFLAGS = $(inherited) -fobjc-nonfragile-abi -fblocks
 CLANG_ENABLE_MODULES = NO
-OTHER_LDFLAGS =  --sysroot=/Users/chyhfj/Development/MiraSDK/Products/android/android-toolchain-arm/sysroot -shared $(inherited) -lopal -landroid -lobjc -ldispatch -lgnustep-base -fconstant-class=NSConstantString -lm -llog -lz
-//OTHER_LDFLAGS =  -shared $(inherited) -lm -llog
+OTHER_LDFLAGS = -shared $(inherited) -lopal -landroid -lobjc -ldispatch -lgnustep-base -fconstant-class=NSConstantString -lm -llog -lz

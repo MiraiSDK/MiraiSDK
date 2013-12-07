@@ -1,0 +1,44 @@
+#!/bin/bash
+
+pushd `pwd`/`dirname $0`
+FILE_ROOT=`pwd`
+popd
+
+pushd $FILE_ROOT/../android-toolchain-arm/arm-linux-androideabi/bin
+
+if [ -f realld ]; then
+	echo "already pached"
+	exit 1
+fi
+
+#rename ld
+mv ld realld
+
+echo '''
+#!/bin/bash
+
+foundFileList="no"
+fileListPath=""
+finalCommand=""
+
+for arg in "$@"
+do
+	newArg=$arg
+	
+    if [[ "$foundFileList" == "yes" && "$fileListPath" == "" ]]; then
+        fileListPath="$arg"
+		fileList=`sed ':a;N;$!ba;s/\n/ /g' $fileListPath`
+		newArg="$fileList"
+    fi
+    if [ "$arg" == "-filelist" ]; then
+        foundFileList="yes"
+		continue;
+    fi
+	finalCommand="$finalCommand $newArg"
+done
+
+`dirname $0`/realld $finalCommand
+
+''' > ld
+chmod +x ld
+popd

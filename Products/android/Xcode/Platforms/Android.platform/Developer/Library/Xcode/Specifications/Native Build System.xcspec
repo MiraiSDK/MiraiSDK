@@ -1,0 +1,181 @@
+/*
+    Native Build System properties for the iPhone Simulator platform
+
+    Copyright (c) 2008-2012 Apple Inc.  All rights reserved.
+
+    Augments the list of build settings for the native build system with settings specific to the iPhone Simulator build environment.
+*/
+(
+{
+        Type = BuildSystem;
+        Identifier = com.apple.build-system.native;
+        BasedOn = "default:com.apple.build-system.native";
+        Name = "Native Build System";
+        DeletedProperties = ( PROVISIONING_PROFILE, CODE_SIGN_ENTITLEMENTS, MACOSX_DEPLOYMENT_TARGET );
+        Properties = (
+        );
+},
+{
+        Type = Compiler;
+        Identifier = "com.apple.compilers.llvm.clang.1_0.compiler";
+        BasedOn = "default:com.apple.compilers.llvm.clang.1_0.compiler";
+        DeletedProperties = ( GCC_MACOSX_VERSION_MIN );
+        Options = (
+            {
+                Name = "GCC_ENABLE_EXCEPTIONS";
+                Type = Boolean;
+                DefaultValue = YES;
+                CommandLineFlag = "-fexceptions";
+            },
+            {
+                Name = "LD_NO_IMPLICIT_DYLIBS";
+                Type = Boolean;
+                DefaultValue = YES;
+                AdditionalLinkerArgs = ( "-Xlinker", "-no_implicit_dylibs" );
+            },
+            {   Name = GCC_IPHONEOS_VERSION_MIN;
+                Type = String;
+                DefaultValue = "$(IPHONEOS_DEPLOYMENT_TARGET)";
+                CommandLinePrefixFlag = "-mios-simulator-version-min=";
+            },
+        );
+},
+{
+        Type = Compiler;
+        Identifier = "com.apple.compilers.llvm.clang.1_0.analyzer";
+        BasedOn = "default:com.apple.compilers.llvm.clang.1_0.analyzer";
+        DeletedProperties = ( GCC_MACOSX_VERSION_MIN );
+        Options = (
+            {
+                Name = "GCC_ENABLE_EXCEPTIONS";
+                Type = Boolean;
+                DefaultValue = YES;
+                CommandLineFlag = "-fexceptions";
+            },
+            {   Name = GCC_IPHONEOS_VERSION_MIN;
+                Type = String;
+                DefaultValue = "$(IPHONEOS_DEPLOYMENT_TARGET)";
+                CommandLinePrefixFlag = "-mios-simulator-version-min=";
+            },
+        );
+},
+{
+        Type = Compiler;
+        Identifier = "com.apple.compilers.llvm.clang.1_0.migrator";
+        BasedOn = "default:com.apple.compilers.llvm.clang.1_0.migrator";
+        DeletedProperties = ( GCC_MACOSX_VERSION_MIN );
+        Options = (
+            {
+                Name = "GCC_ENABLE_EXCEPTIONS";
+                Type = Boolean;
+                DefaultValue = YES;
+                CommandLineFlag = "-fexceptions";
+            },
+            {   Name = GCC_IPHONEOS_VERSION_MIN;
+                Type = String;
+                DefaultValue = "$(IPHONEOS_DEPLOYMENT_TARGET)";
+                CommandLinePrefixFlag = "-mios-simulator-version-min=";
+            },
+        );
+},
+{
+        Type = Compiler;
+        Identifier = "com.apple.compilers.llvm.clang.1_0.migrator.xctest";
+        BasedOn = "default:com.apple.compilers.llvm.clang.1_0.migrator.xctest";
+        DeletedProperties = ( GCC_MACOSX_VERSION_MIN );
+        Options = (
+            {
+                Name = "GCC_ENABLE_EXCEPTIONS";
+                Type = Boolean;
+                DefaultValue = YES;
+                CommandLineFlag = "-fexceptions";
+            },
+            {   Name = GCC_IPHONEOS_VERSION_MIN;
+                Type = String;
+                DefaultValue = "$(IPHONEOS_DEPLOYMENT_TARGET)";
+                CommandLinePrefixFlag = "-mios-simulator-version-min=";
+            },
+        );
+},
+{
+        Type = Compiler;
+        Identifier = "com.apple.compilers.llvm.clang.1_0.astbuilder";
+        BasedOn = "default:com.apple.compilers.llvm.clang.1_0.astbuilder";
+        DeletedProperties = ( GCC_MACOSX_VERSION_MIN );
+        Options = (
+            {
+                Name = "GCC_ENABLE_EXCEPTIONS";
+                Type = Boolean;
+                DefaultValue = YES;
+                CommandLineFlag = "-fexceptions";
+            },
+            {   Name = GCC_IPHONEOS_VERSION_MIN;
+                Type = String;
+                DefaultValue = "$(IPHONEOS_DEPLOYMENT_TARGET)";
+                CommandLinePrefixFlag = "-mios-simulator-version-min=";
+            },
+        );
+},
+
+    {   Type = Linker;
+        Identifier = com.apple.pbx.linkers.ld;
+        BasedOn = "default:com.apple.pbx.linkers.ld";
+        Class = PBXLinkerSpecificationLd;
+        Name = "Apple Mach-O Linker";
+        DeletedProperties = ( MACOSX_DEPLOYMENT_TARGET );
+        Options = (
+            {   Name = IPHONEOS_DEPLOYMENT_TARGET;
+                Type = String;
+                DefaultValue = "$(inherited)";
+                CommandLinePrefixFlag = "-mios-simulator-version-min=";
+                SetValueInEnvironmentVariable = "IPHONEOS_DEPLOYMENT_TARGET";
+            },
+            {
+                Name = "LD_ENTITLEMENTS_SECTION";
+                Type = String;
+                DefaultValue = "";
+                IsInputDependency = YES;
+                CommandLineArgs = {
+                    "" = ();
+                    "<<otherwise>>" = ( "-Xlinker", "-sectcreate", "-Xlinker", "__TEXT", "-Xlinker", "__entitlements", "-Xlinker", "$(value)" );
+                };
+            },
+	        {   Name = __INPUT_FILE_LIST_PATH__;
+	            Type = Path;
+	            DefaultValue = "$(LINK_FILE_LIST_$(variant)_$(arch))";      // this is set up for us as a read-only property
+	            CommandLineFlag = "-filelist";
+	            IsInputDependency = Yes;
+	        },
+        );
+    },
+
+    {   Type = Linker;
+        Identifier = com.apple.pbx.linkers.libtool;
+        BasedOn = "default:com.apple.pbx.linkers.libtool";
+        Class = PBXLinkerSpecificationLibtool;
+        Name = "Apple Mach-O Librarian";
+        DeletedProperties = ( MACOSX_DEPLOYMENT_TARGET );
+        Options = (
+            {   Name = IPHONEOS_DEPLOYMENT_TARGET;
+                Type = String;
+                SetValueInEnvironmentVariable = "IPHONEOS_DEPLOYMENT_TARGET";
+            },
+            {   Name = ANDROIDOS_DEPLOYMENT_TARGET;
+                Type = String;
+                SetValueInEnvironmentVariable = "ANDROIDOS_DEPLOYMENT_TARGET";
+            },
+            {
+                Name = "LD_ENTITLEMENTS_SECTION";
+                Type = String;
+                DefaultValue = "";
+                IsInputDependency = YES;
+                CommandLineArgs = {
+                    "" = ();
+                    "<<otherwise>>" = ( "-Xlinker", "-sectcreate", "-Xlinker", "__TEXT", "-Xlinker", "__entitlements", "-Xlinker", "$(value)" );
+                };
+            },
+        );
+    },
+
+
+)

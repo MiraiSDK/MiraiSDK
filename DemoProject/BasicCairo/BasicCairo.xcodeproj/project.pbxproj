@@ -21,7 +21,7 @@
 		4327E222184DEF4000F17F96 /* android_native_app_glue.c in Sources */ = {isa = PBXBuildFile; fileRef = 4327E220184DEF4000F17F96 /* android_native_app_glue.c */; };
 		4327E238184E0B2D00F17F96 /* libopal.so in Copy Files (libs) */ = {isa = PBXBuildFile; fileRef = 4327E236184E0B1800F17F96 /* libopal.so */; };
 		4383FF4C184B4EFE004E88C2 /* libobjc.so in Copy Files (libs) */ = {isa = PBXBuildFile; fileRef = 4383FF4B184B4EFB004E88C2 /* libobjc.so */; };
-		4383FF4E184B4FF7004E88C2 /* libdispatch.so in Copy Files (libs) */ = {isa = PBXBuildFile; fileRef = 4383FF4D184B4FF5004E88C2 /* libdispatch.so */; };
+		43DFBA59185306DD00BA269F /* libdispatch.so in Copy Files (libs) */ = {isa = PBXBuildFile; fileRef = 43DFBA58185306DB00BA269F /* libdispatch.so */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -45,7 +45,7 @@
 				4327E1C0184C86CC00F17F96 /* libgnustl_shared.so in Copy Files (libs) */,
 				4327E238184E0B2D00F17F96 /* libopal.so in Copy Files (libs) */,
 				4383FF4C184B4EFE004E88C2 /* libobjc.so in Copy Files (libs) */,
-				4383FF4E184B4FF7004E88C2 /* libdispatch.so in Copy Files (libs) */,
+				43DFBA59185306DD00BA269F /* libdispatch.so in Copy Files (libs) */,
 				4327E1BE184C531300F17F96 /* libgnustep-base.so in Copy Files (libs) */,
 			);
 			name = "Copy Files (libs)";
@@ -77,11 +77,10 @@
 		4327E220184DEF4000F17F96 /* android_native_app_glue.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = android_native_app_glue.c; sourceTree = "<group>"; };
 		4327E221184DEF4000F17F96 /* android_native_app_glue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = android_native_app_glue.h; sourceTree = "<group>"; };
 		4327E236184E0B1800F17F96 /* libopal.so */ = {isa = PBXFileReference; lastKnownFileType = file; name = libopal.so; path = "../../Products/android/android-toolchain-arm/sysroot/usr/lib/libopal.so"; sourceTree = "<group>"; };
-		4327E239184F508700F17F96 /* CGContext-private.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "CGContext-private.h"; sourceTree = "<group>"; };
 		43368BB0182774F100B492D0 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = "../../../../Development/cocotron/system/i386-mingw32msvc/Frameworks/Foundation.framework"; sourceTree = "<group>"; };
 		4383FF44184B1B11004E88C2 /* Android.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; name = Android.xcconfig; path = ../Android.xcconfig; sourceTree = "<group>"; };
 		4383FF4B184B4EFB004E88C2 /* libobjc.so */ = {isa = PBXFileReference; lastKnownFileType = file; name = libobjc.so; path = "../../Products/android/android-toolchain-arm/sysroot/usr/lib/libobjc.so"; sourceTree = "<group>"; };
-		4383FF4D184B4FF5004E88C2 /* libdispatch.so */ = {isa = PBXFileReference; lastKnownFileType = file; name = libdispatch.so; path = ../../Products/android/sysroot/usr/lib/libdispatch.so; sourceTree = "<group>"; };
+		43DFBA58185306DB00BA269F /* libdispatch.so */ = {isa = PBXFileReference; lastKnownFileType = file; name = libdispatch.so; path = "../../Products/android/android-toolchain-arm/sysroot/usr/lib/libdispatch.so"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -153,7 +152,6 @@
 			children = (
 				431F17CD1826432A006FCF12 /* Basic-Info.plist */,
 				431F17CE1826432A006FCF12 /* InfoPlist.strings */,
-				4327E239184F508700F17F96 /* CGContext-private.h */,
 				431F17D11826432A006FCF12 /* main.m */,
 				431F17D31826432A006FCF12 /* Basic-Prefix.pch */,
 			);
@@ -181,7 +179,7 @@
 				4327E236184E0B1800F17F96 /* libopal.so */,
 				4327E1BF184C86BF00F17F96 /* libgnustl_shared.so */,
 				4327E1BD184C530800F17F96 /* libgnustep-base.so */,
-				4383FF4D184B4FF5004E88C2 /* libdispatch.so */,
+				43DFBA58185306DB00BA269F /* libdispatch.so */,
 				4383FF4B184B4EFB004E88C2 /* libobjc.so */,
 			);
 			name = Frameworks;
@@ -427,7 +425,7 @@
 					"/Users/chyhfj/Development/MiraSDK/Products/android/android-toolchain-arm/sysroot/usr/lib",
 				);
 				PRODUCT_NAME = BasicCairo;
-				SDKROOT = macosx;
+				SDKROOT = macosx0.0;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -454,7 +452,7 @@
 					"/Users/chyhfj/Development/MiraSDK/Products/android/android-toolchain-arm/sysroot/usr/lib",
 				);
 				PRODUCT_NAME = BasicCairo;
-				SDKROOT = macosx;
+				SDKROOT = macosx0.0;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
