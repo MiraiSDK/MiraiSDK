@@ -159,10 +159,10 @@ if [ ! -f $STANDALONE_TOOLCHAIN_PATH/sysroot/usr/lib/libgnustep-base.so ]; then
 	popd
 fi
 
-# depencies
-#pushd $MIRAI_PROJECTS_PATH/dependencies
-#./build.sh
-#popd
+# dependencies
+pushd $MIRAI_PROJECTS_PATH/dependencies
+./build.sh
+popd
 
 
 #. gnustep-corebase (Core Foundation)
