@@ -1,0 +1,18 @@
+--- gnustep-base-1.24.0/GNUmakefile	2011-03-03 09:19:17.000000000 +0100
++++ gnustep-base-1.24.0-android/GNUmakefile	2013-02-27 09:44:30.000000000 +0100
+@@ -65,10 +65,11 @@ include ./Version
+ # The list of subproject directories
+ #
+ SUBPROJECTS = Source
+-ifneq ($(GNUSTEP_TARGET_OS), mingw32)
+-  SUBPROJECTS += SSL
+-endif
+-SUBPROJECTS += Tools NSTimeZones Resources Tests
++#ifneq ($(GNUSTEP_TARGET_OS), mingw32)
++#  SUBPROJECTS += SSL
++#endif
++#SUBPROJECTS += Tools NSTimeZones Resources Tests
++SUBPROJECTS += NSTimeZones Resources
+ 
+ -include Makefile.preamble
+ 

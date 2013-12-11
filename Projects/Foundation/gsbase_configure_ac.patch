@@ -1,0 +1,171 @@
+--- gnustep-base-1.24.0/configure.ac	2012-01-29 17:57:06.000000000 +0100
++++ gnustep-base-1.24.0-android/configure.ac	2013-03-09 20:20:45.000000000 +0100
+@@ -1628,8 +1628,10 @@ else
+ fi
+ AC_CHECK_LIB(pthread, pthread_join, pthread_ok=yes, pthread_ok=no)
+ ismingw=no
++isandroid=no
+ case "$target_os" in
+   mingw*)	ismingw=yes;;
++  *android*)   isandroid=yes;;
+ esac
+ if test $pthread_ok = yes ; then
+   LIBS="$LIBS -lpthread"
+@@ -1640,6 +1642,12 @@ else
+       LIBS="$LIBS -lpthreadGC2"
+     fi
+   fi
++  if test $isandroid = yes ; then
++    AC_CHECK_LIB(c, pthread_join, pthread_ok=yes, pthread_ok=no)
++    if test $pthread_ok = yes ; then
++      LIBS="$LIBS -lc"
++    fi
++  fi
+ fi
+ if test $pthread_ok = no ; then
+   AC_MSG_ERROR([Unable to find pthread library (needed for thread support).])
+@@ -1889,8 +1897,13 @@ AC_MSG_RESULT($have_set_unexpected)
+ # Don't revert any Objective-C flags as they are used in the next test
+ 
+ AC_MSG_CHECKING(for _objc_unexpected_exception in runtime)
+-AC_RUN_IFELSE([#include "$srcdir/config/config.unexpected.m"],
+-	have_unexpected=yes, have_unexpected=no)
++if test "$cross_compiling" = yes; then
++  have_unexpected=yes
++  AC_MSG_WARN([Cross-compiling, so we will assume you are using a modern runtime.])
++else
++  AC_RUN_IFELSE([#include "$srcdir/config/config.unexpected.m"],
++      have_unexpected=yes, have_unexpected=no)
++fi
+ if test $have_unexpected = yes; then
+   AC_DEFINE(HAVE_UNEXPECTED,1,
+ 	    [Define if libobjc has the _objc_unexpected_exception callback])
+@@ -1939,8 +1952,13 @@ AC_SUBST(HAVE_OBJC_SYNC_ENTER)
+ # Don't revert any Objective-C flags as they are used in the next test
+ 
+ AC_MSG_CHECKING(for thread-safe +initialize in runtime)
+-AC_RUN_IFELSE([#include "$srcdir/config/config.initialize.m"],
+-	safe_initialize=yes, safe_initialize=no)
++if test "$cross_compiling" = yes; then
++  safe_initialize=yes
++  AC_MSG_WARN([Cross-compiling, so we will assume you are using a modern runtime.])
++else
++  AC_RUN_IFELSE([#include "$srcdir/config/config.initialize.m"],
++        safe_initialize=yes, safe_initialize=no)
++fi 
+ if test $safe_initialize = yes; then
+   AC_DEFINE(HAVE_INITIALIZE,1,
+ 	    [Define if libobjc has thread-safe +initialize support])
+@@ -2008,6 +2026,19 @@ AC_CHECK_LIB(m, main)
+ AC_CHECK_FUNCS(statvfs link symlink readlink geteuid getlogin getpwnam getpwnam_r getpwuid getpwuid_r getgrgid getgrgid_r getgrnam getgrnam_r rint getopt)
+ LIBS="$saved_LIBS"
+ 
++AC_CACHE_CHECK([for pw_gecos field in struct passwd],
++		ac_cv_have_pw_gecos_in_struct_passwd, [
++	AC_COMPILE_IFELSE([AC_LANG_PROGRAM([[ #include <pwd.h> ]],
++	[[ struct passwd p; p.pw_gecos = 0; ]])],
++	[ ac_cv_have_pw_gecos_in_struct_passwd="yes" ],
++	[ ac_cv_have_pw_gecos_in_struct_passwd="no" 
++	])
++])
++if test "x$ac_cv_have_pw_gecos_in_struct_passwd" = "xyes" ; then
++	AC_DEFINE([HAVE_PW_GECOS_IN_PASSWD], [1],
++		[Define if you have pw_gecos field in struct passwd])
++fi
++
+ #--------------------------------------------------------------------
+ # These two headers (functions) needed by Time.m
+ #--------------------------------------------------------------------
+@@ -2063,6 +2094,12 @@ AC_CHECK_FUNCS(syslog)
+ #--------------------------------------------------------------------
+ # These headers/functions needed by NSRunLoop.m
+ #--------------------------------------------------------------------
++AC_ARG_WITH(poll,
++  [  --with-poll
++     Explicitly enable or disable the use of the poll() system call.  This
++     option is ignored when not cross compiling: poll usage will be
++     automatically detected. ],, )
++
+ AC_CHECK_HEADERS(poll.h)
+ AC_CHECK_FUNCS(poll)
+ have_poll=no
+@@ -2073,8 +2110,12 @@ if test $ac_cv_header_poll_h = yes; then
+   	have_poll=no,)
+   if test $have_poll = yes; then
+     AC_MSG_RESULT(no)
+-    AC_MSG_CHECKING([if poll supports devices])
+-    AC_TRY_RUN([#include "$srcdir/config/config.poll-dev.c"], ,have_poll=no, )
++    if test "$cross_compiling" = yes; then
++      have_poll=$with_poll
++    else
++      AC_MSG_CHECKING([if poll supports devices])
++      AC_TRY_RUN([#include "$srcdir/config/config.poll-dev.c"], ,have_poll=no, )
++    fi 
+     if test $have_poll = yes; then
+       AC_MSG_RESULT(yes)
+       AC_DEFINE(HAVE_POLL_F,1, [ Define if poll is NOT emulated via select])
+@@ -2087,27 +2128,6 @@ if test $ac_cv_header_poll_h = yes; then
+ fi
+ 
+ #--------------------------------------------------------------------
+-# This function needed by StdioStream.m
+-#--------------------------------------------------------------------
+-AC_CHECK_FUNCS(vsprintf vasprintf snprintf vsnprintf)
+-if test $ac_cv_func_vsprintf = yes ; then
+-    AC_TRY_RUN([#include "$srcdir/config/config.vsprintf.c"],
+-		VSPRINTF_RETURNS_LENGTH=1,
+-		VSPRINTF_RETURNS_LENGTH=0,
+-		VSPRINTF_RETURNS_LENGTH=1)
+-    AC_DEFINE_UNQUOTED(VSPRINTF_RETURNS_LENGTH, $VSPRINTF_RETURNS_LENGTH,
+-                       [Define if vsprintf returns the length printed])
+-fi
+-if test $ac_cv_func_vasprintf = yes ; then
+-    AC_TRY_RUN([#include "$srcdir/config/config.vasprintf.c"],
+-		VASPRINTF_RETURNS_LENGTH=1,
+-		VASPRINTF_RETURNS_LENGTH=0,
+-		VASPRINTF_RETURNS_LENGTH=1)
+-    AC_DEFINE_UNQUOTED(VASPRINTF_RETURNS_LENGTH, $VASPRINTF_RETURNS_LENGTH,
+-                       [Define if vasprintf returns the length printed])
+-fi
+-
+-#--------------------------------------------------------------------
+ # This function needed by NSFileManager.m
+ #--------------------------------------------------------------------
+ AC_CHECK_FUNCS(getcwd)
+@@ -2140,10 +2160,8 @@ AC_CHECK_HEADERS(sys/mman.h)
+ #--------------------------------------------------------------------
+ # These functions needed by NSTask.m
+ #--------------------------------------------------------------------
+-AC_CHECK_FUNCS(killpg setpgrp setpgid setsid)
+-if test "x$ac_cv_func_setpgrp" = xyes; then
+-  AC_FUNC_SETPGRP
+-fi
++AC_CHECK_FUNCS(killpg setpgid setsid)
++
+ 
+ HAVE_PTS_STREAM_MODULES=0
+ case "${target}" in
+@@ -3095,7 +3113,10 @@ AC_ARG_WITH(openssl-library,
+   [  --with-openssl-library=PATH  library path for openssl libraries],
+   openssl_libdir="$withval", openssl_libdir="no")
+ 
+-AC_CONFIG_SUBDIRS(SSL)
++## FIXME: The SSL bundle's configure is broken when cross compiling.  Ignore it for now.
++if test "$cross_compiling" = no; then
++  AC_CONFIG_SUBDIRS(SSL)
++fi
+ 
+ #--------------------------------------------------------------------
+ # Record the version
+--- gnustep-base-1.24.0/Headers/GNUstepBase/config.h.in	2012-01-29 17:57:06.000000000 +0100
++++ gnustep-base-1.24.0-android/Headers/GNUstepBase/config.h.in	2013-03-09 20:04:31.000000000 +0100
+@@ -259,6 +259,9 @@
+ /* Define to 1 if you have the `getpwnam_r' function. */
+ #undef HAVE_GETPWNAM_R
+ 
++/* Define to 1 if you have the `pw_gecos' field in struct passwd. */
++#undef HAVE_PW_GECOS_IN_PASSWD
++
+ /* Define to 1 if you have the `getpwuid' function. */
+ #undef HAVE_GETPWUID
+ 
