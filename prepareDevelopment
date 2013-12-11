@@ -108,6 +108,8 @@ if [ ! -d $STANDALONE_TOOLCHAIN_PATH ]; then
 	popd
 fi
 
+export PATH=$PATH:$STANDALONE_TOOLCHAIN_PATH/bin # Add Android toolchain to PATH for scripting
+
 #3. prepare config
 prepareConfig
 
