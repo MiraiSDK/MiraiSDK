@@ -99,9 +99,13 @@ fi
 if [ ! -d $STANDALONE_TOOLCHAIN_PATH ]; then
     $ANDROID_NDK_PATH/build/tools/make-standalone-toolchain.sh --platform="android-14" --install-dir=$STANDALONE_TOOLCHAIN_PATH --arch=arm --llvm-version=3.3
 	
-	# cp gnustl_shared
+	cp $ANDROID_NDK_PATH/sources/cxx-stl/gnu-libstdc++/4.8/libs/armeabi/libgnustl_shared.so $$STANDALONE_TOOLCHAIN_PATH/sysroot/usr/lib/
+	cp $ANDROID_NDK_PATH/toolchains/arm-linux-androideabi-4.8/prebuilt/darwin-x86_64/lib/gcc/arm-linux-androideabi/4.8/libgcc.a $STANDALONE_TOOLCHAIN_PATH/sysroot/usr/lib/
+	
+	pushd $STANDALONE_TOOLCHAIN_PATH/sysroot/usr/lib
 	# link libcxxrt.so
-	# cp libgcc
+	ln -s libgnustl_shared.so libcxxrt.so
+	popd
 fi
 
 #3. prepare config
