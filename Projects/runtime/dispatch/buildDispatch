@@ -1,0 +1,66 @@
+#!/bin/sh
+
+checkError()
+{
+    if [ "${1}" -ne "0" ]; then
+        echo "*** Error: ${2}"
+        exit ${1}
+    fi
+}
+
+if [ ! -f $STANDALONE_TOOLCHAIN_PATH/sysroot/usr/lib/libdispatch.so ]; then
+    echo "Building libDispatch"
+	#forget how to build...
+	# just copy prebuilt version
+
+	pushd prebuilt
+	cp libdispatch.so $STANDALONE_TOOLCHAIN_PATH/sysroot/usr/lib/
+	cp -r dispatch $STANDALONE_TOOLCHAIN_PATH/sysroot/usr/include/
+	popd
+	
+fi
+exit 0;
+```
+	if [ ! -d opengcd-0.2 ]; then
+	    if [ ! -f opengcd-0.2-source.tgz ]; then
+	        curl http://heanet.dl.sourceforge.net/project/opengcd/0.2/opengcd-0.2-source.tgz > opengcd-0.2-source.tgz
+	    fi
+		
+	    tar -xzf opengcd-0.2-source.tgz
+		
+	    pushd opengcd-0.2
+		
+		patch -p1 -i ../opengcd_android.patch
+		
+		#echo "Get libBlocksRuntime..."
+		#svn co svn://svn.code.sf.net/p/blocksruntime/code/trunk libBlocksRuntime
+		#echo "Get libkqueue..."
+		#svn co svn://svn.code.sf.net/p/libkqueue/code/trunk libkqueue
+		#echo "Get libpthread_workqueue..."
+		#svn co svn://svn.code.sf.net/p/libpwq/code/trunk libpthread_workqueue
+		
+		./configure --host=arm-linux-androideabi --with-ndk=$ANDROID_NDK_PATH --with-sdk=$ANDROID_JDK_PATH
+		
+		cp makeconf/makeconf/androidproject.rb libBlocksRuntime/makeconf/makeconf/androidproject.rb
+		cp makeconf/makeconf/platform.rb libBlocksRuntime/makeconf/makeconf/platform.rb
+		
+		./configure --host=arm-linux-androideabi --with-ndk=$ANDROID_NDK_PATH --with-sdk=$ANDROID_JDK_PATH
+		
+		cp makeconf/makeconf/androidproject.rb libkqueue/makeconf/makeconf/androidproject.rb
+		cp makeconf/makeconf/platform.rb libkqueue/makeconf/makeconf/platform.rb
+		
+		./configure --host=arm-linux-androideabi --with-ndk=$ANDROID_NDK_PATH --with-sdk=$ANDROID_JDK_PATH
+		
+		cp makeconf/makeconf/androidproject.rb libpthread_workqueue/makeconf/makeconf/androidproject.rb
+		cp makeconf/makeconf/platform.rb libpthread_workqueue/makeconf/makeconf/platform.rb
+		
+		
+		popd
+	fi
+
+	#pushd opengcd-0.2
+	#./configure --host=arm-linux-androideabi --with-ndk=$ANDROID_NDK_PATH --with-sdk=$ANDROID_JDK_PATH	
+	#make -j4
+	#popd
+fi
+```
