@@ -124,20 +124,26 @@ static struct android_app* app_state;
                 }
 
 
-                /* Now that we've delt with input, draw stuff */
-                if (app_state->window != NULL) {
-                    ANativeWindow_Buffer buffer;
-                    if (ANativeWindow_lock(app_state->window, &buffer, NULL) < 0) {
-                        NSLog(@"Unable to lock window buffer");
-                        continue;
+                UIWindow *window = _app.keyWindow;
+                if (window.layer.needsDisplay) {
+                    /* Now that we've delt with input, draw stuff */
+                    if (app_state->window != NULL) {
+                        ANativeWindow_Buffer buffer;
+                        if (ANativeWindow_lock(app_state->window, &buffer, NULL) < 0) {
+                            NSLog(@"Unable to lock window buffer");
+                            continue;
+                        }
+                        
+                        
+                        
+                        NSLog(@"Draw frame");
+                        NSDate *begin = [NSDate date];
+                        draw_frame_cgcontext(&buffer);
+                        NSTimeInterval usage = -[begin timeIntervalSinceNow];
+                        NSLog(@"draw use time:%.2f seconds",usage);
+                        
+                        ANativeWindow_unlockAndPost(app_state->window);
                     }
-                    
-
-                    
-                    NSLog(@"Draw frame");
-                    draw_frame_cgcontext(&buffer);
-                    
-                    ANativeWindow_unlockAndPost(app_state->window);
                 }
             }
         } while (_isRunning);
@@ -150,6 +156,12 @@ static int32_t handle_input(struct android_app* app, AInputEvent* event) {
     
     if (AInputEvent_getType(event) == AINPUT_EVENT_TYPE_MOTION) {
         app_has_focus = true;
+        int32_t action = AMotionEvent_getAction(event);
+        if (action ==AMOTION_EVENT_ACTION_UP) {
+            NSLog(@"touc screen up");
+            UIWindow *window = _app.keyWindow;
+//            [window.layer setNeedsDisplay];
+        }
         return 1;
     } else if (AInputEvent_getType(event) == AINPUT_EVENT_TYPE_KEY) {
         NSLog(@"Key event: action=%d keyCode=%d metaState=0x%x",
@@ -197,69 +209,80 @@ void android_main(struct android_app* state)
 }
 
 static void draw_frame_cgcontext(ANativeWindow_Buffer *buffer) {
-    CGSize windowSize = CGSizeMake(buffer->width, buffer->height);
-    CGRect bounds = CGRectMake(0, 0, windowSize.width, windowSize.height);
-    NSLog(@"windowSize: width:%.2f, height:%.2f",windowSize.width,windowSize.height);
-    
-    // context options
-//    CGColorSpaceRef colorSpace = CGColorSpaceCreateDeviceRGB();
-    CGColorSpaceRef colorSpace = CGColorSpaceCreateWithName(kCGColorSpaceGenericRGB);
-    if (colorSpace == NULL) {NSLog(@"color space is NULL!!!");}
-    
-    switch (buffer ->format) {
-        case WINDOW_FORMAT_RGBA_8888:
-            NSLog(@"WINDOW_FORMAT_RGBA_8888");
-            break;
-        case WINDOW_FORMAT_RGBX_8888:
-            NSLog(@"WINDOW_FORMAT_RGBX_8888");
-            break;
-        case WINDOW_FORMAT_RGB_565:
-            NSLog(@"WINDOW_FORMAT_RGB_565");
-            break;
-            
-        default:
-            break;
-    }
-    int32_t bitsPerComponent = 8;
-    int32_t bytesPerRow = buffer->stride * bitsPerComponent / 2 ;
-    CGBitmapInfo info = kCGBitmapByteOrder32Little | kCGImageAlphaNoneSkipFirst;
-    memset (buffer->bits,
-            0, bytesPerRow * buffer->height);
-    
-    CGContextRef ctx = CGBitmapContextCreate(buffer->bits,
-                                             buffer->width,
-                                             buffer->height,
-                                             bitsPerComponent,
-                                             bytesPerRow,
-                                             colorSpace,
-                                             info);
-    UIGraphicsPushContext(ctx);
     UIWindow *window = _app.keyWindow;
-    [window.layer display];
-    UIGraphicsPopContext();
-    
-    CGContextFillRect(ctx, bounds);
-    
-#if BYTEORDER == LITTLEENDIAN
-    //
-    // WORKAROUND:
-    // cairo use ARGB layout, means Alpha at upper bits, Blue at lowest bits
-    // Android's RGBA, means Alpha at upper bits, Red at lowest bits
-    // needs swap Red and Blue
-    //
-    if (buffer->format == WINDOW_FORMAT_RGBA_8888 ||
-        buffer->format == WINDOW_FORMAT_RGBX_8888
-        )
-    {
-        for (char * p = (char*)buffer->bits; p != (char*)buffer->bits+(4*buffer->stride*buffer->height); p+=4) {
-            char x = p[0];
-            p[0] = p[2];
-            p[2] = x;
+    if (window.layer.needsDisplay) {
+        CGSize windowSize = CGSizeMake(buffer->width, buffer->height);
+        CGRect bounds = CGRectMake(0, 0, windowSize.width, windowSize.height);
+//        NSLog(@"windowSize: width:%.2f, height:%.2f",windowSize.width,windowSize.height);
+        
+        // context options
+        //    CGColorSpaceRef colorSpace = CGColorSpaceCreateDeviceRGB();
+        CGColorSpaceRef colorSpace = CGColorSpaceCreateWithName(kCGColorSpaceGenericRGB);
+        if (colorSpace == NULL) {NSLog(@"color space is NULL!!!");}
+        
+        switch (buffer ->format) {
+            case WINDOW_FORMAT_RGBA_8888:
+                NSLog(@"WINDOW_FORMAT_RGBA_8888");
+                break;
+            case WINDOW_FORMAT_RGBX_8888:
+                NSLog(@"WINDOW_FORMAT_RGBX_8888");
+                break;
+            case WINDOW_FORMAT_RGB_565:
+                NSLog(@"WINDOW_FORMAT_RGB_565");
+                break;
+                
+            default:
+                break;
         }
-    }
-#endif
+
+        int32_t bitsPerComponent = 8;
+        int32_t bytesPerRow = buffer->stride * bitsPerComponent / 2 ;
+        CGBitmapInfo info = kCGBitmapByteOrder32Little | kCGImageAlphaNoneSkipFirst;
     
-    CGContextRelease(ctx);
+        CGContextRef ctx = CGBitmapContextCreate(buffer->bits,
+                                                 buffer->width,
+                                                 buffer->height,
+                                                 bitsPerComponent,
+                                                 bytesPerRow,
+                                                 colorSpace,
+                                                 info);
+        CGContextConcatCTM(ctx, CGAffineTransformMake(1, 0, 0, -1, 0, buffer->height));
+
+        UIGraphicsPushContext(ctx);
+        memset (buffer->bits,
+                0, bytesPerRow * buffer->height);
+
+        [window.layer displayIfNeeded];
+        
+        if (window.layer.contents) {
+            CGContextDrawImage(ctx, window.bounds, window.layer.contents);
+        }
+        
+#if BYTEORDER == LITTLEENDIAN
+        //
+        // WORKAROUND:
+        // cairo use ARGB layout, means Alpha at upper bits, Blue at lowest bits
+        // Android's RGBA, means Alpha at upper bits, Red at lowest bits
+        // needs swap Red and Blue
+        //
+        NSLog(@"swap bits");
+        if (buffer->format == WINDOW_FORMAT_RGBA_8888 ||
+            buffer->format == WINDOW_FORMAT_RGBX_8888
+            )
+        {
+            for (char * p = (char*)buffer->bits; p != (char*)buffer->bits+(4*buffer->stride*buffer->height); p+=4) {
+                char x = p[0];
+                p[0] = p[2];
+                p[2] = x;
+            }
+        }
+#endif
+
+        UIGraphicsPopContext();
+        CGContextRelease(ctx);
+        
+    }
+    
 }
 
 static void buffTest(ANativeWindow_Buffer *buffer)

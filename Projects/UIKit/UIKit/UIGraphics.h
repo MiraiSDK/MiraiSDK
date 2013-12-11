@@ -26,10 +26,10 @@ UIKIT_EXTERN void UIGraphicsPopContext(void);
 
 // UIImage context
 
-//UIKIT_EXTERN void     UIGraphicsBeginImageContext(CGSize size);
-//UIKIT_EXTERN void     UIGraphicsBeginImageContextWithOptions(CGSize size, BOOL opaque, CGFloat scale);
-//UIKIT_EXTERN UIImage* UIGraphicsGetImageFromCurrentImageContext(void);
-//UIKIT_EXTERN void     UIGraphicsEndImageContext(void);
+UIKIT_EXTERN void     UIGraphicsBeginImageContext(CGSize size);
+UIKIT_EXTERN void     UIGraphicsBeginImageContextWithOptions(CGSize size, BOOL opaque, CGFloat scale);
+UIKIT_EXTERN UIImage* UIGraphicsGetImageFromCurrentImageContext(void);
+UIKIT_EXTERN void     UIGraphicsEndImageContext(void);
 
 // PDF context
 
