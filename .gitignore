@@ -25,6 +25,7 @@ Pods
 Temp/
 Products/android/android-toolchain-arm
 Products/android/android-ndk-r9b
+Products/android/adt-bundle-mac-x86_64-20131030
 
 DemoProject/**/jni/*.so
 DemoProject/**/obj/local/*

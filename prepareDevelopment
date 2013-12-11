@@ -12,7 +12,7 @@ if [ "$ANDROID_NDK_PATH" == "" ]; then
 export ANDROID_NDK_PATH="$MIRAI_PRODUCTS_ANDROID_PATH/android-ndk-r9b" # if you already has NDK, change this to you NDK path
 fi
 if [ "$ANDROID_JDK_PATH" == "" ]; then
-export ANDROID_JDK_PATH="$MIRAI_PRODUCTS_ANDROID_PATH/android-jdk" # if you already has JDK, change this to you JDK path
+export ANDROID_JDK_PATH="$MIRAI_PRODUCTS_ANDROID_PATH/adt-bundle-mac-x86_64-20131030/sdk" # if you already has JDK, change this to you JDK path
 fi
 
 export STANDALONE_TOOLCHAIN_PATH="$MIRAI_PRODUCTS_ANDROID_PATH/android-toolchain-arm"
@@ -94,9 +94,9 @@ if [ ! -d $ANDROID_NDK_PATH ]; then
 	pushd $MIRAI_PRODUCTS_ANDROID_PATH
 	
 	echo "Missing Android NDK, will download it, if you already has NDK, please set it to environment: ANDROID_NDK_PATH"
-	echo "Downloadng Android NDK..."
 	
 	if [ ! -f android-ndk-r9b-darwin-x86_64.tar.bz2 ]; then
+		echo "Downloadng Android NDK..."
 		curl http://dl.google.com/android/ndk/android-ndk-r9b-darwin-x86_64.tar.bz2 -o android-ndk-r9b-darwin-x86_64.tar.bz2
 	fi
 	
@@ -113,9 +113,12 @@ if [ ! -d $ANDROID_JDK_PATH ]; then
 	pushd $MIRAI_PRODUCTS_ANDROID_PATH
 	
 	echo "Missing Android SDK, will download it, if you already has Android SDK, please set it to environment: ANDROID_JDK_PATH"
-	echo "Downloadng Android SDK adt-bundle-mac-x86_64-20131030.zip..."
-	curl http://dl.google.com/android/adt/adt-bundle-mac-x86_64-20131030.zip -o adt-bundle-mac-x86_64-20131030.zip
-	tar -vxzf adt-bundle-mac-x86_64-20131030.zip
+	if [ -f adt-bundle-mac-x86_64-20131030.zip ]; then
+		echo "Downloadng Android SDK adt-bundle-mac-x86_64-20131030.zip..."
+		curl http://dl.google.com/android/adt/adt-bundle-mac-x86_64-20131030.zip -o adt-bundle-mac-x86_64-20131030.zip
+	fi
+	
+	tar -vxzf adt-bundle-mac-x86_64-20131030.zip android-jdk
 	if [ -d $ANDROID_JDK_PATH ]; then
 		rm android-ndk-r9b-darwin-x86_64.tar.bz2
 	else
