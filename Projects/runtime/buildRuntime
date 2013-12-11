@@ -1,0 +1,15 @@
+#!/bin/sh
+
+pushd ffi
+./buildFFI
+popd
+
+#pushd opengcd-0.2
+#popd
+
+pushd libxml
+popd
+
+pushd objc
+./buildObjC2
+popd

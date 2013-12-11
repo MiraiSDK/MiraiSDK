@@ -1,0 +1,27 @@
+--- libffi/src/closures.c	2013-02-27 17:07:49.000000000 +0100
++++ libffi-android/src/closures.c	2013-02-27 17:07:56.000000000 +0100
+@@ -43,7 +43,9 @@
+    locations in the virtual memory space, one location writable and
+    another executable.  */
+ #  define FFI_MMAP_EXEC_WRIT 1
++#ifndef __ANDROID__
+ #  define HAVE_MNTENT 1
++#endif
+ # endif
+ # if defined(X86_WIN32) || defined(X86_WIN64) || defined(__OS2__)
+ /* Windows systems may have Data Execution Protection (DEP) enabled, 
+@@ -55,10 +57,14 @@
+ 
+ #if FFI_MMAP_EXEC_WRIT && !defined FFI_MMAP_EXEC_SELINUX
+ # ifdef __linux__
++#ifndef __ANDROID__
+ /* When defined to 1 check for SELinux and if SELinux is active,
+    don't attempt PROT_EXEC|PROT_WRITE mapping at all, as that
+    might cause audit messages.  */
+ #  define FFI_MMAP_EXEC_SELINUX 1
++#else
++#  define FFI_MMAP_EXEC_SELINUX 0
++#endif
+ # endif
+ #endif
+ 

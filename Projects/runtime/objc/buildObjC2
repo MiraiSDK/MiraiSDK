@@ -1,0 +1,33 @@
+#!/bin/sh
+
+pushd `pwd`/`dirname $0`
+SCRIPT_ROOT=`pwd`
+popd
+
+pushd $SCRIPT_ROOT/../../../Products/android/android-toolchain-arm
+ARMSYSROOT=`pwd`
+popd
+
+
+# TODO: before build libobjc2, needs build libdispatch
+
+if [ ! -d libobjc2 ]; then
+    svn co http://svn.gna.org/svn/gnustep/libs/libobjc2/trunk libobjc2
+
+    pushd libobjc2
+
+    # apply patches
+    patch -p0 -i ../libobjc2_SONAME.patch
+	popd
+fi
+
+mkdir -p libobjc2/Build
+pushd libobjc2/Build
+#clean
+rm -rf ./*
+
+# disable test, some tests failed due to cross-compiled 
+cmake -DCMAKE_TOOLCHAIN_FILE=$SCRIPT_ROOT/../../toolchain.cmake -DCMAKE_FIND_ROOT_PATH=$ARMSYSROOT/sysroot -DCMAKE_INSTALL_PREFIX=/usr ..
+make
+make install DESTDIR=$ARMSYSROOT/sysroot
+popd

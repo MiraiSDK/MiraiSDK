@@ -1,0 +1,28 @@
+#!/bin/sh
+
+if [ ! -f $ARMSYSROOT/sysroot/usr/lib/libffi.a ]; then
+    echo "Building libffi"
+
+    if [ ! -d libffi ]; then
+        git clone git://github.com/atgreen/libffi.git
+    fi
+
+    cp tools/config/config.sub libffi
+    cp tools/config/config.guess libffi
+
+    cd libffi
+
+    patch -p1 -i ../libffi_closures.patch
+
+    patch -p0 -i ../libffi-include-Makefile_am.patch
+    aclocal
+    automake
+
+    CC="$CLANG_ARM" CXX="$CLANGPP_ARM" CPPFLAGS="$SYSROOTFLAGS_ARM" CFLAGS="$SYSROOTFLAGS_ARM" AR="$AR_ARM" OBJDUMP="$OBJDUMP_ARM" RANLIB="$RANLIB_ARM" ./configure --prefix=$ARMSYSROOT/sysroot/usr --host="arm-linux-androideabi" --with-sysroot=$ARMSYSROOT/sysroot --disable-shared
+
+    checkError $? "configure libffi failed"
+
+    make install
+    checkError $? "Make install libffi failed"
+    cd $BUILDROOT
+fi
