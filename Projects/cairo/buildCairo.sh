@@ -13,9 +13,31 @@ PREFIX=$ARMSYSROOT/sysroot/usr
 . $ARMSYSROOT/sysroot/usr/share/GNUstep/Makefiles/GNUstep.sh
 
 # 1. Pixman
+checkError()
+{
+    if [ "${1}" -ne "0" ]; then
+        echo "*** Error: ${2}"
+        exit ${1}
+    fi
+}
+
+buildCPUFeature()
+{
+	if [ ! -f $ARMSYSROOT/sysroot/usr/lib/cpufeatures.a ]; then
+		pushd $ANDROID_NDK_PATH/sources/android/cpufeatures
+		$CLANG_ARM -c -o cpu-features.o cpu-features.c
+		$AR_ARM rcs cpufeatures.a cpu-features.o
+		mv cpufeatures.a $ARMSYSROOT/sysroot/usr/lib/
+		rm cpu-features.o
+		popd
+	fi
+
+}
 
 buildPixman()
 {
+	buildCPUFeature
+	
 	if [ ! -d pixman-0.32.4 ]; then
 		if [ ! -f pixman-0.32.4.tar.gz ]; then
 			echo "Download pixman..."
@@ -26,31 +48,13 @@ buildPixman()
 
 	pushd pixman-0.32.4
 
-	NDK_ROOT=/Users/chyhfj/.SDK/Android/android-ndk-r9
-	CPUFEATURES_INCLUDE=$NDK_ROOT/sources/android/cpufeatures
+	CPUFEATURES_INCLUDE=$ANDROID_NDK_PATH/sources/android/cpufeatures
 	FLAGS="--sysroot $ARMSYSROOT/sysroot -I$CPUFEATURES_INCLUDE -DPIXMAN_NO_TLS"
 
-	CC=arm-linux-androideabi-clang CXX=arm-linux-androideabi-clang++ AR=arm-linux-androideabi-ar RANLIB=arm-linux-androideabi-ranlib CPPFLAGS="$FLAGS" CFLAGS="$FLAGS" LDFLAGS="-lcpufeatures" PNG_CFLAGS="-I$ARMSYSROOT/sysroot/usr/include/libpng16" PNG_LIBS="-L$ARMSYSROOT/sysroot/usr/lib -lpng16" ./configure --host=arm-linux-androideabi --prefix=$PREFIX
+	CC="$CLANG_ARM" CXX="$CLANGPP_ARM" AR="$AR_ARM" RANLIB="$RANLIB_ARM" CPPFLAGS="$FLAGS" CFLAGS="$FLAGS" LDFLAGS="-l$ARMSYSROOT/sysroot/usr/lib/cpufeatures.a" PNG_CFLAGS="-I$ARMSYSROOT/sysroot/usr/include" PNG_LIBS="-L$ARMSYSROOT/sysroot/usr/lib -lpng" ./configure --host=arm-linux-androideabi --prefix=$PREFIX
 	make -j4
-	make install
-
-	popd
-}
-
-# 2.
-buildFreetype()
-{
-	if [ ! -d freetype-2.5.1 ]; then
-		if [ ! -f freetype-2.5.1.tar.gz ]; then
-			curl http://ftp.twaren.net/Unix/NonGNU//freetype/freetype-2.5.1.tar.gz -o freetype-2.5.1.tar.gz
-		fi
-		tar -xvf freetype-2.5.1.tar.gz
-	fi
-
-	pushd freetype-2.5.1
+	checkError $? "Make pixman failed"
 	
-	LIBPNG_CFLAGS="-I$ARMSYSROOT/sysroot/usr/include/libpng16" LIBPNG_LIBS="-L$ARMSYSROOT/sysroot/usr/lib -lpng16" ./configure --host=arm-linux-androideabi --prefix=$PREFIX --without-zlib
-	make -j4
 	make install
 
 	popd
@@ -85,7 +89,11 @@ buildCairo()
 
 
 buildPixman
-buildFreetype
+checkError $? "Make pixman failed"
+
+#buildFreetype
 # buildFontconfig
 buildCairo
+checkError $? "Make cairo failed"
+
 

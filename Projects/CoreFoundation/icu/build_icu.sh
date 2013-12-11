@@ -12,6 +12,14 @@ ICU_PREFIX=$NDK_STANDARD_ROOT/sysroot/usr
 
 pushd $SCRIPT_ROOT
 
+checkError()
+{
+    if [ "${1}" -ne "0" ]; then
+        echo "*** Error: ${2}"
+        exit ${1}
+    fi
+}
+
 # 1.download icu
 if [ ! -d icu ]; then
 	echo "Downloding icu from SVN..."
@@ -33,6 +41,8 @@ buildOSXVersion()
 	../icu/source/runConfigureICU MacOSX --prefix=$PWD/icu_build --enable-extras=no --enable-strict=no -enable-static -enable-shared --enable-tests=no --enable-samples=no --enable-dyload=no
 	make -j4
 	make install
+    checkError $? "Make install osx version failed"
+	
 	popd	
 }
 
@@ -72,7 +82,11 @@ buildAndroidVersion()
 }
 
 buildOSXVersion
+checkError $? "Make install osx version failed"
+
 buildAndroidVersion
+checkError $? "Make install android version failed"
+
 
 #clean 
 echo "Clean..."

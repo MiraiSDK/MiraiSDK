@@ -12,6 +12,14 @@ PREFIX=$ARMSYSROOT/sysroot/usr
 
 #. $ARMSYSROOT/sysroot/usr/share/GNUstep/Makefiles/GNUstep.sh
 
+checkError()
+{
+    if [ "${1}" -ne "0" ]; then
+        echo "*** Error: ${2}"
+        exit ${1}
+    fi
+}
+
 buildLibPNG()
 {
 	if [ ! -d libpng-1.6.7 ]; then
@@ -28,6 +36,8 @@ buildLibPNG()
 
 	CC=arm-linux-androideabi-clang CXX=arm-linux-androideabi-clang++ AR=arm-linux-androideabi-ar CPPFLAGS="$FLAGS" CFLAGS="$FLAGS" ./configure --host=arm-linux-androideabi --prefix=$PREFIX
 	make -j4
+	checkError $? "Make libpng failed"
+
 	make install
 
 	popd
@@ -42,16 +52,18 @@ buildLibJPEG()
 		fi
 		tar -xvf libjpeg-turbo-1.3.0.tar.gz
 		
-		cp ../tools/config/config.sub libjpeg-turbo-1.3.0/config.sub
-		cp ../tools/config/config.guess libjpeg-turbo-1.3.0/config.guess
+		cp config/config.sub libjpeg-turbo-1.3.0/config.sub
+		cp config/config.guess libjpeg-turbo-1.3.0/config.guess
 	fi
 
 	pushd libjpeg-turbo-1.3.0
 
 	CC=arm-linux-androideabi-clang CXX=arm-linux-androideabi-clang++ AR=arm-linux-androideabi-ar RANLIB=arm-linux-androideabi-ranlib  ./configure --host=arm-linux-androideabi --prefix=$PREFIX
 	make -j4
+	checkError $? "Make libjpeg failed"
+	
 	make install
-
+	
 	popd
 }
 
@@ -63,14 +75,37 @@ buildLibTIFF()
 			curl http://download.osgeo.org/libtiff/tiff-4.0.3.tar.gz -o tiff-4.0.3.tar.gz
 		fi
 		tar -xvf tiff-4.0.3.tar.gz
-		cp ../tools/config/config.sub tiff-4.0.3/config/config.sub
-		cp ../tools/config/config.guess tiff-4.0.3/config/config.guess
+		cp config/config.sub tiff-4.0.3/config/config.sub
+		cp config/config.guess tiff-4.0.3/config/config.guess
 	fi
 
 	pushd tiff-4.0.3
 
 	CC=arm-linux-androideabi-clang CXX=arm-linux-androideabi-clang++ AR=arm-linux-androideabi-ar RANLIB=arm-linux-androideabi-ranlib  ./configure --host=arm-linux-androideabi --prefix=$PREFIX
 	make -j4
+	checkError $? "Make libtiff failed"
+	
+	make install
+
+	popd
+}
+
+
+buildFreetype()
+{
+	if [ ! -d freetype-2.5.1 ]; then
+		if [ ! -f freetype-2.5.1.tar.gz ]; then
+			curl http://ftp.twaren.net/Unix/NonGNU//freetype/freetype-2.5.1.tar.gz -o freetype-2.5.1.tar.gz
+		fi
+		tar -xvf freetype-2.5.1.tar.gz
+	fi
+
+	pushd freetype-2.5.1
+	
+	LIBPNG_CFLAGS="-I$ARMSYSROOT/sysroot/usr/include/libpng16" LIBPNG_LIBS="-L$ARMSYSROOT/sysroot/usr/lib -lpng16" ./configure --host=arm-linux-androideabi --prefix=$PREFIX --without-zlib
+	make -j4
+	checkError $? "Make free type failed"
+	
 	make install
 
 	popd
@@ -84,6 +119,8 @@ buildFontconfig()
 		pushd fontconfig
 			patch -p1 -i ../fontconfig_android_lconv.patch
 			patch -p1 -i ../fontconfig_autogen.patch
+			
+			./autogen.sh
 		popd
 	fi
 
@@ -92,6 +129,8 @@ buildFontconfig()
 	export PKG_CONFIG_PATH="$ARMSYSROOT/sysroot/usr/lib/pkgconfig"
 	CC=arm-linux-androideabi-clang CXX=arm-linux-androideabi-clang++ AR=arm-linux-androideabi-ar RANLIB=arm-linux-androideabi-ranlib CFLAGS="-DANDROID" CPPFLAGS="-DANDROID"  ./configure --host=arm-linux-androideabi --prefix=$PREFIX 
 	make -j4
+	checkError $? "Make fontconfig failed"
+	
 	make install
 
 	popd
@@ -111,6 +150,8 @@ buildExpat()
 
 	CC=arm-linux-androideabi-clang CXX=arm-linux-androideabi-clang++ AR=arm-linux-androideabi-ar RANLIB=arm-linux-androideabi-ranlib  ./configure --host=arm-linux-androideabi --prefix=$PREFIX 
 	make -j4
+	checkError $? "Make expat failed"
+	
 	make install
 
 	popd
@@ -125,8 +166,8 @@ buildLCMS()
 		
 		tar -xvf lcms-1.19.tar.gz
 
-		cp ../tools/config/config.sub lcms-1.19/config.sub
-		cp ../tools/config/config.guess lcms-1.19/config.guess
+		cp config/config.sub lcms-1.19/config.sub
+		cp config/config.guess lcms-1.19/config.guess
 		
 		pushd lcms-1.19
 		patch -p1 -i ../lcms_android_swab.patch
@@ -135,18 +176,35 @@ buildLCMS()
 
 	pushd lcms-1.19
 
+	export CFLAGS="-DANDROID"
 	CC=arm-linux-androideabi-clang CXX=arm-linux-androideabi-clang++ AR=arm-linux-androideabi-ar RANLIB=arm-linux-androideabi-ranlib  ./configure --host=arm-linux-androideabi --prefix=$PREFIX 
 	make -j4
+	checkError $? "Make lcms failed"
+	
 	make install
 
 	popd
 }
 
-#buildLibPNG
-#buildLibJPEG
-#buildLibTIFF
-#buildExpat
-#buildFontconfig
-#buildLCMS
+buildLibPNG
+checkError $? "Make libpng failed"
+buildLibJPEG
+checkError $? "Make libjpeg failed"
+
+buildLibTIFF
+checkError $? "Make libtiff failed"
+
+buildExpat
+checkError $? "Make expat failed"
+
+buildFreetype
+checkError $? "Make freetype failed"
+
+buildFontconfig
+checkError $? "Make fontconfig failed"
+
+buildLCMS
+checkError $? "Make lcms failed"
+
 
 

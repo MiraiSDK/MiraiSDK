@@ -13,8 +13,8 @@ export STANDALONE_TOOLCHAIN_PATH="$MIRAI_PRODUCTS_ANDROID_PATH/android-toolchain
 export GNUSTEP_MAKE_CONFIG_PATH="$MIRAI_PROJECTS_PATH/dependencies/config"
 export SYSROOTFLAGS_ARM="--sysroot $STANDALONE_TOOLCHAIN_PATH/sysroot"
 
-export CLANG_ARM=$STANDALONE_TOOLCHAIN_PATH/bin/clang
-export CLANGPP_ARM=$STANDALONE_TOOLCHAIN_PATH/bin/clang++
+export CLANG_ARM=$STANDALONE_TOOLCHAIN_PATH/bin/arm-linux-androideabi-clang
+export CLANGPP_ARM=$STANDALONE_TOOLCHAIN_PATH/bin/arm-linux-androideabi-clang++
 
 export GCC_ARM=$STANDALONE_TOOLCHAIN_PATH/bin/arm-linux-androideabi-gcc
 export LD_ARM=$STANDALONE_TOOLCHAIN_PATH/bin/arm-linux-androideabi-ld
@@ -98,6 +98,10 @@ fi
 #2. make standalone toolchain path
 if [ ! -d $STANDALONE_TOOLCHAIN_PATH ]; then
     $ANDROID_NDK_PATH/build/tools/make-standalone-toolchain.sh --platform="android-14" --install-dir=$STANDALONE_TOOLCHAIN_PATH --arch=arm --llvm-version=3.3
+	
+	# cp gnustl_shared
+	# link libcxxrt.so
+	# cp libgcc
 fi
 
 #3. prepare config
@@ -111,13 +115,60 @@ fi
 #5. build runtime
 pushd $MIRAI_PROJECTS_PATH/runtime
 ./buildRuntime
+checkError $? "Make install runtime failed"
+
 popd
+
+. $STANDALONE_TOOLCHAIN_PATH/sysroot/usr/share/GNUstep/Makefiles/GNUstep.sh
+
+# iccu
+if [ ! -f $STANDALONE_TOOLCHAIN_PATH/sysroot/usr/lib/libicui18n.a ]; then
+	pushd $MIRAI_PROJECTS_PATH/CoreFoundation/icu
+	./build_icu.sh
+	checkError $? "Make install icu failed"
+	popd
+fi
 
 #6. gnustep-base
-pushd $MIRAI_PROJECTS_PATH/Foundation
+if [ ! -f $STANDALONE_TOOLCHAIN_PATH/sysroot/usr/lib/libgnustep-base.so ]; then
+	pushd $MIRAI_PROJECTS_PATH/Foundation
+	./buildgnustep-base.sh
+	checkError $? "build gnustep-base failed"
+	popd
+fi
+
+# depencies
+#pushd $MIRAI_PROJECTS_PATH/dependencies
+#./build.sh
+#popd
+
+
+#. gnustep-corebase (Core Foundation)
+if [ ! -f $STANDALONE_TOOLCHAIN_PATH/sysroot/usr/lib/libgnustep-corebase.a ]; then
+	pushd $MIRAI_PROJECTS_PATH/CoreFoundation
+	./buildCorebase.sh
+	popd
+fi
+
+# cairo
+if [ ! -f $STANDALONE_TOOLCHAIN_PATH/sysroot/usr/lib/libcairo.a ]; then
+	pushd $MIRAI_PROJECTS_PATH/cairo
+	./buildCairo.sh
+	checkError $? "build cairo failed"
+	popd
+fi
+
+# opal (Core Graphics)
+if [ ! -f $STANDALONE_TOOLCHAIN_PATH/sysroot/usr/lib/libopal.so ]; then
+	echo "build CoreGraphics..."
+	pushd $MIRAI_PROJECTS_PATH/CoreGraphics
+	./buildOpal.sh
+	checkError $? "build CoreGraphics failed"
+	
+	popd
+fi
+
+# link Xcode
+pushd $MIRAI_PRODUCTS_ANDROID_PATH
+./install
 popd
-
-#. gnustep-corebase
-
-
-
