@@ -24,6 +24,8 @@ Pods
 **.tar.xz
 Temp/
 Products/android/android-toolchain-arm
+Products/android/android-ndk-r9b
+
 DemoProject/**/jni/*.so
 DemoProject/**/obj/local/*
 DemoProject/**/build.xml
