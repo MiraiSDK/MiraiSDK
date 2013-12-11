@@ -5,7 +5,7 @@ PRODUCT_ROOT=`pwd`
 popd
 
 # link platform
-echo "Link Android.platform to Xcode..."
+#echo "Link Android.platform to Xcode..."
 #ln -s ${PRODUCT_ROOT}/Xcode/Platforms/Android.platform /Applications/Xcode.app/Contents/Developer/Platforms/Android.platform
 
 # create Specifications
@@ -41,3 +41,20 @@ template='''
 
 generated=${template/PRODUCT_ROOT/$PRODUCT_ROOT}
 echo "$generated" > ~/Library/Application\ Support/Developer/Shared/Xcode/Specifications/android-clang-3.3.pbcompspec
+
+pushd ${PRODUCT_ROOT}/Xcode/Platforms/MacOSX.platform/Developer/SDKs/FakeMacOSX10.9.sdk
+ln -sf $STANDALONE_TOOLCHAIN_PATH/sysroot/usr
+
+pushd System/Library
+ln -sf  $STANDALONE_TOOLCHAIN_PATH/sysroot/System/Library/Frameworks
+popd
+
+popd
+
+
+echo "Link fake sdk... needs sudo"
+pushd /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs
+sudo ln -s ${PRODUCT_ROOT}/Xcode/Platforms/MacOSX.platform/Developer/SDKs/FakeMacOSX10.9.sdk
+popd
+
+
