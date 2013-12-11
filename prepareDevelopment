@@ -118,6 +118,10 @@ if [ ! -d $STANDALONE_TOOLCHAIN_PATH ]; then
 	# link libcxxrt.so
 	ln -s libgnustl_shared.so libcxxrt.so
 	popd
+	
+	pushd $MIRAI_PRODUCTS_ANDROID_PATH/toolchainPatchs
+	./patchToolchainLd
+	popd
 fi
 
 export PATH=$PATH:$STANDALONE_TOOLCHAIN_PATH/bin # Add Android toolchain to PATH for scripting
@@ -216,6 +220,7 @@ popd
 
 pushd $STANDALONE_TOOLCHAIN_PATH/sysroot/usr/include
 ln -sf $STANDALONE_TOOLCHAIN_PATH/sysroot/System/Library/Frameworks/UIKit.framework/Headers UIKit
+ln -sf $MIRAI_PRODUCTS_ANDROID_PATH/SDKHeaders/Availability.h
 popd
 pushd $STANDALONE_TOOLCHAIN_PATH/sysroot/usr/lib
 ln -sf $STANDALONE_TOOLCHAIN_PATH/sysroot/System/Library/Frameworks/UIKit.framework/Versions/A/UIKit libUIKit.so
