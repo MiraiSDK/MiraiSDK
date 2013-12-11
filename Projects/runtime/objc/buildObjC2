@@ -18,6 +18,7 @@ if [ ! -d libobjc2 ]; then
 
     # apply patches
     patch -p0 -i ../libobjc2_SONAME.patch
+	patch -p0 -i ../libobjc_android_test.diff
 	popd
 fi
 
@@ -27,7 +28,7 @@ pushd libobjc2/Build
 rm -rf ./*
 
 # disable test, some tests failed due to cross-compiled 
-cmake -DCMAKE_TOOLCHAIN_FILE=$SCRIPT_ROOT/../../toolchain.cmake -DCMAKE_FIND_ROOT_PATH=$ARMSYSROOT/sysroot -DCMAKE_INSTALL_PREFIX=/usr ..
+cmake -DTESTS=0 -DCMAKE_TOOLCHAIN_FILE=$SCRIPT_ROOT/../../toolchain.cmake -DCMAKE_FIND_ROOT_PATH=$ARMSYSROOT/sysroot -DCMAKE_INSTALL_PREFIX=/usr ..
 make
 make install DESTDIR=$ARMSYSROOT/sysroot
 popd

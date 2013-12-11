@@ -1,28 +1,43 @@
 #!/bin/sh
 
-if [ ! -f $ARMSYSROOT/sysroot/usr/lib/libffi.a ]; then
+checkError()
+{
+    if [ "${1}" -ne "0" ]; then
+        echo "*** Error: ${2}"
+        exit ${1}
+    fi
+}
+
+if [ ! -f $STANDALONE_TOOLCHAIN_PATH/sysroot/usr/lib/libffi.a ]; then
     echo "Building libffi"
 
     if [ ! -d libffi ]; then
         git clone git://github.com/atgreen/libffi.git
+
+	    cp $GNUSTEP_MAKE_CONFIG_PATH/config.sub libffi
+	    cp $GNUSTEP_MAKE_CONFIG_PATH/config.guess libffi
+		
+		pushd libffi
+	    patch -p1 -i ../libffi_closures.patch
+
+	    patch -p0 -i ../libffi-include-Makefile_am.patch
+		
+	    aclocal
+	    automake
+		
+		popd
     fi
 
-    cp tools/config/config.sub libffi
-    cp tools/config/config.guess libffi
 
-    cd libffi
+    pushd libffi
 
-    patch -p1 -i ../libffi_closures.patch
 
-    patch -p0 -i ../libffi-include-Makefile_am.patch
-    aclocal
-    automake
-
-    CC="$CLANG_ARM" CXX="$CLANGPP_ARM" CPPFLAGS="$SYSROOTFLAGS_ARM" CFLAGS="$SYSROOTFLAGS_ARM" AR="$AR_ARM" OBJDUMP="$OBJDUMP_ARM" RANLIB="$RANLIB_ARM" ./configure --prefix=$ARMSYSROOT/sysroot/usr --host="arm-linux-androideabi" --with-sysroot=$ARMSYSROOT/sysroot --disable-shared
+    CC="$CLANG_ARM" CXX="$CLANGPP_ARM" CPPFLAGS="$SYSROOTFLAGS_ARM" CFLAGS="$SYSROOTFLAGS_ARM" AR="$AR_ARM" OBJDUMP="$OBJDUMP_ARM" RANLIB="$RANLIB_ARM" ./configure --prefix=$STANDALONE_TOOLCHAIN_PATH/sysroot/usr --host="arm-linux-androideabi" --with-sysroot=$STANDALONE_TOOLCHAIN_PATH/sysroot --disable-shared
 
     checkError $? "configure libffi failed"
 
     make install
     checkError $? "Make install libffi failed"
-    cd $BUILDROOT
+	
+	popd
 fi

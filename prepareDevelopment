@@ -4,26 +4,26 @@ pushd `pwd`/`dirname $0`
 SCRIPT_ROOT=`pwd`
 popd
 
-MIRAI_ROOT_PATH="$SCRIPT_ROOT"
-MIRAI_PROJECTS_PATH="$MIRAI_ROOT_PATH/Projects"
-MIRAI_PRODUCTS_ANDROID_PATH="$MIRAI_ROOT_PATH/Products/android"
-ANDROID_NDK_PATH="/Users/chyhfj/.SDK/Android/android-ndk-r9"
-ANDROID_JDK_PATH=""
-STANDALONE_TOOLCHAIN_PATH="$MIRAI_PRODUCTS_ANDROID_PATH/android-toolchain-arm"
-GNUSTEP_MAKE_CONFIG_PATH=""
-SYSROOTFLAGS_ARM="--sysroot $STANDALONE_TOOLCHAIN_PATH/sysroot"
+export MIRAI_ROOT_PATH="$SCRIPT_ROOT"
+export MIRAI_PROJECTS_PATH="$MIRAI_ROOT_PATH/Projects"
+export MIRAI_PRODUCTS_ANDROID_PATH="$MIRAI_ROOT_PATH/Products/android"
+export ANDROID_NDK_PATH="/Users/chyhfj/.SDK/Android/android-ndk-r9"
+export ANDROID_JDK_PATH="/Users/chyhfj/.SDK/Android/jdk"
+export STANDALONE_TOOLCHAIN_PATH="$MIRAI_PRODUCTS_ANDROID_PATH/android-toolchain-arm"
+export GNUSTEP_MAKE_CONFIG_PATH="$MIRAI_PROJECTS_PATH/dependencies/config"
+export SYSROOTFLAGS_ARM="--sysroot $STANDALONE_TOOLCHAIN_PATH/sysroot"
 
-CLANG_ARM=$STANDALONE_TOOLCHAIN_PATH/bin/clang
-CLANGPP_ARM=$STANDALONE_TOOLCHAIN_PATH/bin/clang++
+export CLANG_ARM=$STANDALONE_TOOLCHAIN_PATH/bin/clang
+export CLANGPP_ARM=$STANDALONE_TOOLCHAIN_PATH/bin/clang++
 
-GCC_ARM=$STANDALONE_TOOLCHAIN_PATH/bin/arm-linux-androideabi-gcc
-LD_ARM=$STANDALONE_TOOLCHAIN_PATH/bin/arm-linux-androideabi-ld
+export GCC_ARM=$STANDALONE_TOOLCHAIN_PATH/bin/arm-linux-androideabi-gcc
+export LD_ARM=$STANDALONE_TOOLCHAIN_PATH/bin/arm-linux-androideabi-ld
 
-GXX_ARM=$STANDALONE_TOOLCHAIN_PATH/bin/arm-linux-androideabi-g++
+export GXX_ARM=$STANDALONE_TOOLCHAIN_PATH/bin/arm-linux-androideabi-g++
 
-AR_ARM=$STANDALONE_TOOLCHAIN_PATH/bin/arm-linux-androideabi-ar
-RANLIB_ARM=$STANDALONE_TOOLCHAIN_PATH/bin/arm-linux-androideabi-ranlib
-OBJDUMP_ARM=$STANDALONE_TOOLCHAIN_PATH/bin/arm-linux-androideabi-objdump
+export AR_ARM=$STANDALONE_TOOLCHAIN_PATH/bin/arm-linux-androideabi-ar
+export RANLIB_ARM=$STANDALONE_TOOLCHAIN_PATH/bin/arm-linux-androideabi-ranlib
+export OBJDUMP_ARM=$STANDALONE_TOOLCHAIN_PATH/bin/arm-linux-androideabi-objdump
 
 checkError()
 {
@@ -76,7 +76,6 @@ prepareConfig()
 
 	if [ ! -d config ]; then
 	    git clone http://git.savannah.gnu.org/r/config.git/ config
-		GNUSTEP_MAKE_CONFIG_PATH=`pwd`/config
 	fi
 	popd
 }
@@ -101,22 +100,22 @@ if [ ! -d $STANDALONE_TOOLCHAIN_PATH ]; then
     $ANDROID_NDK_PATH/build/tools/make-standalone-toolchain.sh --platform="android-14" --install-dir=$STANDALONE_TOOLCHAIN_PATH --arch=arm --llvm-version=3.3
 fi
 
-#3. build runtime
-pushd $MIRAI_PROJECTS_PATH/runtime
-./build
-popd
-
-#4. prepare config
+#3. prepare config
 prepareConfig
 
-#5. build gnustep-make
+#4. build gnustep-make
 if [ ! -f $STANDALONE_TOOLCHAIN_PATH/sysroot/usr/share/GNUstep/Makefiles/GNUstep.sh ]; then
     buildGNUstepMake
 fi
 
-#6. depencies
+#5. build runtime
+pushd $MIRAI_PROJECTS_PATH/runtime
+./buildRuntime
+popd
 
-#7. gnustep-base
+#6. gnustep-base
+pushd $MIRAI_PROJECTS_PATH/Foundation
+popd
 
 #. gnustep-corebase
 

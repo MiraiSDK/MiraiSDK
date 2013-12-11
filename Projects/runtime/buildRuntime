@@ -4,10 +4,12 @@ pushd ffi
 ./buildFFI
 popd
 
-#pushd opengcd-0.2
-#popd
-
 pushd libxml
+./buildLibXML
+popd
+
+pushd dispatch
+./buildDispatch
 popd
 
 pushd objc
