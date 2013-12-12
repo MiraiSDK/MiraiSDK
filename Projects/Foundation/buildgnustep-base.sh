@@ -6,7 +6,7 @@ cp -r prebuilt/GNUstep $STANDALONE_TOOLCHAIN_PATH/sysroot/usr/lib/
 cp -r prebuilt/GNUstepBase $STANDALONE_TOOLCHAIN_PATH/sysroot/usr/include/
 cp -r prebuilt/Foundation $STANDALONE_TOOLCHAIN_PATH/sysroot/usr/include/
 
-#exit 0
+exit 0
 
 pushd `pwd`/`dirname $0`
 SCRIPT_ROOT=`pwd`
