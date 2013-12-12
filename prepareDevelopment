@@ -120,9 +120,9 @@ if [ ! -d $ANDROID_JDK_PATH ]; then
 		curl http://dl.google.com/android/adt/adt-bundle-mac-x86_64-20131030.zip -o adt-bundle-mac-x86_64-20131030.zip
 	fi
 	
-	tar -vxzf adt-bundle-mac-x86_64-20131030.zip android-jdk
+	tar -vxzf adt-bundle-mac-x86_64-20131030.zip
 	if [ -d $ANDROID_JDK_PATH ]; then
-		rm android-ndk-r9b-darwin-x86_64.tar.bz2
+		rm adt-bundle-mac-x86_64-20131030.zip
 	else
 		echo "Missing Android SDK folder, take a look what's extracted folder name"
 		exit 1;
