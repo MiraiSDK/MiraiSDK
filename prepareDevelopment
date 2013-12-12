@@ -115,7 +115,7 @@ if [ ! -d $ANDROID_JDK_PATH ]; then
 	pushd $MIRAI_PRODUCTS_ANDROID_PATH
 	
 	echo "Missing Android SDK, will download it, if you already has Android SDK, please set it to environment: ANDROID_JDK_PATH"
-	if [ -f adt-bundle-mac-x86_64-20131030.zip ]; then
+	if [ ! -f adt-bundle-mac-x86_64-20131030.zip ]; then
 		echo "Downloadng Android SDK adt-bundle-mac-x86_64-20131030.zip..."
 		curl http://dl.google.com/android/adt/adt-bundle-mac-x86_64-20131030.zip -o adt-bundle-mac-x86_64-20131030.zip
 	fi
