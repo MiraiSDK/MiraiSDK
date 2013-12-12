@@ -186,25 +186,40 @@ buildLCMS()
 	popd
 }
 
+if [ ! -f $ARMSYSROOT/sysroot/usr/lib/libpng.a ]; then
 buildLibPNG
 checkError $? "Make libpng failed"
+fi
+
+if [ ! -f $ARMSYSROOT/sysroot/usr/lib/libjpeg.a ]; then
 buildLibJPEG
 checkError $? "Make libjpeg failed"
+fi
 
+if [ ! -f $ARMSYSROOT/sysroot/usr/lib/libtiff.a ]; then
 buildLibTIFF
 checkError $? "Make libtiff failed"
+fi
 
+if [ ! -f $ARMSYSROOT/sysroot/usr/lib/libexpat.a ]; then
 buildExpat
 checkError $? "Make expat failed"
+fi
 
+if [ ! -f $ARMSYSROOT/sysroot/usr/lib/libfreetype.a ]; then
 buildFreetype
 checkError $? "Make freetype failed"
+fi
 
+if [ ! -f $ARMSYSROOT/sysroot/usr/lib/libfontconfig.a ]; then
 buildFontconfig
 checkError $? "Make fontconfig failed"
+fi
 
+if [ ! -f $ARMSYSROOT/sysroot/usr/lib/liblcms.a ]; then
 buildLCMS
 checkError $? "Make lcms failed"
+fi
 
 
 

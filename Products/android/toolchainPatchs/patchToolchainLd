@@ -13,32 +13,5 @@ fi
 
 #rename ld
 mv ld realld
-
-echo '''
-#!/bin/bash
-
-foundFileList="no"
-fileListPath=""
-finalCommand=""
-
-for arg in "$@"
-do
-	newArg=$arg
-	
-    if [[ "$foundFileList" == "yes" && "$fileListPath" == "" ]]; then
-        fileListPath="$arg"
-		fileList=`sed ':a;N;$!ba;s/\n/ /g' $fileListPath`
-		newArg="$fileList"
-    fi
-    if [ "$arg" == "-filelist" ]; then
-        foundFileList="yes"
-		continue;
-    fi
-	finalCommand="$finalCommand $newArg"
-done
-
-`dirname $0`/realld $finalCommand
-
-''' > ld
-chmod +x ld
+cp $FILE_ROOT/ld ld
 popd

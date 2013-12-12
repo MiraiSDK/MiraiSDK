@@ -1,5 +1,7 @@
 #!/bin/sh
 
+set -e
+
 pushd `pwd`/`dirname $0`
 SCRIPT_ROOT=`pwd`
 popd
@@ -133,30 +135,34 @@ fi
 if [ ! -d $STANDALONE_TOOLCHAIN_PATH ]; then
     $ANDROID_NDK_PATH/build/tools/make-standalone-toolchain.sh --platform="android-14" --install-dir=$STANDALONE_TOOLCHAIN_PATH --arch=arm --llvm-version=3.3
 	
-	cp $ANDROID_NDK_PATH/sources/cxx-stl/gnu-libstdc++/4.8/libs/armeabi/libgnustl_shared.so $$STANDALONE_TOOLCHAIN_PATH/sysroot/usr/lib/
+	
+	cp $ANDROID_NDK_PATH/sources/cxx-stl/gnu-libstdc++/4.8/libs/armeabi/libgnustl_shared.so $STANDALONE_TOOLCHAIN_PATH/sysroot/usr/lib/
 	cp $ANDROID_NDK_PATH/toolchains/arm-linux-androideabi-4.8/prebuilt/darwin-x86_64/lib/gcc/arm-linux-androideabi/4.8/libgcc.a $STANDALONE_TOOLCHAIN_PATH/sysroot/usr/lib/
 	
 	pushd $STANDALONE_TOOLCHAIN_PATH/sysroot/usr/lib
 	# link libcxxrt.so
-	ln -s libgnustl_shared.so libcxxrt.so
-	popd
-	
-	pushd $MIRAI_PRODUCTS_ANDROID_PATH/toolchainPatchs
-	./patchToolchainLd
+	ln -sf libgnustl_shared.so libcxxrt.so
 	popd
 fi
 
+echo "set PATH..."
 export PATH=$PATH:$STANDALONE_TOOLCHAIN_PATH/bin # Add Android toolchain to PATH for scripting
 
 #3. prepare config
+echo "prepare config"
 prepareConfig
+checkError $? "prepare config failed"
 
 #4. build gnustep-make
 if [ ! -f $STANDALONE_TOOLCHAIN_PATH/sysroot/usr/share/GNUstep/Makefiles/GNUstep.sh ]; then
+	echo "build GNUstep make..."
     buildGNUstepMake
+	checkError $? "build gnustep-make failed"
 fi
 
+
 #5. build runtime
+echo "build Runtime..."
 pushd $MIRAI_PROJECTS_PATH/runtime
 ./buildRuntime
 checkError $? "Make install runtime failed"
@@ -184,6 +190,8 @@ fi
 # dependencies
 pushd $MIRAI_PROJECTS_PATH/dependencies
 ./build.sh
+checkError $? "build dependencies failed"
+
 popd
 
 
@@ -191,6 +199,8 @@ popd
 if [ ! -f $STANDALONE_TOOLCHAIN_PATH/sysroot/usr/lib/libgnustep-corebase.a ]; then
 	pushd $MIRAI_PROJECTS_PATH/CoreFoundation
 	./buildCorebase.sh
+	checkError $? "build Core Foundation failed"
+	
 	popd
 fi
 
@@ -216,7 +226,7 @@ pushd $STANDALONE_TOOLCHAIN_PATH/sysroot
 	mkdir -p System/Library/Frameworks
 	pushd System/Library/Frameworks
 
-		mkdir CoreFoundation.framework Foundation.framework UIKit.framework CoreGraphics.framework GNUstepBase.framework CoreText.framework QuartzCore.framework
+		mkdir -p CoreFoundation.framework Foundation.framework UIKit.framework CoreGraphics.framework GNUstepBase.framework CoreText.framework QuartzCore.framework
 
 		pushd CoreFoundation.framework
 		ln -sf ../../../../usr/include/CoreFoundation Headers
@@ -248,7 +258,14 @@ pushd $STANDALONE_TOOLCHAIN_PATH/sysroot/usr/lib
 ln -sf $STANDALONE_TOOLCHAIN_PATH/sysroot/System/Library/Frameworks/UIKit.framework/Versions/A/UIKit libUIKit.so
 popd
 
+#modify ld to make xcode happy
+if [ ! -f $STANDALONE_TOOLCHAIN_PATH/arm-linux-androideabi/bin/realld ]; then
+	pushd $MIRAI_PRODUCTS_ANDROID_PATH/toolchainPatchs
+	./patchToolchainLd
+	popd
+fi
 # link Xcode
 pushd $MIRAI_PRODUCTS_ANDROID_PATH
-./install
+./install.sh
 popd
+

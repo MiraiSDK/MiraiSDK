@@ -1,0 +1,42 @@
+#!/bin/bash
+
+foundFileList="no"
+fileListPath=""
+finalCommand=""
+
+for arg in "$@"
+do
+	newArg=$arg
+	
+    if [[ "$foundFileList" == "yes" && "$fileListPath" == "" ]]; then
+        fileListPath="$arg"
+		fileList=`sed ':a;N;$!ba;s/\n/ /g' "$fileListPath"`
+		newArg="$fileList"
+    fi
+    if [ "$arg" == "-filelist" ]; then
+        foundFileList="yes"
+		continue;
+    fi
+	finalCommand="$finalCommand $newArg"
+done
+
+finalCommand=${finalCommand//" -dynamiclib "/" -shared "}
+
+finalCommand=${finalCommand//" -framework UIKit "/" -lUIKit "}
+finalCommand=${finalCommand//" -framework CoreGraphics "/" -lopal "}
+finalCommand=${finalCommand//" -framework Foundation "/" -lgnustep-base "}
+finalCommand=${finalCommand//" -framework QuartzCore "/" -lQuartzCore "}
+finalCommand=${finalCommand//" -framework CoreFoundation "/" -lgnustep-corebase "}
+finalCommand=${finalCommand//" -framework CoreText "/" -lopal "}
+
+# temp hack, remove link gcc
+#finalCommand=${finalCommand//"-lgcc"/""}
+
+#finalCommand="$finalCommand -lobjc"
+
+echo "final command: $finalCommand"
+`dirname $0`/realld $finalCommand
+
+
+
+

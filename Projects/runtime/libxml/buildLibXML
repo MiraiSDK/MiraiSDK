@@ -26,12 +26,16 @@ if [ ! -f $STANDALONE_TOOLCHAIN_PATH/sysroot/usr/lib/libxml2.a ]; then
 
 	pushd libxml2-2.9.0
 
+
     # build with gcc instead of clang
     # using clang produce an error missing symbol 'nan'
-    CC="$GCC_ARM" LD="$LD_ARM" CXX="$CLANGPP_ARM" CPPFLAGS="$SYSROOTFLAGS_ARM" CFLAGS="$SYSROOTFLAGS_ARM" AR="$AR_ARM" OBJDUMP="$OBJDUMP_ARM" RANLIB="$RANLIB_ARM" ./configure --prefix=$STANDALONE_TOOLCHAIN_PATH/sysroot/usr --host="arm-linux-androideabi" --with-sysroot=$STANDALONE_TOOLCHAIN_PATH/sysroot --disable-shared
+	CC="$GCC_ARM" LD="$LD_ARM" CXX="$CLANGPP_ARM" CPPFLAGS="$SYSROOTFLAGS_ARM" CFLAGS="$SYSROOTFLAGS_ARM" AR="$AR_ARM" OBJDUMP="$OBJDUMP_ARM" RANLIB="$RANLIB_ARM" ./configure --prefix=$STANDALONE_TOOLCHAIN_PATH/sysroot/usr --host="arm-linux-androideabi" --with-sysroot=$STANDALONE_TOOLCHAIN_PATH/sysroot --disable-shared
     checkError $? "configure libxml2 failed"
-
+	
+	make -j4
+    checkError $? "Make libxml2 failed"
+	
     make install
     checkError $? "Make install libxml2 failed"
-    cd $BUILDROOT
+	popd
 fi

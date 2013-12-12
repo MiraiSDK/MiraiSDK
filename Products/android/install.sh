@@ -52,9 +52,10 @@ popd
 popd
 
 
-echo "Link fake sdk... needs sudo"
 pushd /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs
-sudo ln -s ${PRODUCT_ROOT}/Xcode/Platforms/MacOSX.platform/Developer/SDKs/FakeMacOSX10.9.sdk
+echo "Attemp to Link fake sdk to Xcode..."
+echo "This operation needs sudo privilege"
+sudo ln -sf ${PRODUCT_ROOT}/Xcode/Platforms/MacOSX.platform/Developer/SDKs/FakeMacOSX10.9.sdk
 popd
 
 
