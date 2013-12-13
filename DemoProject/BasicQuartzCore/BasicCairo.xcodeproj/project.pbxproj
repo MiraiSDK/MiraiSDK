@@ -1,0 +1,597 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		431F17C61826432A006FCF12 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 431F17C51826432A006FCF12 /* Foundation.framework */; };
+		431F17C81826432A006FCF12 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 431F17C71826432A006FCF12 /* CoreGraphics.framework */; };
+		431F17CA1826432A006FCF12 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 431F17C91826432A006FCF12 /* UIKit.framework */; };
+		431F17D01826432A006FCF12 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 431F17CE1826432A006FCF12 /* InfoPlist.strings */; };
+		431F17D21826432A006FCF12 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 431F17D11826432A006FCF12 /* main.m */; };
+		431F17D61826432A006FCF12 /* TNAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 431F17D51826432A006FCF12 /* TNAppDelegate.m */; };
+		431F17DC1826432A006FCF12 /* TNViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 431F17DB1826432A006FCF12 /* TNViewController.m */; };
+		431F17FE18264507006FCF12 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 431F17D11826432A006FCF12 /* main.m */; };
+		431F183F18265125006FCF12 /* InfoPlist.strings in Copy Files (assets) */ = {isa = PBXBuildFile; fileRef = 431F17CE1826432A006FCF12 /* InfoPlist.strings */; };
+		432077E1185313EA00166514 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 432077E0185313EA00166514 /* QuartzCore.framework */; };
+		4327E1BE184C531300F17F96 /* libgnustep-base.so in Copy Files (libs) */ = {isa = PBXBuildFile; fileRef = 4327E1BD184C530800F17F96 /* libgnustep-base.so */; };
+		4327E1C0184C86CC00F17F96 /* libgnustl_shared.so in Copy Files (libs) */ = {isa = PBXBuildFile; fileRef = 4327E1BF184C86BF00F17F96 /* libgnustl_shared.so */; };
+		4327E238184E0B2D00F17F96 /* libopal.so in Copy Files (libs) */ = {isa = PBXBuildFile; fileRef = 4327E236184E0B1800F17F96 /* libopal.so */; };
+		4327E2411850692900F17F96 /* libQuartzCore.so in Copy Files (libs) */ = {isa = PBXBuildFile; fileRef = 4327E2401850691D00F17F96 /* libQuartzCore.so */; };
+		432FF2B018574966005486C5 /* TNCustomView.m in Sources */ = {isa = PBXBuildFile; fileRef = 432FF2AF18574966005486C5 /* TNCustomView.m */; };
+		432FF2B218574AD9005486C5 /* TNCustomView.m in Sources */ = {isa = PBXBuildFile; fileRef = 432FF2AF18574966005486C5 /* TNCustomView.m */; };
+		4383FF4C184B4EFE004E88C2 /* libobjc.so in Copy Files (libs) */ = {isa = PBXBuildFile; fileRef = 4383FF4B184B4EFB004E88C2 /* libobjc.so */; };
+		43DFBA531851DABE00BA269F /* libgnustep-corebase.so in Copy Files (libs) */ = {isa = PBXBuildFile; fileRef = 43DFBA521851D9F200BA269F /* libgnustep-corebase.so */; };
+		43ECCF051851936B0076535C /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 431F17C91826432A006FCF12 /* UIKit.framework */; };
+		43ECCF0A185194860076535C /* libUIKit.so in Copy Files (libs) */ = {isa = PBXBuildFile; fileRef = 43ECCF09185194480076535C /* libUIKit.so */; };
+		43ECCF0B1851B50A0076535C /* TNAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 431F17D51826432A006FCF12 /* TNAppDelegate.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		432FF27718570C2B005486C5 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 432FF27218570C2B005486C5 /* UIKit.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 43718E6918517B7B00850F08;
+			remoteInfo = UIKit;
+		};
+		432FF27918570C2B005486C5 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 432FF27218570C2B005486C5 /* UIKit.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 43718E8018517B7B00850F08;
+			remoteInfo = UIKitTests;
+		};
+		432FF27B18570C3A005486C5 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 432FF27218570C2B005486C5 /* UIKit.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = 43718E6818517B7B00850F08;
+			remoteInfo = UIKit;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		431F1838182650B5006FCF12 /* Copy Files (assets) */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "$(SOURCE_ROOT)/$(PRODUCT_NAME)-android/assets/Resources";
+			dstSubfolderSpec = 0;
+			files = (
+				431F183F18265125006FCF12 /* InfoPlist.strings in Copy Files (assets) */,
+			);
+			name = "Copy Files (assets)";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		431F1839182650D4006FCF12 /* Copy Files (libs) */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 6;
+			files = (
+				4327E1C0184C86CC00F17F96 /* libgnustl_shared.so in Copy Files (libs) */,
+				43DFBA531851DABE00BA269F /* libgnustep-corebase.so in Copy Files (libs) */,
+				43ECCF0A185194860076535C /* libUIKit.so in Copy Files (libs) */,
+				4327E238184E0B2D00F17F96 /* libopal.so in Copy Files (libs) */,
+				4383FF4C184B4EFE004E88C2 /* libobjc.so in Copy Files (libs) */,
+				4327E2411850692900F17F96 /* libQuartzCore.so in Copy Files (libs) */,
+				4327E1BE184C531300F17F96 /* libgnustep-base.so in Copy Files (libs) */,
+			);
+			name = "Copy Files (libs)";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		431F17C21826432A006FCF12 /* BasicCairo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BasicCairo.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		431F17C51826432A006FCF12 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		431F17C71826432A006FCF12 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		431F17C91826432A006FCF12 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		431F17CD1826432A006FCF12 /* Basic-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Basic-Info.plist"; sourceTree = "<group>"; };
+		431F17CF1826432A006FCF12 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		431F17D11826432A006FCF12 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		431F17D31826432A006FCF12 /* Basic-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Basic-Prefix.pch"; sourceTree = "<group>"; };
+		431F17D41826432A006FCF12 /* TNAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TNAppDelegate.h; sourceTree = "<group>"; };
+		431F17D51826432A006FCF12 /* TNAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TNAppDelegate.m; sourceTree = "<group>"; };
+		431F17DA1826432A006FCF12 /* TNViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TNViewController.h; sourceTree = "<group>"; };
+		431F17DB1826432A006FCF12 /* TNViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TNViewController.m; sourceTree = "<group>"; };
+		431F17E41826432A006FCF12 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
+		431F180818264507006FCF12 /* libBasicCairo.so */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.dylib"; includeInIndex = 0; path = libBasicCairo.so; sourceTree = BUILT_PRODUCTS_DIR; };
+		431F184018265403006FCF12 /* android-main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "android-main.m"; path = "../../../../Development/SyoujoSDK/android/share/android/jni/android-main.m"; sourceTree = "<group>"; };
+		432077E0185313EA00166514 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		4327E1BD184C530800F17F96 /* libgnustep-base.so */ = {isa = PBXFileReference; lastKnownFileType = file; name = "libgnustep-base.so"; path = "../../Products/android/android-toolchain-arm/sysroot/usr/lib/libgnustep-base.so"; sourceTree = "<group>"; };
+		4327E1BF184C86BF00F17F96 /* libgnustl_shared.so */ = {isa = PBXFileReference; lastKnownFileType = file; name = libgnustl_shared.so; path = "../../Products/android/android-toolchain-arm/sysroot/usr/lib/libgnustl_shared.so"; sourceTree = "<group>"; };
+		4327E21C184DE14500F17F96 /* MainHActivity.java */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.java; name = MainHActivity.java; path = "BasicCairo-android/src/org/tiny4/BasicCairo/MainHActivity.java"; sourceTree = "<group>"; };
+		4327E21D184DE1F600F17F96 /* AndroidManifest.xml */ = {isa = PBXFileReference; lastKnownFileType = text.xml; name = AndroidManifest.xml; path = "BasicCairo-android/AndroidManifest.xml"; sourceTree = "<group>"; };
+		4327E21E184DE2D500F17F96 /* Android.mk */ = {isa = PBXFileReference; lastKnownFileType = text; name = Android.mk; path = "BasicCairo-android/jni/Android.mk"; sourceTree = "<group>"; };
+		4327E236184E0B1800F17F96 /* libopal.so */ = {isa = PBXFileReference; lastKnownFileType = file; name = libopal.so; path = "../../Products/android/android-toolchain-arm/sysroot/usr/lib/libopal.so"; sourceTree = "<group>"; };
+		4327E2401850691D00F17F96 /* libQuartzCore.so */ = {isa = PBXFileReference; lastKnownFileType = file; name = libQuartzCore.so; path = "../../Products/android/android-toolchain-arm/sysroot/usr/lib/libQuartzCore.so"; sourceTree = "<group>"; };
+		432FF27218570C2B005486C5 /* UIKit.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = UIKit.xcodeproj; path = ../../Projects/UIKit/UIKit.xcodeproj; sourceTree = "<group>"; };
+		432FF2AE18574966005486C5 /* TNCustomView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TNCustomView.h; sourceTree = "<group>"; };
+		432FF2AF18574966005486C5 /* TNCustomView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TNCustomView.m; sourceTree = "<group>"; };
+		4383FF44184B1B11004E88C2 /* Android.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; name = Android.xcconfig; path = ../Android.xcconfig; sourceTree = "<group>"; };
+		4383FF4B184B4EFB004E88C2 /* libobjc.so */ = {isa = PBXFileReference; lastKnownFileType = file; name = libobjc.so; path = "../../Products/android/android-toolchain-arm/sysroot/usr/lib/libobjc.so"; sourceTree = "<group>"; };
+		43DFBA521851D9F200BA269F /* libgnustep-corebase.so */ = {isa = PBXFileReference; lastKnownFileType = file; name = "libgnustep-corebase.so"; path = "../../Products/android/android-toolchain-arm/sysroot/usr/lib/libgnustep-corebase.so"; sourceTree = "<group>"; };
+		43ECCF08185194200076535C /* libdispatch.so */ = {isa = PBXFileReference; lastKnownFileType = file; name = libdispatch.so; path = "../../Products/android/android-toolchain-arm/sysroot/usr/lib/libdispatch.so"; sourceTree = "<group>"; };
+		43ECCF09185194480076535C /* libUIKit.so */ = {isa = PBXFileReference; lastKnownFileType = file; name = libUIKit.so; path = "../../Products/android/android-toolchain-arm/sysroot/usr/lib/libUIKit.so"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		431F17BF1826432A006FCF12 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				431F17C81826432A006FCF12 /* CoreGraphics.framework in Frameworks */,
+				431F17CA1826432A006FCF12 /* UIKit.framework in Frameworks */,
+				431F17C61826432A006FCF12 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		431F17FF18264507006FCF12 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				432077E1185313EA00166514 /* QuartzCore.framework in Frameworks */,
+				43ECCF051851936B0076535C /* UIKit.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		431F17B91826432A006FCF12 = {
+			isa = PBXGroup;
+			children = (
+				431F17CB1826432A006FCF12 /* Basic */,
+				431F17C41826432A006FCF12 /* Frameworks */,
+				431F17C31826432A006FCF12 /* Products */,
+				431F180A18264528006FCF12 /* SimpleView-Android */,
+			);
+			sourceTree = "<group>";
+		};
+		431F17C31826432A006FCF12 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				431F17C21826432A006FCF12 /* BasicCairo.app */,
+				431F180818264507006FCF12 /* libBasicCairo.so */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		431F17C41826432A006FCF12 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				432FF27218570C2B005486C5 /* UIKit.xcodeproj */,
+				432077E0185313EA00166514 /* QuartzCore.framework */,
+				431F17C51826432A006FCF12 /* Foundation.framework */,
+				431F17C71826432A006FCF12 /* CoreGraphics.framework */,
+				431F17C91826432A006FCF12 /* UIKit.framework */,
+				431F17E41826432A006FCF12 /* XCTest.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		431F17CB1826432A006FCF12 /* Basic */ = {
+			isa = PBXGroup;
+			children = (
+				431F17D41826432A006FCF12 /* TNAppDelegate.h */,
+				431F17D51826432A006FCF12 /* TNAppDelegate.m */,
+				432FF2AE18574966005486C5 /* TNCustomView.h */,
+				432FF2AF18574966005486C5 /* TNCustomView.m */,
+				431F17DA1826432A006FCF12 /* TNViewController.h */,
+				431F17DB1826432A006FCF12 /* TNViewController.m */,
+				431F17CC1826432A006FCF12 /* Supporting Files */,
+			);
+			path = Basic;
+			sourceTree = "<group>";
+		};
+		431F17CC1826432A006FCF12 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				431F17CD1826432A006FCF12 /* Basic-Info.plist */,
+				431F17CE1826432A006FCF12 /* InfoPlist.strings */,
+				431F17D11826432A006FCF12 /* main.m */,
+				431F17D31826432A006FCF12 /* Basic-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		431F180A18264528006FCF12 /* SimpleView-Android */ = {
+			isa = PBXGroup;
+			children = (
+				4383FF44184B1B11004E88C2 /* Android.xcconfig */,
+				4327E21E184DE2D500F17F96 /* Android.mk */,
+				4327E21D184DE1F600F17F96 /* AndroidManifest.xml */,
+				4327E21C184DE14500F17F96 /* MainHActivity.java */,
+				431F182718264D96006FCF12 /* Frameworks */,
+				431F182818264DA8006FCF12 /* Platform sources */,
+			);
+			name = "SimpleView-Android";
+			sourceTree = "<group>";
+		};
+		431F182718264D96006FCF12 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				4327E236184E0B1800F17F96 /* libopal.so */,
+				4327E2401850691D00F17F96 /* libQuartzCore.so */,
+				43DFBA521851D9F200BA269F /* libgnustep-corebase.so */,
+				4327E1BF184C86BF00F17F96 /* libgnustl_shared.so */,
+				43ECCF08185194200076535C /* libdispatch.so */,
+				43ECCF09185194480076535C /* libUIKit.so */,
+				4327E1BD184C530800F17F96 /* libgnustep-base.so */,
+				4383FF4B184B4EFB004E88C2 /* libobjc.so */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		431F182818264DA8006FCF12 /* Platform sources */ = {
+			isa = PBXGroup;
+			children = (
+				431F184018265403006FCF12 /* android-main.m */,
+			);
+			name = "Platform sources";
+			sourceTree = "<group>";
+		};
+		432FF27318570C2B005486C5 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				432FF27818570C2B005486C5 /* UIKit.framework */,
+				432FF27A18570C2B005486C5 /* UIKitTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		431F17C11826432A006FCF12 /* BasicCairo */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 431F17F41826432A006FCF12 /* Build configuration list for PBXNativeTarget "BasicCairo" */;
+			buildPhases = (
+				431F17BE1826432A006FCF12 /* Sources */,
+				431F17BF1826432A006FCF12 /* Frameworks */,
+				431F17C01826432A006FCF12 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = BasicCairo;
+			productName = SimpleView;
+			productReference = 431F17C21826432A006FCF12 /* BasicCairo.app */;
+			productType = "com.apple.product-type.application";
+		};
+		431F17FA18264507006FCF12 /* BasicCairo-Android */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 431F180518264507006FCF12 /* Build configuration list for PBXNativeTarget "BasicCairo-Android" */;
+			buildPhases = (
+				431F17FB18264507006FCF12 /* Sources */,
+				431F17FF18264507006FCF12 /* Frameworks */,
+				431F1838182650B5006FCF12 /* Copy Files (assets) */,
+				431F1839182650D4006FCF12 /* Copy Files (libs) */,
+				432FF27118570A58005486C5 /* ShellScript */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				432FF27C18570C3A005486C5 /* PBXTargetDependency */,
+			);
+			name = "BasicCairo-Android";
+			productName = SimpleView;
+			productReference = 431F180818264507006FCF12 /* libBasicCairo.so */;
+			productType = "com.apple.product-type.library.dynamic";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		431F17BA1826432A006FCF12 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				CLASSPREFIX = TN;
+				LastUpgradeCheck = 0500;
+				ORGANIZATIONNAME = "Shanghai Tinynetwork";
+			};
+			buildConfigurationList = 431F17BD1826432A006FCF12 /* Build configuration list for PBXProject "BasicCairo" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 431F17B91826432A006FCF12;
+			productRefGroup = 431F17C31826432A006FCF12 /* Products */;
+			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = 432FF27318570C2B005486C5 /* Products */;
+					ProjectRef = 432FF27218570C2B005486C5 /* UIKit.xcodeproj */;
+				},
+			);
+			projectRoot = "";
+			targets = (
+				431F17C11826432A006FCF12 /* BasicCairo */,
+				431F17FA18264507006FCF12 /* BasicCairo-Android */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXReferenceProxy section */
+		432FF27818570C2B005486C5 /* UIKit.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = UIKit.framework;
+			remoteRef = 432FF27718570C2B005486C5 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		432FF27A18570C2B005486C5 /* UIKitTests.xctest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = UIKitTests.xctest;
+			remoteRef = 432FF27918570C2B005486C5 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+/* End PBXReferenceProxy section */
+
+/* Begin PBXResourcesBuildPhase section */
+		431F17C01826432A006FCF12 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				431F17D01826432A006FCF12 /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		432FF27118570A58005486C5 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "pushd \"$TARGET_BUILD_DIR/../\"\n/Users/chyhfj/.SDK/Android/android-ndk-r9/ndk-build\npopd";
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		431F17BE1826432A006FCF12 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				431F17DC1826432A006FCF12 /* TNViewController.m in Sources */,
+				432FF2B018574966005486C5 /* TNCustomView.m in Sources */,
+				431F17D61826432A006FCF12 /* TNAppDelegate.m in Sources */,
+				431F17D21826432A006FCF12 /* main.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		431F17FB18264507006FCF12 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				43ECCF0B1851B50A0076535C /* TNAppDelegate.m in Sources */,
+				432FF2B218574AD9005486C5 /* TNCustomView.m in Sources */,
+				431F17FE18264507006FCF12 /* main.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		432FF27C18570C3A005486C5 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = UIKit;
+			targetProxy = 432FF27B18570C3A005486C5 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		431F17CE1826432A006FCF12 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				431F17CF1826432A006FCF12 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		431F17F21826432A006FCF12 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx0.0;
+			};
+			name = Debug;
+		};
+		431F17F31826432A006FCF12 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				SDKROOT = macosx0.0;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		431F17F51826432A006FCF12 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "SimpleView/Basic-Prefix.pch";
+				INFOPLIST_FILE = "SimpleView/Basic-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
+				PRODUCT_NAME = BasicCairo;
+				SDKROOT = iphoneos;
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		431F17F61826432A006FCF12 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "SimpleView/Basic-Prefix.pch";
+				INFOPLIST_FILE = "SimpleView/Basic-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
+				PRODUCT_NAME = BasicCairo;
+				SDKROOT = iphoneos;
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+		431F180618264507006FCF12 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 4383FF44184B1B11004E88C2 /* Android.xcconfig */;
+			buildSettings = {
+				ADDITIONAL_SDKS = "";
+				CLANG_ENABLE_MODULES = NO;
+				CLANG_ENABLE_OBJC_ARC = NO;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				DEPLOYMENT_LOCATION = YES;
+				DSTROOT = /;
+				EXECUTABLE_EXTENSION = so;
+				EXECUTABLE_PREFIX = lib;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "";
+				INFOPLIST_FILE = "Basic-Info.plist";
+				INSTALL_PATH = "$(SOURCE_ROOT)/$(PRODUCT_NAME)-android/jni";
+				LD_DEPENDENCY_INFO_FILE = "";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"/Users/chyhfj/Development/MiraSDK/Products/android/android-toolchain-arm/sysroot/usr/lib",
+				);
+				PRODUCT_NAME = BasicCairo;
+				SDKROOT = macosx0.0;
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		431F180718264507006FCF12 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 4383FF44184B1B11004E88C2 /* Android.xcconfig */;
+			buildSettings = {
+				ADDITIONAL_SDKS = "";
+				CLANG_ENABLE_MODULES = NO;
+				CLANG_ENABLE_OBJC_ARC = NO;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				DEPLOYMENT_LOCATION = YES;
+				DSTROOT = /;
+				EXECUTABLE_EXTENSION = so;
+				EXECUTABLE_PREFIX = lib;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "";
+				INFOPLIST_FILE = "Basic-Info.plist";
+				INSTALL_PATH = "$(SOURCE_ROOT)/$(PRODUCT_NAME)-android/jni";
+				LD_DEPENDENCY_INFO_FILE = "";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"/Users/chyhfj/Development/MiraSDK/Products/android/android-toolchain-arm/sysroot/usr/lib",
+				);
+				PRODUCT_NAME = BasicCairo;
+				SDKROOT = macosx0.0;
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		431F17BD1826432A006FCF12 /* Build configuration list for PBXProject "BasicCairo" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				431F17F21826432A006FCF12 /* Debug */,
+				431F17F31826432A006FCF12 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		431F17F41826432A006FCF12 /* Build configuration list for PBXNativeTarget "BasicCairo" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				431F17F51826432A006FCF12 /* Debug */,
+				431F17F61826432A006FCF12 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		431F180518264507006FCF12 /* Build configuration list for PBXNativeTarget "BasicCairo-Android" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				431F180618264507006FCF12 /* Debug */,
+				431F180718264507006FCF12 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 431F17BA1826432A006FCF12 /* Project object */;
+}

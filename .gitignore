@@ -29,6 +29,9 @@ Products/android/adt-bundle-mac-x86_64-20131030
 
 DemoProject/**/jni/*.so
 DemoProject/**/obj/local/*
+DemoProject/**/bin/
+DemoProject/**/gen/
+DemoProject/**/libs/
 DemoProject/**/build.xml
 DemoProject/**/local.properties
 DemoProject/**/proguard-project.txt
