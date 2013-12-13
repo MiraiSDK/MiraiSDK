@@ -1,0 +1,4 @@
+#!/bin/sh
+
+cp -r prebuilt/include/QuartzCore $STANDALONE_TOOLCHAIN_PATH/sysroot/usr/include/
+cp prebuilt/lib/libQuartzCore.so  $STANDALONE_TOOLCHAIN_PATH/sysroot/usr/lib/
