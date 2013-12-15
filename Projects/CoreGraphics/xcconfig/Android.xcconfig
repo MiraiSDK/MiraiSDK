@@ -1,0 +1,16 @@
+//
+//  Android.xcconfig
+//  UIKit
+//
+//  Created by Chen Yonghui on 12/6/13.
+//  Copyright (c) 2013 Shanghai Tinynetwork Inc. All rights reserved.
+//
+
+DEPLOYMENT_LOCATION = YES
+DSTROOT = /
+INSTALL_PATH = $(SOURCE_ROOT)/../../Products/android/android-toolchain-arm/sysroot/System/Library/Frameworks/
+HEADER_SEARCH_PATHS=$(inherited) $(SOURCE_ROOT)/../../Products/android/android-toolchain-arm/sysroot/usr/include/cairo/  $(SOURCE_ROOT)/gnustep-opal/Source/OpalGraphics
+OTHER_LDFLAGS= $(inherited) -lcairo -lpixman-1  -lcpufeatures -lfontconfig -lfreetype -lexpat -lxml2 -lobjc -ljpeg -lpng -ltiff -llcms -lgnustl_shared -lobjc -lm -lz -l/Users/chyhfj/Development/MiraSDK/Products/android/android-toolchain-arm/lib/gcc/arm-linux-androideabi/4.6/libgcc.a
+
+LD_DEPENDENCY_INFO_FILE= 
+
