@@ -7,6 +7,73 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		43A9D075185D9B2E00720B81 /* CAAnimation.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F77517C1594AF2900F56E92 /* CAAnimation.m */; };
+		43A9D076185D9B2E00720B81 /* CABase.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F77517D1594AF2900F56E92 /* CABase.m */; };
+		43A9D077185D9B2E00720B81 /* CADisplayLink.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F77517E1594AF2900F56E92 /* CADisplayLink.m */; };
+		43A9D078185D9B2E00720B81 /* CAEAGLLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F77517F1594AF2900F56E92 /* CAEAGLLayer.m */; };
+		43A9D079185D9B2E00720B81 /* CAGradientLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F7751801594AF2900F56E92 /* CAGradientLayer.m */; };
+		43A9D07A185D9B2E00720B81 /* CALayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F7751811594AF2900F56E92 /* CALayer.m */; };
+		43A9D07B185D9B2E00720B81 /* CAMediaTimingFunction.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F7751821594AF2900F56E92 /* CAMediaTimingFunction.m */; };
+		43A9D07C185D9B2E00720B81 /* CARenderer.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F7751831594AF2900F56E92 /* CARenderer.m */; };
+		43A9D07D185D9B2E00720B81 /* CAReplicatorLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F7751841594AF2900F56E92 /* CAReplicatorLayer.m */; };
+		43A9D07E185D9B2E00720B81 /* CAScrollLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F7751851594AF2900F56E92 /* CAScrollLayer.m */; };
+		43A9D07F185D9B2E00720B81 /* CAShapeLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F7751861594AF2900F56E92 /* CAShapeLayer.m */; };
+		43A9D080185D9B2E00720B81 /* CATextLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F7751871594AF2900F56E92 /* CATextLayer.m */; };
+		43A9D081185D9B2E00720B81 /* CATiledLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F7751881594AF2900F56E92 /* CATiledLayer.m */; };
+		43A9D082185D9B2E00720B81 /* CATransaction.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F7751891594AF2900F56E92 /* CATransaction.m */; };
+		43A9D083185D9B2E00720B81 /* CATransform3D.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F77518A1594AF2900F56E92 /* CATransform3D.m */; };
+		43A9D084185D9B2E00720B81 /* CATransformLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F77518B1594AF2900F56E92 /* CATransformLayer.m */; };
+		43A9D085185D9B2E00720B81 /* CAValueFunction.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F77518C1594AF2900F56E92 /* CAValueFunction.m */; };
+		43A9D086185D9B2E00720B81 /* CABackingStore.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F43F22D1594ECD800F1C5EB /* CABackingStore.m */; };
+		43A9D087185D9B2E00720B81 /* CAMediaTiming.m in Sources */ = {isa = PBXBuildFile; fileRef = 7FCE5C5315964BC4009557DC /* CAMediaTiming.m */; };
+		43A9D088185D9B2E00720B81 /* CAImplicitAnimationObserver.m in Sources */ = {isa = PBXBuildFile; fileRef = 7FFBC86515AB4F58004B0E68 /* CAImplicitAnimationObserver.m */; };
+		43A9D089185D9B2E00720B81 /* CAGLSimpleFramebuffer.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F5026AC15BC63FB00184772 /* CAGLSimpleFramebuffer.m */; };
+		43A9D08A185D9B2E00720B81 /* CAGLTexture.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F5026B015BC685900184772 /* CAGLTexture.m */; };
+		43A9D08B185D9B2E00720B81 /* CALayer+DynamicProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F88F46815CE9FD2002F25F0 /* CALayer+DynamicProperties.m */; };
+		43A9D08C185D9B2E00720B81 /* CAGLShader.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F1DE5A315D6EBAC00C2AE2A /* CAGLShader.m */; };
+		43A9D08D185D9B2E00720B81 /* CAGLProgram.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F1DE5A715D6F35D00C2AE2A /* CAGLProgram.m */; };
+		43A9D092185D9B2E00720B81 /* CAAnimation.h in Headers */ = {isa = PBXBuildFile; fileRef = 7F7751A41594AF3A00F56E92 /* CAAnimation.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		43A9D093185D9B2E00720B81 /* CABase.h in Headers */ = {isa = PBXBuildFile; fileRef = 7F7751A51594AF3A00F56E92 /* CABase.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		43A9D094185D9B2E00720B81 /* CADisplayLink.h in Headers */ = {isa = PBXBuildFile; fileRef = 7F7751A61594AF3A00F56E92 /* CADisplayLink.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		43A9D095185D9B2E00720B81 /* CAEAGLLayer.h in Headers */ = {isa = PBXBuildFile; fileRef = 7F7751A71594AF3A00F56E92 /* CAEAGLLayer.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		43A9D096185D9B2E00720B81 /* CAGradientLayer.h in Headers */ = {isa = PBXBuildFile; fileRef = 7F7751A81594AF3A00F56E92 /* CAGradientLayer.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		43A9D097185D9B2E00720B81 /* CALayer.h in Headers */ = {isa = PBXBuildFile; fileRef = 7F7751A91594AF3A00F56E92 /* CALayer.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		43A9D098185D9B2E00720B81 /* CAMediaTiming.h in Headers */ = {isa = PBXBuildFile; fileRef = 7F7751AA1594AF3A00F56E92 /* CAMediaTiming.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		43A9D099185D9B2E00720B81 /* CAMediaTimingFunction.h in Headers */ = {isa = PBXBuildFile; fileRef = 7F7751AB1594AF3A00F56E92 /* CAMediaTimingFunction.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		43A9D09A185D9B2E00720B81 /* CARenderer.h in Headers */ = {isa = PBXBuildFile; fileRef = 7F7751AC1594AF3A00F56E92 /* CARenderer.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		43A9D09B185D9B2E00720B81 /* CAReplicatorLayer.h in Headers */ = {isa = PBXBuildFile; fileRef = 7F7751AD1594AF3A00F56E92 /* CAReplicatorLayer.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		43A9D09C185D9B2E00720B81 /* CAScrollLayer.h in Headers */ = {isa = PBXBuildFile; fileRef = 7F7751AE1594AF3A00F56E92 /* CAScrollLayer.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		43A9D09D185D9B2E00720B81 /* CAShapeLayer.h in Headers */ = {isa = PBXBuildFile; fileRef = 7F7751AF1594AF3A00F56E92 /* CAShapeLayer.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		43A9D09E185D9B2E00720B81 /* CATextLayer.h in Headers */ = {isa = PBXBuildFile; fileRef = 7F7751B01594AF3A00F56E92 /* CATextLayer.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		43A9D09F185D9B2E00720B81 /* CATiledLayer.h in Headers */ = {isa = PBXBuildFile; fileRef = 7F7751B11594AF3A00F56E92 /* CATiledLayer.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		43A9D0A0185D9B2E00720B81 /* CATransaction.h in Headers */ = {isa = PBXBuildFile; fileRef = 7F7751B21594AF3A00F56E92 /* CATransaction.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		43A9D0A1185D9B2E00720B81 /* CATransform3D.h in Headers */ = {isa = PBXBuildFile; fileRef = 7F7751B31594AF3A00F56E92 /* CATransform3D.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		43A9D0A2185D9B2E00720B81 /* CATransformLayer.h in Headers */ = {isa = PBXBuildFile; fileRef = 7F7751B41594AF3A00F56E92 /* CATransformLayer.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		43A9D0A3185D9B2E00720B81 /* CAValueFunction.h in Headers */ = {isa = PBXBuildFile; fileRef = 7F7751B51594AF3A00F56E92 /* CAValueFunction.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		43A9D0A4185D9B2E00720B81 /* CoreAnimation.h in Headers */ = {isa = PBXBuildFile; fileRef = 7F7751B61594AF3A00F56E92 /* CoreAnimation.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		43A9D0A5185D9B2E00720B81 /* QuartzCore.h in Headers */ = {isa = PBXBuildFile; fileRef = 7F7751B71594AF3A00F56E92 /* QuartzCore.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		43A9D0A6185D9B2E00720B81 /* AppleSupport.h in Headers */ = {isa = PBXBuildFile; fileRef = 7F5CF3DD1594B35B00A5D114 /* AppleSupport.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		43A9D0A7185D9B2E00720B81 /* AppleSupportRevert.h in Headers */ = {isa = PBXBuildFile; fileRef = 7F5909751594B7ED00AF49AF /* AppleSupportRevert.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		43A9D0A8185D9B2E00720B81 /* CABackingStore.h in Headers */ = {isa = PBXBuildFile; fileRef = 7F43F22C1594ECD800F1C5EB /* CABackingStore.h */; };
+		43A9D0A9185D9B2E00720B81 /* CAAnimation+FrameworkPrivate.h in Headers */ = {isa = PBXBuildFile; fileRef = 7F8CC66C15A0A964003AEB38 /* CAAnimation+FrameworkPrivate.h */; };
+		43A9D0AA185D9B2E00720B81 /* CALayer+FrameworkPrivate.h in Headers */ = {isa = PBXBuildFile; fileRef = 7F8CC66D15A0A964003AEB38 /* CALayer+FrameworkPrivate.h */; };
+		43A9D0AB185D9B2E00720B81 /* CAImplicitAnimationObserver.h in Headers */ = {isa = PBXBuildFile; fileRef = 7FFBC86415AB4F58004B0E68 /* CAImplicitAnimationObserver.h */; };
+		43A9D0AC185D9B2E00720B81 /* CATransaction+FrameworkPrivate.h in Headers */ = {isa = PBXBuildFile; fileRef = 7FFBC86815AB6390004B0E68 /* CATransaction+FrameworkPrivate.h */; };
+		43A9D0AD185D9B2E00720B81 /* CAMediaTimingFunction+FrameworkPrivate.h in Headers */ = {isa = PBXBuildFile; fileRef = 7FA9CFD215AC3CBC00F12B76 /* CAMediaTimingFunction+FrameworkPrivate.h */; };
+		43A9D0AE185D9B2E00720B81 /* CAGLSimpleFramebuffer.h in Headers */ = {isa = PBXBuildFile; fileRef = 7F5026AB15BC63FB00184772 /* CAGLSimpleFramebuffer.h */; };
+		43A9D0AF185D9B2E00720B81 /* CAGLTexture.h in Headers */ = {isa = PBXBuildFile; fileRef = 7F5026AF15BC685900184772 /* CAGLTexture.h */; };
+		43A9D0B0185D9B2E00720B81 /* CALayer+DynamicProperties.h in Headers */ = {isa = PBXBuildFile; fileRef = 7F88F46715CE9FD2002F25F0 /* CALayer+DynamicProperties.h */; };
+		43A9D0B1185D9B2E00720B81 /* CAGLShader.h in Headers */ = {isa = PBXBuildFile; fileRef = 7F1DE5A215D6EBAC00C2AE2A /* CAGLShader.h */; };
+		43A9D0B2185D9B2E00720B81 /* CAGLProgram.h in Headers */ = {isa = PBXBuildFile; fileRef = 7F1DE5A615D6F35D00C2AE2A /* CAGLProgram.h */; };
+		43A9D0B4185D9B2E00720B81 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 7F77516B1594AE2A00F56E92 /* InfoPlist.strings */; };
+		43A9D0B5185D9B2E00720B81 /* simple.fsh in Resources */ = {isa = PBXBuildFile; fileRef = 7F1DE5AB15D6FD6200C2AE2A /* simple.fsh */; };
+		43A9D0B6185D9B2E00720B81 /* simple.vsh in Resources */ = {isa = PBXBuildFile; fileRef = 7F1DE5AD15D6FDC500C2AE2A /* simple.vsh */; };
+		43A9D0B7185D9B2E00720B81 /* blurbase.vsh in Resources */ = {isa = PBXBuildFile; fileRef = 7F639F0115D80114007DFA18 /* blurbase.vsh */; };
+		43A9D0B8185D9B2E00720B81 /* blurhoriz.fsh in Resources */ = {isa = PBXBuildFile; fileRef = 7F639EFD15D7C5AF007DFA18 /* blurhoriz.fsh */; };
+		43A9D0B9185D9B2E00720B81 /* blurvert.fsh in Resources */ = {isa = PBXBuildFile; fileRef = 7F639EFF15D7C6EB007DFA18 /* blurvert.fsh */; };
+		43A9D0C6185D9C9400720B81 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 43A9D0C5185D9C9400720B81 /* CoreGraphics.framework */; };
+		43BA695C185DA18E00526D8E /* libGLESv2.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 43BA695B185DA18E00526D8E /* libGLESv2.dylib */; };
+		43DBF183185DA05A00BF9025 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7F7751671594AE2A00F56E92 /* Foundation.framework */; };
 		7F1DE5A415D6EBAC00C2AE2A /* CAGLShader.h in Headers */ = {isa = PBXBuildFile; fileRef = 7F1DE5A215D6EBAC00C2AE2A /* CAGLShader.h */; };
 		7F1DE5A515D6EBAC00C2AE2A /* CAGLShader.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F1DE5A315D6EBAC00C2AE2A /* CAGLShader.m */; };
 		7F1DE5A815D6F35D00C2AE2A /* CAGLProgram.h in Headers */ = {isa = PBXBuildFile; fileRef = 7F1DE5A615D6F35D00C2AE2A /* CAGLProgram.h */; };
@@ -25,7 +92,6 @@
 		7F639F0215D80114007DFA18 /* blurbase.vsh in Resources */ = {isa = PBXBuildFile; fileRef = 7F639F0115D80114007DFA18 /* blurbase.vsh */; };
 		7F74229E1594C2A400AEB117 /* OpenGL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7F74229D1594C2A400AEB117 /* OpenGL.framework */; };
 		7F7422B61594C75E00AEB117 /* AppleSupportRevert.h in Headers */ = {isa = PBXBuildFile; fileRef = 7F5909751594B7ED00AF49AF /* AppleSupportRevert.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		7F7751631594AE2A00F56E92 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7F7751621594AE2A00F56E92 /* Cocoa.framework */; };
 		7F77516D1594AE2A00F56E92 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 7F77516B1594AE2A00F56E92 /* InfoPlist.strings */; };
 		7F77518F1594AF2900F56E92 /* CAAnimation.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F77517C1594AF2900F56E92 /* CAAnimation.m */; };
 		7F7751901594AF2900F56E92 /* CABase.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F77517D1594AF2900F56E92 /* CABase.m */; };
@@ -114,6 +180,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		43A9D0BE185D9B2E00720B81 /* GSQuartzCore.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = GSQuartzCore.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		43A9D0C5185D9C9400720B81 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		43BA695B185DA18E00526D8E /* libGLESv2.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libGLESv2.dylib; path = usr/lib/libGLESv2.dylib; sourceTree = SDKROOT; };
+		43BA6965185DA26500526D8E /* GSQuartzCore-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "GSQuartzCore-Prefix.pch"; sourceTree = "<group>"; };
 		7F19ECE015E2813200D53ED8 /* QuartzCoreDemo.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = QuartzCoreDemo.xcodeproj; path = Demo/QuartzCoreDemo.xcodeproj; sourceTree = "<group>"; };
 		7F1DE5A215D6EBAC00C2AE2A /* CAGLShader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CAGLShader.h; sourceTree = "<group>"; };
 		7F1DE5A315D6EBAC00C2AE2A /* CAGLShader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CAGLShader.m; sourceTree = "<group>"; };
@@ -135,7 +205,6 @@
 		7F74229D1594C2A400AEB117 /* OpenGL.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGL.framework; path = System/Library/Frameworks/OpenGL.framework; sourceTree = SDKROOT; };
 		7F7422A21594C32000AEB117 /* GNUstepQuartzCoreTests.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = GNUstepQuartzCoreTests.xcodeproj; path = Tests/GNUstepQuartzCoreTests.xcodeproj; sourceTree = "<group>"; };
 		7F77515F1594AE2A00F56E92 /* GSQuartzCore.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = GSQuartzCore.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		7F7751621594AE2A00F56E92 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
 		7F7751651594AE2A00F56E92 /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
 		7F7751661594AE2A00F56E92 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
 		7F7751671594AE2A00F56E92 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -191,18 +260,35 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		43A9D08E185D9B2E00720B81 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				43BA695C185DA18E00526D8E /* libGLESv2.dylib in Frameworks */,
+				43DBF183185DA05A00BF9025 /* Foundation.framework in Frameworks */,
+				43A9D0C6185D9C9400720B81 /* CoreGraphics.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		7F77515B1594AE2A00F56E92 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				7F74229E1594C2A400AEB117 /* OpenGL.framework in Frameworks */,
-				7F7751631594AE2A00F56E92 /* Cocoa.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		43BA6964185DA26500526D8E /* Android */ = {
+			isa = PBXGroup;
+			children = (
+				43BA6965185DA26500526D8E /* GSQuartzCore-Prefix.pch */,
+			);
+			path = Android;
+			sourceTree = "<group>";
+		};
 		7F19ECE115E2813200D53ED8 /* Products */ = {
 			isa = PBXGroup;
 			children = (
@@ -258,6 +344,7 @@
 				7F7751681594AE2A00F56E92 /* GSQuartzCore */,
 				7F7751611594AE2A00F56E92 /* Frameworks */,
 				7F7751601594AE2A00F56E92 /* Products */,
+				43BA6964185DA26500526D8E /* Android */,
 			);
 			sourceTree = "<group>";
 		};
@@ -265,6 +352,7 @@
 			isa = PBXGroup;
 			children = (
 				7F77515F1594AE2A00F56E92 /* GSQuartzCore.framework */,
+				43A9D0BE185D9B2E00720B81 /* GSQuartzCore.framework */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -272,7 +360,8 @@
 		7F7751611594AE2A00F56E92 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				7F7751621594AE2A00F56E92 /* Cocoa.framework */,
+				43BA695B185DA18E00526D8E /* libGLESv2.dylib */,
+				43A9D0C5185D9C9400720B81 /* CoreGraphics.framework */,
 				7F7751641594AE2A00F56E92 /* Other Frameworks */,
 			);
 			name = Frameworks;
@@ -386,6 +475,46 @@
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
+		43A9D091185D9B2E00720B81 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				43A9D092185D9B2E00720B81 /* CAAnimation.h in Headers */,
+				43A9D093185D9B2E00720B81 /* CABase.h in Headers */,
+				43A9D094185D9B2E00720B81 /* CADisplayLink.h in Headers */,
+				43A9D095185D9B2E00720B81 /* CAEAGLLayer.h in Headers */,
+				43A9D096185D9B2E00720B81 /* CAGradientLayer.h in Headers */,
+				43A9D097185D9B2E00720B81 /* CALayer.h in Headers */,
+				43A9D098185D9B2E00720B81 /* CAMediaTiming.h in Headers */,
+				43A9D099185D9B2E00720B81 /* CAMediaTimingFunction.h in Headers */,
+				43A9D09A185D9B2E00720B81 /* CARenderer.h in Headers */,
+				43A9D09B185D9B2E00720B81 /* CAReplicatorLayer.h in Headers */,
+				43A9D09C185D9B2E00720B81 /* CAScrollLayer.h in Headers */,
+				43A9D09D185D9B2E00720B81 /* CAShapeLayer.h in Headers */,
+				43A9D09E185D9B2E00720B81 /* CATextLayer.h in Headers */,
+				43A9D09F185D9B2E00720B81 /* CATiledLayer.h in Headers */,
+				43A9D0A0185D9B2E00720B81 /* CATransaction.h in Headers */,
+				43A9D0A1185D9B2E00720B81 /* CATransform3D.h in Headers */,
+				43A9D0A2185D9B2E00720B81 /* CATransformLayer.h in Headers */,
+				43A9D0A3185D9B2E00720B81 /* CAValueFunction.h in Headers */,
+				43A9D0A4185D9B2E00720B81 /* CoreAnimation.h in Headers */,
+				43A9D0A5185D9B2E00720B81 /* QuartzCore.h in Headers */,
+				43A9D0A6185D9B2E00720B81 /* AppleSupport.h in Headers */,
+				43A9D0A7185D9B2E00720B81 /* AppleSupportRevert.h in Headers */,
+				43A9D0A8185D9B2E00720B81 /* CABackingStore.h in Headers */,
+				43A9D0A9185D9B2E00720B81 /* CAAnimation+FrameworkPrivate.h in Headers */,
+				43A9D0AA185D9B2E00720B81 /* CALayer+FrameworkPrivate.h in Headers */,
+				43A9D0AB185D9B2E00720B81 /* CAImplicitAnimationObserver.h in Headers */,
+				43A9D0AC185D9B2E00720B81 /* CATransaction+FrameworkPrivate.h in Headers */,
+				43A9D0AD185D9B2E00720B81 /* CAMediaTimingFunction+FrameworkPrivate.h in Headers */,
+				43A9D0AE185D9B2E00720B81 /* CAGLSimpleFramebuffer.h in Headers */,
+				43A9D0AF185D9B2E00720B81 /* CAGLTexture.h in Headers */,
+				43A9D0B0185D9B2E00720B81 /* CALayer+DynamicProperties.h in Headers */,
+				43A9D0B1185D9B2E00720B81 /* CAGLShader.h in Headers */,
+				43A9D0B2185D9B2E00720B81 /* CAGLProgram.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		7F77515C1594AE2A00F56E92 /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
@@ -429,6 +558,24 @@
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
+		43A9D073185D9B2E00720B81 /* GSQuartzCore-Android */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 43A9D0BA185D9B2E00720B81 /* Build configuration list for PBXNativeTarget "GSQuartzCore-Android" */;
+			buildPhases = (
+				43A9D074185D9B2E00720B81 /* Sources */,
+				43A9D08E185D9B2E00720B81 /* Frameworks */,
+				43A9D091185D9B2E00720B81 /* Headers */,
+				43A9D0B3185D9B2E00720B81 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "GSQuartzCore-Android";
+			productName = GSQuartzCore;
+			productReference = 43A9D0BE185D9B2E00720B81 /* GSQuartzCore.framework */;
+			productType = "com.apple.product-type.framework";
+		};
 		7F77515E1594AE2A00F56E92 /* GSQuartzCore */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 7F7751741594AE2A00F56E92 /* Build configuration list for PBXNativeTarget "GSQuartzCore" */;
@@ -479,6 +626,7 @@
 			projectRoot = "";
 			targets = (
 				7F77515E1594AE2A00F56E92 /* GSQuartzCore */,
+				43A9D073185D9B2E00720B81 /* GSQuartzCore-Android */,
 			);
 		};
 /* End PBXProject section */
@@ -522,6 +670,19 @@
 /* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
+		43A9D0B3185D9B2E00720B81 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				43A9D0B4185D9B2E00720B81 /* InfoPlist.strings in Resources */,
+				43A9D0B5185D9B2E00720B81 /* simple.fsh in Resources */,
+				43A9D0B6185D9B2E00720B81 /* simple.vsh in Resources */,
+				43A9D0B7185D9B2E00720B81 /* blurbase.vsh in Resources */,
+				43A9D0B8185D9B2E00720B81 /* blurhoriz.fsh in Resources */,
+				43A9D0B9185D9B2E00720B81 /* blurvert.fsh in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		7F77515D1594AE2A00F56E92 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -538,6 +699,38 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		43A9D074185D9B2E00720B81 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				43A9D075185D9B2E00720B81 /* CAAnimation.m in Sources */,
+				43A9D076185D9B2E00720B81 /* CABase.m in Sources */,
+				43A9D077185D9B2E00720B81 /* CADisplayLink.m in Sources */,
+				43A9D078185D9B2E00720B81 /* CAEAGLLayer.m in Sources */,
+				43A9D079185D9B2E00720B81 /* CAGradientLayer.m in Sources */,
+				43A9D07A185D9B2E00720B81 /* CALayer.m in Sources */,
+				43A9D07B185D9B2E00720B81 /* CAMediaTimingFunction.m in Sources */,
+				43A9D07C185D9B2E00720B81 /* CARenderer.m in Sources */,
+				43A9D07D185D9B2E00720B81 /* CAReplicatorLayer.m in Sources */,
+				43A9D07E185D9B2E00720B81 /* CAScrollLayer.m in Sources */,
+				43A9D07F185D9B2E00720B81 /* CAShapeLayer.m in Sources */,
+				43A9D080185D9B2E00720B81 /* CATextLayer.m in Sources */,
+				43A9D081185D9B2E00720B81 /* CATiledLayer.m in Sources */,
+				43A9D082185D9B2E00720B81 /* CATransaction.m in Sources */,
+				43A9D083185D9B2E00720B81 /* CATransform3D.m in Sources */,
+				43A9D084185D9B2E00720B81 /* CATransformLayer.m in Sources */,
+				43A9D085185D9B2E00720B81 /* CAValueFunction.m in Sources */,
+				43A9D086185D9B2E00720B81 /* CABackingStore.m in Sources */,
+				43A9D087185D9B2E00720B81 /* CAMediaTiming.m in Sources */,
+				43A9D088185D9B2E00720B81 /* CAImplicitAnimationObserver.m in Sources */,
+				43A9D089185D9B2E00720B81 /* CAGLSimpleFramebuffer.m in Sources */,
+				43A9D08A185D9B2E00720B81 /* CAGLTexture.m in Sources */,
+				43A9D08B185D9B2E00720B81 /* CALayer+DynamicProperties.m in Sources */,
+				43A9D08C185D9B2E00720B81 /* CAGLShader.m in Sources */,
+				43A9D08D185D9B2E00720B81 /* CAGLProgram.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		7F77515A1594AE2A00F56E92 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -584,6 +777,69 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		43A9D0BB185D9B2E00720B81 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				DEPLOYMENT_LOCATION = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				FRAMEWORK_VERSION = A;
+				GCC_PREFIX_HEADER = "Android/GSQuartzCore-Prefix.pch";
+				INFOPLIST_FILE = "Mac/GSQuartzCore-Info.plist";
+				LD_DEPENDENCY_INFO_FILE = "";
+				MACOSX_DEPLOYMENT_TARGET = "";
+				OTHER_LDFLAGS = (
+					"-lobjc",
+					"-lm",
+					"-lgnustl_shared",
+				);
+				PRODUCT_NAME = GSQuartzCore;
+				WRAPPER_EXTENSION = framework;
+			};
+			name = Debug;
+		};
+		43A9D0BC185D9B2E00720B81 /* UsingGNUstepImpl */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				DEPLOYMENT_LOCATION = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				FRAMEWORK_VERSION = A;
+				GCC_PREFIX_HEADER = "Android/GSQuartzCore-Prefix.pch";
+				INFOPLIST_FILE = "Mac/GSQuartzCore-Info.plist";
+				LD_DEPENDENCY_INFO_FILE = "";
+				MACOSX_DEPLOYMENT_TARGET = "";
+				OTHER_LDFLAGS = (
+					"-lobjc",
+					"-lm",
+					"-lgnustl_shared",
+				);
+				PRODUCT_NAME = GSQuartzCore;
+				WRAPPER_EXTENSION = framework;
+			};
+			name = UsingGNUstepImpl;
+		};
+		43A9D0BD185D9B2E00720B81 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				DEPLOYMENT_LOCATION = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				FRAMEWORK_VERSION = A;
+				GCC_PREFIX_HEADER = "Android/GSQuartzCore-Prefix.pch";
+				INFOPLIST_FILE = "Mac/GSQuartzCore-Info.plist";
+				LD_DEPENDENCY_INFO_FILE = "";
+				MACOSX_DEPLOYMENT_TARGET = "";
+				OTHER_LDFLAGS = (
+					"-lobjc",
+					"-lm",
+					"-lgnustl_shared",
+				);
+				PRODUCT_NAME = GSQuartzCore;
+				WRAPPER_EXTENSION = framework;
+			};
+			name = Release;
+		};
 		7F7751721594AE2A00F56E92 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -609,7 +865,7 @@
 				HEADER_SEARCH_PATHS = "$(PROJECT_DIR)/Headers";
 				MACOSX_DEPLOYMENT_TARGET = 10.7;
 				ONLY_ACTIVE_ARCH = YES;
-				SDKROOT = macosx;
+				SDKROOT = macosx0.0;
 				USER_HEADER_SEARCH_PATHS = "$(PROJECT_DIR)/Headers";
 			};
 			name = Debug;
@@ -632,7 +888,7 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				HEADER_SEARCH_PATHS = "$(PROJECT_DIR)/Headers";
 				MACOSX_DEPLOYMENT_TARGET = 10.7;
-				SDKROOT = macosx;
+				SDKROOT = macosx0.0;
 				USER_HEADER_SEARCH_PATHS = "$(PROJECT_DIR)/Headers";
 			};
 			name = Release;
@@ -692,7 +948,7 @@
 				HEADER_SEARCH_PATHS = "$(PROJECT_DIR)/Headers";
 				MACOSX_DEPLOYMENT_TARGET = 10.7;
 				ONLY_ACTIVE_ARCH = YES;
-				SDKROOT = macosx;
+				SDKROOT = macosx0.0;
 				USER_HEADER_SEARCH_PATHS = "$(PROJECT_DIR)/Headers";
 			};
 			name = UsingGNUstepImpl;
@@ -715,6 +971,16 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		43A9D0BA185D9B2E00720B81 /* Build configuration list for PBXNativeTarget "GSQuartzCore-Android" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				43A9D0BB185D9B2E00720B81 /* Debug */,
+				43A9D0BC185D9B2E00720B81 /* UsingGNUstepImpl */,
+				43A9D0BD185D9B2E00720B81 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		7F7751581594AE2A00F56E92 /* Build configuration list for PBXProject "GSQuartzCore" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (

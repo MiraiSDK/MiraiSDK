@@ -28,5 +28,6 @@
    Boston, MA 02110-1301, USA.
 */
 
+#import <CoreGraphics/CoreGraphics.h>
 #import "QuartzCore/CoreAnimation.h"
 
