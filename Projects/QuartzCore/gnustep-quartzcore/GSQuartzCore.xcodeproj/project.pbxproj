@@ -74,6 +74,10 @@
 		43A9D0C6185D9C9400720B81 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 43A9D0C5185D9C9400720B81 /* CoreGraphics.framework */; };
 		43BA695C185DA18E00526D8E /* libGLESv2.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 43BA695B185DA18E00526D8E /* libGLESv2.dylib */; };
 		43DBF183185DA05A00BF9025 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7F7751671594AE2A00F56E92 /* Foundation.framework */; };
+		43E112A2185EDB3400E771B4 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 43A9D0C5185D9C9400720B81 /* CoreGraphics.framework */; };
+		43E112A4185EDBFF00E771B4 /* CAAction.h in Headers */ = {isa = PBXBuildFile; fileRef = 43E112A3185EDBFF00E771B4 /* CAAction.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		43E112A5185EDBFF00E771B4 /* CAAction.h in Headers */ = {isa = PBXBuildFile; fileRef = 43E112A3185EDBFF00E771B4 /* CAAction.h */; };
+		43E112AC185EDCFF00E771B4 /* ImageIO.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 43E112AB185EDCFF00E771B4 /* ImageIO.framework */; };
 		7F1DE5A415D6EBAC00C2AE2A /* CAGLShader.h in Headers */ = {isa = PBXBuildFile; fileRef = 7F1DE5A215D6EBAC00C2AE2A /* CAGLShader.h */; };
 		7F1DE5A515D6EBAC00C2AE2A /* CAGLShader.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F1DE5A315D6EBAC00C2AE2A /* CAGLShader.m */; };
 		7F1DE5A815D6F35D00C2AE2A /* CAGLProgram.h in Headers */ = {isa = PBXBuildFile; fileRef = 7F1DE5A615D6F35D00C2AE2A /* CAGLProgram.h */; };
@@ -185,6 +189,8 @@
 		43BA695B185DA18E00526D8E /* libGLESv2.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libGLESv2.dylib; path = usr/lib/libGLESv2.dylib; sourceTree = SDKROOT; };
 		43BA6965185DA26500526D8E /* GSQuartzCore-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "GSQuartzCore-Prefix.pch"; sourceTree = "<group>"; };
 		43BA6973185DB72300526D8E /* Android.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Android.xcconfig; sourceTree = "<group>"; };
+		43E112A3185EDBFF00E771B4 /* CAAction.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CAAction.h; sourceTree = "<group>"; };
+		43E112AB185EDCFF00E771B4 /* ImageIO.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ImageIO.framework; path = System/Library/Frameworks/ImageIO.framework; sourceTree = SDKROOT; };
 		7F19ECE015E2813200D53ED8 /* QuartzCoreDemo.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = QuartzCoreDemo.xcodeproj; path = Demo/QuartzCoreDemo.xcodeproj; sourceTree = "<group>"; };
 		7F1DE5A215D6EBAC00C2AE2A /* CAGLShader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CAGLShader.h; sourceTree = "<group>"; };
 		7F1DE5A315D6EBAC00C2AE2A /* CAGLShader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CAGLShader.m; sourceTree = "<group>"; };
@@ -275,6 +281,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				43E112AC185EDCFF00E771B4 /* ImageIO.framework in Frameworks */,
+				43E112A2185EDB3400E771B4 /* CoreGraphics.framework in Frameworks */,
 				7F74229E1594C2A400AEB117 /* OpenGL.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -351,7 +359,6 @@
 			children = (
 				7F7422A21594C32000AEB117 /* GNUstepQuartzCoreTests.xcodeproj */,
 				7F19ECE015E2813200D53ED8 /* QuartzCoreDemo.xcodeproj */,
-				7F74229D1594C2A400AEB117 /* OpenGL.framework */,
 				7F7751681594AE2A00F56E92 /* GSQuartzCore */,
 				7F7751611594AE2A00F56E92 /* Frameworks */,
 				7F7751601594AE2A00F56E92 /* Products */,
@@ -371,6 +378,8 @@
 		7F7751611594AE2A00F56E92 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				7F74229D1594C2A400AEB117 /* OpenGL.framework */,
+				43E112AB185EDCFF00E771B4 /* ImageIO.framework */,
 				43BA695B185DA18E00526D8E /* libGLESv2.dylib */,
 				43A9D0C5185D9C9400720B81 /* CoreGraphics.framework */,
 				7F7751641594AE2A00F56E92 /* Other Frameworks */,
@@ -457,6 +466,7 @@
 		7F7751A31594AF3A00F56E92 /* QuartzCore */ = {
 			isa = PBXGroup;
 			children = (
+				43E112A3185EDBFF00E771B4 /* CAAction.h */,
 				7F7751A41594AF3A00F56E92 /* CAAnimation.h */,
 				7F7751A51594AF3A00F56E92 /* CABase.h */,
 				7F7751A61594AF3A00F56E92 /* CADisplayLink.h */,
@@ -520,6 +530,7 @@
 				43A9D0AD185D9B2E00720B81 /* CAMediaTimingFunction+FrameworkPrivate.h in Headers */,
 				43A9D0AE185D9B2E00720B81 /* CAGLSimpleFramebuffer.h in Headers */,
 				43A9D0AF185D9B2E00720B81 /* CAGLTexture.h in Headers */,
+				43E112A5185EDBFF00E771B4 /* CAAction.h in Headers */,
 				43A9D0B0185D9B2E00720B81 /* CALayer+DynamicProperties.h in Headers */,
 				43A9D0B1185D9B2E00720B81 /* CAGLShader.h in Headers */,
 				43A9D0B2185D9B2E00720B81 /* CAGLProgram.h in Headers */,
@@ -550,6 +561,7 @@
 				7F7751C91594AF3A00F56E92 /* CAValueFunction.h in Headers */,
 				7F7751CA1594AF3A00F56E92 /* CoreAnimation.h in Headers */,
 				7F7751CB1594AF3A00F56E92 /* QuartzCore.h in Headers */,
+				43E112A4185EDBFF00E771B4 /* CAAction.h in Headers */,
 				7F5CF3DE1594B35B00A5D114 /* AppleSupport.h in Headers */,
 				7F7422B61594C75E00AEB117 /* AppleSupportRevert.h in Headers */,
 				7F43F22E1594ECD800F1C5EB /* CABackingStore.h in Headers */,
@@ -805,6 +817,7 @@
 					"-lgnustl_shared",
 				);
 				PRODUCT_NAME = QuartzCore;
+				SDKROOT = macosx0.0;
 				WRAPPER_EXTENSION = framework;
 			};
 			name = Debug;
@@ -826,6 +839,7 @@
 					"-lgnustl_shared",
 				);
 				PRODUCT_NAME = QuartzCore;
+				SDKROOT = macosx0.0;
 				WRAPPER_EXTENSION = framework;
 			};
 			name = UsingGNUstepImpl;
@@ -847,6 +861,7 @@
 					"-lgnustl_shared",
 				);
 				PRODUCT_NAME = QuartzCore;
+				SDKROOT = macosx0.0;
 				WRAPPER_EXTENSION = framework;
 			};
 			name = Release;
@@ -876,7 +891,7 @@
 				HEADER_SEARCH_PATHS = "$(PROJECT_DIR)/Headers";
 				MACOSX_DEPLOYMENT_TARGET = 10.7;
 				ONLY_ACTIVE_ARCH = YES;
-				SDKROOT = macosx0.0;
+				SDKROOT = macosx;
 				USER_HEADER_SEARCH_PATHS = "$(PROJECT_DIR)/Headers";
 			};
 			name = Debug;
@@ -899,7 +914,7 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				HEADER_SEARCH_PATHS = "$(PROJECT_DIR)/Headers";
 				MACOSX_DEPLOYMENT_TARGET = 10.7;
-				SDKROOT = macosx0.0;
+				SDKROOT = macosx;
 				USER_HEADER_SEARCH_PATHS = "$(PROJECT_DIR)/Headers";
 			};
 			name = Release;
@@ -908,7 +923,6 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				DEPLOYMENT_LOCATION = YES;
-				DSTROOT = /;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				FRAMEWORK_VERSION = A;
@@ -923,7 +937,6 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				DEPLOYMENT_LOCATION = YES;
-				DSTROOT = /;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				FRAMEWORK_VERSION = A;
@@ -959,7 +972,7 @@
 				HEADER_SEARCH_PATHS = "$(PROJECT_DIR)/Headers";
 				MACOSX_DEPLOYMENT_TARGET = 10.7;
 				ONLY_ACTIVE_ARCH = YES;
-				SDKROOT = macosx0.0;
+				SDKROOT = macosx;
 				USER_HEADER_SEARCH_PATHS = "$(PROJECT_DIR)/Headers";
 			};
 			name = UsingGNUstepImpl;
@@ -968,7 +981,6 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				DEPLOYMENT_LOCATION = YES;
-				DSTROOT = /;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				FRAMEWORK_VERSION = A;
