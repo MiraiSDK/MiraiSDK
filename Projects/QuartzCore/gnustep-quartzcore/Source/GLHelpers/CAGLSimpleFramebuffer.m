@@ -54,18 +54,20 @@ static NSMutableArray * framebufferStack = nil;
 
   [_texture bind];
   /* Ogre3d sets these parameters to ensure functionality under nVidia cards */
-//  glTexParameteri([_texture textureTarget], GL_TEXTURE_MAX_LEVEL, 0);
+#if !ANDROID
+
+  glTexParameteri([_texture textureTarget], GL_TEXTURE_MAX_LEVEL, 0);
   glTexParameteri([_texture textureTarget], GL_TEXTURE_MIN_FILTER, GL_NEAREST);
   glTexParameteri([_texture textureTarget], GL_TEXTURE_MAG_FILTER, GL_NEAREST);
   glTexParameteri([_texture textureTarget], GL_TEXTURE_WRAP_S, GL_CLAMP_TO_EDGE);
   glTexParameteri([_texture textureTarget], GL_TEXTURE_WRAP_T, GL_CLAMP_TO_EDGE);
-
   [_texture loadEmptyImageWithWidth: width
                              height: height];
   
-//  glBindFramebuffer(GL_FRAMEBUFFER_EXT, _framebufferID);
-//  glFramebufferTexture2D(GL_FRAMEBUFFER_EXT, GL_COLOR_ATTACHMENT0_EXT, [_texture textureTarget], [_texture textureID], 0);
-    
+  glBindFramebuffer(GL_FRAMEBUFFER_EXT, _framebufferID);
+  glFramebufferTexture2D(GL_FRAMEBUFFER_EXT, GL_COLOR_ATTACHMENT0_EXT, [_texture textureTarget], [_texture textureID], 0);
+#endif
+
   return self;
 }
 
@@ -97,47 +99,52 @@ static NSMutableArray * framebufferStack = nil;
   
   _depthBufferEnabled = depthBufferEnabled;
   [self bind];
-  
+#if !ANDROID
   if (_depthBufferEnabled)
   {
     glGenRenderbuffers(1, &_depthRenderbufferID);
-//    glBindRenderbuffer(GL_RENDERBUFFER_EXT, _depthRenderbufferID);
-//    glRenderbufferStorage(GL_RENDERBUFFER_EXT, GL_DEPTH_COMPONENT24, [_texture width], [_texture height]);
+    glBindRenderbuffer(GL_RENDERBUFFER_EXT, _depthRenderbufferID);
+    glRenderbufferStorage(GL_RENDERBUFFER_EXT, GL_DEPTH_COMPONENT24, [_texture width], [_texture height]);
 
-//    glFramebufferRenderbuffer(GL_FRAMEBUFFER_EXT, GL_DEPTH_ATTACHMENT_EXT, GL_RENDERBUFFER_EXT, _depthRenderbufferID);
+    glFramebufferRenderbuffer(GL_FRAMEBUFFER_EXT, GL_DEPTH_ATTACHMENT_EXT, GL_RENDERBUFFER_EXT, _depthRenderbufferID);
   }
   else
   {
-//    glFramebufferRenderbuffer(GL_FRAMEBUFFER_EXT, GL_DEPTH_ATTACHMENT_EXT, GL_RENDERBUFFER_EXT, 0);
+    glFramebufferRenderbuffer(GL_FRAMEBUFFER_EXT, GL_DEPTH_ATTACHMENT_EXT, GL_RENDERBUFFER_EXT, 0);
     
     glDeleteRenderbuffers(1, &_depthRenderbufferID);
   }
+#endif
   
   [self unbind];
 }
 
 - (void) bind
 {
+#if !ANDROID
   if (!framebufferStack)
     {
       framebufferStack = [NSMutableArray new];
     }
-//  glBindFramebuffer(GL_FRAMEBUFFER_EXT, _framebufferID);
+  glBindFramebuffer(GL_FRAMEBUFFER_EXT, _framebufferID);
   [framebufferStack addObject: self];
+#endif
 }
 
 - (void) unbind
 {
+#if !ANDROID
   if ([framebufferStack lastObject] != self)
     {
       NSLog(@"Unbinding a framebuffer that is not on top of the stack");
     }
   [framebufferStack removeLastObject];
   
-//  if ([framebufferStack count] > 0)
-//    glBindFramebuffer(GL_FRAMEBUFFER_EXT, [((CAGLSimpleFramebuffer*)[framebufferStack lastObject]) framebufferID]);
-//  else
-//    glBindFramebuffer(GL_FRAMEBUFFER_EXT, 0);
+  if ([framebufferStack count] > 0)
+    glBindFramebuffer(GL_FRAMEBUFFER_EXT, [((CAGLSimpleFramebuffer*)[framebufferStack lastObject]) framebufferID]);
+  else
+    glBindFramebuffer(GL_FRAMEBUFFER_EXT, 0);
+#endif
 }
 
 /*
