@@ -1,3 +1,6 @@
 [submodule "Projects/QuartzCore/QuartzCore"]
 	path = Projects/QuartzCore/QuartzCore
 	url = git@github.com:tinyfool/QuartzCore.git
+[submodule "Projects/CoreGraphics"]
+	path = Projects/CoreGraphics
+	url = git@github.com:tinyfool/Mirai-CoreGraphics.git
