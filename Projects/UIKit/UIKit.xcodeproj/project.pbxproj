@@ -516,13 +516,6 @@
 					"-fobjc-nonfragile-abi",
 					"-fblocks",
 				);
-				OTHER_LDFLAGS = (
-					"-lobjc",
-					"-shared",
-					"-ldispatch",
-					"-landroid",
-					"-llog",
-				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = framework;
 			};
@@ -543,13 +536,6 @@
 				OTHER_CFLAGS = (
 					"-fobjc-nonfragile-abi",
 					"-fblocks",
-				);
-				OTHER_LDFLAGS = (
-					"-lobjc",
-					"-shared",
-					"-ldispatch",
-					"-landroid",
-					"-llog",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = framework;

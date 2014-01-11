@@ -14,7 +14,8 @@ public class MainHActivity extends NativeActivity
         System.loadLibrary ("objc");
         System.loadLibrary ("gnustep-base");
         System.loadLibrary ("gnustep-corebase");
-        System.loadLibrary ("opal");
+        System.loadLibrary ("CoreGraphics");
+        System.loadLibrary ("CoreText");
         System.loadLibrary ("GLESv2");
         System.loadLibrary ("QuartzCore");
         System.loadLibrary ("UIKit");

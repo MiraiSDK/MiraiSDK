@@ -30,9 +30,15 @@ include $(PREBUILT_SHARED_LIBRARY)
 
 
 include $(CLEAR_VARS)
-LOCAL_MODULE    := opal
-LOCAL_SRC_FILES := libopal.so
+LOCAL_MODULE    := CoreGraphics
+LOCAL_SRC_FILES := libCoreGraphics.so
 include $(PREBUILT_SHARED_LIBRARY)
+
+include $(CLEAR_VARS)
+LOCAL_MODULE    := CoreText
+LOCAL_SRC_FILES := libCoreText.so
+include $(PREBUILT_SHARED_LIBRARY)
+
 
 include $(CLEAR_VARS)
 LOCAL_MODULE    := QuartzCore

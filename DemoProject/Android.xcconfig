@@ -18,4 +18,4 @@ MACOSX_DEPLOYMENT_TARGET=
 WRAPPER_EXTENSION = app
 OTHER_CFLAGS = $(inherited) -fobjc-nonfragile-abi -fblocks
 CLANG_ENABLE_MODULES = NO
-OTHER_LDFLAGS = -shared $(inherited) -lopal -landroid -lobjc -ldispatch -lgnustep-base -fconstant-class=NSConstantString -lm -llog -lz
+OTHER_LDFLAGS = -shared $(inherited) -Wl,-z,defs -landroid -lobjc -ldispatch -lgnustep-base -fconstant-class=NSConstantString -lm -llog -lz
