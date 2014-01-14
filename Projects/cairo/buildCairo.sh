@@ -78,9 +78,10 @@ buildCairo()
 	# compile
 	pushd cairo-1.12.14
 	export PKG_CONFIG_LIBDIR="${ARMSYSROOT}/sysroot/usr/lib/pkgconfig:${ARMSYSROOT}/sysroot/usr/share/pkgconfig"
-	ARMCFLAGS="-DANDROID --sysroot $ARMSYSROOT/sysroot"
+	export PKG_CONFIG_PATH=$PKG_CONFIG_LIBDIR
+	ARMCFLAGS="-DANDROID --sysroot $ARMSYSROOT/sysroot -g"
 	
-	CC=arm-linux-androideabi-clang CXX=arm-linux-androideabi-clang++ AR=arm-linux-androideabi-ar CPPFLAGS="$ARMCFLAGS" CFLAGS="$ARMCFLAGS" ./configure --host=arm-linux-androideabi --prefix=$PREFIX --enable-xlib=no --enable-glesv2 --enable-shared=no
+	CC=arm-linux-androideabi-clang CXX=arm-linux-androideabi-clang++ AR=arm-linux-androideabi-ar CPPFLAGS="$ARMCFLAGS" CFLAGS="$ARMCFLAGS" ./configure --host=arm-linux-androideabi --prefix=$PREFIX --enable-xlib=no --enable-xcb=no --enable-glesv2
 	make -j4
 	make install
 
