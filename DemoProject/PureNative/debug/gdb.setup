@@ -1,0 +1,5 @@
+set solib-search-path ./
+directory /Users/chyhfj/.SDK/Android/android-ndk-r9/platforms/android-18/arch-arm/usr/include jni /Users/chyhfj/.SDK/Android/android-ndk-r9/sources/cxx-stl/system
+file ./app_process
+set LANGUAGE objective-c
+target remote :5039

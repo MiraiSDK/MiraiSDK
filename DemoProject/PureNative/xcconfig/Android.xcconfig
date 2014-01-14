@@ -1,0 +1,10 @@
+//
+//  Android.xcconfig
+//  PureNative
+//
+//  Created by Chen Yonghui on 1/12/14.
+//  Copyright (c) 2014 Shanghai TinyNetwork Inc. All rights reserved.
+//
+
+OTHER_LDFLAGS= $(inherited) -lobjc -lgnustl_shared
+LD_DEPENDENCY_INFO_FILE=
