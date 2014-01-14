@@ -127,7 +127,7 @@ buildFontconfig()
 	pushd fontconfig
 
 	export PKG_CONFIG_PATH="$ARMSYSROOT/sysroot/usr/lib/pkgconfig"
-	CC=arm-linux-androideabi-clang CXX=arm-linux-androideabi-clang++ AR=arm-linux-androideabi-ar RANLIB=arm-linux-androideabi-ranlib CFLAGS="-DANDROID" CPPFLAGS="-DANDROID"  ./configure --host=arm-linux-androideabi --prefix=$PREFIX 
+	CC=arm-linux-androideabi-clang CXX=arm-linux-androideabi-clang++ AR=arm-linux-androideabi-ar RANLIB=arm-linux-androideabi-ranlib CFLAGS="-DANDROID" CPPFLAGS="-DANDROID"  ./configure --host=arm-linux-androideabi --prefix=$PREFIX  --with-default-fonts="/data/local/tmp/fonts" #--with-cache-dir="/sdcard/.fccache"
 	make -j4
 	checkError $? "Make fontconfig failed"
 	
