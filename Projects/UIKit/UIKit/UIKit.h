@@ -38,7 +38,7 @@
 #import <UIKit/UIGeometry.h>
 //#import <UIKit/UIGestureRecognizer.h>
 #import <UIKit/UIGraphics.h>
-//#import <UIKit/UIImage.h>
+#import <UIKit/UIImage.h>
 //#import <UIKit/UIImagePickerController.h>
 //#import <UIKit/UIImageView.h>
 //#import <UIKit/UIInputView.h>

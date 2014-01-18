@@ -41,6 +41,8 @@
 		43846303188B1ED9006DA1AA /* UIColor.m in Sources */ = {isa = PBXBuildFile; fileRef = 43846301188B1ED9006DA1AA /* UIColor.m */; };
 		4384630B188B2751006DA1AA /* UIGeometry.h in Headers */ = {isa = PBXBuildFile; fileRef = 43846309188B2751006DA1AA /* UIGeometry.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		4384630C188B2751006DA1AA /* UIGeometry.m in Sources */ = {isa = PBXBuildFile; fileRef = 4384630A188B2751006DA1AA /* UIGeometry.m */; };
+		4384630F188B2BCD006DA1AA /* UIImage.h in Headers */ = {isa = PBXBuildFile; fileRef = 4384630D188B2BCD006DA1AA /* UIImage.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		43846310188B2BCD006DA1AA /* UIImage.m in Sources */ = {isa = PBXBuildFile; fileRef = 4384630E188B2BCD006DA1AA /* UIImage.m */; };
 		43DFBA511851D89000BA269F /* CoreFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 43DFBA501851D89000BA269F /* CoreFoundation.framework */; };
 		43ECCF0E1851CA9A0076535C /* UIView.h in Headers */ = {isa = PBXBuildFile; fileRef = 43ECCF0C1851CA9A0076535C /* UIView.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		43ECCF0F1851CA9A0076535C /* UIView.m in Sources */ = {isa = PBXBuildFile; fileRef = 43ECCF0D1851CA9A0076535C /* UIView.m */; };
@@ -100,6 +102,8 @@
 		43846301188B1ED9006DA1AA /* UIColor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UIColor.m; sourceTree = "<group>"; };
 		43846309188B2751006DA1AA /* UIGeometry.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UIGeometry.h; sourceTree = "<group>"; };
 		4384630A188B2751006DA1AA /* UIGeometry.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UIGeometry.m; sourceTree = "<group>"; };
+		4384630D188B2BCD006DA1AA /* UIImage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UIImage.h; sourceTree = "<group>"; };
+		4384630E188B2BCD006DA1AA /* UIImage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UIImage.m; sourceTree = "<group>"; };
 		43DFBA501851D89000BA269F /* CoreFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreFoundation.framework; path = System/Library/Frameworks/CoreFoundation.framework; sourceTree = SDKROOT; };
 		43ECCF0C1851CA9A0076535C /* UIView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UIView.h; sourceTree = "<group>"; };
 		43ECCF0D1851CA9A0076535C /* UIView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UIView.m; sourceTree = "<group>"; };
@@ -261,6 +265,8 @@
 				43846301188B1ED9006DA1AA /* UIColor.m */,
 				43846309188B2751006DA1AA /* UIGeometry.h */,
 				4384630A188B2751006DA1AA /* UIGeometry.m */,
+				4384630D188B2BCD006DA1AA /* UIImage.h */,
+				4384630E188B2BCD006DA1AA /* UIImage.m */,
 			);
 			name = Types;
 			sourceTree = "<group>";
@@ -290,6 +296,7 @@
 				432FF07F1853645D005486C5 /* UIGraphics.h in Headers */,
 				4384630B188B2751006DA1AA /* UIGeometry.h in Headers */,
 				432FF093185452EC005486C5 /* NSStringDrawing.h in Headers */,
+				4384630F188B2BCD006DA1AA /* UIImage.h in Headers */,
 				43718EA018517F0500850F08 /* UIResponder.h in Headers */,
 				432FF05F185338BD005486C5 /* UIScreen.h in Headers */,
 				43718EA418517FBA00850F08 /* UIApplication.h in Headers */,
@@ -423,6 +430,7 @@
 				432FF09018544EE4005486C5 /* NSText.m in Sources */,
 				432FF094185452EC005486C5 /* NSStringDrawing.m in Sources */,
 				4384630C188B2751006DA1AA /* UIGeometry.m in Sources */,
+				43846310188B2BCD006DA1AA /* UIImage.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
