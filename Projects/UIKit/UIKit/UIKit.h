@@ -104,7 +104,7 @@
 //#import <UIKit/UITextInputTraits.h>
 //#import <UIKit/UITextView.h>
 //#import <UIKit/UIToolbar.h>
-//#import <UIKit/UITouch.h>
+#import <UIKit/UITouch.h>
 //#import <UIKit/UIVideoEditorController.h>
 #import <UIKit/UIView.h>
 //#import <UIKit/UIViewController.h>
