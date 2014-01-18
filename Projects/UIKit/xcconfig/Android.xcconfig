@@ -11,4 +11,4 @@ SDK_ROOT=/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/De
 DEPLOYMENT_LOCATION = YES
 DSTROOT = /
 INSTALL_PATH = $(SDK_ROOT)/System/Library/Frameworks/
-OTHER_LDFLAGS= $(inherited) -shared -Wl,-z,defs -lobjc -ldispatch -landroid -llog
+OTHER_LDFLAGS= $(inherited) -shared -Wl,-z,defs -lobjc -ldispatch -landroid -llog -lm
