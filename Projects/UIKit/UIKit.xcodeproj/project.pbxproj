@@ -47,6 +47,13 @@
 		43846314188B39EE006DA1AA /* UITouch.m in Sources */ = {isa = PBXBuildFile; fileRef = 43846312188B39EE006DA1AA /* UITouch.m */; };
 		43846317188B3B74006DA1AA /* UIEvent.h in Headers */ = {isa = PBXBuildFile; fileRef = 43846315188B3B74006DA1AA /* UIEvent.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		43846318188B3B74006DA1AA /* UIEvent.m in Sources */ = {isa = PBXBuildFile; fileRef = 43846316188B3B74006DA1AA /* UIEvent.m */; };
+		4384631C188B3D52006DA1AA /* UIControlAction.h in Headers */ = {isa = PBXBuildFile; fileRef = 4384631A188B3D52006DA1AA /* UIControlAction.h */; };
+		4384631D188B3D52006DA1AA /* UIControlAction.m in Sources */ = {isa = PBXBuildFile; fileRef = 4384631B188B3D52006DA1AA /* UIControlAction.m */; };
+		43846320188B3D5B006DA1AA /* UIControl.h in Headers */ = {isa = PBXBuildFile; fileRef = 4384631E188B3D5B006DA1AA /* UIControl.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		43846321188B3D5B006DA1AA /* UIControl.m in Sources */ = {isa = PBXBuildFile; fileRef = 4384631F188B3D5B006DA1AA /* UIControl.m */; };
+		43846323188B3D62006DA1AA /* UIControl+UIPrivate.h in Headers */ = {isa = PBXBuildFile; fileRef = 43846322188B3D62006DA1AA /* UIControl+UIPrivate.h */; };
+		43846326188B3D7C006DA1AA /* UIAction.h in Headers */ = {isa = PBXBuildFile; fileRef = 43846324188B3D7C006DA1AA /* UIAction.h */; };
+		43846327188B3D7C006DA1AA /* UIAction.m in Sources */ = {isa = PBXBuildFile; fileRef = 43846325188B3D7C006DA1AA /* UIAction.m */; };
 		43DFBA511851D89000BA269F /* CoreFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 43DFBA501851D89000BA269F /* CoreFoundation.framework */; };
 		43ECCF0E1851CA9A0076535C /* UIView.h in Headers */ = {isa = PBXBuildFile; fileRef = 43ECCF0C1851CA9A0076535C /* UIView.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		43ECCF0F1851CA9A0076535C /* UIView.m in Sources */ = {isa = PBXBuildFile; fileRef = 43ECCF0D1851CA9A0076535C /* UIView.m */; };
@@ -112,6 +119,13 @@
 		43846312188B39EE006DA1AA /* UITouch.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UITouch.m; sourceTree = "<group>"; };
 		43846315188B3B74006DA1AA /* UIEvent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UIEvent.h; sourceTree = "<group>"; };
 		43846316188B3B74006DA1AA /* UIEvent.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UIEvent.m; sourceTree = "<group>"; };
+		4384631A188B3D52006DA1AA /* UIControlAction.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UIControlAction.h; sourceTree = "<group>"; };
+		4384631B188B3D52006DA1AA /* UIControlAction.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UIControlAction.m; sourceTree = "<group>"; };
+		4384631E188B3D5B006DA1AA /* UIControl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UIControl.h; sourceTree = "<group>"; };
+		4384631F188B3D5B006DA1AA /* UIControl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UIControl.m; sourceTree = "<group>"; };
+		43846322188B3D62006DA1AA /* UIControl+UIPrivate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIControl+UIPrivate.h"; sourceTree = "<group>"; };
+		43846324188B3D7C006DA1AA /* UIAction.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UIAction.h; sourceTree = "<group>"; };
+		43846325188B3D7C006DA1AA /* UIAction.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UIAction.m; sourceTree = "<group>"; };
 		43DFBA501851D89000BA269F /* CoreFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreFoundation.framework; path = System/Library/Frameworks/CoreFoundation.framework; sourceTree = SDKROOT; };
 		43ECCF0C1851CA9A0076535C /* UIView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UIView.h; sourceTree = "<group>"; };
 		43ECCF0D1851CA9A0076535C /* UIView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UIView.m; sourceTree = "<group>"; };
@@ -215,6 +229,9 @@
 				432FF092185452EC005486C5 /* NSStringDrawing.m */,
 				432FF08D18544EE4005486C5 /* NSText.h */,
 				432FF08E18544EE4005486C5 /* NSText.m */,
+				4384631E188B3D5B006DA1AA /* UIControl.h */,
+				4384631F188B3D5B006DA1AA /* UIControl.m */,
+				43846319188B3D3A006DA1AA /* Private Classes */,
 				43718E7318517B7B00850F08 /* Supporting Files */,
 			);
 			path = UIKit;
@@ -290,6 +307,18 @@
 			name = Event;
 			sourceTree = "<group>";
 		};
+		43846319188B3D3A006DA1AA /* Private Classes */ = {
+			isa = PBXGroup;
+			children = (
+				43846322188B3D62006DA1AA /* UIControl+UIPrivate.h */,
+				4384631A188B3D52006DA1AA /* UIControlAction.h */,
+				4384631B188B3D52006DA1AA /* UIControlAction.m */,
+				43846324188B3D7C006DA1AA /* UIAction.h */,
+				43846325188B3D7C006DA1AA /* UIAction.m */,
+			);
+			name = "Private Classes";
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
@@ -301,14 +330,18 @@
 				43ECCF121851CAA80076535C /* UIWindow.h in Headers */,
 				432FF08718544D3A005486C5 /* UILabel.h in Headers */,
 				432FF08F18544EE4005486C5 /* NSText.h in Headers */,
+				4384631C188B3D52006DA1AA /* UIControlAction.h in Headers */,
 				432FF08B18544D7A005486C5 /* UIStringDrawing.h in Headers */,
 				43718EC518518FB400850F08 /* UIKitDefines.h in Headers */,
 				43846302188B1ED9006DA1AA /* UIColor.h in Headers */,
+				43846326188B3D7C006DA1AA /* UIAction.h in Headers */,
 				43ECCF0E1851CA9A0076535C /* UIView.h in Headers */,
 				432FF07F1853645D005486C5 /* UIGraphics.h in Headers */,
 				4384630B188B2751006DA1AA /* UIGeometry.h in Headers */,
+				43846323188B3D62006DA1AA /* UIControl+UIPrivate.h in Headers */,
 				432FF093185452EC005486C5 /* NSStringDrawing.h in Headers */,
 				4384630F188B2BCD006DA1AA /* UIImage.h in Headers */,
+				43846320188B3D5B006DA1AA /* UIControl.h in Headers */,
 				43718EA018517F0500850F08 /* UIResponder.h in Headers */,
 				43846313188B39EE006DA1AA /* UITouch.h in Headers */,
 				43846317188B3B74006DA1AA /* UIEvent.h in Headers */,
@@ -431,7 +464,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				43846327188B3D7C006DA1AA /* UIAction.m in Sources */,
 				43ECCF0F1851CA9A0076535C /* UIView.m in Sources */,
+				43846321188B3D5B006DA1AA /* UIControl.m in Sources */,
 				432FF0801853645D005486C5 /* UIGraphics.m in Sources */,
 				43846314188B39EE006DA1AA /* UITouch.m in Sources */,
 				432FF08C18544D7A005486C5 /* UIStringDrawing.m in Sources */,
@@ -444,6 +479,7 @@
 				43718EC018518AB200850F08 /* android_native_app_glue.c in Sources */,
 				432FF060185338BD005486C5 /* UIScreen.m in Sources */,
 				432FF09018544EE4005486C5 /* NSText.m in Sources */,
+				4384631D188B3D52006DA1AA /* UIControlAction.m in Sources */,
 				432FF094185452EC005486C5 /* NSStringDrawing.m in Sources */,
 				4384630C188B2751006DA1AA /* UIGeometry.m in Sources */,
 				43846310188B2BCD006DA1AA /* UIImage.m in Sources */,

@@ -26,7 +26,7 @@
 //#import <UIKit/UICollectionViewLayout.h>
 //#import <UIKit/UICollectionViewTransitionLayout.h>
 #import <UIKit/UIColor.h>
-//#import <UIKit/UIControl.h>
+#import <UIKit/UIControl.h>
 //#import <UIKit/UIDataDetectors.h>
 //#import <UIKit/UIDatePicker.h>
 //#import <UIKit/UIDevice.h>
