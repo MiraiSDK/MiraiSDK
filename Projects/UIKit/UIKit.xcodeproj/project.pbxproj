@@ -39,6 +39,8 @@
 		43718EC518518FB400850F08 /* UIKitDefines.h in Headers */ = {isa = PBXBuildFile; fileRef = 43718E9D18517E5B00850F08 /* UIKitDefines.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		43846302188B1ED9006DA1AA /* UIColor.h in Headers */ = {isa = PBXBuildFile; fileRef = 43846300188B1ED9006DA1AA /* UIColor.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		43846303188B1ED9006DA1AA /* UIColor.m in Sources */ = {isa = PBXBuildFile; fileRef = 43846301188B1ED9006DA1AA /* UIColor.m */; };
+		4384630B188B2751006DA1AA /* UIGeometry.h in Headers */ = {isa = PBXBuildFile; fileRef = 43846309188B2751006DA1AA /* UIGeometry.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		4384630C188B2751006DA1AA /* UIGeometry.m in Sources */ = {isa = PBXBuildFile; fileRef = 4384630A188B2751006DA1AA /* UIGeometry.m */; };
 		43DFBA511851D89000BA269F /* CoreFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 43DFBA501851D89000BA269F /* CoreFoundation.framework */; };
 		43ECCF0E1851CA9A0076535C /* UIView.h in Headers */ = {isa = PBXBuildFile; fileRef = 43ECCF0C1851CA9A0076535C /* UIView.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		43ECCF0F1851CA9A0076535C /* UIView.m in Sources */ = {isa = PBXBuildFile; fileRef = 43ECCF0D1851CA9A0076535C /* UIView.m */; };
@@ -96,6 +98,8 @@
 		43718EC318518EE300850F08 /* Android.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; name = Android.xcconfig; path = xcconfig/Android.xcconfig; sourceTree = "<group>"; };
 		43846300188B1ED9006DA1AA /* UIColor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UIColor.h; sourceTree = "<group>"; };
 		43846301188B1ED9006DA1AA /* UIColor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UIColor.m; sourceTree = "<group>"; };
+		43846309188B2751006DA1AA /* UIGeometry.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UIGeometry.h; sourceTree = "<group>"; };
+		4384630A188B2751006DA1AA /* UIGeometry.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UIGeometry.m; sourceTree = "<group>"; };
 		43DFBA501851D89000BA269F /* CoreFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreFoundation.framework; path = System/Library/Frameworks/CoreFoundation.framework; sourceTree = SDKROOT; };
 		43ECCF0C1851CA9A0076535C /* UIView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UIView.h; sourceTree = "<group>"; };
 		43ECCF0D1851CA9A0076535C /* UIView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UIView.m; sourceTree = "<group>"; };
@@ -174,6 +178,7 @@
 		43718E7218517B7B00850F08 /* UIKit */ = {
 			isa = PBXGroup;
 			children = (
+				43846304188B26A4006DA1AA /* Event */,
 				438462F9188B1E04006DA1AA /* Types */,
 				43718E9C18517E3400850F08 /* Public Headers */,
 				43718E7918517B7B00850F08 /* UIKit.h */,
@@ -254,8 +259,17 @@
 			children = (
 				43846300188B1ED9006DA1AA /* UIColor.h */,
 				43846301188B1ED9006DA1AA /* UIColor.m */,
+				43846309188B2751006DA1AA /* UIGeometry.h */,
+				4384630A188B2751006DA1AA /* UIGeometry.m */,
 			);
 			name = Types;
+			sourceTree = "<group>";
+		};
+		43846304188B26A4006DA1AA /* Event */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Event;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -274,6 +288,7 @@
 				43846302188B1ED9006DA1AA /* UIColor.h in Headers */,
 				43ECCF0E1851CA9A0076535C /* UIView.h in Headers */,
 				432FF07F1853645D005486C5 /* UIGraphics.h in Headers */,
+				4384630B188B2751006DA1AA /* UIGeometry.h in Headers */,
 				432FF093185452EC005486C5 /* NSStringDrawing.h in Headers */,
 				43718EA018517F0500850F08 /* UIResponder.h in Headers */,
 				432FF05F185338BD005486C5 /* UIScreen.h in Headers */,
@@ -407,6 +422,7 @@
 				432FF060185338BD005486C5 /* UIScreen.m in Sources */,
 				432FF09018544EE4005486C5 /* NSText.m in Sources */,
 				432FF094185452EC005486C5 /* NSStringDrawing.m in Sources */,
+				4384630C188B2751006DA1AA /* UIGeometry.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
