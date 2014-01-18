@@ -40,7 +40,7 @@
 #import <UIKit/UIGraphics.h>
 #import <UIKit/UIImage.h>
 //#import <UIKit/UIImagePickerController.h>
-//#import <UIKit/UIImageView.h>
+#import <UIKit/UIImageView.h>
 //#import <UIKit/UIInputView.h>
 //#import <UIKit/UIInterface.h>
 #import <UIKit/UILabel.h>
