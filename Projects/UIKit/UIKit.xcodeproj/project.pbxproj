@@ -45,6 +45,8 @@
 		43846310188B2BCD006DA1AA /* UIImage.m in Sources */ = {isa = PBXBuildFile; fileRef = 4384630E188B2BCD006DA1AA /* UIImage.m */; };
 		43846313188B39EE006DA1AA /* UITouch.h in Headers */ = {isa = PBXBuildFile; fileRef = 43846311188B39EE006DA1AA /* UITouch.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		43846314188B39EE006DA1AA /* UITouch.m in Sources */ = {isa = PBXBuildFile; fileRef = 43846312188B39EE006DA1AA /* UITouch.m */; };
+		43846317188B3B74006DA1AA /* UIEvent.h in Headers */ = {isa = PBXBuildFile; fileRef = 43846315188B3B74006DA1AA /* UIEvent.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		43846318188B3B74006DA1AA /* UIEvent.m in Sources */ = {isa = PBXBuildFile; fileRef = 43846316188B3B74006DA1AA /* UIEvent.m */; };
 		43DFBA511851D89000BA269F /* CoreFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 43DFBA501851D89000BA269F /* CoreFoundation.framework */; };
 		43ECCF0E1851CA9A0076535C /* UIView.h in Headers */ = {isa = PBXBuildFile; fileRef = 43ECCF0C1851CA9A0076535C /* UIView.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		43ECCF0F1851CA9A0076535C /* UIView.m in Sources */ = {isa = PBXBuildFile; fileRef = 43ECCF0D1851CA9A0076535C /* UIView.m */; };
@@ -108,6 +110,8 @@
 		4384630E188B2BCD006DA1AA /* UIImage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UIImage.m; sourceTree = "<group>"; };
 		43846311188B39EE006DA1AA /* UITouch.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UITouch.h; sourceTree = "<group>"; };
 		43846312188B39EE006DA1AA /* UITouch.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UITouch.m; sourceTree = "<group>"; };
+		43846315188B3B74006DA1AA /* UIEvent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UIEvent.h; sourceTree = "<group>"; };
+		43846316188B3B74006DA1AA /* UIEvent.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UIEvent.m; sourceTree = "<group>"; };
 		43DFBA501851D89000BA269F /* CoreFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreFoundation.framework; path = System/Library/Frameworks/CoreFoundation.framework; sourceTree = SDKROOT; };
 		43ECCF0C1851CA9A0076535C /* UIView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UIView.h; sourceTree = "<group>"; };
 		43ECCF0D1851CA9A0076535C /* UIView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UIView.m; sourceTree = "<group>"; };
@@ -280,6 +284,8 @@
 			children = (
 				43846311188B39EE006DA1AA /* UITouch.h */,
 				43846312188B39EE006DA1AA /* UITouch.m */,
+				43846315188B3B74006DA1AA /* UIEvent.h */,
+				43846316188B3B74006DA1AA /* UIEvent.m */,
 			);
 			name = Event;
 			sourceTree = "<group>";
@@ -305,6 +311,7 @@
 				4384630F188B2BCD006DA1AA /* UIImage.h in Headers */,
 				43718EA018517F0500850F08 /* UIResponder.h in Headers */,
 				43846313188B39EE006DA1AA /* UITouch.h in Headers */,
+				43846317188B3B74006DA1AA /* UIEvent.h in Headers */,
 				432FF05F185338BD005486C5 /* UIScreen.h in Headers */,
 				43718EA418517FBA00850F08 /* UIApplication.h in Headers */,
 				43718EC118518AB200850F08 /* android_native_app_glue.h in Headers */,
@@ -428,6 +435,7 @@
 				432FF0801853645D005486C5 /* UIGraphics.m in Sources */,
 				43846314188B39EE006DA1AA /* UITouch.m in Sources */,
 				432FF08C18544D7A005486C5 /* UIStringDrawing.m in Sources */,
+				43846318188B3B74006DA1AA /* UIEvent.m in Sources */,
 				432FF08818544D3A005486C5 /* UILabel.m in Sources */,
 				43846303188B1ED9006DA1AA /* UIColor.m in Sources */,
 				43ECCF131851CAA80076535C /* UIWindow.m in Sources */,
