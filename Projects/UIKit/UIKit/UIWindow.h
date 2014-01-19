@@ -16,7 +16,29 @@ typedef CGFloat UIWindowLevel;
 
 @class UIEvent, UIScreen, NSUndoManager, UIViewController;
 
-@interface UIWindow : UIView
+@interface UIWindow : UIView {
+    @package
+    id                       _delegate;
+    CGFloat                  _windowLevel;
+    CGFloat                  _windowSublevel;
+    id                       _layerContext;
+    UIView                  *_lastMouseDownView;
+    UIView                  *_lastMouseEnteredView;
+    UIResponder             *_firstResponder;
+    id                       _fingerInfo;
+    id                       _touchData;
+    UIInterfaceOrientation   _viewOrientation;
+    UIView                  *_exclusiveTouchView;
+    NSUndoManager           *_undoManager;
+    UIScreen                *_screen;
+    CALayer                 *_transformLayer;
+    NSMutableArray          *_rotationViewControllers;
+    UIViewController        *_rootViewController;
+    UIColor                 *_savedBackgroundColor;
+    NSMutableSet            *_subtreeMonitoringViews;
+    NSMutableSet            *_tintViews;
+    id                      _currentTintView;
+}
 
 @property(nonatomic,retain) UIScreen *screen;
 @property(nonatomic) UIWindowLevel windowLevel;
