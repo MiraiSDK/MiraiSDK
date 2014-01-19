@@ -29,7 +29,7 @@
 #import <UIKit/UIControl.h>
 //#import <UIKit/UIDataDetectors.h>
 //#import <UIKit/UIDatePicker.h>
-//#import <UIKit/UIDevice.h>
+#import <UIKit/UIDevice.h>
 //#import <UIKit/UIDocument.h>
 //#import <UIKit/UIDocumentInteractionController.h>
 #import <UIKit/UIEvent.h>

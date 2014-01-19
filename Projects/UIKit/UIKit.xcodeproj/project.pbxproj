@@ -67,6 +67,8 @@
 		43846345188C58F9006DA1AA /* UIFont.m in Sources */ = {isa = PBXBuildFile; fileRef = 43846343188C58F9006DA1AA /* UIFont.m */; };
 		43846348188C5977006DA1AA /* UIFontDescriptor.h in Headers */ = {isa = PBXBuildFile; fileRef = 43846346188C5977006DA1AA /* UIFontDescriptor.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		43846349188C5977006DA1AA /* UIFontDescriptor.m in Sources */ = {isa = PBXBuildFile; fileRef = 43846347188C5977006DA1AA /* UIFontDescriptor.m */; };
+		4384634D188C636C006DA1AA /* UIDevice.h in Headers */ = {isa = PBXBuildFile; fileRef = 4384634B188C636C006DA1AA /* UIDevice.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		4384634E188C636C006DA1AA /* UIDevice.m in Sources */ = {isa = PBXBuildFile; fileRef = 4384634C188C636C006DA1AA /* UIDevice.m */; };
 		43DFBA511851D89000BA269F /* CoreFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 43DFBA501851D89000BA269F /* CoreFoundation.framework */; };
 		43ECCF0E1851CA9A0076535C /* UIView.h in Headers */ = {isa = PBXBuildFile; fileRef = 43ECCF0C1851CA9A0076535C /* UIView.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		43ECCF0F1851CA9A0076535C /* UIView.m in Sources */ = {isa = PBXBuildFile; fileRef = 43ECCF0D1851CA9A0076535C /* UIView.m */; };
@@ -152,6 +154,8 @@
 		43846343188C58F9006DA1AA /* UIFont.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UIFont.m; sourceTree = "<group>"; };
 		43846346188C5977006DA1AA /* UIFontDescriptor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UIFontDescriptor.h; sourceTree = "<group>"; };
 		43846347188C5977006DA1AA /* UIFontDescriptor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UIFontDescriptor.m; sourceTree = "<group>"; };
+		4384634B188C636C006DA1AA /* UIDevice.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UIDevice.h; sourceTree = "<group>"; };
+		4384634C188C636C006DA1AA /* UIDevice.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UIDevice.m; sourceTree = "<group>"; };
 		43DFBA501851D89000BA269F /* CoreFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreFoundation.framework; path = System/Library/Frameworks/CoreFoundation.framework; sourceTree = SDKROOT; };
 		43ECCF0C1851CA9A0076535C /* UIView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UIView.h; sourceTree = "<group>"; };
 		43ECCF0D1851CA9A0076535C /* UIView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UIView.m; sourceTree = "<group>"; };
@@ -237,6 +241,8 @@
 				4384632C188B3F7A006DA1AA /* View */,
 				43718E9E18517F0500850F08 /* UIResponder.h */,
 				43718E9F18517F0500850F08 /* UIResponder.m */,
+				4384634B188C636C006DA1AA /* UIDevice.h */,
+				4384634C188C636C006DA1AA /* UIDevice.m */,
 				43718EA218517FBA00850F08 /* UIApplication.h */,
 				43718EA318517FBA00850F08 /* UIApplication.m */,
 				432FF05D185338BD005486C5 /* UIScreen.h */,
@@ -392,6 +398,7 @@
 				4384630F188B2BCD006DA1AA /* UIImage.h in Headers */,
 				43846348188C5977006DA1AA /* UIFontDescriptor.h in Headers */,
 				43846340188C540F006DA1AA /* NSParagraphStyle.h in Headers */,
+				4384634D188C636C006DA1AA /* UIDevice.h in Headers */,
 				43846332188B4031006DA1AA /* UIImageView+UIPrivate.h in Headers */,
 				4384632F188B4025006DA1AA /* UIImageView.h in Headers */,
 				43846339188B41D2006DA1AA /* UIRoundedRectButton.h in Headers */,
@@ -523,6 +530,7 @@
 				43846341188C540F006DA1AA /* NSParagraphStyle.m in Sources */,
 				43846349188C5977006DA1AA /* UIFontDescriptor.m in Sources */,
 				43ECCF0F1851CA9A0076535C /* UIView.m in Sources */,
+				4384634E188C636C006DA1AA /* UIDevice.m in Sources */,
 				43846321188B3D5B006DA1AA /* UIControl.m in Sources */,
 				432FF0801853645D005486C5 /* UIGraphics.m in Sources */,
 				43846314188B39EE006DA1AA /* UITouch.m in Sources */,
