@@ -8,6 +8,12 @@
 
 #import "UIStringDrawing.h"
 
-@implementation UIStringDrawing
+NSString *const UITextAttributeFont = @"UITextAttributeFont";
+NSString *const UITextAttributeTextColor = @"UITextAttributeTextColor";
+NSString *const UITextAttributeTextShadowColor = @"UITextAttributeTextShadowColor";
+NSString *const UITextAttributeTextShadowOffset = @"UITextAttributeTextShadowOffset";
+
+@implementation NSString (UIStringDrawing)
+
 
 @end
