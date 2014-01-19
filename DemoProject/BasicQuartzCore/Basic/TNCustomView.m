@@ -26,7 +26,7 @@
 - (NSDictionary *)attributes
 {
     CGColorRef redColor = CGColorCreateGenericRGB(1, 0, 0, 1);
-    CGFontRef font = CGFontCreateWithFontName(@"Arial");
+    CGFontRef font = CGFontCreateWithFontName(@"Roboto");
     return @{
              (__bridge NSString *)kCTForegroundColorAttributeName:(id)redColor,
              //(__bridge NSString *)kCTFontAttributeName:font
@@ -37,18 +37,29 @@
 - (void)drawRect:(CGRect)rect
 {
     CGContextRef ctx = UIGraphicsGetCurrentContext();
-    CGColorRef gb = CGColorCreateGenericRGB(0, 1, 1, 1);
-    CGContextSetFillColorWithColor(ctx, gb);
+    [[UIColor cyanColor] setFill];
     CGContextFillRect(ctx, rect);
     
-    CGColorRef red = CGColorCreateGenericRGB(1, 0, 0, 1);
-    CGContextSetStrokeColorWithColor(ctx, red);
+    [[UIColor redColor] set];
     
-    CGContextMoveToPoint(ctx, 10, 0);
-    CGContextAddLineToPoint(ctx, 100, 100);
-    CGContextAddLineToPoint(ctx, 100, 0);
-    CGContextAddLineToPoint(ctx, 10, 100);
-    CGContextStrokePath(ctx);
+//    CGContextMoveToPoint(ctx, 10, 0);
+//    CGContextAddLineToPoint(ctx, 100, 100);
+//    CGContextAddLineToPoint(ctx, 100, 0);
+//    CGContextAddLineToPoint(ctx, 10, 100);
+//    CGContextStrokePath(ctx);
+    
+//    NSLog(@"will create font:Robote");
+//    CGAffineTransform t = {1,0,0,1,0,0};
+//    CGContextSetTextMatrix(ctx, t);
+//    CGFontRef f = CGFontCreateWithFontName(@"Roboto");
+//    CGContextSelectFont(ctx, "Roboto", 32, kCGEncodingMacRoman);
+//    CGContextShowTextAtPoint(ctx, 0, 0, "HelloWorld", 10);
+//    if (!f) {
+//        NSLog(@"empty font");
+//    }
+    
+    CGContextScaleCTM(ctx, 1, -1);
+    CGContextTranslateCTM(ctx, 0, -rect.size.height);
     
     CTFramesetterRef framesetter = CTFramesetterCreateWithAttributedString(_attributedString);
     CGMutablePathRef path = CGPathCreateMutable();
