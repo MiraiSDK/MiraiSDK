@@ -64,8 +64,6 @@ static UIScreen *_mainScreen = nil;
     return _mainScreen;
 }
 
-
-
 - (CGRect)bounds
 {
     return _bounds;
@@ -81,5 +79,15 @@ static UIScreen *_mainScreen = nil;
     return _scale;
 }
 
+- (CADisplayLink *)displayLinkWithTarget:(id)target selector:(SEL)sel
+{
+    NS_UNIMPLEMENTED_LOG;
+    return nil;
+}
+
 
 @end
+
+NSString *const UIScreenDidConnectNotification = @"UIScreenDidConnectNotification";
+NSString *const UIScreenDidDisconnectNotification = @"UIScreenDidDisconnectNotification";
+NSString *const UIScreenModeDidChangeNotification = @"UIScreenModeDidChangeNotification";
