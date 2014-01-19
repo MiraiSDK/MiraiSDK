@@ -61,6 +61,8 @@
 		43846336188B417F006DA1AA /* UIButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 43846334188B417F006DA1AA /* UIButton.m */; };
 		43846339188B41D2006DA1AA /* UIRoundedRectButton.h in Headers */ = {isa = PBXBuildFile; fileRef = 43846337188B41D2006DA1AA /* UIRoundedRectButton.h */; };
 		4384633A188B41D2006DA1AA /* UIRoundedRectButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 43846338188B41D2006DA1AA /* UIRoundedRectButton.m */; };
+		43846340188C540F006DA1AA /* NSParagraphStyle.h in Headers */ = {isa = PBXBuildFile; fileRef = 4384633E188C540F006DA1AA /* NSParagraphStyle.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		43846341188C540F006DA1AA /* NSParagraphStyle.m in Sources */ = {isa = PBXBuildFile; fileRef = 4384633F188C540F006DA1AA /* NSParagraphStyle.m */; };
 		43DFBA511851D89000BA269F /* CoreFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 43DFBA501851D89000BA269F /* CoreFoundation.framework */; };
 		43ECCF0E1851CA9A0076535C /* UIView.h in Headers */ = {isa = PBXBuildFile; fileRef = 43ECCF0C1851CA9A0076535C /* UIView.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		43ECCF0F1851CA9A0076535C /* UIView.m in Sources */ = {isa = PBXBuildFile; fileRef = 43ECCF0D1851CA9A0076535C /* UIView.m */; };
@@ -140,6 +142,8 @@
 		43846334188B417F006DA1AA /* UIButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UIButton.m; sourceTree = "<group>"; };
 		43846337188B41D2006DA1AA /* UIRoundedRectButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UIRoundedRectButton.h; sourceTree = "<group>"; };
 		43846338188B41D2006DA1AA /* UIRoundedRectButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UIRoundedRectButton.m; sourceTree = "<group>"; };
+		4384633E188C540F006DA1AA /* NSParagraphStyle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NSParagraphStyle.h; sourceTree = "<group>"; };
+		4384633F188C540F006DA1AA /* NSParagraphStyle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NSParagraphStyle.m; sourceTree = "<group>"; };
 		43DFBA501851D89000BA269F /* CoreFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreFoundation.framework; path = System/Library/Frameworks/CoreFoundation.framework; sourceTree = SDKROOT; };
 		43ECCF0C1851CA9A0076535C /* UIView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UIView.h; sourceTree = "<group>"; };
 		43ECCF0D1851CA9A0076535C /* UIView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UIView.m; sourceTree = "<group>"; };
@@ -299,6 +303,8 @@
 				4384630A188B2751006DA1AA /* UIGeometry.m */,
 				4384630D188B2BCD006DA1AA /* UIImage.h */,
 				4384630E188B2BCD006DA1AA /* UIImage.m */,
+				4384633E188C540F006DA1AA /* NSParagraphStyle.h */,
+				4384633F188C540F006DA1AA /* NSParagraphStyle.m */,
 			);
 			name = Types;
 			sourceTree = "<group>";
@@ -371,6 +377,7 @@
 				432FF093185452EC005486C5 /* NSStringDrawing.h in Headers */,
 				43846335188B417F006DA1AA /* UIButton.h in Headers */,
 				4384630F188B2BCD006DA1AA /* UIImage.h in Headers */,
+				43846340188C540F006DA1AA /* NSParagraphStyle.h in Headers */,
 				43846332188B4031006DA1AA /* UIImageView+UIPrivate.h in Headers */,
 				4384632F188B4025006DA1AA /* UIImageView.h in Headers */,
 				43846339188B41D2006DA1AA /* UIRoundedRectButton.h in Headers */,
@@ -499,6 +506,7 @@
 			files = (
 				43846330188B4025006DA1AA /* UIImageView.m in Sources */,
 				43846327188B3D7C006DA1AA /* UIAction.m in Sources */,
+				43846341188C540F006DA1AA /* NSParagraphStyle.m in Sources */,
 				43ECCF0F1851CA9A0076535C /* UIView.m in Sources */,
 				43846321188B3D5B006DA1AA /* UIControl.m in Sources */,
 				432FF0801853645D005486C5 /* UIGraphics.m in Sources */,

@@ -113,7 +113,7 @@
 //#import <UIKit/NSAttributedString.h>
 //#import <UIKit/NSLayoutConstraint.h>
 //#import <UIKit/NSLayoutManager.h>
-//#import <UIKit/NSParagraphStyle.h>
+#import <UIKit/NSParagraphStyle.h>
 //#import <UIKit/NSShadow.h>
 #import <UIKit/NSStringDrawing.h>
 #import <UIKit/NSText.h>
