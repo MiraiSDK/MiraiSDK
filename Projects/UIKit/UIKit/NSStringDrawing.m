@@ -32,7 +32,7 @@
     NSLog(@"get context");
 
     CGColorRef blue = CGColorCreateGenericRGB(0, 0, 1, 1);
-    CTFontRef font = CTFontCreateWithName(@"Arial", 16, NULL);
+    CTFontRef font = CTFontCreateWithName(@"Roboto", 16, NULL);
     NSDictionary *dict = @{kCTForegroundColorAttributeName:blue,kCTFontAttributeName:font};
     NSAttributedString *att =[[NSAttributedString alloc] initWithString:self attributes:dict];
     NSLog(@"%@, length:%d",att,[att length]);
@@ -42,12 +42,17 @@
 
     CGMutablePathRef path = CGPathCreateMutable();
     NSLog(@"path:%@",path);
-    CGPathAddRect(path, NULL, CGRectMake(0, 0, 700, 700));
+    CGPathAddRect(path, NULL, CGRectMake(0, 0, rect.size.width, rect.size.height));
     NSLog(@"addRect");
 
     CTFrameRef frame = CTFramesetterCreateFrame(frameseter, CFRangeMake(0, 0), path, NULL);
     NSLog(@"frame:%@",frameseter);
     CGContextSetStrokeColorWithColor(ctx, blue);
+    CGContextSetFillColorWithColor(ctx, blue);
+    
+    CGContextScaleCTM(ctx, 1, -1);
+    CGContextTranslateCTM(ctx, 0, -rect.size.height);
+    
     CTFrameDraw(frame, ctx);
     NSLog(@"draw");
 

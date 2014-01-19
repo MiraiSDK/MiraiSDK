@@ -9,12 +9,15 @@
 #import "UILabel.h"
 #import <UIKit/UIGraphics.h>
 #import "NSStringDrawing.h"
+#import "UIColor.h"
+
+#import <CoreText/CoreText.h>
 
 @implementation UILabel
 - (void)drawTextInRect:(CGRect)rect
 {
     NSLog(@"%s",__PRETTY_FUNCTION__);
-    [_text drawInRect:rect withAttributes:nil];
+    [_text drawInRect:rect withAttributes:@{kCTForegroundColorAttributeName: self.textColor}];
 //    [_text drawInRect:rect withFont:_font lineBreakMode:_lineBreakMode alignment:_textAlignment];
 }
 
@@ -25,12 +28,14 @@
     CGColorRef color = CGColorCreateGenericRGB(0, 1, 0, 1);
     CGContextSetFillColorWithColor(ctx, color);
     CGColorRelease(color);
+
     CGContextFillRect(ctx, rect);
+    [self.textColor set];
     
     if (_text.length > 0) {
-//        CGContextSaveGState(UIGraphicsGetCurrentContext());
-//        [self drawTextInRect:rect];
-//        CGContextRestoreGState(UIGraphicsGetCurrentContext());
+        CGContextSaveGState(UIGraphicsGetCurrentContext());
+        [self drawTextInRect:rect];
+        CGContextRestoreGState(UIGraphicsGetCurrentContext());
     }
 }
 
