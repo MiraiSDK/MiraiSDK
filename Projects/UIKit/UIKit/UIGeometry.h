@@ -18,14 +18,14 @@ typedef struct UIOffset {
     CGFloat horizontal, vertical; // specify amount to offset a position, positive for right or down, negative for left or up
 } UIOffset;
 
-typedef enum  {
+typedef NS_OPTIONS(NSUInteger, UIRectEdge) {
     UIRectEdgeNone   = 0,
     UIRectEdgeTop    = 1 << 0,
     UIRectEdgeLeft   = 1 << 1,
     UIRectEdgeBottom = 1 << 2,
     UIRectEdgeRight  = 1 << 3,
     UIRectEdgeAll    = UIRectEdgeTop | UIRectEdgeLeft | UIRectEdgeBottom | UIRectEdgeRight
-} UIRectEdge;
+};
 
 UIKIT_STATIC_INLINE UIEdgeInsets UIEdgeInsetsMake(CGFloat top, CGFloat left, CGFloat bottom, CGFloat right) {
     UIEdgeInsets insets = {top, left, bottom, right};

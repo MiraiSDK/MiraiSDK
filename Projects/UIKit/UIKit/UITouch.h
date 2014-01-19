@@ -12,13 +12,13 @@
 
 @class UIWindow, UIView;
 
-typedef enum {
+typedef NS_ENUM(NSInteger, UITouchPhase) {
     UITouchPhaseBegan,             // whenever a finger touches the surface.
     UITouchPhaseMoved,             // whenever a finger moves on the surface.
     UITouchPhaseStationary,        // whenever a finger is touching the surface but hasn't moved since the previous event.
     UITouchPhaseEnded,             // whenever a finger leaves the surface.
     UITouchPhaseCancelled,         // whenever a touch doesn't end but we need to stop tracking (e.g. putting device to face)
-} UITouchPhase;
+};
 
 @interface UITouch : NSObject
 @property(nonatomic,readonly) NSTimeInterval      timestamp;

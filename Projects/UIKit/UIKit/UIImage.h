@@ -13,7 +13,7 @@
 #import <UIKit/UIColor.h>
 #import <UIKit/UIGeometry.h>
 
-typedef enum {
+typedef NS_ENUM(NSInteger, UIImageOrientation) {
     UIImageOrientationUp,            // default orientation
     UIImageOrientationDown,          // 180 deg rotation
     UIImageOrientationLeft,          // 90 deg CCW
@@ -22,19 +22,19 @@ typedef enum {
     UIImageOrientationDownMirrored,  // horizontal flip
     UIImageOrientationLeftMirrored,  // vertical flip
     UIImageOrientationRightMirrored, // vertical flip
-} UIImageOrientation;
+};
 
-typedef enum {
+typedef NS_ENUM(NSInteger, UIImageResizingMode) {
     UIImageResizingModeTile,
     UIImageResizingModeStretch,
-} UIImageResizingMode;
+};
 
-typedef enum {
+typedef NS_ENUM(NSInteger, UIImageRenderingMode) {
     UIImageRenderingModeAutomatic,          // Use the default rendering mode for the context where the image is used
     
     UIImageRenderingModeAlwaysOriginal,     // Always draw the original image, without treating it as a template
     UIImageRenderingModeAlwaysTemplate,     // Always draw the image as a template image, ignoring its color information
-} UIImageRenderingMode;
+};// NS_ENUM_AVAILABLE_IOS(7_0);
 
 @interface UIImage : NSObject <NSCoding>
 + (UIImage *)imageNamed:(NSString *)name;      // load from main bundle

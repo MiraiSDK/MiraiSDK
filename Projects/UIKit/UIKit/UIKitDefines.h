@@ -16,3 +16,12 @@
 
 #define UIKIT_STATIC_INLINE	static inline
 
+//TODO: should move to Foundation framework
+#ifndef NS_ENUM
+#define NS_ENUM(_type, _name) enum _name : _type _name; enum _name : _type
+#endif
+
+#ifndef NS_OPTIONS
+#define NS_OPTIONS(_type, _name) enum _name : _type _name; enum _name : _type
+#endif
+

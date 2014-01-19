@@ -12,13 +12,13 @@
 
 @class UIWindow, UIView, UIGestureRecognizer;
 
-typedef enum {
+typedef NS_ENUM(NSInteger, UIEventType) {
     UIEventTypeTouches,
     UIEventTypeMotion,
     UIEventTypeRemoteControl,
-} UIEventType;
+};
 
-typedef enum {
+typedef NS_ENUM(NSInteger, UIEventSubtype) {
     // available in iPhone OS 3.0
     UIEventSubtypeNone                              = 0,
     
@@ -36,7 +36,7 @@ typedef enum {
     UIEventSubtypeRemoteControlEndSeekingBackward   = 107,
     UIEventSubtypeRemoteControlBeginSeekingForward  = 108,
     UIEventSubtypeRemoteControlEndSeekingForward    = 109,
-} UIEventSubtype;
+};
 
 @interface UIEvent : NSObject
 @property(nonatomic,readonly) UIEventType     type;// NS_AVAILABLE_IOS(3_0);
