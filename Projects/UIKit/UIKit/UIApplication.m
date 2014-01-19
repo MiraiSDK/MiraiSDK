@@ -319,6 +319,191 @@ static void buffTest(ANativeWindow_Buffer *buffer)
         }
     }
 }
+
+#pragma mark - 
+- (void)beginIgnoringInteractionEvents
+{
+    NS_UNIMPLEMENTED_LOG;
+}
+- (void)endIgnoringInteractionEvents
+{
+    NS_UNIMPLEMENTED_LOG;
+}
+- (BOOL)isIgnoringInteractionEvents
+{
+    NS_UNIMPLEMENTED_LOG;
+    return NO;
+}
+
+- (BOOL)openURL:(NSURL*)url
+{
+    NS_UNIMPLEMENTED_LOG;
+    return NO;
+}
+
+- (BOOL)canOpenURL:(NSURL *)url
+{
+    NS_UNIMPLEMENTED_LOG;
+    return NO;
+}
+
+- (void)sendEvent:(UIEvent *)event
+{
+    NS_UNIMPLEMENTED_LOG;
+}
+
+- (BOOL)sendAction:(SEL)action to:(id)target from:(id)sender forEvent:(UIEvent *)event
+{
+    NS_UNIMPLEMENTED_LOG;
+    return NO;
+}
+
+- (UIBackgroundTaskIdentifier)beginBackgroundTaskWithExpirationHandler:(void(^)(void))handler
+{
+    NS_UNIMPLEMENTED_LOG;
+    return 0;
+}
+
+- (UIBackgroundTaskIdentifier)beginBackgroundTaskWithName:(NSString *)taskName expirationHandler:(void(^)(void))handler
+{
+    NS_UNIMPLEMENTED_LOG;
+    return 0;
+}
+
+- (void)endBackgroundTask:(UIBackgroundTaskIdentifier)identifier
+{
+    NS_UNIMPLEMENTED_LOG;
+}
+
+- (void)setMinimumBackgroundFetchInterval:(NSTimeInterval)minimumBackgroundFetchInterval
+{
+    NS_UNIMPLEMENTED_LOG;
+}
+
+- (BOOL)setKeepAliveTimeout:(NSTimeInterval)timeout handler:(void(^)(void))keepAliveHandler
+{
+    NS_UNIMPLEMENTED_LOG;
+    return NO;
+}
+
+- (void)clearKeepAliveTimeout
+{
+    NS_UNIMPLEMENTED_LOG;
+}
+
+@end
+
+@implementation UIApplication (UIRemoteNotifications)
+
+- (void)registerForRemoteNotificationTypes:(UIRemoteNotificationType)types
+{
+    NS_UNIMPLEMENTED_LOG;
+}
+
+- (void)unregisterForRemoteNotifications
+{
+    NS_UNIMPLEMENTED_LOG;
+}
+
+- (UIRemoteNotificationType)enabledRemoteNotificationTypes
+{
+    NS_UNIMPLEMENTED_LOG;
+    return UIRemoteNotificationTypeNone;
+}
+
+@end
+
+@implementation UIApplication (UILocalNotifications)
+
+- (void)presentLocalNotificationNow:(UILocalNotification *)notification
+{
+    NS_UNIMPLEMENTED_LOG;
+}
+
+- (void)scheduleLocalNotification:(UILocalNotification *)notification
+{
+    NS_UNIMPLEMENTED_LOG;
+}
+
+- (void)cancelLocalNotification:(UILocalNotification *)notification
+{
+    NS_UNIMPLEMENTED_LOG;
+}
+
+- (void)cancelAllLocalNotifications
+{
+    NS_UNIMPLEMENTED_LOG;
+}
+
+- (void)setScheduledLocalNotifications:(NSArray *)scheduledLocalNotifications
+{
+    NS_UNIMPLEMENTED_LOG;
+}
+
+- (NSArray *)scheduledLocalNotifications
+{
+    NS_UNIMPLEMENTED_LOG;
+    return nil;
+}
+
+@end
+
+@implementation UIApplication (UIRemoteControlEvents)
+
+- (void)beginReceivingRemoteControlEvents
+{
+    NS_UNIMPLEMENTED_LOG;
+}
+
+- (void)endReceivingRemoteControlEvents
+{
+    NS_UNIMPLEMENTED_LOG;
+}
+
+@end
+
+@implementation UIApplication (UIStateRestoration)
+
+- (void)extendStateRestoration
+{
+    NS_UNIMPLEMENTED_LOG;
+}
+
+- (void)completeStateRestoration
+{
+    NS_UNIMPLEMENTED_LOG;
+}
+
+- (void)ignoreSnapshotOnNextApplicationLaunch
+{
+    NS_UNIMPLEMENTED_LOG;
+}
+
++ (void) registerObjectForStateRestoration:(id<UIStateRestoring>)object restorationIdentifier:(NSString *)restorationIdentifier
+{
+    NS_UNIMPLEMENTED_LOG;
+}
+
+@end
+
+@implementation UIApplication (UIApplicationDeprecated)
+
+- (BOOL)isProximitySensingEnabled
+{
+    NS_UNIMPLEMENTED_LOG;
+    return NO;
+}
+
+- (void)setProximitySensingEnabled:(BOOL)proximitySensingEnabled
+{
+    NS_UNIMPLEMENTED_LOG;
+}
+
+- (void)setStatusBarHidden:(BOOL)hidden animated:(BOOL)animated
+{
+    NS_UNIMPLEMENTED_LOG;
+}
+
 @end
 
 int UIApplicationMain(int argc, char *argv[], NSString *principalClassName, NSString *delegateClassName)
@@ -352,5 +537,55 @@ int UIApplicationMain(int argc, char *argv[], NSString *principalClassName, NSSt
     return 0;
 }
 
-NSString *const UIApplicationDidFinishLaunchingNotification = @"UIApplicationDidFinishLaunchingNotification";
+NSString *const UIApplicationInvalidInterfaceOrientationException = @"UIApplicationInvalidInterfaceOrientationException";
+
+const UIBackgroundTaskIdentifier UIBackgroundTaskInvalid = 0;
+const NSTimeInterval UIMinimumKeepAliveTimeout = 600.0; //seconds
+const NSTimeInterval UIApplicationBackgroundFetchIntervalMinimum = 0.0;
+const NSTimeInterval UIApplicationBackgroundFetchIntervalNever = INFINITY;
+
+
+NSString *const UITrackingRunLoopModeKey = @"UITrackingRunLoopMode";
+NSString *const UIApplicationDidEnterBackgroundNotificationKey = @"UIApplicationDidEnterBackgroundNotification";
+NSString *const UIApplicationWillEnterForegroundNotificationKey = @"UIApplicationWillEnterForegroundNotification";
+NSString *const UIApplicationDidFinishLaunchingNotificationKey = @"UIApplicationDidFinishLaunchingNotification";
+NSString *const UIApplicationDidBecomeActiveNotificationKey = @"UIApplicationDidBecomeActiveNotification";
+NSString *const UIApplicationWillResignActiveNotificationKey = @"UIApplicationWillResignActiveNotification";
+NSString *const UIApplicationDidReceiveMemoryWarningNotificationKey = @"UIApplicationDidReceiveMemoryWarningNotification";
+NSString *const UIApplicationWillTerminateNotificationKey = @"UIApplicationWillTerminateNotification";
+NSString *const UIApplicationSignificantTimeChangeNotificationKey = @"UIApplicationSignificantTimeChangeNotification";
+NSString *const UIApplicationWillChangeStatusBarOrientationNotificationKey = @"UIApplicationWillChangeStatusBarOrientationNotification";
+NSString *const UIApplicationDidChangeStatusBarOrientationNotificationKey = @"UIApplicationDidChangeStatusBarOrientationNotification";
+NSString *const UIApplicationStatusBarOrientationUserInfoKeyKey = @"UIApplicationStatusBarOrientationUserInfoKey";
+NSString *const UIApplicationWillChangeStatusBarFrameNotificationKey = @"UIApplicationWillChangeStatusBarFrameNotification";
+NSString *const UIApplicationDidChangeStatusBarFrameNotificationKey = @"UIApplicationDidChangeStatusBarFrameNotification";
+NSString *const UIApplicationStatusBarFrameUserInfoKeyKey = @"UIApplicationStatusBarFrameUserInfoKey";
+NSString *const UIApplicationBackgroundRefreshStatusDidChangeNotificationKey = @"UIApplicationBackgroundRefreshStatusDidChangeNotification";
+NSString *const UIApplicationLaunchOptionsURLKeyKey = @"UIApplicationLaunchOptionsURLKey";
+NSString *const UIApplicationLaunchOptionsSourceApplicationKeyKey = @"UIApplicationLaunchOptionsSourceApplicationKey";
+NSString *const UIApplicationLaunchOptionsRemoteNotificationKeyKey = @"UIApplicationLaunchOptionsRemoteNotificationKey";
+NSString *const UIApplicationLaunchOptionsLocalNotificationKeyKey = @"UIApplicationLaunchOptionsLocalNotificationKey";
+NSString *const UIApplicationLaunchOptionsAnnotationKeyKey = @"UIApplicationLaunchOptionsAnnotationKey";
+NSString *const UIApplicationProtectedDataWillBecomeUnavailableKey = @"UIApplicationProtectedDataWillBecomeUnavailable";
+NSString *const UIApplicationProtectedDataDidBecomeAvailableKey = @"UIApplicationProtectedDataDidBecomeAvailable";
+NSString *const UIApplicationLaunchOptionsLocationKeyKey = @"UIApplicationLaunchOptionsLocationKey";
+NSString *const UIApplicationLaunchOptionsNewsstandDownloadsKeyKey = @"UIApplicationLaunchOptionsNewsstandDownloadsKey";
+NSString *const UIApplicationLaunchOptionsBluetoothCentralsKeyKey = @"UIApplicationLaunchOptionsBluetoothCentralsKey";
+NSString *const UIApplicationLaunchOptionsBluetoothPeripheralsKeyKey = @"UIApplicationLaunchOptionsBluetoothPeripheralsKey";
+NSString *const UIContentSizeCategoryExtraSmallKey = @"UIContentSizeCategoryExtraSmall";
+NSString *const UIContentSizeCategorySmallKey = @"UIContentSizeCategorySmall";
+NSString *const UIContentSizeCategoryMediumKey = @"UIContentSizeCategoryMedium";
+NSString *const UIContentSizeCategoryLargeKey = @"UIContentSizeCategoryLarge";
+NSString *const UIContentSizeCategoryExtraLargeKey = @"UIContentSizeCategoryExtraLarge";
+NSString *const UIContentSizeCategoryExtraExtraLargeKey = @"UIContentSizeCategoryExtraExtraLarge";
+NSString *const UIContentSizeCategoryExtraExtraExtraLargeKey = @"UIContentSizeCategoryExtraExtraExtraLarge";
+NSString *const UIContentSizeCategoryAccessibilityMediumKey = @"UIContentSizeCategoryAccessibilityMedium";
+NSString *const UIContentSizeCategoryAccessibilityLargeKey = @"UIContentSizeCategoryAccessibilityLarge";
+NSString *const UIContentSizeCategoryAccessibilityExtraLargeKey = @"UIContentSizeCategoryAccessibilityExtraLarge";
+NSString *const UIContentSizeCategoryAccessibilityExtraExtraLargeKey = @"UIContentSizeCategoryAccessibilityExtraExtraLarge";
+NSString *const UIContentSizeCategoryAccessibilityExtraExtraExtraLargeKey = @"UIContentSizeCategoryAccessibilityExtraExtraExtraLarge";
+NSString *const UIContentSizeCategoryDidChangeNotificationKey = @"UIContentSizeCategoryDidChangeNotification";
+NSString *const UIContentSizeCategoryNewValueKeyKey = @"UIContentSizeCategoryNewValueKey";
+NSString *const UIApplicationUserDidTakeScreenshotNotificationKey = @"UIApplicationUserDidTakeScreenshotNotification";
+
 

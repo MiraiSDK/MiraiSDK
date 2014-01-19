@@ -25,3 +25,5 @@
 #define NS_OPTIONS(_type, _name) enum _name : _type _name; enum _name : _type
 #endif
 
+#define NS_UNIMPLEMENTED_LOG NSLog(@"Unimplemented method: %s",__PRETTY_FUNCTION__)
+
