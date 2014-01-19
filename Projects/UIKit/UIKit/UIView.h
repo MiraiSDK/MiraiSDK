@@ -8,8 +8,109 @@
 
 #import <Foundation/Foundation.h>
 #import <UIKit/UIResponder.h>
+//#import <UIKit/UIInterface.h>
 #import <UIKit/UIKitDefines.h>
+//#import <UIKit/UIAppearance.h>
+//#import <UIKit/UIDynamicBehavior.h>
+//#import <UIKit/NSLayoutConstraint.h>
+
 #import <CoreGraphics/CoreGraphics.h>
+
+typedef NS_ENUM(NSInteger, UIViewAnimationCurve) {
+    UIViewAnimationCurveEaseInOut,         // slow at beginning and end
+    UIViewAnimationCurveEaseIn,            // slow at beginning
+    UIViewAnimationCurveEaseOut,           // slow at end
+    UIViewAnimationCurveLinear
+};
+
+typedef NS_ENUM(NSInteger, UIViewContentMode) {
+    UIViewContentModeScaleToFill,
+    UIViewContentModeScaleAspectFit,      // contents scaled to fit with fixed aspect. remainder is transparent
+    UIViewContentModeScaleAspectFill,     // contents scaled to fill with fixed aspect. some portion of content may be clipped.
+    UIViewContentModeRedraw,              // redraw on bounds change (calls -setNeedsDisplay)
+    UIViewContentModeCenter,              // contents remain same size. positioned adjusted.
+    UIViewContentModeTop,
+    UIViewContentModeBottom,
+    UIViewContentModeLeft,
+    UIViewContentModeRight,
+    UIViewContentModeTopLeft,
+    UIViewContentModeTopRight,
+    UIViewContentModeBottomLeft,
+    UIViewContentModeBottomRight,
+};
+
+typedef NS_ENUM(NSInteger, UIViewAnimationTransition) {
+    UIViewAnimationTransitionNone,
+    UIViewAnimationTransitionFlipFromLeft,
+    UIViewAnimationTransitionFlipFromRight,
+    UIViewAnimationTransitionCurlUp,
+    UIViewAnimationTransitionCurlDown,
+};
+
+typedef NS_OPTIONS(NSUInteger, UIViewAutoresizing) {
+    UIViewAutoresizingNone                 = 0,
+    UIViewAutoresizingFlexibleLeftMargin   = 1 << 0,
+    UIViewAutoresizingFlexibleWidth        = 1 << 1,
+    UIViewAutoresizingFlexibleRightMargin  = 1 << 2,
+    UIViewAutoresizingFlexibleTopMargin    = 1 << 3,
+    UIViewAutoresizingFlexibleHeight       = 1 << 4,
+    UIViewAutoresizingFlexibleBottomMargin = 1 << 5
+};
+
+typedef NS_OPTIONS(NSUInteger, UIViewAnimationOptions) {
+    UIViewAnimationOptionLayoutSubviews            = 1 <<  0,
+    UIViewAnimationOptionAllowUserInteraction      = 1 <<  1, // turn on user interaction while animating
+    UIViewAnimationOptionBeginFromCurrentState     = 1 <<  2, // start all views from current value, not initial value
+    UIViewAnimationOptionRepeat                    = 1 <<  3, // repeat animation indefinitely
+    UIViewAnimationOptionAutoreverse               = 1 <<  4, // if repeat, run animation back and forth
+    UIViewAnimationOptionOverrideInheritedDuration = 1 <<  5, // ignore nested duration
+    UIViewAnimationOptionOverrideInheritedCurve    = 1 <<  6, // ignore nested curve
+    UIViewAnimationOptionAllowAnimatedContent      = 1 <<  7, // animate contents (applies to transitions only)
+    UIViewAnimationOptionShowHideTransitionViews   = 1 <<  8, // flip to/from hidden state instead of adding/removing
+    UIViewAnimationOptionOverrideInheritedOptions  = 1 <<  9, // do not inherit any options or animation type
+    
+    UIViewAnimationOptionCurveEaseInOut            = 0 << 16, // default
+    UIViewAnimationOptionCurveEaseIn               = 1 << 16,
+    UIViewAnimationOptionCurveEaseOut              = 2 << 16,
+    UIViewAnimationOptionCurveLinear               = 3 << 16,
+    
+    UIViewAnimationOptionTransitionNone            = 0 << 20, // default
+    UIViewAnimationOptionTransitionFlipFromLeft    = 1 << 20,
+    UIViewAnimationOptionTransitionFlipFromRight   = 2 << 20,
+    UIViewAnimationOptionTransitionCurlUp          = 3 << 20,
+    UIViewAnimationOptionTransitionCurlDown        = 4 << 20,
+    UIViewAnimationOptionTransitionCrossDissolve   = 5 << 20,
+    UIViewAnimationOptionTransitionFlipFromTop     = 6 << 20,
+    UIViewAnimationOptionTransitionFlipFromBottom  = 7 << 20,
+};// NS_ENUM_AVAILABLE_IOS(4_0);
+
+typedef NS_OPTIONS(NSUInteger, UIViewKeyframeAnimationOptions) {
+    UIViewKeyframeAnimationOptionLayoutSubviews            = UIViewAnimationOptionLayoutSubviews,
+    UIViewKeyframeAnimationOptionAllowUserInteraction      = UIViewAnimationOptionAllowUserInteraction, // turn on user interaction while animating
+    UIViewKeyframeAnimationOptionBeginFromCurrentState     = UIViewAnimationOptionBeginFromCurrentState, // start all views from current value, not initial value
+    UIViewKeyframeAnimationOptionRepeat                    = UIViewAnimationOptionRepeat, // repeat animation indefinitely
+    UIViewKeyframeAnimationOptionAutoreverse               = UIViewAnimationOptionAutoreverse, // if repeat, run animation back and forth
+    UIViewKeyframeAnimationOptionOverrideInheritedDuration = UIViewAnimationOptionOverrideInheritedDuration, // ignore nested duration
+    UIViewKeyframeAnimationOptionOverrideInheritedOptions  = UIViewAnimationOptionOverrideInheritedOptions, // do not inherit any options or animation type
+    
+    UIViewKeyframeAnimationOptionCalculationModeLinear     = 0 << 10, // default
+    UIViewKeyframeAnimationOptionCalculationModeDiscrete   = 1 << 10,
+    UIViewKeyframeAnimationOptionCalculationModePaced      = 2 << 10,
+    UIViewKeyframeAnimationOptionCalculationModeCubic      = 3 << 10,
+    UIViewKeyframeAnimationOptionCalculationModeCubicPaced = 4 << 10
+};// NS_ENUM_AVAILABLE_IOS(7_0);
+
+typedef NS_ENUM(NSUInteger, UISystemAnimation) {
+    UISystemAnimationDelete,    // removes the views from the hierarchy when complete
+};// NS_ENUM_AVAILABLE_IOS(7_0);
+
+typedef NS_ENUM(NSInteger, UIViewTintAdjustmentMode) {
+    UIViewTintAdjustmentModeAutomatic,
+    
+    UIViewTintAdjustmentModeNormal,
+    UIViewTintAdjustmentModeDimmed,
+};// NS_ENUM_AVAILABLE_IOS(7_0);
+
 
 @class UIBezierPath, UIEvent, UIWindow, UIViewController, UIColor, UIGestureRecognizer, UIMotionEffect, CALayer;
 
@@ -22,32 +123,27 @@
 @end
 
 @interface UIView(UIViewGeometry)
-
-// animatable. do not use frame if view is transformed since it will not correctly reflect the actual location of the view. use bounds + center instead.
 @property(nonatomic) CGRect            frame;
+@property(nonatomic) CGRect            bounds;
+@property(nonatomic) CGPoint           center;
+@property(nonatomic) CGAffineTransform transform;
+@property(nonatomic) CGFloat           contentScaleFactor;
+@property(nonatomic,getter=isMultipleTouchEnabled) BOOL multipleTouchEnabled;
+@property(nonatomic,getter=isExclusiveTouch) BOOL       exclusiveTouch;
 
-// use bounds/center and not frame if non-identity transform. if bounds dimension is odd, center may be have fractional part
-@property(nonatomic) CGRect            bounds;      // default bounds is zero origin, frame size. animatable
-@property(nonatomic) CGPoint           center;      // center is center of frame. animatable
-@property(nonatomic) CGAffineTransform transform;   // default is CGAffineTransformIdentity. animatable
-//@property(nonatomic) CGFloat           contentScaleFactor NS_AVAILABLE_IOS(4_0);
-
-@property(nonatomic,getter=isMultipleTouchEnabled) BOOL multipleTouchEnabled;   // default is NO
-@property(nonatomic,getter=isExclusiveTouch) BOOL       exclusiveTouch;         // default is NO
-
-- (UIView *)hitTest:(CGPoint)point withEvent:(UIEvent *)event;   // recursively calls -pointInside:withEvent:. point is in the receiver's coordinate system
-- (BOOL)pointInside:(CGPoint)point withEvent:(UIEvent *)event;   // default returns YES if point is in bounds
+- (UIView *)hitTest:(CGPoint)point withEvent:(UIEvent *)event;
+- (BOOL)pointInside:(CGPoint)point withEvent:(UIEvent *)event;
 
 - (CGPoint)convertPoint:(CGPoint)point toView:(UIView *)view;
 - (CGPoint)convertPoint:(CGPoint)point fromView:(UIView *)view;
 - (CGRect)convertRect:(CGRect)rect toView:(UIView *)view;
 - (CGRect)convertRect:(CGRect)rect fromView:(UIView *)view;
 
-@property(nonatomic) BOOL               autoresizesSubviews; // default is YES. if set, subviews are adjusted according to their autoresizingMask if self.bounds changes
-//@property(nonatomic) UIViewAutoresizing autoresizingMask;    // simple resize. default is UIViewAutoresizingNone
+@property(nonatomic) BOOL               autoresizesSubviews;
+@property(nonatomic) UIViewAutoresizing autoresizingMask;
 
-- (CGSize)sizeThatFits:(CGSize)size;     // return 'best' size to fit given size. does not actually resize view. Default is return existing view size
-- (void)sizeToFit;                       // calls sizeThatFits: with current view bounds and changes bounds size.
+- (CGSize)sizeThatFits:(CGSize)size;
+- (void)sizeToFit;
 
 @end
 
@@ -77,14 +173,13 @@
 - (void)willMoveToWindow:(UIWindow *)newWindow;
 - (void)didMoveToWindow;
 
-- (BOOL)isDescendantOfView:(UIView *)view;  // returns YES for self.
-- (UIView *)viewWithTag:(NSInteger)tag;     // recursive search. includes self
+- (BOOL)isDescendantOfView:(UIView *)view;
+- (UIView *)viewWithTag:(NSInteger)tag;
 
-// Allows you to perform layout before the drawing cycle happens. -layoutIfNeeded forces layout early
 - (void)setNeedsLayout;
 - (void)layoutIfNeeded;
 
-- (void)layoutSubviews;    // override point. called by layoutIfNeeded automatically. As of iOS 6.0, when constraints-based layout is used the base implementation applies the constraints-based layout, otherwise it does nothing.
+- (void)layoutSubviews;
 
 @end
 
@@ -94,105 +189,82 @@
 - (void)setNeedsDisplay;
 - (void)setNeedsDisplayInRect:(CGRect)rect;
 
-@property(nonatomic)                 BOOL              clipsToBounds;              // When YES, content and subviews are clipped to the bounds of the view. Default is NO.
-//@property(nonatomic,copy)            UIColor          *backgroundColor UI_APPEARANCE_SELECTOR; // default is nil. Can be useful with the appearance proxy on custom UIView subclasses.
-@property(nonatomic)                 CGFloat           alpha;                      // animatable. default is 1.0
-@property(nonatomic,getter=isOpaque) BOOL              opaque;                     // default is YES. opaque views must fill their entire bounds or the results are undefined. the active CGContext in drawRect: will not have been cleared and may have non-zeroed pixels
-@property(nonatomic)                 BOOL              clearsContextBeforeDrawing; // default is YES. ignored for opaque views. for non-opaque views causes the active CGContext in drawRect: to be pre-filled with transparent pixels
-@property(nonatomic,getter=isHidden) BOOL              hidden;                     // default is NO. doesn't check superviews
-//@property(nonatomic)                 UIViewContentMode contentMode;                // default is UIViewContentModeScaleToFill
-//@property(nonatomic)                 CGRect            contentStretch NS_DEPRECATED_IOS(3_0,6_0); // animatable. default is unit rectangle {{0,0} {1,1}}. Now deprecated: please use -[UIImage resizableImageWithCapInsets:] to achieve the same effect.
+@property(nonatomic)                 BOOL              clipsToBounds;
+@property(nonatomic,copy)            UIColor          *backgroundColor; //UI_APPEARANCE_SELECTOR;
+@property(nonatomic)                 CGFloat           alpha;
+@property(nonatomic,getter=isOpaque) BOOL              opaque;
+@property(nonatomic)                 BOOL              clearsContextBeforeDrawing;
+@property(nonatomic,getter=isHidden) BOOL              hidden;
+@property(nonatomic)                 UIViewContentMode contentMode;
+@property(nonatomic)                 CGRect            contentStretch; //NS_DEPRECATED_IOS(3_0,6_0);
 
-/*
- -tintColor always returns a color. The color returned is the first non-default value in the receiver's superview chain (starting with itself).
- If no non-default value is found, a system-defined color is returned.
- If this view's -tintAdjustmentMode returns Dimmed, then the color that is returned for -tintColor will automatically be dimmed.
- If your view subclass uses tintColor in its rendering, override -tintColorDidChange in order to refresh the rendering if the color changes.
- */
-//@property(nonatomic,retain) UIColor *tintColor NS_AVAILABLE_IOS(7_0);
+@property(nonatomic,retain) UIColor *tintColor;// NS_AVAILABLE_IOS(7_0);
 
-/*
- -tintAdjustmentMode always returns either UIViewTintAdjustmentModeNormal or UIViewTintAdjustmentModeDimmed. The value returned is the first non-default value in the receiver's superview chain (starting with itself).
- If no non-default value is found, UIViewTintAdjustmentModeNormal is returned.
- When tintAdjustmentMode has a value of UIViewTintAdjustmentModeDimmed for a view, the color it returns from tintColor will be modified to give a dimmed appearance.
- When the tintAdjustmentMode of a view changes (either the view's value changing or by one of its superview's values changing), -tintColorDidChange will be called to allow the view to refresh its rendering.
- */
-//@property(nonatomic) UIViewTintAdjustmentMode tintAdjustmentMode NS_AVAILABLE_IOS(7_0);
+@property(nonatomic) UIViewTintAdjustmentMode tintAdjustmentMode;// NS_AVAILABLE_IOS(7_0);
 
-/*
- The -tintColorDidChange message is sent to appropriate subviews of a view when its tintColor is changed by client code or to subviews in the view hierarchy of a view whose tintColor is implicitly changed when its superview or tintAdjustmentMode changes.
- */
-//- (void)tintColorDidChange NS_AVAILABLE_IOS(7_0);
+- (void)tintColorDidChange;// NS_AVAILABLE_IOS(7_0);
 
 @end
 
-//@interface UIView(UIViewAnimation)
-//
-//+ (void)beginAnimations:(NSString *)animationID context:(void *)context;  // additional context info passed to will start/did stop selectors. begin/commit can be nested
-//+ (void)commitAnimations;                                                 // starts up any animations when the top level animation is commited
-//
-//// no getters. if called outside animation block, these setters have no effect.
-//+ (void)setAnimationDelegate:(id)delegate;                          // default = nil
-//+ (void)setAnimationWillStartSelector:(SEL)selector;                // default = NULL. -animationWillStart:(NSString *)animationID context:(void *)context
-//+ (void)setAnimationDidStopSelector:(SEL)selector;                  // default = NULL. -animationDidStop:(NSString *)animationID finished:(NSNumber *)finished context:(void *)context
-//+ (void)setAnimationDuration:(NSTimeInterval)duration;              // default = 0.2
-//+ (void)setAnimationDelay:(NSTimeInterval)delay;                    // default = 0.0
-//+ (void)setAnimationStartDate:(NSDate *)startDate;                  // default = now ([NSDate date])
-//+ (void)setAnimationCurve:(UIViewAnimationCurve)curve;              // default = UIViewAnimationCurveEaseInOut
-//+ (void)setAnimationRepeatCount:(float)repeatCount;                 // default = 0.0.  May be fractional
-//+ (void)setAnimationRepeatAutoreverses:(BOOL)repeatAutoreverses;    // default = NO. used if repeat count is non-zero
-//+ (void)setAnimationBeginsFromCurrentState:(BOOL)fromCurrentState;  // default = NO. If YES, the current view position is always used for new animations -- allowing animations to "pile up" on each other. Otherwise, the last end state is used for the animation (the default).
-//
-//+ (void)setAnimationTransition:(UIViewAnimationTransition)transition forView:(UIView *)view cache:(BOOL)cache;  // current limitation - only one per begin/commit block
-//
-//+ (void)setAnimationsEnabled:(BOOL)enabled;                         // ignore any attribute changes while set.
-//+ (BOOL)areAnimationsEnabled;
-//+ (void)performWithoutAnimation:(void (^)(void))actionsWithoutAnimation NS_AVAILABLE_IOS(7_0);
-//
-//@end
-//
-//@interface UIView(UIViewAnimationWithBlocks)
-//
-//+ (void)animateWithDuration:(NSTimeInterval)duration delay:(NSTimeInterval)delay options:(UIViewAnimationOptions)options animations:(void (^)(void))animations completion:(void (^)(BOOL finished))completion NS_AVAILABLE_IOS(4_0);
-//
-//+ (void)animateWithDuration:(NSTimeInterval)duration animations:(void (^)(void))animations completion:(void (^)(BOOL finished))completion NS_AVAILABLE_IOS(4_0); // delay = 0.0, options = 0
-//
-//+ (void)animateWithDuration:(NSTimeInterval)duration animations:(void (^)(void))animations NS_AVAILABLE_IOS(4_0); // delay = 0.0, options = 0, completion = NULL
-//
-///* Performs `animations` using a timing curve described by the motion of a spring. When `dampingRatio` is 1, the animation will smoothly decelerate to its final model values without oscillating. Damping ratios less than 1 will oscillate more and more before coming to a complete stop. You can use the initial spring velocity to specify how fast the object at the end of the simulated spring was moving before it was attached. It's a unit coordinate system, where 1 is defined as travelling the total animation distance in a second. So if you're changing an object's position by 200pt in this animation, and you want the animation to behave as if the object was moving at 100pt/s before the animation started, you'd pass 0.5. You'll typically want to pass 0 for the velocity. */
-//+ (void)animateWithDuration:(NSTimeInterval)duration delay:(NSTimeInterval)delay usingSpringWithDamping:(CGFloat)dampingRatio initialSpringVelocity:(CGFloat)velocity options:(UIViewAnimationOptions)options animations:(void (^)(void))animations completion:(void (^)(BOOL finished))completion NS_AVAILABLE_IOS(7_0);
-//
-//+ (void)transitionWithView:(UIView *)view duration:(NSTimeInterval)duration options:(UIViewAnimationOptions)options animations:(void (^)(void))animations completion:(void (^)(BOOL finished))completion NS_AVAILABLE_IOS(4_0);
-//
-//+ (void)transitionFromView:(UIView *)fromView toView:(UIView *)toView duration:(NSTimeInterval)duration options:(UIViewAnimationOptions)options completion:(void (^)(BOOL finished))completion NS_AVAILABLE_IOS(4_0); // toView added to fromView.superview, fromView removed from its superview
-//
-///* Performs the requested system-provided animation on one or more views. Specify addtional animations in the parallelAnimations block. These additional animations will run alongside the system animation with the same timing and duration that the system animation defines/inherits. Additional animations should not modify properties of the view on which the system animation is being performed. Not all system animations honor all available options.
-// */
-//+ (void)performSystemAnimation:(UISystemAnimation)animation onViews:(NSArray *)views options:(UIViewAnimationOptions)options animations:(void (^)(void))parallelAnimations completion:(void (^)(BOOL finished))completion NS_AVAILABLE_IOS(7_0);
-//
-//@end
-//
-//@interface UIView (UIViewKeyframeAnimations)
-//
-//+ (void)animateKeyframesWithDuration:(NSTimeInterval)duration delay:(NSTimeInterval)delay options:(UIViewKeyframeAnimationOptions)options animations:(void (^)(void))animations completion:(void (^)(BOOL finished))completion NS_AVAILABLE_IOS(7_0);
-//+ (void)addKeyframeWithRelativeStartTime:(double)frameStartTime relativeDuration:(double)frameDuration animations:(void (^)(void))animations NS_AVAILABLE_IOS(7_0); // start time and duration are values between 0.0 and 1.0 specifying time and duration relative to the overall time of the keyframe animation
-//
-//@end
-//
-//@interface UIView (UIViewGestureRecognizers)
-//
-//@property(nonatomic,copy) NSArray *gestureRecognizers NS_AVAILABLE_IOS(3_2);
-//
-//- (void)addGestureRecognizer:(UIGestureRecognizer*)gestureRecognizer NS_AVAILABLE_IOS(3_2);
-//- (void)removeGestureRecognizer:(UIGestureRecognizer*)gestureRecognizer NS_AVAILABLE_IOS(3_2);
-//
-//// called when the recognizer attempts to transition out of UIGestureRecognizerStatePossible if a touch hit-tested to this view will be cancelled as a result of gesture recognition
-//// returns YES by default. return NO to cause the gesture recognizer to transition to UIGestureRecognizerStateFailed
-//// subclasses may override to prevent recognition of particular gestures. for example, UISlider prevents swipes parallel to the slider that start in the thumb
-//- (BOOL)gestureRecognizerShouldBegin:(UIGestureRecognizer *)gestureRecognizer NS_AVAILABLE_IOS(6_0);
-//
-//@end
-//
+@interface UIView(UIViewAnimation)
+
++ (void)beginAnimations:(NSString *)animationID context:(void *)context;
++ (void)commitAnimations;
+
++ (void)setAnimationDelegate:(id)delegate;
++ (void)setAnimationWillStartSelector:(SEL)selector;
++ (void)setAnimationDidStopSelector:(SEL)selector;
++ (void)setAnimationDuration:(NSTimeInterval)duration;
++ (void)setAnimationDelay:(NSTimeInterval)delay;
++ (void)setAnimationStartDate:(NSDate *)startDate;
++ (void)setAnimationCurve:(UIViewAnimationCurve)curve;
++ (void)setAnimationRepeatCount:(float)repeatCount;
++ (void)setAnimationRepeatAutoreverses:(BOOL)repeatAutoreverses;
++ (void)setAnimationBeginsFromCurrentState:(BOOL)fromCurrentState;
+
++ (void)setAnimationTransition:(UIViewAnimationTransition)transition forView:(UIView *)view cache:(BOOL)cache;
+
++ (void)setAnimationsEnabled:(BOOL)enabled;
++ (BOOL)areAnimationsEnabled;
++ (void)performWithoutAnimation:(void (^)(void))actionsWithoutAnimation; // NS_AVAILABLE_IOS(7_0);
+
+@end
+
+@interface UIView(UIViewAnimationWithBlocks)
+
++ (void)animateWithDuration:(NSTimeInterval)duration delay:(NSTimeInterval)delay options:(UIViewAnimationOptions)options animations:(void (^)(void))animations completion:(void (^)(BOOL finished))completion;
+
++ (void)animateWithDuration:(NSTimeInterval)duration animations:(void (^)(void))animations completion:(void (^)(BOOL finished))completion;
+
++ (void)animateWithDuration:(NSTimeInterval)duration animations:(void (^)(void))animations;
++ (void)animateWithDuration:(NSTimeInterval)duration delay:(NSTimeInterval)delay usingSpringWithDamping:(CGFloat)dampingRatio initialSpringVelocity:(CGFloat)velocity options:(UIViewAnimationOptions)options animations:(void (^)(void))animations completion:(void (^)(BOOL finished))completion;// NS_AVAILABLE_IOS(7_0);
+
++ (void)transitionWithView:(UIView *)view duration:(NSTimeInterval)duration options:(UIViewAnimationOptions)options animations:(void (^)(void))animations completion:(void (^)(BOOL finished))completion;
+
++ (void)transitionFromView:(UIView *)fromView toView:(UIView *)toView duration:(NSTimeInterval)duration options:(UIViewAnimationOptions)options completion:(void (^)(BOOL finished))completion;
+
++ (void)performSystemAnimation:(UISystemAnimation)animation onViews:(NSArray *)views options:(UIViewAnimationOptions)options animations:(void (^)(void))parallelAnimations completion:(void (^)(BOOL finished))completion; // NS_AVAILABLE_IOS(7_0);
+
+@end
+
+@interface UIView (UIViewKeyframeAnimations)
+
++ (void)animateKeyframesWithDuration:(NSTimeInterval)duration delay:(NSTimeInterval)delay options:(UIViewKeyframeAnimationOptions)options animations:(void (^)(void))animations completion:(void (^)(BOOL finished))completion;// NS_AVAILABLE_IOS(7_0);
++ (void)addKeyframeWithRelativeStartTime:(double)frameStartTime relativeDuration:(double)frameDuration animations:(void (^)(void))animations; // NS_AVAILABLE_IOS(7_0);
+
+@end
+
+@interface UIView (UIViewGestureRecognizers)
+
+@property(nonatomic,copy) NSArray *gestureRecognizers;
+
+- (void)addGestureRecognizer:(UIGestureRecognizer*)gestureRecognizer;
+- (void)removeGestureRecognizer:(UIGestureRecognizer*)gestureRecognizer;
+
+- (BOOL)gestureRecognizerShouldBegin:(UIGestureRecognizer *)gestureRecognizer;
+
+@end
+
 //@interface UIView (UIViewMotionEffects)
 //
 ///*! Begins applying `effect` to the receiver. The effect's emitted keyPath/value pairs will be
@@ -211,7 +283,7 @@
 //@end
 //
 //
-////
+//
 //// UIView Constraint-based Layout Support
 ////
 //
