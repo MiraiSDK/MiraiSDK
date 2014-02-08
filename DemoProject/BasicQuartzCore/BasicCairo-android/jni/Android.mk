@@ -35,6 +35,11 @@ LOCAL_SRC_FILES := libCoreGraphics.so
 include $(PREBUILT_SHARED_LIBRARY)
 
 include $(CLEAR_VARS)
+LOCAL_MODULE    := OpenGLES
+LOCAL_SRC_FILES := libOpenGLES.so
+include $(PREBUILT_SHARED_LIBRARY)
+
+include $(CLEAR_VARS)
 LOCAL_MODULE    := CoreText
 LOCAL_SRC_FILES := libCoreText.so
 include $(PREBUILT_SHARED_LIBRARY)

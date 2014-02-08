@@ -4,5 +4,13 @@
 //  The contents of this file are implicitly included at the beginning of every source file.
 //
 
+#ifdef ANDROID
+#undef __APPLE__
+#define __OPENGL_ES__ 1
+#else
+#define __OPENGL_ES__ 0
+#endif
+
 #ifdef __OBJC__
+
 #endif

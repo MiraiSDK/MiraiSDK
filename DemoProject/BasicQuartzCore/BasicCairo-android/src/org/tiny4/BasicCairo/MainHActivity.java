@@ -17,6 +17,7 @@ public class MainHActivity extends NativeActivity
         System.loadLibrary ("CoreGraphics");
         System.loadLibrary ("CoreText");
         System.loadLibrary ("GLESv2");
+        System.loadLibrary ("OpenGLES");
         System.loadLibrary ("QuartzCore");
         System.loadLibrary ("UIKit");
         System.loadLibrary ("BasicCairo");

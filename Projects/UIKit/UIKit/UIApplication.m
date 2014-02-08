@@ -20,6 +20,13 @@
 #import <Foundation/NSObjCRuntime.h>
 #include "android_native_app_glue.h"
 
+#include <EGL/egl.h>
+#include <GLES2/gl2.h>
+
+#define ANDROID 1
+#import <OpenGLES/EAGL.h>
+
+
 @interface TNAndroidLauncher : NSObject
 + (void)launchWithArgc:(int)argc argv:(char *[])argv;
 @end
@@ -32,6 +39,8 @@
 
 @implementation UIApplication {
     BOOL _isRunning;
+    EAGLContext *_context;
+    CARenderer *_renderer;
 }
 
 static UIApplication *_app;
@@ -77,6 +86,20 @@ static int32_t handle_input(struct android_app* app, AInputEvent* event);
 bool app_has_focus = false;
 static struct android_app* app_state;
 
+/**
+ * Shared state for our app.
+ */
+struct engine {
+    struct android_app* app;
+    
+    int animating;
+    EGLDisplay display;
+    EGLSurface surface;
+    EGLContext context;
+    int32_t width;
+    int32_t height;
+};
+
 - (void)_run
 {
     static BOOL didlaunch = NO;
@@ -95,11 +118,14 @@ static struct android_app* app_state;
         
         // Make sure glue isn't stripped.
         app_dummy();
-
-        app_state->userData = NULL;
+        struct engine engine;
+        memset(&engine, 0, sizeof(engine));
+        app_state->userData = &engine;
         app_state->onAppCmd = handle_app_command;
         app_state->onInputEvent = handle_input;
-
+        engine.app = app_state;
+        
+        NSLog(@"start loop");
         do {
             @autoreleasepool {
                 // Read all pending events. If app_has_focus is true, then we are going
@@ -110,7 +136,10 @@ static struct android_app* app_state;
                 int ident;
                 int events;
                 struct android_poll_source* source;
-                while ((ident=ALooper_pollAll(app_has_focus ? 0 : -1, NULL, &events, (void**)&source)) >= 0) {
+//                int pollTimeout = engine.animating ? 0 : -1;
+                int pollTimeout = 0;
+                while ((ident=ALooper_pollAll(pollTimeout, NULL, &events, (void**)&source)) >= 0) {
+                    NSLog(@"handle event");
                     // Process this event.
                     if (source != NULL) {
                         source->process(app_state, source);
@@ -119,37 +148,127 @@ static struct android_app* app_state;
                     // Check if we are exiting.
                     if (app_state->destroyRequested != 0) {
                         NSLog(@"Engine thread destroy requested!");
+                        engine_term_display(&engine);
                         return;
                     }
                 }
 
-
-                UIWindow *window = _app.keyWindow;
-                if (window.layer.needsDisplay) {
-                    /* Now that we've delt with input, draw stuff */
-                    if (app_state->window != NULL) {
-                        ANativeWindow_Buffer buffer;
-                        if (ANativeWindow_lock(app_state->window, &buffer, NULL) < 0) {
-                            NSLog(@"Unable to lock window buffer");
-                            continue;
-                        }
-                        
-                        
-                        
-                        NSLog(@"Draw frame");
-                        NSDate *begin = [NSDate date];
-                        draw_frame_cgcontext(&buffer);
-                        NSTimeInterval usage = -[begin timeIntervalSinceNow];
-                        NSLog(@"draw use time:%.2f seconds",usage);
-                        
-                        ANativeWindow_unlockAndPost(app_state->window);
-                    }
+                if (!UIGraphicsGetCurrentContext()) {
+                    UIGraphicsBeginImageContext(CGSizeMake(engine.width, engine.height));
                 }
+                
+                @autoreleasepool {
+                    _renderer.layer = _app.keyWindow.layer;
+                    [_renderer beginFrameAtTime:CACurrentMediaTime() timeStamp:NULL];
+                    [_renderer render];
+                    [_renderer endFrame];
+                }
+
+                eglSwapBuffers(engine.display, engine.surface);
+                
             }
         } while (_isRunning);
     }
 
+    NSLog(@"end running");
+
 }
+
+
+/**
+ * Initialize an EGL context for the current display.
+ */
+static int engine_init_display(struct engine* engine) {
+    // initialize OpenGL ES and EGL
+    
+    /*
+     * Here specify the attributes of the desired configuration.
+     * Below, we select an EGLConfig with at least 8 bits per color
+     * component compatible with on-screen windows
+     */
+    const EGLint attribs[] = {
+        EGL_CONFORMANT, EGL_OPENGL_ES2_BIT,
+        EGL_RENDERABLE_TYPE, EGL_OPENGL_ES2_BIT,
+        EGL_SURFACE_TYPE, EGL_WINDOW_BIT,
+        EGL_BLUE_SIZE, 8,
+        EGL_GREEN_SIZE, 8,
+        EGL_RED_SIZE, 8,
+        EGL_NONE
+    };
+    EGLint w, h, dummy, format;
+    EGLint numConfigs;
+    EGLConfig config;
+    EGLSurface surface;
+    EGLContext context;
+    
+    EGLDisplay display = eglGetDisplay(EGL_DEFAULT_DISPLAY);
+    
+    eglInitialize(display, 0, 0);
+    
+    /* Here, the application chooses the configuration it desires. In this
+     * sample, we have a very simplified selection process, where we pick
+     * the first EGLConfig that matches our criteria */
+    eglChooseConfig(display, attribs, &config, 1, &numConfigs);
+    
+    /* EGL_NATIVE_VISUAL_ID is an attribute of the EGLConfig that is
+     * guaranteed to be accepted by ANativeWindow_setBuffersGeometry().
+     * As soon as we picked a EGLConfig, we can safely reconfigure the
+     * ANativeWindow buffers to match, using EGL_NATIVE_VISUAL_ID. */
+    eglGetConfigAttrib(display, config, EGL_NATIVE_VISUAL_ID, &format);
+    
+    ANativeWindow_setBuffersGeometry(engine->app->window, 0, 0, format);
+    
+    surface = eglCreateWindowSurface(display, config, engine->app->window, NULL);
+    context = eglCreateContext(display, config, NULL, NULL);
+    
+    if (eglMakeCurrent(display, surface, surface, context) == EGL_FALSE) {
+        NSLog(@"Unable to eglMakeCurrent");
+        return -1;
+    }
+    
+    eglQuerySurface(display, surface, EGL_WIDTH, &w);
+    eglQuerySurface(display, surface, EGL_HEIGHT, &h);
+    
+    engine->display = display;
+    engine->context = context;
+    engine->surface = surface;
+    engine->width = w;
+    engine->height = h;
+    engine->state.angle = 0;
+    
+    NSLog(@"surface width:%d height:%d",w,h);
+    // Initialize GL state.
+    
+    EAGLContext *ctx = [[EAGLContext alloc] initWithAPI:kEAGLRenderingAPIOpenGLES2];
+    _app->_renderer = [CARenderer rendererWithEAGLContext:ctx options:nil];
+    _app->_context = ctx;
+    
+    return 0;
+}
+
+/**
+ * Tear down the EGL context currently associated with the display.
+ */
+static void engine_term_display(struct engine* engine) {
+    if (engine->display != EGL_NO_DISPLAY) {
+        eglMakeCurrent(engine->display, EGL_NO_SURFACE, EGL_NO_SURFACE, EGL_NO_CONTEXT);
+        if (engine->context != EGL_NO_CONTEXT) {
+            eglDestroyContext(engine->display, engine->context);
+        }
+        if (engine->surface != EGL_NO_SURFACE) {
+            eglDestroySurface(engine->display, engine->surface);
+        }
+        eglTerminate(engine->display);
+    }
+    engine->animating = 0;
+    engine->display = EGL_NO_DISPLAY;
+    engine->context = EGL_NO_CONTEXT;
+    engine->surface = EGL_NO_SURFACE;
+    
+    _app->_renderer = nil;
+    _app->_context = nil;
+}
+
 
 static int32_t handle_input(struct android_app* app, AInputEvent* event) {
     /* app->userData is available here */
@@ -175,13 +294,25 @@ static int32_t handle_input(struct android_app* app, AInputEvent* event) {
 
 static void handle_app_command(struct android_app* app, int32_t cmd) {
     /* app->userData is available here */
+    struct engine* engine = (struct engine*)app->userData;
     
     switch (cmd) {
         case APP_CMD_INIT_WINDOW:
-            app_has_focus=true;
+            // The window is being shown, get it ready.
+            if (engine->app->window != NULL) {
+                engine_init_display(engine);
+//                engine_draw_frame(engine);
+            }
+            break;
+        case APP_CMD_TERM_WINDOW:
+            // The window is being hidden or closed, clean it up.
+            engine_term_display(engine);
             break;
         case APP_CMD_LOST_FOCUS:
             app_has_focus=false;
+            // Also stop animating.
+            engine->animating = 0;
+//            engine_draw_frame(engine);
             break;
         case APP_CMD_GAINED_FOCUS:
             app_has_focus=true;
@@ -283,41 +414,6 @@ static void draw_frame_cgcontext(ANativeWindow_Buffer *buffer) {
         
     }
     
-}
-
-static void buffTest(ANativeWindow_Buffer *buffer)
-{
-    //    int32_t idx = 0;
-    //    int8_t *bytes = buffer->bits;
-    //    int8_t r = 0;
-    //    int8_t g = 0;
-    //    int8_t b = 255;
-    //    int8_t a = 255;
-    //    for (int32_t y = 0; y <buffer->height; y++) {
-    //        for (int32_t x = 0; x < bytesPerRow; x++) {
-    //            int channel = x % 4;
-    //            int8_t value = 0;
-    //            switch (channel) {
-    //                case 0: value = r; break;
-    //                case 1: value = g; break;
-    //                case 2: value = b; break;
-    //                case 3: value = a; break;
-    //                default:break;
-    //            }
-    //
-    //            bytes[idx] = value;
-    //            idx ++;
-    //        }
-    //    }
-    
-    int32_t *pixes = buffer->bits;
-    int32_t idx = 0;
-    for (int32_t y = 0; y <buffer->height; y++) {
-        for (int32_t x = 0; x < buffer->width; x++) {
-            pixes[idx] = 0xFF0000FF;
-            idx++;
-        }
-    }
 }
 
 #pragma mark - 
