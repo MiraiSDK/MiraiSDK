@@ -206,7 +206,7 @@ NSString *const UIViewHiddenDidChangeNotification = @"UIViewHiddenDidChangeNotif
         _layer.frame = newFrame;
         NSLog(@"set layer frame: {%.2f,%.2f,%.2f,%.2f}",newFrame.origin.x,newFrame.origin.y,newFrame.size.width,newFrame.size.height);
         _layer.bounds = CGRectMake(0, 0, newFrame.size.width, newFrame.size.height);
-        _layer.position = CGPointMake(newFrame.origin.x, newFrame.origin.y);
+        _layer.position = CGPointMake(newFrame.origin.x+newFrame.size.width/2, newFrame.origin.y+newFrame.size.height/2);
         
         //        [self _boundsDidChangeFrom:oldBounds to:_layer.bounds];
         //        [[NSNotificationCenter defaultCenter] postNotificationName:UIViewFrameDidChangeNotification object:self];
