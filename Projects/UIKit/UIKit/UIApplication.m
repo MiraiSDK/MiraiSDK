@@ -234,7 +234,6 @@ static int engine_init_display(struct engine* engine) {
     engine->surface = surface;
     engine->width = w;
     engine->height = h;
-    engine->state.angle = 0;
     
     NSLog(@"surface width:%d height:%d",w,h);
     // Initialize GL state.
