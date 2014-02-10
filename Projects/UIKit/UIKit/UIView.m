@@ -665,29 +665,29 @@ NSString *const UIViewHiddenDidChangeNotification = @"UIViewHiddenDidChangeNotif
 
 - (void)displayLayer:(CALayer *)theLayer
 {
-    CGContextRef ctx = UIGraphicsGetCurrentContext();
-    
-    CGContextTranslateCTM(ctx, theLayer.frame.origin.x, theLayer.frame.origin.y);
-    
-    if (theLayer.backgroundColor) {
-        CGContextSetFillColorWithColor(ctx, theLayer.backgroundColor);
-        CGContextFillRect(ctx, theLayer.frame);
-    }
-    
-    for (UIView *subView in _subviews) {
-        NSLog(@"draw layer:%@",subView.layer);
-        if (subView.layer.needsDisplay) {
-            CGContextSaveGState(ctx);
-            [subView.layer displayIfNeeded];
-            CGContextRestoreGState(ctx);
-            
-            if (subView.layer.contents) {
-                NSLog(@"draw layer contnts.");
-                CGContextDrawImage(ctx, subView.layer.frame, subView.layer.contents);
-            }
-        }
-        
-    }
+//    CGContextRef ctx = UIGraphicsGetCurrentContext();
+//    
+//    CGContextTranslateCTM(ctx, theLayer.frame.origin.x, theLayer.frame.origin.y);
+//    
+//    if (theLayer.backgroundColor) {
+//        CGContextSetFillColorWithColor(ctx, theLayer.backgroundColor);
+//        CGContextFillRect(ctx, theLayer.frame);
+//    }
+//    
+//    for (UIView *subView in _subviews) {
+//        NSLog(@"draw layer:%@",subView.layer);
+//        if (subView.layer.needsDisplay) {
+//            CGContextSaveGState(ctx);
+//            [subView.layer displayIfNeeded];
+//            CGContextRestoreGState(ctx);
+//            
+//            if (subView.layer.contents) {
+//                NSLog(@"draw layer contnts.");
+//                CGContextDrawImage(ctx, subView.layer.frame, subView.layer.contents);
+//            }
+//        }
+//        
+//    }
 }
 
 - (void)drawLayer:(CALayer *)layer inContext:(CGContextRef)ctx
