@@ -152,10 +152,6 @@ struct engine {
                         return;
                     }
                 }
-
-                if (!UIGraphicsGetCurrentContext()) {
-                    UIGraphicsBeginImageContext(CGSizeMake(engine.width, engine.height));
-                }
                 
                 @autoreleasepool {
                     _renderer.layer = _app.keyWindow.layer;
