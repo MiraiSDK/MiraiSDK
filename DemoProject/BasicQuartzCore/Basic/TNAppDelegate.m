@@ -8,7 +8,8 @@
 
 #import "TNAppDelegate.h"
 #import <QuartzCore/QuartzCore.h>
-//#import "TNViewController.h"
+#import <UIKit/UIKit.h>
+#import "TNViewController.h"
 #import <dispatch/dispatch.h>
 #include <android/log.h>
 #define  LOG_TAG    "BasicCairo"
@@ -22,27 +23,23 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     // Override point for customization after application launch.
-    self.window = [[UIWindow alloc] initWithFrame:CGRectMake(0, 0, 720, 720)];
-    self.window.layer.backgroundColor = [[UIColor redColor] CGColor];
-    
-    UILabel *label = [[UILabel alloc] init];
-    label.frame = CGRectMake(20, 20, 500, 500);
-    label.layer.backgroundColor = [[UIColor greenColor] CGColor];
-    label.text = [NSString stringWithFormat:@"Hello Label \n中文能支持\n日本語もOKです。"];
-    [label setTextColor:[UIColor redColor]];
-    [self.window addSubview:label];
-    
-    TNCustomView *custom = [[TNCustomView alloc] initWithFrame:CGRectMake(0, 0, 300, 300)];
+    self.window = [[UIWindow alloc] initWithFrame:CGRectMake(0, 0, 720, 1280)];
+//    
+//    UILabel *label = [[UILabel alloc] init];
+//    label.frame = CGRectMake(20, 20, 500, 500);
+//    label.layer.backgroundColor = [[UIColor greenColor] CGColor];
+//    label.text = [NSString stringWithFormat:@"Hello Label \n中文能支持\n日本語もOKです。"];
+//    [label setTextColor:[UIColor redColor]];
+//    [self.window addSubview:label];
+//
+//    TNCustomView *custom = [[TNCustomView alloc] initWithFrame:CGRectMake(0, 0, 300, 300)];
 //    [self.window addSubview:custom];
     
+    TNViewController *vc = [[TNViewController alloc] initWithNibName:nil bundle:nil];
+    UINavigationController *nav = [[UINavigationController alloc] initWithRootViewController:vc];
+    self.window.rootViewController = nav;
     
-//    UIButton *button = [[UIButton alloc] initWithFrame:CGRectMake(50, 50, 500, 400)];
-//    [button setTitle:@"Button" forState:UIControlStateNormal];
-//    
-//    [self.window addSubview:button];
-    
-//    self.window.rootViewController = [[TNViewController alloc] initWithNibName:nil bundle:nil];
-//    [self.window makeKeyAndVisible];
+    [self.window makeKeyAndVisible];
     NSLog(@"before queue");
     dispatch_queue_t queue = dispatch_queue_create("org.tiny4.sample", NULL);
     dispatch_async(queue, ^{

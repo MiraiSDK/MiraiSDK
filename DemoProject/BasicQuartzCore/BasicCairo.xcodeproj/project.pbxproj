@@ -29,6 +29,7 @@
 		438462E3188ADE1A006DA1AA /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 438462E2188ADE1A006DA1AA /* UIKit.framework */; };
 		439487EC1893B7F6004F8636 /* libOpenGLES.so in Copy Files (libs) */ = {isa = PBXBuildFile; fileRef = 439487EA1893B7E6004F8636 /* libOpenGLES.so */; };
 		43DFBA531851DABE00BA269F /* libgnustep-corebase.so in Copy Files (libs) */ = {isa = PBXBuildFile; fileRef = 43DFBA521851D9F200BA269F /* libgnustep-corebase.so */; };
+		43EBAA7518AB5573005DDD8D /* TNViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 431F17DB1826432A006FCF12 /* TNViewController.m */; };
 		43ECCF051851936B0076535C /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 431F17C91826432A006FCF12 /* UIKit.framework */; };
 		43ECCF0A185194860076535C /* libUIKit.so in Copy Files (libs) */ = {isa = PBXBuildFile; fileRef = 43ECCF09185194480076535C /* libUIKit.so */; };
 		43ECCF0B1851B50A0076535C /* TNAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 431F17D51826432A006FCF12 /* TNAppDelegate.m */; };
@@ -397,6 +398,7 @@
 			files = (
 				43ECCF0B1851B50A0076535C /* TNAppDelegate.m in Sources */,
 				432FF2B218574AD9005486C5 /* TNCustomView.m in Sources */,
+				43EBAA7518AB5573005DDD8D /* TNViewController.m in Sources */,
 				431F17FE18264507006FCF12 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
