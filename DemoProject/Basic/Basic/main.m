@@ -20,15 +20,28 @@
 int main(int argc, char * argv[])
 {
     __android_log_print(ANDROID_LOG_DEBUG, DEBUG_TAG, "NDK: main");
+    
+    int count = 1;
+    char buffer[1024];
+    sprintf(buffer, "/data/local/tmp/UIKitApp");
 
+    char * arg[] = {buffer};
+
+    [NSProcessInfo initializeWithArguments:arg count:count environment:NULL];
+
+    
     @autoreleasepool {
+        
+        
         NSString *lll = @"hello";
         __android_log_print(ANDROID_LOG_DEBUG, DEBUG_TAG, "NDK: in autoreleasepool");
         NSNumber *a = [NSNumber numberWithInteger:1];
         NSNumber *b = [NSNumber numberWithInteger:2];
         
-        return 0;
-//        //return UIApplicationMain(argc, argv, nil, NSStringFromClass([TNAppDelegate class]));
+        while (1) {
+            __android_log_print(ANDROID_LOG_DEBUG, DEBUG_TAG, "number a:%s number b:%s",a.stringValue.UTF8String,b.stringValue.UTF8String);
+        }
+        //        //return UIApplicationMain(argc, argv, nil, NSStringFromClass([TNAppDelegate class]));
     }
     return 0;
 }

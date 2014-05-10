@@ -19,7 +19,7 @@
 		4327E1BE184C531300F17F96 /* libgnustep-base.so in Copy Files (libs) */ = {isa = PBXBuildFile; fileRef = 4327E1BD184C530800F17F96 /* libgnustep-base.so */; };
 		4327E1C0184C86CC00F17F96 /* libgnustl_shared.so in Copy Files (libs) */ = {isa = PBXBuildFile; fileRef = 4327E1BF184C86BF00F17F96 /* libgnustl_shared.so */; };
 		4383FF4C184B4EFE004E88C2 /* libobjc.so in Copy Files (libs) */ = {isa = PBXBuildFile; fileRef = 4383FF4B184B4EFB004E88C2 /* libobjc.so */; };
-		4383FF4E184B4FF7004E88C2 /* libdispatch.so in Copy Files (libs) */ = {isa = PBXBuildFile; fileRef = 4383FF4D184B4FF5004E88C2 /* libdispatch.so */; };
+		43A8132D191B642F00E3DFA5 /* libdispatch.so in Copy Files (libs) */ = {isa = PBXBuildFile; fileRef = 43A8132C191B63F400E3DFA5 /* libdispatch.so */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -41,8 +41,8 @@
 			dstSubfolderSpec = 6;
 			files = (
 				4327E1C0184C86CC00F17F96 /* libgnustl_shared.so in Copy Files (libs) */,
+				43A8132D191B642F00E3DFA5 /* libdispatch.so in Copy Files (libs) */,
 				4383FF4C184B4EFE004E88C2 /* libobjc.so in Copy Files (libs) */,
-				4383FF4E184B4FF7004E88C2 /* libdispatch.so in Copy Files (libs) */,
 				4327E1BE184C531300F17F96 /* libgnustep-base.so in Copy Files (libs) */,
 			);
 			name = "Copy Files (libs)";
@@ -71,9 +71,9 @@
 		43368BB0182774F100B492D0 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = "../../../../Development/cocotron/system/i386-mingw32msvc/Frameworks/Foundation.framework"; sourceTree = "<group>"; };
 		4383FF44184B1B11004E88C2 /* Android.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; name = Android.xcconfig; path = ../Android.xcconfig; sourceTree = "<group>"; };
 		4383FF4B184B4EFB004E88C2 /* libobjc.so */ = {isa = PBXFileReference; lastKnownFileType = file; name = libobjc.so; path = "../../Products/android/android-toolchain-arm/sysroot/usr/lib/libobjc.so"; sourceTree = "<group>"; };
-		4383FF4D184B4FF5004E88C2 /* libdispatch.so */ = {isa = PBXFileReference; lastKnownFileType = file; name = libdispatch.so; path = ../../Products/android/sysroot/usr/lib/libdispatch.so; sourceTree = "<group>"; };
 		4383FF4F184B5017004E88C2 /* Android.mk */ = {isa = PBXFileReference; lastKnownFileType = text; name = Android.mk; path = "Basic-android/jni/Android.mk"; sourceTree = "<group>"; };
 		4383FF50184B5037004E88C2 /* MainHActivity.java */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.java; name = MainHActivity.java; path = "Basic-android/src/org/tiny4/Basic/MainHActivity.java"; sourceTree = "<group>"; };
+		43A8132C191B63F400E3DFA5 /* libdispatch.so */ = {isa = PBXFileReference; lastKnownFileType = file; name = libdispatch.so; path = "../../Products/android/android-toolchain-arm/sysroot/usr/lib/libdispatch.so"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -168,7 +168,7 @@
 			children = (
 				4327E1BF184C86BF00F17F96 /* libgnustl_shared.so */,
 				4327E1BD184C530800F17F96 /* libgnustep-base.so */,
-				4383FF4D184B4FF5004E88C2 /* libdispatch.so */,
+				43A8132C191B63F400E3DFA5 /* libdispatch.so */,
 				4383FF4B184B4EFB004E88C2 /* libobjc.so */,
 			);
 			name = Frameworks;
@@ -408,7 +408,7 @@
 				INSTALL_PATH = "$(SOURCE_ROOT)/$(PRODUCT_NAME)-android/jni";
 				LD_DEPENDENCY_INFO_FILE = "";
 				PRODUCT_NAME = Basic;
-				SDKROOT = macosx;
+				SDKROOT = macosx0.0;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -430,7 +430,7 @@
 				INSTALL_PATH = "$(SOURCE_ROOT)/$(PRODUCT_NAME)-android/jni";
 				LD_DEPENDENCY_INFO_FILE = "";
 				PRODUCT_NAME = Basic;
-				SDKROOT = macosx;
+				SDKROOT = macosx0.0;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
