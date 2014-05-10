@@ -56,7 +56,12 @@ LOCAL_SRC_FILES := libUIKit.so
 include $(PREBUILT_SHARED_LIBRARY)
 
 include $(CLEAR_VARS)
-LOCAL_MODULE    := BasicCairo
-LOCAL_SRC_FILES := libBasicCairo.so
+LOCAL_MODULE    := NextBookKit
+LOCAL_SRC_FILES := libNextBookKit.so
+include $(PREBUILT_SHARED_LIBRARY)
+
+include $(CLEAR_VARS)
+LOCAL_MODULE    := NextBookRun
+LOCAL_SRC_FILES := libNextBookRun.so
 include $(PREBUILT_SHARED_LIBRARY)
 

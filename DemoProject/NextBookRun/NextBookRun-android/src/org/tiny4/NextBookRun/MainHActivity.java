@@ -1,4 +1,4 @@
-package org.tiny4.BasicCairo;
+package org.tiny4.NextBookRun;
 import android.os.Bundle;
 import android.app.Activity;
 import android.app.NativeActivity;
@@ -20,7 +20,8 @@ public class MainHActivity extends NativeActivity
         System.loadLibrary ("OpenGLES");
         System.loadLibrary ("QuartzCore");
         System.loadLibrary ("UIKit");
-        System.loadLibrary ("BasicCairo");
+        System.loadLibrary ("NextBookKit");
+        System.loadLibrary ("NextBookRun");
 
     }
     
