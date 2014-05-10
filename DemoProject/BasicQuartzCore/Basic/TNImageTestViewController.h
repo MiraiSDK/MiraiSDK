@@ -7,7 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "TNTestViewController.h"
 
-@interface TNImageTestViewController : UIViewController
-
+@interface TNImageTestViewController : TNTestViewController
++ (NSString *)testName;
 @end

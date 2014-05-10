@@ -13,6 +13,10 @@
 @end
 
 @implementation TNButtonTestViewController
++ (NSString *)testName
+{
+    return @"Button Test";
+}
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -27,6 +31,19 @@
 {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    self.view.backgroundColor = [UIColor whiteColor];
+    
+    UIButton *button = [UIButton buttonWithType:UIButtonTypeRoundedRect];
+    [button setTitle:@"Pop" forState:UIControlStateNormal];
+    [button addTarget:self action:@selector(didPressedButton:) forControlEvents:UIControlEventTouchUpInside];
+    [button sizeToFit];
+    
+    [self.view addSubview:button];
+}
+
+- (void)didPressedButton:(id)sender
+{
+    [self.navigationController popViewControllerAnimated:YES];
 }
 
 - (void)didReceiveMemoryWarning

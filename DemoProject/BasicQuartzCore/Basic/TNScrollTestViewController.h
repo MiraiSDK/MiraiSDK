@@ -7,7 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "TNTestViewController.h"
 
-@interface TNScrollTestViewController : UIViewController
+@interface TNScrollTestViewController : TNTestViewController
 
 @end

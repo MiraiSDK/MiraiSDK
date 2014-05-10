@@ -17,7 +17,7 @@
 {
     self = [super initWithFrame:frame];
     if (self) {
-        _attributedString = [[NSAttributedString alloc] initWithString:@"Hello Miku" attributes:[self attributes]];
+        _attributedString = [[NSAttributedString alloc] initWithString:@"I am the bone of my sword\nSteel is my body and fire is my blood\nI have created over a thousand blades\nUnaware of loss, Nor aware of gain\nWithstood pain to create weapons, waiting for one’s arrival\nI have no regrets. This is the only path \nMy whole life was unlimited blade works" attributes:[self attributes]];
 
     }
     return self;
@@ -25,12 +25,19 @@
 
 - (NSDictionary *)attributes
 {
+#ifdef ANDROID
     CGColorRef redColor = CGColorCreateGenericRGB(1, 0, 0, 1);
     CGFontRef font = CGFontCreateWithFontName(@"Roboto");
     return @{
              (__bridge NSString *)kCTForegroundColorAttributeName:(id)redColor,
              //(__bridge NSString *)kCTFontAttributeName:font
              };
+#else
+    CGColorRef redColor = CGColorRetain([UIColor redColor].CGColor);
+    return @{
+             (__bridge NSString *)kCTForegroundColorAttributeName:(__bridge id)redColor,
+             };
+#endif
 }
 
 
@@ -42,11 +49,11 @@
     
     [[UIColor redColor] set];
     
-//    CGContextMoveToPoint(ctx, 10, 0);
-//    CGContextAddLineToPoint(ctx, 100, 100);
-//    CGContextAddLineToPoint(ctx, 100, 0);
-//    CGContextAddLineToPoint(ctx, 10, 100);
-//    CGContextStrokePath(ctx);
+    CGContextMoveToPoint(ctx, 0, 0);
+    CGContextAddLineToPoint(ctx, 100, 0);
+    CGContextAddLineToPoint(ctx, 100, 100);
+    CGContextAddLineToPoint(ctx, 0, 100);
+    CGContextStrokePath(ctx);
     
 //    NSLog(@"will create font:Robote");
 //    CGAffineTransform t = {1,0,0,1,0,0};
@@ -58,15 +65,62 @@
 //        NSLog(@"empty font");
 //    }
     
+    CGAffineTransform t = CGContextGetTextMatrix(ctx);
+    
+    NSLog(@"origin text matrix:%@",NSStringFromCGAffineTransform(t));
+    NSLog(@"will set text matrix:%@",NSStringFromCGAffineTransform(CGAffineTransformIdentity));
+    CGContextSetTextMatrix(ctx, CGAffineTransformIdentity);
+    CGAffineTransform t1 = CGContextGetTextMatrix(ctx);
+    NSLog(@"new text matrix:%@",NSStringFromCGAffineTransform(t1));
+    
     CGContextScaleCTM(ctx, 1, -1);
     CGContextTranslateCTM(ctx, 0, -rect.size.height);
     
+#ifdef ANDROID
     CTFramesetterRef framesetter = CTFramesetterCreateWithAttributedString(_attributedString);
+#else
+    CTFramesetterRef framesetter = CTFramesetterCreateWithAttributedString((__bridge CFAttributedStringRef)_attributedString);
+#endif
     CGMutablePathRef path = CGPathCreateMutable();
     CGPathAddRect(path, NULL, rect);
     CTFrameRef frame = CTFramesetterCreateFrame(framesetter, CFRangeMake(0, 0), path, NULL);
     CGPathRelease(path);
-    CTFrameDraw(frame, ctx);
+//    CTFrameDraw(frame, ctx);
+    
+#ifdef ANDROID
+    CTTypesetterRef typesetter = CTTypesetterCreateWithAttributedString(_attributedString);
+#else
+    CTTypesetterRef typesetter = CTTypesetterCreateWithAttributedString((__bridge CFAttributedStringRef) _attributedString);
+
+#endif
+    
+    CFIndex pos = 0;
+    CGFloat y = 0;
+    NSInteger lineIdx = 0;
+    CFIndex length = _attributedString.length;
+    while (pos < length) {
+//        if (lineIdx >1) {
+//            break;
+//        }
+        CFIndex textCount = CTTypesetterSuggestLineBreak(typesetter, pos, self.bounds.size.width);
+
+        NSString *str = [_attributedString attributedSubstringFromRange:NSMakeRange(pos, textCount)].string;
+        NSLog(@"line break, range:%@ str:%@",NSStringFromRange(NSMakeRange(pos, textCount)), str);
+
+        CTLineRef line = CTTypesetterCreateLine(typesetter, CFRangeMake(pos, textCount));
+        
+        
+        CGContextSetTextPosition(ctx, 0, y);
+        CTLineDraw(line, ctx);
+        
+        pos += textCount;
+#if ANDROID
+        y += 40;
+#else
+        y += 20;
+#endif
+        lineIdx ++;
+    }
     
 }
 @end

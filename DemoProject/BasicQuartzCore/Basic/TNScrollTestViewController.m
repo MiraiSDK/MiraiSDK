@@ -10,9 +10,21 @@
 
 @interface TNScrollTestViewController ()
 
+@property (nonatomic, strong) UIScrollView *scrollView;
+@property (nonatomic, strong) UIView *red;
+
 @end
 
 @implementation TNScrollTestViewController
++ (NSString *)testName
+{
+    return @"Scroll Test";
+}
+
+//+ (void)initialize
+//{
+//    [self registerTestCase];
+//}
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -26,7 +38,25 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
+    
+    UIScrollView *s = [[UIScrollView alloc] initWithFrame:self.view.bounds];
+    s.backgroundColor = [UIColor whiteColor];
+    
+    s.contentSize = CGSizeMake(self.view.bounds.size.width*2,
+                               self.view.bounds.size.height);
+    
+    [self.view addSubview:s];
+    self.scrollView = s;
+    
+    UIView *red = [[UIView alloc] initWithFrame:CGRectMake(50, 250, 300, 150)];
+    red.backgroundColor = [UIColor redColor];
+    self.red = red;
+    [self.scrollView addSubview:red];
+    
+    UIView *green = [[UIView alloc] initWithFrame:CGRectMake(self.view.bounds.size.width*2-50-300, 250, 300, 150)];
+    green.backgroundColor = [UIColor greenColor];
+    [self.scrollView addSubview:green];
+
 }
 
 - (void)didReceiveMemoryWarning

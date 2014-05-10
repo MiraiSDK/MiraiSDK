@@ -9,5 +9,8 @@
 #import <UIKit/UIKit.h>
 
 @interface TNTestViewController : UIViewController
++ (NSString *)testName;
++ (void)registerTestCase;
 
++ (NSArray *)testCases;
 @end

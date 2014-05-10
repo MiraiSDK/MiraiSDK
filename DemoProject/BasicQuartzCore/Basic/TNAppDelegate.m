@@ -11,7 +11,7 @@
 #import <UIKit/UIKit.h>
 #import "TNViewController.h"
 #import <dispatch/dispatch.h>
-#include <android/log.h>
+//#include <android/log.h>
 #define  LOG_TAG    "BasicCairo"
 #define  LOGI(...)  __android_log_print(ANDROID_LOG_INFO,LOG_TAG,__VA_ARGS__)
 
@@ -23,7 +23,8 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     // Override point for customization after application launch.
-    self.window = [[UIWindow alloc] initWithFrame:CGRectMake(0, 0, 720, 1280)];
+    
+    self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
 //    
 //    UILabel *label = [[UILabel alloc] init];
 //    label.frame = CGRectMake(20, 20, 500, 500);
@@ -32,20 +33,29 @@
 //    [label setTextColor:[UIColor redColor]];
 //    [self.window addSubview:label];
 //
-//    TNCustomView *custom = [[TNCustomView alloc] initWithFrame:CGRectMake(0, 0, 300, 300)];
-//    [self.window addSubview:custom];
     
     TNViewController *vc = [[TNViewController alloc] initWithNibName:nil bundle:nil];
     UINavigationController *nav = [[UINavigationController alloc] initWithRootViewController:vc];
     self.window.rootViewController = nav;
     
+//    TNCustomView *custom = [[TNCustomView alloc] initWithFrame:CGRectMake(0, 0, 300, 300)];
+//    [self.window addSubview:custom];
+
+//    UIButton *button = [UIButton buttonWithType:UIButtonTypeCustom];
+//    [button setTitle:@"Pop" forState:UIControlStateNormal];
+//    [button setTitleColor:[UIColor redColor] forState:UIControlStateNormal];
+//    [button setBackgroundColor:[UIColor greenColor]];
+//    [button setFrame:CGRectMake(0, 0, 300, 200)];
+//    [self.window addSubview:button];
+//    [button layoutSubviews];
+    
     [self.window makeKeyAndVisible];
-    NSLog(@"before queue");
-    dispatch_queue_t queue = dispatch_queue_create("org.tiny4.sample", NULL);
-    dispatch_async(queue, ^{
-        NSLog(@"in async queue.....");
-    });
-    NSLog(@"dispatch async queue");
+//    NSLog(@"before queue");
+//    dispatch_queue_t queue = dispatch_queue_create("org.tiny4.sample", NULL);
+//    dispatch_async(queue, ^{
+//        NSLog(@"in async queue.....");
+//    });
+//    NSLog(@"dispatch async queue");
     
     
 //    LOGI("start dispatch");

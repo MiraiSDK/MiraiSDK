@@ -14,6 +14,32 @@
 
 @implementation TNTestViewController
 
+static NSMutableArray *_testcases;
+//+ (void)initialize
+//{
+//    [self testCases];
+//}
+
+//+ (void)registerTestCase
+//{
+//    NSMutableArray *t = (NSMutableArray *)[self testCases];
+//    [t addObject:[self class]];
+//}
+
++ (NSArray *)testCases
+{
+    if (_testcases == nil) {
+        _testcases = [NSMutableArray array];
+    }
+    
+    return _testcases;
+}
+
++ (NSString *)testName
+{
+    return @"Test";
+}
+
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];

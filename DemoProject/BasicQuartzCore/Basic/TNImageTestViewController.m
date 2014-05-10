@@ -9,16 +9,19 @@
 #import "TNImageTestViewController.h"
 
 @interface TNImageTestViewController ()
-
+@property (nonatomic, strong) UIImageView *imageView;
 @end
 
 @implementation TNImageTestViewController
++ (NSString *)testName
+{
+    return @"Image Test";
+}
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
-        // Custom initialization
     }
     return self;
 }
@@ -26,7 +29,64 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
+    
+    UIImageView *imageView = [[UIImageView alloc] initWithFrame:self.view.bounds];
+    [self.view addSubview:imageView];
+    self.imageView = imageView;
+    
+    [self testImageWithData];
+}
+
+- (NSString *)jpegImagePath
+{
+    NSString *path = [[NSBundle mainBundle] pathForResource:@"testImage" ofType:@"jpg"];
+    NSLog(@"path:%@",path);
+    return path;
+}
+
+- (NSString *)pngImagePath
+{
+    NSString *path = [[NSBundle mainBundle] pathForResource:@"testImage" ofType:@"png"];
+    NSLog(@"path:%@",path);
+    return path;
+}
+
+- (NSData *)jpegImageData
+{
+    NSData *data = [[NSData alloc] initWithContentsOfFile:[self jpegImagePath]];
+    return data;
+}
+
+- (NSData *)pngImageData
+{
+    NSData *data = [[NSData alloc] initWithContentsOfFile:[self pngImagePath]];
+    return data;
+}
+
+- (void)testImageWithData
+{
+    
+//    NSLog(@"create from path");
+//    UIImage *pathImage = [UIImage imageWithContentsOfFile:[self jpegImagePath]];
+//    NSLog(@"jpetImageFromPath:%@",pathImage);
+
+    NSLog(@"create from data");
+    NSData *jpegData = [self jpegImageData];
+    UIImage *jpegImage = [UIImage imageWithData:jpegData];
+//
+    NSLog(@"jpegImage from data:%@",jpegImage);
+    
+//    NSLog(@"png image from path");
+//    UIImage *pathPngImage = [UIImage imageWithContentsOfFile:[self pngImagePath]];
+//    NSLog(@"png from Path:%@",pathPngImage);
+    
+//    NSData *pngData = [self pngImageData];
+//    NSLog(@"pngData:%@",pngData);
+//    UIImage *pngImage = [UIImage imageWithData:pngData];
+//    
+//    NSLog(@"pngImage:%@",pngImage);
+    
+    self.imageView.image = jpegImage;
 }
 
 - (void)didReceiveMemoryWarning
