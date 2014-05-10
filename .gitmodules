@@ -7,3 +7,6 @@
 [submodule "Projects/CoreText"]
 	path = Projects/CoreText
 	url = git@github.com:tinyfool/Mirai-CoreText.git
+[submodule "Projects/Foundation"]
+	path = Projects/Foundation
+	url = https://github.com/tinyfool/Mirai-Foundation.git
