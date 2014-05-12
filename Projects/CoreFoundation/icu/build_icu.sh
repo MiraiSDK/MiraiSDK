@@ -34,11 +34,11 @@ buildOSXVersion()
 
 	pushd $SCRIPT_ROOT/build_icu_osx
 
-	export CPPFLAGS="-O3 -fno-short-wchar -DU_USING_ICU_NAMESPACE=1 -fno-short-enums \
+	export CPPFLAGS="-DU_USING_ICU_NAMESPACE=0 -fno-short-enums \
 	-DU_HAVE_NL_LANGINFO_CODESET=0 -D__STDC_INT64__ -DU_TIMEZONE=1 \
 	-DUCONFIG_NO_LEGACY_CONVERSION=1 -DUCONFIG_NO_TRANSLITERATION=0"
 
-	../icu/source/runConfigureICU MacOSX --prefix=$PWD/icu_build --enable-extras=no --enable-strict=no -enable-static -enable-shared --enable-tests=no --enable-samples=no --enable-dyload=no
+	../icu/source/runConfigureICU MacOSX --prefix=$PWD/icu_build --enable-extras=no --enable-strict=no -enable-static -enable-shared --enable-tests=no --enable-samples=no --enable-dyload=no --enable-debug
 	make -j4
 	make install
     checkError $? "Make install osx version failed"
@@ -66,15 +66,15 @@ buildAndroidVersion()
 	# required COLLATION (-DUCONFIG_NO_COLLATION=0)
 	#
 	export CPPFLAGS="-I$NDK_STANDARD_ROOT/sysroot/usr/include/ \
-	-O3 -fno-short-wchar -DU_USING_ICU_NAMESPACE=1 -fno-short-enums \
+	-fno-short-wchar -DU_USING_ICU_NAMESPACE=0 -fno-short-enums \
 	-DU_HAVE_NL_LANGINFO_CODESET=0 -D__STDC_INT64__ -DU_TIMEZONE=1 \
 	-DUCONFIG_NO_LEGACY_CONVERSION=1 -DUCONFIG_NO_TRANSLITERATION=0"
 	export LDFLAGS="-lc -lgnustl_shared -Wl,-rpath-link=$NDK_STANDARD_ROOT/sysroot/usr/lib/"
 
 	../icu/source/configure --with-cross-build=$ICU_CROSS_BUILD \
-	--enable-extras=no --enable-strict=no -enable-static -enable-shared \
+	--enable-extras=no --enable-strict=no -enable-static --disable-shared \
 	--enable-tests=no --enable-samples=no --enable-dyload=no \
-	--host=arm-linux-androideabi --prefix=$ICU_PREFIX
+	--host=arm-linux-androideabi --prefix=$ICU_PREFIX --enable-debug
 	make -j4
 	make install 
 
