@@ -1,0 +1,21 @@
+//
+//  Android.xcconfig
+//  SimpleView
+//
+//  Created by Chen Yonghui on 11/3/13.
+//  Copyright (c) 2013 Shanghai Tinynetwork. All rights reserved.
+//
+SYMROOT = build-arm-google-android
+CODE_SIGN_IDENTITY[sdk=iphoneos*] =
+DEPLOYMENT_LOCATION = YES
+DSTROOT = /
+INSTALL_PATH = $(SOURCE_ROOT)/$(PRODUCT_NAME)-android/jni
+LD_DEPENDENCY_INFO_FILE =
+EXECUTABLE_EXTENSION = so
+EXECUTABLE_PREFIX = lib
+MACOSX_DEPLOYMENT_TARGET=
+
+WRAPPER_EXTENSION = app
+OTHER_CFLAGS = -DANDROID $(inherited) -fobjc-nonfragile-abi -fblocks
+CLANG_ENABLE_MODULES = NO
+OTHER_LDFLAGS = -shared $(inherited) -Wl,-z,defs -L/Users/chyhfj/Library/Developer/Xcode/DerivedData/NextBook-fazhihlfhvtlsefbywpdmafzmkye/Build/Products/Debug -lNextBookKit -landroid -lobjc -ldispatch -lgnustep-base -fconstant-class=NSConstantString -lm -llog -lz

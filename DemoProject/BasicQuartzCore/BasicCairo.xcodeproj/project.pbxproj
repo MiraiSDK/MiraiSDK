@@ -101,6 +101,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		4301394D19225B6300EC5B20 /* Android.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Android.xcconfig; sourceTree = "<group>"; };
 		431F17C21826432A006FCF12 /* BasicCairo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BasicCairo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		431F17C51826432A006FCF12 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		431F17C71826432A006FCF12 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -125,7 +126,6 @@
 		4327E2401850691D00F17F96 /* libQuartzCore.so */ = {isa = PBXFileReference; lastKnownFileType = file; name = libQuartzCore.so; path = "../../Products/android/android-toolchain-arm/sysroot/usr/lib/libQuartzCore.so"; sourceTree = "<group>"; };
 		432FF2AE18574966005486C5 /* TNCustomView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TNCustomView.h; sourceTree = "<group>"; };
 		432FF2AF18574966005486C5 /* TNCustomView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TNCustomView.m; sourceTree = "<group>"; };
-		4383FF44184B1B11004E88C2 /* Android.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; name = Android.xcconfig; path = ../Android.xcconfig; sourceTree = "<group>"; };
 		4383FF4B184B4EFB004E88C2 /* libobjc.so */ = {isa = PBXFileReference; lastKnownFileType = file; name = libobjc.so; path = "../../Products/android/android-toolchain-arm/sysroot/usr/lib/libobjc.so"; sourceTree = "<group>"; };
 		4384062F1881571F000D092C /* CoreText.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreText.framework; path = System/Library/Frameworks/CoreText.framework; sourceTree = SDKROOT; };
 		43840634188157F5000D092C /* libCoreGraphics.so */ = {isa = PBXFileReference; lastKnownFileType = file; name = libCoreGraphics.so; path = "../../Products/android/android-toolchain-arm/sysroot/usr/lib/libCoreGraphics.so"; sourceTree = "<group>"; };
@@ -241,7 +241,7 @@
 		431F180A18264528006FCF12 /* SimpleView-Android */ = {
 			isa = PBXGroup;
 			children = (
-				4383FF44184B1B11004E88C2 /* Android.xcconfig */,
+				4301394D19225B6300EC5B20 /* Android.xcconfig */,
 				4327E21E184DE2D500F17F96 /* Android.mk */,
 				4327E21D184DE1F600F17F96 /* AndroidManifest.xml */,
 				4327E21C184DE14500F17F96 /* MainHActivity.java */,
@@ -559,7 +559,7 @@
 		};
 		431F180618264507006FCF12 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 4383FF44184B1B11004E88C2 /* Android.xcconfig */;
+			baseConfigurationReference = 4301394D19225B6300EC5B20 /* Android.xcconfig */;
 			buildSettings = {
 				ADDITIONAL_SDKS = "";
 				CLANG_ENABLE_MODULES = NO;
@@ -587,7 +587,7 @@
 		};
 		431F180718264507006FCF12 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 4383FF44184B1B11004E88C2 /* Android.xcconfig */;
+			baseConfigurationReference = 4301394D19225B6300EC5B20 /* Android.xcconfig */;
 			buildSettings = {
 				ADDITIONAL_SDKS = "";
 				CLANG_ENABLE_MODULES = NO;
