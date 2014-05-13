@@ -221,5 +221,11 @@ buildLCMS
 checkError $? "Make lcms failed"
 fi
 
+if [ ! -f $ARMSYSROOT/sysroot/usr/lib/libicui18n.a ]; then
+	pushd icu
+	./build_icu
+	popd
+fi
+
 
 

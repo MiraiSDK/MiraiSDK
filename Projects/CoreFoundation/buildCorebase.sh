@@ -19,13 +19,6 @@ checkError()
     fi
 }
 
-# need icu
-if [ ! -f $ARMSYSROOT/sysroot/usr/lib/libicui18n.a ]; then
-	pushd icu
-	./build_icu
-	popd
-fi
-
 buildCoreBase()
 {
 	# getting sources
