@@ -36,3 +36,6 @@ DemoProject/**/build.xml
 DemoProject/**/local.properties
 DemoProject/**/proguard-project.txt
 DemoProject/**/assets/
+build-arm-google-android
+
+build
