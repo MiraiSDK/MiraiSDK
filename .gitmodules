@@ -10,3 +10,6 @@
 [submodule "Projects/Foundation"]
 	path = Projects/Foundation
 	url = https://github.com/tinyfool/Mirai-Foundation.git
+[submodule "Projects/CoreFoundation"]
+	path = Projects/CoreFoundation
+	url = https://github.com/tinyfool/Mirai-CoreFoundation.git
