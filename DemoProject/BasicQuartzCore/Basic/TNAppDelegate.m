@@ -25,6 +25,7 @@
     // Override point for customization after application launch.
     
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
+    self.window.backgroundColor = [UIColor blueColor];
 //    
 //    UILabel *label = [[UILabel alloc] init];
 //    label.frame = CGRectMake(20, 20, 500, 500);
@@ -32,7 +33,7 @@
 //    label.text = [NSString stringWithFormat:@"Hello Label \n中文能支持\n日本語もOKです。"];
 //    [label setTextColor:[UIColor redColor]];
 //    [self.window addSubview:label];
-//
+//    
     
     TNViewController *vc = [[TNViewController alloc] initWithNibName:nil bundle:nil];
     UINavigationController *nav = [[UINavigationController alloc] initWithRootViewController:vc];

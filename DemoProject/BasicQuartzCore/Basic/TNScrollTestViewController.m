@@ -18,26 +18,13 @@
 @implementation TNScrollTestViewController
 + (NSString *)testName
 {
-    return @"Scroll Test";
-}
-
-//+ (void)initialize
-//{
-//    [self registerTestCase];
-//}
-
-- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
-{
-    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
-    if (self) {
-        // Custom initialization
-    }
-    return self;
+    return @"UIScrollView";
 }
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    self.view.backgroundColor = [UIColor whiteColor];
     
     UIScrollView *s = [[UIScrollView alloc] initWithFrame:self.view.bounds];
     s.backgroundColor = [UIColor whiteColor];
@@ -57,23 +44,20 @@
     green.backgroundColor = [UIColor greenColor];
     [self.scrollView addSubview:green];
 
+    self.title = [[self class] testName];
 }
 
-- (void)didReceiveMemoryWarning
+#pragma mark - scrollTest
+- (void)scrollTest1:(id)sender
 {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+    //    [self.scrollView scrollRectToVisible:CGRectMake(0, 1280, 720, 1280) animated:NO];
+    //    NSLog(@"%@",self.scrollView);
+    //    NSLog(@"scroll bounds:%@",NSStringFromCGRect(self.scrollView.bounds));
 }
 
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+- (void)scrollTest2:(id)sender
 {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+    //    [self.scrollView scrollRectToVisible:self.view.bounds animated:NO];
+    //    NSLog(@"%@",self.scrollView);
 }
-*/
-
 @end

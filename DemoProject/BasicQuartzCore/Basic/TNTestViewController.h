@@ -10,7 +10,5 @@
 
 @interface TNTestViewController : UIViewController
 + (NSString *)testName;
-+ (void)registerTestCase;
-
-+ (NSArray *)testCases;
+- (NSString *)testDescription;
 @end

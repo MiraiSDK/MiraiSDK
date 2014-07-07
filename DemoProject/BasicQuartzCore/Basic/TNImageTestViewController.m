@@ -18,23 +18,33 @@
     return @"Image Test";
 }
 
-- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
-{
-    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
-    if (self) {
-    }
-    return self;
-}
-
 - (void)viewDidLoad
 {
     [super viewDidLoad];
     
+    //    [self addImageWithName:@"testImage" type:@"png" atRect:CGRectMake(0, 0, 720, 1024)];
+    
+    //    NSString *imagePath = [[NSBundle mainBundle] pathForResource:@"a" ofType:@"jpg"];
+    //    NSLog(@"imagePath:%@",imagePath);
+    //
+    //    CGDataProviderRef imageSource = CGDataProviderCreateWithFilename([imagePath UTF8String]);
+    //    CGImageRef imageRef = CGImageCreateWithJPEGDataProvider(imageSource, NULL, NO, kCGRenderingIntentDefault);
+    //    UIImage *i = [[UIImage alloc] initWithCGImage:imageRef];
+    //    NSLog(@"%@",i);
+    //
+    //    [self addImageWithName:@"rgbatest" type:@"png" atRect:CGRectMake(0, 0, 720, 720)];
+    
+    //    [self addImageWithName:@"Icon" type:@"png" atRect:CGRectMake(50, 600, 72, 72)];
+
+    //    [self addImageWithName:@"Icon" type:@"png" atRect:CGRectMake(50, 600, 72, 72)];
+
     UIImageView *imageView = [[UIImageView alloc] initWithFrame:self.view.bounds];
     [self.view addSubview:imageView];
     self.imageView = imageView;
     
     [self testImageWithData];
+    
+    self.title = [[self class] testName];
 }
 
 - (NSString *)jpegImagePath
@@ -89,21 +99,35 @@
     self.imageView.image = jpegImage;
 }
 
-- (void)didReceiveMemoryWarning
+- (CGImageRef)createImageNamed:(NSString *)name type:(NSString *)type
 {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+    NSString *imagePath = [[NSBundle mainBundle] pathForResource:name ofType:type];
+    CGImageRef image = NULL;
+    if (imagePath) {
+        NSString *lowercaseType = [type lowercaseString];
+        CGDataProviderRef source = CGDataProviderCreateWithFilename([imagePath UTF8String]);
+        if ([lowercaseType isEqualToString:@"png"]) {
+            image = CGImageCreateWithPNGDataProvider(source, NULL, NO, kCGRenderingIntentDefault);
+        } else if ([lowercaseType isEqualToString:@"jpg"]) {
+            image = CGImageCreateWithJPEGDataProvider(source, NULL, NO, kCGRenderingIntentDefault);
+        } else {
+            NSLog(@"unsupported image type:%@",type);
+        }
+        
+    } else {
+        NSLog(@"[WARNING]Can't find file: %@.%@",name,type);
+    }
+    return image;
 }
 
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+- (void)addImageWithName:(NSString *)name type:(NSString *)type atRect:(CGRect)rect
 {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+    CGImageRef imageRef = [self createImageNamed:name type:type];
+    UIImage *image = [[UIImage alloc] initWithCGImage:imageRef];
+    UIImageView *imageView = [[UIImageView alloc] initWithImage:image];
+    imageView.frame = rect;
+    
+    [self.view addSubview:imageView];
 }
-*/
 
 @end

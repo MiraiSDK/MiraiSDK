@@ -23,6 +23,11 @@
     return self;
 }
 
+- (void)setFrame:(CGRect)frame
+{
+    [super setFrame:frame];
+}
+
 - (NSDictionary *)attributes
 {
 #ifdef ANDROID
@@ -76,23 +81,15 @@
     CGContextScaleCTM(ctx, 1, -1);
     CGContextTranslateCTM(ctx, 0, -rect.size.height);
     
-#ifdef ANDROID
-    CTFramesetterRef framesetter = CTFramesetterCreateWithAttributedString(_attributedString);
-#else
     CTFramesetterRef framesetter = CTFramesetterCreateWithAttributedString((__bridge CFAttributedStringRef)_attributedString);
-#endif
+    
     CGMutablePathRef path = CGPathCreateMutable();
     CGPathAddRect(path, NULL, rect);
     CTFrameRef frame = CTFramesetterCreateFrame(framesetter, CFRangeMake(0, 0), path, NULL);
     CGPathRelease(path);
 //    CTFrameDraw(frame, ctx);
     
-#ifdef ANDROID
-    CTTypesetterRef typesetter = CTTypesetterCreateWithAttributedString(_attributedString);
-#else
     CTTypesetterRef typesetter = CTTypesetterCreateWithAttributedString((__bridge CFAttributedStringRef) _attributedString);
-
-#endif
     
     CFIndex pos = 0;
     CGFloat y = 0;

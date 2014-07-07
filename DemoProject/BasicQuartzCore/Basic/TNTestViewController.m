@@ -14,62 +14,30 @@
 
 @implementation TNTestViewController
 
-static NSMutableArray *_testcases;
-//+ (void)initialize
-//{
-//    [self testCases];
-//}
-
-//+ (void)registerTestCase
-//{
-//    NSMutableArray *t = (NSMutableArray *)[self testCases];
-//    [t addObject:[self class]];
-//}
-
-+ (NSArray *)testCases
-{
-    if (_testcases == nil) {
-        _testcases = [NSMutableArray array];
-    }
-    
-    return _testcases;
-}
-
 + (NSString *)testName
 {
-    return @"Test";
+    return @"Untitled Test";
 }
 
-- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
+- (NSString *)testDescription
 {
-    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
-    if (self) {
-        // Custom initialization
-    }
-    return self;
+    return nil;
 }
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
+    
+    self.title = [[self class] testName];
+    
+    self.view.backgroundColor = [UIColor whiteColor];
+    
+    NSString *desc = [self testDescription];
+    if (desc) {
+        UILabel *descLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, CGRectGetWidth(self.view.bounds), 100)];
+        descLabel.text = desc;
+        [self.view addSubview:descLabel];
+    }
 }
-
-- (void)didReceiveMemoryWarning
-{
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
-}
-
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
-{
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
 
 @end
