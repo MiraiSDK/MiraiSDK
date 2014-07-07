@@ -20,6 +20,7 @@ public class MainHActivity extends NativeActivity
         System.loadLibrary ("OpenGLES");
         System.loadLibrary ("QuartzCore");
         System.loadLibrary ("UIKit");
+        System.loadLibrary ("MediaPlayer");
         System.loadLibrary ("NextBookKit");
         System.loadLibrary ("NextBookRun");
 

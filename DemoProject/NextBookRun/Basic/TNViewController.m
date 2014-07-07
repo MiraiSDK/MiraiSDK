@@ -32,18 +32,44 @@
     f.origin = CGPointMake(50, 50);
     button.frame = f;
     [self.view addSubview:button];
-    
+
+    UIButton *button2 = [UIButton buttonWithType:UIButtonTypeRoundedRect];
+    [button2 setTitle:@"Load Book" forState:UIControlStateNormal];
+    [button2 addTarget:self action:@selector(didPressedButton:) forControlEvents:UIControlEventTouchUpInside];
+    [button2 sizeToFit];
+    button2.tag = 1;
+    CGRect f2 = button.frame;
+    f2.origin = CGPointMake(50, 250);
+    button2.frame = f2;
+    [self.view addSubview:button2];
+
     [NBBookLib authWithDeveloperID:@"" key:@""];
 }
 
 - (NSString *)bookPath
 {
     //return [[NSBundle mainBundle] pathForResource:@"Untitled" ofType:@"ibooks"];
+    //return [[NSBundle mainBundle] pathForResource:@"FullWidgetSample" ofType:@"ibooks"];
     return [[NSBundle mainBundle] pathForResource:@"Simple" ofType:@"ibooks"];
 }
+
+- (NSString *)bookPath1
+{
+    //return [[NSBundle mainBundle] pathForResource:@"Untitled" ofType:@"ibooks"];
+    //return [[NSBundle mainBundle] pathForResource:@"FullWidgetSample" ofType:@"ibooks"];
+    return [[NSBundle mainBundle] pathForResource:@"Chinese" ofType:@"ibooks"];
+}
+
 - (void)didPressedButton:(id)sender
 {
-    NSString *path = [self bookPath];
+    NSString *path;
+    UIButton *button = sender;
+    if (button.tag == 1) {
+        path = [self bookPath1];
+    } else {
+        path = [self bookPath];
+        
+    }
     NSLog(@"book path:%@",path);
     
 //    NSString *path1 = [[NSBundle mainBundle] pathForResource:@"Simple1" ofType:@"ibooks"];

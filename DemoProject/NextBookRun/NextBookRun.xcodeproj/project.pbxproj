@@ -31,6 +31,7 @@
 		43C2010818ED4B0400490D59 /* AndroidManifest.xml in Resources */ = {isa = PBXBuildFile; fileRef = 43C2010718ED4B0400490D59 /* AndroidManifest.xml */; };
 		43C2010A18ED4B1600490D59 /* Android.mk in Resources */ = {isa = PBXBuildFile; fileRef = 43C2010918ED4B1600490D59 /* Android.mk */; };
 		43C2011518ED528100490D59 /* NextBookKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 43C2011418ED528100490D59 /* NextBookKit.framework */; };
+		43CA2A201954324F00B92F2C /* libMediaPlayer.so in Copy Files (libs) */ = {isa = PBXBuildFile; fileRef = 43CA2A1F1954324300B92F2C /* libMediaPlayer.so */; };
 		43DFBA531851DABE00BA269F /* libgnustep-corebase.so in Copy Files (libs) */ = {isa = PBXBuildFile; fileRef = 43DFBA521851D9F200BA269F /* libgnustep-corebase.so */; };
 		43EBAA7518AB5573005DDD8D /* TNViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 431F17DB1826432A006FCF12 /* TNViewController.m */; };
 		43ECCF051851936B0076535C /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 431F17C91826432A006FCF12 /* UIKit.framework */; };
@@ -60,6 +61,7 @@
 				43DFBA531851DABE00BA269F /* libgnustep-corebase.so in Copy Files (libs) */,
 				43ECCF0A185194860076535C /* libUIKit.so in Copy Files (libs) */,
 				4383FF4C184B4EFE004E88C2 /* libobjc.so in Copy Files (libs) */,
+				43CA2A201954324F00B92F2C /* libMediaPlayer.so in Copy Files (libs) */,
 				4327E2411850692900F17F96 /* libQuartzCore.so in Copy Files (libs) */,
 				4384063618815805000D092C /* libCoreText.so in Copy Files (libs) */,
 				4384063718815806000D092C /* libCoreGraphics.so in Copy Files (libs) */,
@@ -106,6 +108,7 @@
 		43C2010918ED4B1600490D59 /* Android.mk */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = Android.mk; path = "NextBookRun-android/jni/Android.mk"; sourceTree = "<group>"; };
 		43C2011418ED528100490D59 /* NextBookKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = NextBookKit.framework; path = Support/NextBookKit.framework; sourceTree = "<group>"; };
 		43C2011618ED538100490D59 /* Simple.ibooks */ = {isa = PBXFileReference; lastKnownFileType = file; path = Simple.ibooks; sourceTree = "<group>"; };
+		43CA2A1F1954324300B92F2C /* libMediaPlayer.so */ = {isa = PBXFileReference; lastKnownFileType = file; name = libMediaPlayer.so; path = "../../Products/android/android-toolchain-arm/sysroot/usr/lib/libMediaPlayer.so"; sourceTree = "<group>"; };
 		43DFBA521851D9F200BA269F /* libgnustep-corebase.so */ = {isa = PBXFileReference; lastKnownFileType = file; name = "libgnustep-corebase.so"; path = "../../Products/android/android-toolchain-arm/sysroot/usr/lib/libgnustep-corebase.so"; sourceTree = "<group>"; };
 		43ECCF08185194200076535C /* libdispatch.so */ = {isa = PBXFileReference; lastKnownFileType = file; name = libdispatch.so; path = "../../Products/android/android-toolchain-arm/sysroot/usr/lib/libdispatch.so"; sourceTree = "<group>"; };
 		43ECCF09185194480076535C /* libUIKit.so */ = {isa = PBXFileReference; lastKnownFileType = file; name = libUIKit.so; path = "../../Products/android/android-toolchain-arm/sysroot/usr/lib/libUIKit.so"; sourceTree = "<group>"; };
@@ -213,6 +216,7 @@
 			children = (
 				43B6B64F1913A237005D09ED /* libNextBookKit.so */,
 				43840635188157FB000D092C /* libCoreText.so */,
+				43CA2A1F1954324300B92F2C /* libMediaPlayer.so */,
 				43840634188157F5000D092C /* libCoreGraphics.so */,
 				4327E2401850691D00F17F96 /* libQuartzCore.so */,
 				43DFBA521851D9F200BA269F /* libgnustep-corebase.so */,
