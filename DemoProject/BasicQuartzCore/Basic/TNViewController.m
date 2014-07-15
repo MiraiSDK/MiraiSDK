@@ -21,6 +21,9 @@
 #import "TNTableViewTestController.h"
 #import "TNViewTestViewController.h"
 
+#import "TNShapeLayerTestViewController.h"
+#import "TNCGTestViewController.h"
+
 @interface TNViewController () <UITableViewDataSource,UITableViewDelegate>
 @property (nonatomic, strong) UILabel *tapCountLabel;
 
@@ -40,7 +43,8 @@
     self.navigationItem.title = @"ItemMain";
     self.view.backgroundColor = [UIColor whiteColor];
     
-    self.tests = @[[TNViewTestViewController class],
+    self.tests = @[[TNCGTestViewController class],
+                   [TNViewTestViewController class],
                    [TNLabelTestViewController class],
                    [TNButtonTestViewController class],
                    [TNImageTestViewController class],
@@ -48,7 +52,7 @@
                    [TNAlertViewTestViewController class],
                    [TNAnimationTestViewController class],
                    [TNTableViewTestController class],
-                   [TNScrollTestViewController class],
+                   [TNShapeLayerTestViewController class],
                    [TNScrollTestViewController class],
                    [TNScrollTestViewController class],
                    [TNScrollTestViewController class]];
