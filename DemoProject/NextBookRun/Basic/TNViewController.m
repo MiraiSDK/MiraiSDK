@@ -14,8 +14,10 @@
 
 #import "TNSecondViewController.h"
 
-@interface TNViewController ()
+@interface TNViewController () <UITableViewDataSource,UITableViewDelegate>
 @property (nonatomic, strong) NBBook *book;
+
+@property (nonatomic, strong) NSArray *bookNames;
 @end
 
 @implementation TNViewController
@@ -24,56 +26,31 @@
 {
     [super viewDidLoad];
     
-    UIButton *button = [UIButton buttonWithType:UIButtonTypeRoundedRect];
-    [button setTitle:@"Load Book" forState:UIControlStateNormal];
-    [button addTarget:self action:@selector(didPressedButton:) forControlEvents:UIControlEventTouchUpInside];
-    [button sizeToFit];
-    CGRect f = button.frame;
-    f.origin = CGPointMake(50, 50);
-    button.frame = f;
-    [self.view addSubview:button];
-
-    UIButton *button2 = [UIButton buttonWithType:UIButtonTypeRoundedRect];
-    [button2 setTitle:@"Load Book" forState:UIControlStateNormal];
-    [button2 addTarget:self action:@selector(didPressedButton:) forControlEvents:UIControlEventTouchUpInside];
-    [button2 sizeToFit];
-    button2.tag = 1;
-    CGRect f2 = button.frame;
-    f2.origin = CGPointMake(50, 250);
-    button2.frame = f2;
-    [self.view addSubview:button2];
-
     [NBBookLib authWithDeveloperID:@"" key:@""];
+
+    self.bookNames = @[@"Untitled",
+                       @"FullWidgetSample",
+                       @"Simple",
+                       @"Chinese",
+                       @"zuguoduoliaokuo",
+                       @"yaodaipeixun",
+                       @"manziwenzai"];
+
+    UITableView *tableView = [[UITableView alloc] initWithFrame:self.view.bounds];
+    tableView.autoresizingMask = UIViewAutoresizingFlexibleTopMargin | UIViewAutoresizingFlexibleLeftMargin | UIViewAutoresizingFlexibleBottomMargin | UIViewAutoresizingFlexibleRightMargin | UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
+    tableView.delegate = self;
+    tableView.dataSource = self;
+    [self.view addSubview:tableView];
 }
 
-- (NSString *)bookPath
+- (NSString *)pathForBookName:(NSString *)name
 {
-    //return [[NSBundle mainBundle] pathForResource:@"Untitled" ofType:@"ibooks"];
-    //return [[NSBundle mainBundle] pathForResource:@"FullWidgetSample" ofType:@"ibooks"];
-    return [[NSBundle mainBundle] pathForResource:@"Simple" ofType:@"ibooks"];
+    return [[NSBundle mainBundle] pathForResource:name ofType:@"ibooks"];
 }
 
-- (NSString *)bookPath1
+- (void)loadBookAtPath:(NSString *)path
 {
-    //return [[NSBundle mainBundle] pathForResource:@"Untitled" ofType:@"ibooks"];
-    //return [[NSBundle mainBundle] pathForResource:@"FullWidgetSample" ofType:@"ibooks"];
-    return [[NSBundle mainBundle] pathForResource:@"Chinese" ofType:@"ibooks"];
-}
-
-- (void)didPressedButton:(id)sender
-{
-    NSString *path;
-    UIButton *button = sender;
-    if (button.tag == 1) {
-        path = [self bookPath1];
-    } else {
-        path = [self bookPath];
-        
-    }
     NSLog(@"book path:%@",path);
-    
-//    NSString *path1 = [[NSBundle mainBundle] pathForResource:@"Simple1" ofType:@"ibooks"];
-//    NSLog(@"Simple1 path:%@",path1);
 
     if (path) {
         NSLog(@"will init book");
@@ -85,7 +62,7 @@
             NSLog(@"title:%@ chapters:%@",book.bookTitle,book.chapters);
             NBBookViewController *vc = [[NBBookViewController alloc] initWithBook:book];
             [self presentViewController:vc animated:YES completion:nil];
-
+            
         } else {
             
             [book prepareForOpenOnProcessing:^(NSInteger idx, NSInteger total) {
@@ -102,12 +79,43 @@
         }
     }
 }
-
-#pragma mark -
-- (void)didReceiveMemoryWarning
+#pragma mark - Table view data source
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+    return 1;
 }
 
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
+{
+    return self.bookNames.count;
+}
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    static NSString *CellIdentifier = @"Cell";
+    
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
+    if (cell == nil) {
+        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
+    }
+    
+    cell.textLabel.text = self.bookNames[indexPath.row];
+    
+    return cell;
+}
+
+#pragma mark - Table view delegate
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    NSString *name = self.bookNames[indexPath.row];
+    NSString *path = [self pathForBookName:name];
+    
+    [self loadBookAtPath:path];
+}
+
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    return 100;
+}
 @end
