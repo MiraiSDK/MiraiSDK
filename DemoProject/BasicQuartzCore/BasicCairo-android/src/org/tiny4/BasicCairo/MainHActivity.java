@@ -1,11 +1,15 @@
 package org.tiny4.BasicCairo;
+
+import org.tiny4.CocoaActivity.CocoaActivity;
+
 import android.os.Bundle;
 import android.app.Activity;
 import android.app.NativeActivity;
+import android.content.res.Configuration;
 
 import android.widget.RelativeLayout;
 
-public class MainHActivity extends NativeActivity
+public class MainHActivity extends CocoaActivity
 {
     static
     {
@@ -21,20 +25,21 @@ public class MainHActivity extends NativeActivity
         System.loadLibrary ("QuartzCore");
         System.loadLibrary ("UIKit");
         System.loadLibrary ("BasicCairo");
-
     }
     
     @Override
     public void onCreate (Bundle savedInstanceState)
     {
         super.onCreate (savedInstanceState);
-        //nativeOnCreate();
     }
-    
-    //private native void nativeOnCreate();
 
-    
+    @Override
+    public void onConfigurationChanged (Configuration newConfig)
+    {
+        super.onConfigurationChanged (newConfig);
+    }
 }
+
 
 
 
