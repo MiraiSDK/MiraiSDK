@@ -16,6 +16,11 @@
 @end
 
 @implementation TNScrollTestViewController
++ (void)load
+{
+    [self regisiterTestClass:self];
+}
+
 + (NSString *)testName
 {
     return @"UIScrollView";

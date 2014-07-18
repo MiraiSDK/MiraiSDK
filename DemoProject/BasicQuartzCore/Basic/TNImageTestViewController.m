@@ -8,97 +8,80 @@
 
 #import "TNImageTestViewController.h"
 
-@interface TNImageTestViewController ()
+@interface TNImageTestViewController () <UITableViewDataSource,UITableViewDelegate>
 @property (nonatomic, strong) UIImageView *imageView;
+@property (nonatomic, strong) NSArray *images;
 @end
 
 @implementation TNImageTestViewController
+
++ (void)load
+{
+    [self regisiterTestClass:self];
+}
+
 + (NSString *)testName
 {
     return @"Image Test";
+}
+
+- (NSArray *)images
+{
+    if (!_images) {
+        _images = @[
+                    @[@"testImage",@"png"],
+                    @[@"testImage",@"jpg"],
+                    @[@"testImage",@"tiff"],
+                    @[@"rgbatest",@"png"],
+                    @[@"38162749",@"jpg"],
+                    @[@"Gray 8Bit",@"png"],
+                    @[@"Gray Alpha 8Bit",@"png"],
+                    @[@"RGB 8Bit",@"png"],
+                    @[@"RGBA 8Bit",@"png"],
+                    @[@"Gray 16Bit",@"png"],
+                    @[@"Gray Alpha 16Bit",@"png"],
+                    @[@"RGB 16Bit",@"png"],
+                    @[@"RGBA 16Bit",@"png"],
+                    ];
+    }
+    return _images;
 }
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
     
-    //    [self addImageWithName:@"testImage" type:@"png" atRect:CGRectMake(0, 0, 720, 1024)];
+    self.view.backgroundColor = [UIColor greenColor];
     
-    //    NSString *imagePath = [[NSBundle mainBundle] pathForResource:@"a" ofType:@"jpg"];
-    //    NSLog(@"imagePath:%@",imagePath);
-    //
-    //    CGDataProviderRef imageSource = CGDataProviderCreateWithFilename([imagePath UTF8String]);
-    //    CGImageRef imageRef = CGImageCreateWithJPEGDataProvider(imageSource, NULL, NO, kCGRenderingIntentDefault);
-    //    UIImage *i = [[UIImage alloc] initWithCGImage:imageRef];
-    //    NSLog(@"%@",i);
-    //
-    //    [self addImageWithName:@"rgbatest" type:@"png" atRect:CGRectMake(0, 0, 720, 720)];
+    UITableView *tableView = [[UITableView alloc] initWithFrame:self.view.bounds];
+    tableView.autoresizingMask = UIViewAutoresizingFlexibleTopMargin | UIViewAutoresizingFlexibleLeftMargin | UIViewAutoresizingFlexibleBottomMargin | UIViewAutoresizingFlexibleRightMargin | UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
+    tableView.delegate = self;
+    tableView.dataSource = self;
+    [self.view addSubview:tableView];
     
-    //    [self addImageWithName:@"Icon" type:@"png" atRect:CGRectMake(50, 600, 72, 72)];
-
-    //    [self addImageWithName:@"Icon" type:@"png" atRect:CGRectMake(50, 600, 72, 72)];
-
+    UIBarButtonItem *clearItem = [[UIBarButtonItem alloc] initWithTitle:@"Clear" style:UIBarButtonItemStyleBordered target:self action:@selector(didPressedClearItem:)];
+    self.navigationItem.rightBarButtonItems = @[clearItem];
+    
     UIImageView *imageView = [[UIImageView alloc] initWithFrame:self.view.bounds];
-    [self.view addSubview:imageView];
     self.imageView = imageView;
-    
-    [self testImageWithData];
-    
-    self.title = [[self class] testName];
 }
 
-- (NSString *)jpegImagePath
+- (void)didPressedClearItem:(id)sender
 {
-    NSString *path = [[NSBundle mainBundle] pathForResource:@"testImage" ofType:@"jpg"];
-    NSLog(@"path:%@",path);
-    return path;
+    self.imageView.image = nil;
+    [self.imageView removeFromSuperview];
 }
 
-- (NSString *)pngImagePath
+- (void)testImageNamed:(NSString *)name type:(NSString *)type
 {
-    NSString *path = [[NSBundle mainBundle] pathForResource:@"testImage" ofType:@"png"];
-    NSLog(@"path:%@",path);
-    return path;
+    NSString *path = [[NSBundle mainBundle] pathForResource:name ofType:type];
+    NSData *data = [[NSData alloc] initWithContentsOfFile:path];
+    UIImage *image = [[UIImage alloc] initWithData:data];
+    self.imageView.image = image;
+    [self.view addSubview:self.imageView];
 }
 
-- (NSData *)jpegImageData
-{
-    NSData *data = [[NSData alloc] initWithContentsOfFile:[self jpegImagePath]];
-    return data;
-}
-
-- (NSData *)pngImageData
-{
-    NSData *data = [[NSData alloc] initWithContentsOfFile:[self pngImagePath]];
-    return data;
-}
-
-- (void)testImageWithData
-{
-    
-//    NSLog(@"create from path");
-//    UIImage *pathImage = [UIImage imageWithContentsOfFile:[self jpegImagePath]];
-//    NSLog(@"jpetImageFromPath:%@",pathImage);
-
-    NSLog(@"create from data");
-    NSData *jpegData = [self jpegImageData];
-    UIImage *jpegImage = [UIImage imageWithData:jpegData];
-//
-    NSLog(@"jpegImage from data:%@",jpegImage);
-    
-//    NSLog(@"png image from path");
-//    UIImage *pathPngImage = [UIImage imageWithContentsOfFile:[self pngImagePath]];
-//    NSLog(@"png from Path:%@",pathPngImage);
-    
-//    NSData *pngData = [self pngImageData];
-//    NSLog(@"pngData:%@",pngData);
-//    UIImage *pngImage = [UIImage imageWithData:pngData];
-//    
-//    NSLog(@"pngImage:%@",pngImage);
-    
-    self.imageView.image = jpegImage;
-}
-
+#pragma mark - Legcy
 - (CGImageRef)createImageNamed:(NSString *)name type:(NSString *)type
 {
     NSString *imagePath = [[NSBundle mainBundle] pathForResource:name ofType:type];
@@ -130,4 +113,43 @@
     [self.view addSubview:imageView];
 }
 
+#pragma mark - Table view data source
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
+{
+    return 1;
+}
+
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
+{
+    return self.images.count;
+}
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    static NSString *CellIdentifier = @"Cell";
+    
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
+    if (cell == nil) {
+        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
+    }
+    
+    NSArray *info = self.images[indexPath.row];
+    cell.textLabel.text = [info componentsJoinedByString:@"."];
+    
+    return cell;
+}
+
+#pragma mark - Table view delegate
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    NSArray *info = self.images[indexPath.row];
+
+    [self testImageNamed:info[0] type:info[1]];
+}
+
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    return 100;
+}
 @end

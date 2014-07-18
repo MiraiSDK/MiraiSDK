@@ -12,18 +12,6 @@
 
 #import "TNTestViewController.h"
 
-#import "TNButtonTestViewController.h"
-#import "TNImageTestViewController.h"
-#import "TNScrollTestViewController.h"
-#import "TNLabelTestViewController.h"
-#import "TNAlertViewTestViewController.h"
-#import "TNAnimationTestViewController.h"
-#import "TNTableViewTestController.h"
-#import "TNViewTestViewController.h"
-
-#import "TNShapeLayerTestViewController.h"
-#import "TNCGTestViewController.h"
-
 @interface TNViewController () <UITableViewDataSource,UITableViewDelegate>
 @property (nonatomic, strong) UILabel *tapCountLabel;
 
@@ -43,20 +31,7 @@
     self.navigationItem.title = @"ItemMain";
     self.view.backgroundColor = [UIColor whiteColor];
     
-    self.tests = @[[TNCGTestViewController class],
-                   [TNViewTestViewController class],
-                   [TNLabelTestViewController class],
-                   [TNButtonTestViewController class],
-                   [TNImageTestViewController class],
-                   [TNScrollTestViewController class],
-                   [TNAlertViewTestViewController class],
-                   [TNAnimationTestViewController class],
-                   [TNTableViewTestController class],
-                   [TNShapeLayerTestViewController class],
-                   [TNScrollTestViewController class],
-                   [TNScrollTestViewController class],
-                   [TNScrollTestViewController class]];
-    
+    self.tests = [TNTestViewController tests];
     
 //    UILabel *tapCountLabel = [[UILabel alloc] initWithFrame:CGRectMake(400, 10, 300, 150)];
 //    tapCountLabel.text = @"tap cout: 0";
@@ -86,6 +61,7 @@
 //    [self.view addSubview:label];
     
     UITableView *tableView = [[UITableView alloc] initWithFrame:self.view.bounds];
+    tableView.autoresizingMask = UIViewAutoresizingFlexibleTopMargin | UIViewAutoresizingFlexibleLeftMargin | UIViewAutoresizingFlexibleBottomMargin | UIViewAutoresizingFlexibleRightMargin | UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
     tableView.delegate = self;
     tableView.dataSource = self;
     [self.view addSubview:tableView];

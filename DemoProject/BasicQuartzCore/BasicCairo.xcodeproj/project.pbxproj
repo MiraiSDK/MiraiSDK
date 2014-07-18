@@ -18,6 +18,10 @@
 		43081FA21968130300355FC5 /* TNAlertViewTestViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 43081FA01968130300355FC5 /* TNAlertViewTestViewController.m */; };
 		43081FA51968170000355FC5 /* TNViewTestViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 43081FA41968170000355FC5 /* TNViewTestViewController.m */; };
 		43081FA61968170000355FC5 /* TNViewTestViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 43081FA41968170000355FC5 /* TNViewTestViewController.m */; };
+		43098C2B1978C21C005A97A1 /* TNVCTestViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 43098C2A1978C21C005A97A1 /* TNVCTestViewController.m */; };
+		43098C2C1978C21C005A97A1 /* TNVCTestViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 43098C2A1978C21C005A97A1 /* TNVCTestViewController.m */; };
+		43098C301978FC45005A97A1 /* TNPresentedContentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 43098C2F1978FC45005A97A1 /* TNPresentedContentViewController.m */; };
+		43098C311978FC45005A97A1 /* TNPresentedContentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 43098C2F1978FC45005A97A1 /* TNPresentedContentViewController.m */; };
 		431F17C61826432A006FCF12 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 431F17C51826432A006FCF12 /* Foundation.framework */; };
 		431F17C81826432A006FCF12 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 431F17C71826432A006FCF12 /* CoreGraphics.framework */; };
 		431F17D01826432A006FCF12 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 431F17CE1826432A006FCF12 /* InfoPlist.strings */; };
@@ -128,6 +132,10 @@
 		43081FA01968130300355FC5 /* TNAlertViewTestViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TNAlertViewTestViewController.m; sourceTree = "<group>"; };
 		43081FA31968170000355FC5 /* TNViewTestViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TNViewTestViewController.h; sourceTree = "<group>"; };
 		43081FA41968170000355FC5 /* TNViewTestViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TNViewTestViewController.m; sourceTree = "<group>"; };
+		43098C291978C21C005A97A1 /* TNVCTestViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TNVCTestViewController.h; sourceTree = "<group>"; };
+		43098C2A1978C21C005A97A1 /* TNVCTestViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TNVCTestViewController.m; sourceTree = "<group>"; };
+		43098C2E1978FC45005A97A1 /* TNPresentedContentViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TNPresentedContentViewController.h; sourceTree = "<group>"; };
+		43098C2F1978FC45005A97A1 /* TNPresentedContentViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TNPresentedContentViewController.m; sourceTree = "<group>"; };
 		431F17C21826432A006FCF12 /* BasicCairo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BasicCairo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		431F17C51826432A006FCF12 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		431F17C71826432A006FCF12 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -209,6 +217,7 @@
 				43E3428618F573F000463092 /* TNTestViewController.m */,
 				43E7C988196E50470067C3A7 /* TNCGTestViewController.h */,
 				43E7C989196E50470067C3A7 /* TNCGTestViewController.m */,
+				43098C271978C1EE005A97A1 /* ViewController */,
 				43E7C979196C40AA0067C3A7 /* Layer */,
 				43081FA71968170500355FC5 /* UIView */,
 				43081F9E196812ED00355FC5 /* UIAlertView */,
@@ -294,6 +303,17 @@
 				43081FA41968170000355FC5 /* TNViewTestViewController.m */,
 			);
 			name = UIView;
+			sourceTree = "<group>";
+		};
+		43098C271978C1EE005A97A1 /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				43098C291978C21C005A97A1 /* TNVCTestViewController.h */,
+				43098C2A1978C21C005A97A1 /* TNVCTestViewController.m */,
+				43098C2E1978FC45005A97A1 /* TNPresentedContentViewController.h */,
+				43098C2F1978FC45005A97A1 /* TNPresentedContentViewController.m */,
+			);
+			name = ViewController;
 			sourceTree = "<group>";
 		};
 		431F17B91826432A006FCF12 = {
@@ -546,8 +566,10 @@
 				43E7C97C196C40C70067C3A7 /* TNShapeLayerTestViewController.m in Sources */,
 				43B6B6541913B9AB005D09ED /* TNScrollTestViewController.m in Sources */,
 				43081F8F1967F19500355FC5 /* TNLabelTestViewController.m in Sources */,
+				43098C301978FC45005A97A1 /* TNPresentedContentViewController.m in Sources */,
 				43E7C98A196E50470067C3A7 /* TNCGTestViewController.m in Sources */,
 				43081FA51968170000355FC5 /* TNViewTestViewController.m in Sources */,
+				43098C2B1978C21C005A97A1 /* TNVCTestViewController.m in Sources */,
 				431F17D21826432A006FCF12 /* main.m in Sources */,
 				43081F97196811ED00355FC5 /* TNAnimationTestViewController.m in Sources */,
 			);
@@ -568,8 +590,10 @@
 				43E7C97D196C40CA0067C3A7 /* TNShapeLayerTestViewController.m in Sources */,
 				43EBAA7518AB5573005DDD8D /* TNViewController.m in Sources */,
 				43E3428318F5730600463092 /* TNScrollTestViewController.m in Sources */,
+				43098C311978FC45005A97A1 /* TNPresentedContentViewController.m in Sources */,
 				43E7C98B196E50470067C3A7 /* TNCGTestViewController.m in Sources */,
 				43081FA61968170000355FC5 /* TNViewTestViewController.m in Sources */,
+				43098C2C1978C21C005A97A1 /* TNVCTestViewController.m in Sources */,
 				43081F931967F41C00355FC5 /* TNLabelTestViewController.m in Sources */,
 				431F17FE18264507006FCF12 /* main.m in Sources */,
 			);

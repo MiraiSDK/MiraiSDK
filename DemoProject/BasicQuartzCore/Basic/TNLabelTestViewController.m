@@ -9,6 +9,12 @@
 #import "TNLabelTestViewController.h"
 
 @implementation TNLabelTestViewController
+
++ (void)load
+{
+    [self regisiterTestClass:self];
+}
+
 + (NSString *)testName
 {
     return @"UILabel";

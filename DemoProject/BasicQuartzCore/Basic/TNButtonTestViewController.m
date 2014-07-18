@@ -15,6 +15,11 @@
 @end
 
 @implementation TNButtonTestViewController
++ (void)load
+{
+    [self regisiterTestClass:self];
+}
+
 + (NSString *)testName
 {
     return @"UIButton Test";

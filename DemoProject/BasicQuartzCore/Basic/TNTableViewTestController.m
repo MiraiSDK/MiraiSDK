@@ -9,6 +9,11 @@
 #import "TNTableViewTestController.h"
 
 @implementation TNTableViewTestController
++ (void)load
+{
+    [self regisiterTestClass:self];
+}
+
 + (NSString *)testName
 {
     return @"UITableView";

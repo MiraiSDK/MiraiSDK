@@ -9,6 +9,12 @@
 #import "TNAlertViewTestViewController.h"
 
 @implementation TNAlertViewTestViewController
+
++ (void)load
+{
+    [self regisiterTestClass:self];
+}
+
 + (NSString *)testName
 {
     return @"UIAlertView";

@@ -10,6 +10,11 @@
 #import "TNCustomView.h"
 
 @implementation TNViewTestViewController
++ (void)load
+{
+    [self regisiterTestClass:self];
+}
+
 + (NSString *)testName
 {
     return @"UIView";

@@ -14,6 +14,11 @@
 @property (nonatomic, strong) UIView *animationView;
 @end
 @implementation TNAnimationTestViewController
++ (void)load
+{
+    [self regisiterTestClass:self];
+}
+
 + (NSString *)testName
 {
     return @"Animation";

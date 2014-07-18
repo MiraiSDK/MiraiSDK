@@ -14,6 +14,27 @@
 
 @implementation TNTestViewController
 
+static NSMutableArray *testClasses = nil;
+
++ (void)regisiterTestClass:(Class)cls
+{
+    if (nil == testClasses) {
+        testClasses = [NSMutableArray array];
+    }
+    
+    if ([cls isSubclassOfClass: [TNTestViewController class]])
+    {
+        [testClasses addObject: cls];
+    } else {
+        [NSException raise: NSInvalidArgumentException format: @"+[TNTestViewController regisiterTestClass:] called with invalid class"];
+    }
+}
+
++ (NSArray *)tests
+{
+    return testClasses;
+}
+
 + (NSString *)testName
 {
     return @"Untitled Test";

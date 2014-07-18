@@ -11,4 +11,8 @@
 @interface TNTestViewController : UIViewController
 + (NSString *)testName;
 - (NSString *)testDescription;
+
++ (NSArray *)tests;
++ (void)regisiterTestClass:(Class)cls;
+
 @end
