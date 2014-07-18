@@ -1,11 +1,14 @@
 package org.tiny4.NextBookRun;
+
+import org.tiny4.CocoaActivity.CocoaActivity;
+
 import android.os.Bundle;
 import android.app.Activity;
 import android.app.NativeActivity;
 
 import android.widget.RelativeLayout;
 
-public class MainHActivity extends NativeActivity
+public class MainHActivity extends CocoaActivity
 {
     static
     {
