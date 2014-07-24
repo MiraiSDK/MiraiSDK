@@ -14,7 +14,7 @@
 
 #import "TNSecondViewController.h"
 
-@interface TNViewController () <UITableViewDataSource,UITableViewDelegate>
+@interface TNViewController () <UITableViewDataSource,UITableViewDelegate,NBBookNavigationControllerDelegate>
 @property (nonatomic, strong) NBBook *book;
 
 @property (nonatomic, strong) NSArray *bookNames;
@@ -73,7 +73,8 @@
                 NSLog(@"title:%@ chapters:%@",book.bookTitle,book.chapters);
                 NBBookViewController *vc = [[NBBookViewController alloc] initWithBook:book];
                 
-                //            NBBookNavigationController *nav = [[NBBookNavigationController alloc] initWithContentViewController:vc];
+//                NBBookNavigationController *nav = [[NBBookNavigationController alloc] initWithContentViewController:vc];
+//                nav.delegate = self;
                 [self presentViewController:vc animated:YES completion:nil];
             }];
         }
@@ -117,5 +118,10 @@
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     return 100;
+}
+
+- (void)bookNavigationControllerDidCancel:(NBBookNavigationController *)controller
+{
+    [self dismissViewControllerAnimated:YES completion:nil];
 }
 @end
