@@ -7,11 +7,14 @@
 //
 
 #import "TNAnimationTestViewController.h"
+#import <QuartzCore/QuartzCore.h>
 
-@interface TNAnimationTestViewController ()
+@interface TNAnimationTestViewController () <UITableViewDataSource,UITableViewDelegate>
 @property (nonatomic, strong) CALayer *quadLayer;
 @property (nonatomic, strong) UIView *quadView;
 @property (nonatomic, strong) UIView *animationView;
+
+@property (nonatomic, strong) NSArray *tests;
 @end
 @implementation TNAnimationTestViewController
 + (void)load
@@ -27,6 +30,17 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    
+    UITableView *tableView = [[UITableView alloc] initWithFrame:self.view.bounds];
+    tableView.autoresizingMask = UIViewAutoresizingFlexibleTopMargin | UIViewAutoresizingFlexibleLeftMargin | UIViewAutoresizingFlexibleBottomMargin | UIViewAutoresizingFlexibleRightMargin | UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
+    tableView.delegate = self;
+    tableView.dataSource = self;
+    [self.view addSubview:tableView];
+    
+    self.tests = @[
+                   @[@"Test animation override", NSStringFromSelector(@selector(testAnimationOverride))],
+                   @[@"Test alpha animation", NSStringFromSelector(@selector(testAlphaAnimation))],
+                  ];
     
     //
     //    CALayer *quad = [CALayer layer];
@@ -62,6 +76,58 @@
     //    ani.duration = 1;
     //    [quad addAnimation:ani forKey:@"move"];
 
+}
+
+- (UIImage *)imageNamed:(NSString *)name type:(NSString *)type
+{
+    NSString *path = [[NSBundle mainBundle] pathForResource:name ofType:type];
+    NSData *data = [[NSData alloc] initWithContentsOfFile:path];
+    UIImage *image = [[UIImage alloc] initWithData:data];
+    return image;
+}
+
+- (void)testAlphaAnimation
+{
+    UIImage *image = [self imageNamed:@"testImage" type:@"jpg"];
+    NSLog(@"image:%@",image);
+    UIImageView *imageView = [[UIImageView alloc] initWithImage:image];
+    [self.view addSubview:imageView];
+    
+//    UIView *v = [[UIView alloc] initWithFrame:CGRectMake(100, 100, 100, 100)];
+//    v.backgroundColor = [UIColor redColor];
+//    [self.view addSubview:v];
+
+    
+    [UIView animateWithDuration:4 animations:^{
+        imageView.alpha = 0;
+    } completion:^(BOOL finished) {
+        [imageView removeFromSuperview];
+    }];
+}
+
+- (void)testAnimationOverride
+{
+    UIView *v = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 100, 100)];
+    v.backgroundColor = [UIColor redColor];
+    [self.view addSubview:v];
+    
+    CABasicAnimation *ani1 = [CABasicAnimation animationWithKeyPath:@"position"];
+    ani1.toValue = [NSValue valueWithCGPoint:CGPointMake(100, 100)];
+    ani1.delegate = self;
+    ani1.duration = 5;
+    [v.layer addAnimation:ani1 forKey:@"position"];
+    
+    
+    CABasicAnimation *ani2 = [CABasicAnimation animationWithKeyPath:@"position"];
+    ani2.toValue = [NSValue valueWithCGPoint:CGPointMake(100, 100)];
+    ani2.delegate = self;
+    ani2.duration = 5;
+    [v.layer addAnimation:ani2 forKey:@"position"];
+}
+
+- (void)animationDidStop:(CAAnimation *)anim finished:(BOOL)flag
+{
+    NSLog(@"%s animation:%@ finished:%d",__PRETTY_FUNCTION__,anim,flag);
 }
 
 - (void)testAnimation
@@ -115,5 +181,46 @@
     //
     //    self.quadLayer.position = center;
 
+}
+
+#pragma mark - Table view data source
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
+{
+    return 1;
+}
+
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
+{
+    return self.tests.count;
+}
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    static NSString *CellIdentifier = @"Cell";
+    
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
+    if (cell == nil) {
+        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
+    }
+    
+    cell.textLabel.text = self.tests[indexPath.row][0];
+    
+    return cell;
+}
+
+#pragma mark - Table view delegate
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    NSArray *test = self.tests[indexPath.row];
+    SEL selector = NSSelectorFromString(test[1]);
+    if (selector && [self respondsToSelector:selector]) {
+        [self performSelector:selector];
+    }
+}
+
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    return 100;
 }
 @end
