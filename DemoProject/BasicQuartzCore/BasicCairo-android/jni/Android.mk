@@ -24,6 +24,11 @@ LOCAL_SRC_FILES := libgnustep-base.so
 include $(PREBUILT_SHARED_LIBRARY)
 
 include $(CLEAR_VARS)
+LOCAL_MODULE    := TNJavaHelper
+LOCAL_SRC_FILES := libTNJavaHelper.so
+include $(PREBUILT_SHARED_LIBRARY)
+
+include $(CLEAR_VARS)
 LOCAL_MODULE    := gnustep-corebase
 LOCAL_SRC_FILES := libgnustep-corebase.so
 include $(PREBUILT_SHARED_LIBRARY)
@@ -53,6 +58,11 @@ include $(PREBUILT_SHARED_LIBRARY)
 include $(CLEAR_VARS)
 LOCAL_MODULE    := UIKit
 LOCAL_SRC_FILES := libUIKit.so
+include $(PREBUILT_SHARED_LIBRARY)
+
+include $(CLEAR_VARS)
+LOCAL_MODULE    := MediaPlayer
+LOCAL_SRC_FILES := libMediaPlayer.so
 include $(PREBUILT_SHARED_LIBRARY)
 
 include $(CLEAR_VARS)

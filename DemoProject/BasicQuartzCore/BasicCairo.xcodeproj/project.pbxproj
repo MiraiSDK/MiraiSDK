@@ -64,6 +64,11 @@
 		43ECCF051851936B0076535C /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 431F17C91826432A006FCF12 /* UIKit.framework */; };
 		43ECCF0A185194860076535C /* libUIKit.so in Copy Files (libs) */ = {isa = PBXBuildFile; fileRef = 43ECCF09185194480076535C /* libUIKit.so */; };
 		43ECCF0B1851B50A0076535C /* TNAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 431F17D51826432A006FCF12 /* TNAppDelegate.m */; };
+		43F962F11982596500530F4F /* libTNJavaHelper.so in Copy Files (libs) */ = {isa = PBXBuildFile; fileRef = 43F962EF1982595000530F4F /* libTNJavaHelper.so */; };
+		43F962F51982599400530F4F /* TNMediaPlayerTestViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 43F962F41982599400530F4F /* TNMediaPlayerTestViewController.m */; };
+		43F962F61982599400530F4F /* TNMediaPlayerTestViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 43F962F41982599400530F4F /* TNMediaPlayerTestViewController.m */; };
+		43F962F819825A1600530F4F /* MediaPlayer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 43F962F719825A1600530F4F /* MediaPlayer.framework */; };
+		43F962FA19825C4600530F4F /* libMediaPlayer.so in Copy Files (libs) */ = {isa = PBXBuildFile; fileRef = 43F962F919825C4000530F4F /* libMediaPlayer.so */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -88,6 +93,27 @@
 			remoteGlobalIDString = 43718E6818517B7B00850F08;
 			remoteInfo = UIKit;
 		};
+		43F9630019825F6F00530F4F /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 43F962FB19825F6F00530F4F /* MediaPlayer.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 430138901921E68300EC5B20;
+			remoteInfo = MediaPlayer;
+		};
+		43F9630219825F6F00530F4F /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 43F962FB19825F6F00530F4F /* MediaPlayer.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 430138C91921E6DE00EC5B20;
+			remoteInfo = "MediaPlayer-Android";
+		};
+		43F9630419825F8200530F4F /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 43F962FB19825F6F00530F4F /* MediaPlayer.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = 430138BE1921E6DE00EC5B20;
+			remoteInfo = "MediaPlayer-Android";
+		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -110,7 +136,9 @@
 			files = (
 				4327E1C0184C86CC00F17F96 /* libgnustl_shared.so in Copy Files (libs) */,
 				43DFBA531851DABE00BA269F /* libgnustep-corebase.so in Copy Files (libs) */,
+				43F962FA19825C4600530F4F /* libMediaPlayer.so in Copy Files (libs) */,
 				43ECCF0A185194860076535C /* libUIKit.so in Copy Files (libs) */,
+				43F962F11982596500530F4F /* libTNJavaHelper.so in Copy Files (libs) */,
 				4383FF4C184B4EFE004E88C2 /* libobjc.so in Copy Files (libs) */,
 				4327E2411850692900F17F96 /* libQuartzCore.so in Copy Files (libs) */,
 				4384063618815805000D092C /* libCoreText.so in Copy Files (libs) */,
@@ -190,6 +218,12 @@
 		43E7C989196E50470067C3A7 /* TNCGTestViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TNCGTestViewController.m; sourceTree = "<group>"; };
 		43ECCF08185194200076535C /* libdispatch.so */ = {isa = PBXFileReference; lastKnownFileType = file; name = libdispatch.so; path = "../../Products/android/android-toolchain-arm/sysroot/usr/lib/libdispatch.so"; sourceTree = "<group>"; };
 		43ECCF09185194480076535C /* libUIKit.so */ = {isa = PBXFileReference; lastKnownFileType = file; name = libUIKit.so; path = "../../Products/android/android-toolchain-arm/sysroot/usr/lib/libUIKit.so"; sourceTree = "<group>"; };
+		43F962EF1982595000530F4F /* libTNJavaHelper.so */ = {isa = PBXFileReference; lastKnownFileType = file; name = libTNJavaHelper.so; path = "../../Products/android/android-toolchain-arm/sysroot/usr/lib/libTNJavaHelper.so"; sourceTree = "<group>"; };
+		43F962F31982599400530F4F /* TNMediaPlayerTestViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TNMediaPlayerTestViewController.h; sourceTree = "<group>"; };
+		43F962F41982599400530F4F /* TNMediaPlayerTestViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TNMediaPlayerTestViewController.m; sourceTree = "<group>"; };
+		43F962F719825A1600530F4F /* MediaPlayer.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MediaPlayer.framework; path = System/Library/Frameworks/MediaPlayer.framework; sourceTree = SDKROOT; };
+		43F962F919825C4000530F4F /* libMediaPlayer.so */ = {isa = PBXFileReference; lastKnownFileType = file; name = libMediaPlayer.so; path = "../../Products/android/android-toolchain-arm/sysroot/usr/lib/libMediaPlayer.so"; sourceTree = "<group>"; };
+		43F962FB19825F6F00530F4F /* MediaPlayer.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = MediaPlayer.xcodeproj; path = "../../../Mirai-MediaPlayer/MediaPlayer.xcodeproj"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -207,6 +241,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				43F962F819825A1600530F4F /* MediaPlayer.framework in Frameworks */,
 				43013A551923509900EC5B20 /* CoreFoundation.framework in Frameworks */,
 				4384064918816CA4000D092C /* CoreGraphics.framework in Frameworks */,
 				438406301881571F000D092C /* CoreText.framework in Frameworks */,
@@ -225,6 +260,7 @@
 				43E3428618F573F000463092 /* TNTestViewController.m */,
 				43E7C988196E50470067C3A7 /* TNCGTestViewController.h */,
 				43E7C989196E50470067C3A7 /* TNCGTestViewController.m */,
+				43F962F21982597800530F4F /* MediaPlayer */,
 				43098C77197ACAB8005A97A1 /* CoreText */,
 				43098C271978C1EE005A97A1 /* ViewController */,
 				43E7C979196C40AA0067C3A7 /* Layer */,
@@ -358,6 +394,8 @@
 		431F17C41826432A006FCF12 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				43F962FB19825F6F00530F4F /* MediaPlayer.xcodeproj */,
+				43F962F719825A1600530F4F /* MediaPlayer.framework */,
 				43013A541923509900EC5B20 /* CoreFoundation.framework */,
 				43AF1E2C18A9EE24002BC090 /* UIKit.xcodeproj */,
 				438462E2188ADE1A006DA1AA /* UIKit.framework */,
@@ -411,6 +449,8 @@
 		431F182718264D96006FCF12 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				43F962F919825C4000530F4F /* libMediaPlayer.so */,
+				43F962EF1982595000530F4F /* libTNJavaHelper.so */,
 				43840635188157FB000D092C /* libCoreText.so */,
 				43840634188157F5000D092C /* libCoreGraphics.so */,
 				4327E2401850691D00F17F96 /* libQuartzCore.so */,
@@ -451,6 +491,24 @@
 			name = Layer;
 			sourceTree = "<group>";
 		};
+		43F962F21982597800530F4F /* MediaPlayer */ = {
+			isa = PBXGroup;
+			children = (
+				43F962F31982599400530F4F /* TNMediaPlayerTestViewController.h */,
+				43F962F41982599400530F4F /* TNMediaPlayerTestViewController.m */,
+			);
+			name = MediaPlayer;
+			sourceTree = "<group>";
+		};
+		43F962FC19825F6F00530F4F /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				43F9630119825F6F00530F4F /* MediaPlayer.framework */,
+				43F9630319825F6F00530F4F /* MediaPlayer.framework */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -485,6 +543,7 @@
 			);
 			dependencies = (
 				43EBAA1418A9EE56005DDD8D /* PBXTargetDependency */,
+				43F9630519825F8200530F4F /* PBXTargetDependency */,
 			);
 			name = "BasicCairo-Android";
 			productName = SimpleView;
@@ -514,6 +573,10 @@
 			projectDirPath = "";
 			projectReferences = (
 				{
+					ProductGroup = 43F962FC19825F6F00530F4F /* Products */;
+					ProjectRef = 43F962FB19825F6F00530F4F /* MediaPlayer.xcodeproj */;
+				},
+				{
 					ProductGroup = 43AF1E2D18A9EE24002BC090 /* Products */;
 					ProjectRef = 43AF1E2C18A9EE24002BC090 /* UIKit.xcodeproj */;
 				},
@@ -539,6 +602,20 @@
 			fileType = wrapper.cfbundle;
 			path = UIKitTests.xctest;
 			remoteRef = 43AF1E3318A9EE24002BC090 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		43F9630119825F6F00530F4F /* MediaPlayer.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = MediaPlayer.framework;
+			remoteRef = 43F9630019825F6F00530F4F /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		43F9630319825F6F00530F4F /* MediaPlayer.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = MediaPlayer.framework;
+			remoteRef = 43F9630219825F6F00530F4F /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
 /* End PBXReferenceProxy section */
@@ -585,6 +662,7 @@
 				43081FA11968130300355FC5 /* TNAlertViewTestViewController.m in Sources */,
 				431F17D61826432A006FCF12 /* TNAppDelegate.m in Sources */,
 				43E7C97C196C40C70067C3A7 /* TNShapeLayerTestViewController.m in Sources */,
+				43F962F51982599400530F4F /* TNMediaPlayerTestViewController.m in Sources */,
 				43B6B6541913B9AB005D09ED /* TNScrollTestViewController.m in Sources */,
 				43081F8F1967F19500355FC5 /* TNLabelTestViewController.m in Sources */,
 				43098C301978FC45005A97A1 /* TNPresentedContentViewController.m in Sources */,
@@ -611,6 +689,7 @@
 				43081FA21968130300355FC5 /* TNAlertViewTestViewController.m in Sources */,
 				432FF2B218574AD9005486C5 /* TNCustomView.m in Sources */,
 				43E7C97D196C40CA0067C3A7 /* TNShapeLayerTestViewController.m in Sources */,
+				43F962F61982599400530F4F /* TNMediaPlayerTestViewController.m in Sources */,
 				43EBAA7518AB5573005DDD8D /* TNViewController.m in Sources */,
 				43E3428318F5730600463092 /* TNScrollTestViewController.m in Sources */,
 				43098C311978FC45005A97A1 /* TNPresentedContentViewController.m in Sources */,
@@ -630,6 +709,11 @@
 			isa = PBXTargetDependency;
 			name = UIKit;
 			targetProxy = 43EBAA1318A9EE56005DDD8D /* PBXContainerItemProxy */;
+		};
+		43F9630519825F8200530F4F /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = "MediaPlayer-Android";
+			targetProxy = 43F9630419825F8200530F4F /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
