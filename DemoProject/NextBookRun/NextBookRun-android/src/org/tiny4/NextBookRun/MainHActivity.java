@@ -17,6 +17,7 @@ public class MainHActivity extends CocoaActivity
         System.loadLibrary ("objc");
         System.loadLibrary ("gnustep-base");
         System.loadLibrary ("gnustep-corebase");
+        System.loadLibrary ("TNJavaHelper");
         System.loadLibrary ("CoreGraphics");
         System.loadLibrary ("CoreText");
         System.loadLibrary ("GLESv2");

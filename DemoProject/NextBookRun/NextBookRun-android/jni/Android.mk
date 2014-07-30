@@ -44,6 +44,10 @@ LOCAL_MODULE    := CoreText
 LOCAL_SRC_FILES := libCoreText.so
 include $(PREBUILT_SHARED_LIBRARY)
 
+include $(CLEAR_VARS)
+LOCAL_MODULE    := TNJavaHelper
+LOCAL_SRC_FILES := libTNJavaHelper.so
+include $(PREBUILT_SHARED_LIBRARY)
 
 include $(CLEAR_VARS)
 LOCAL_MODULE    := QuartzCore
