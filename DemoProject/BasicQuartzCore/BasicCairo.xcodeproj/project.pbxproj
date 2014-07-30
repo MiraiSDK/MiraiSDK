@@ -64,6 +64,10 @@
 		43ECCF051851936B0076535C /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 431F17C91826432A006FCF12 /* UIKit.framework */; };
 		43ECCF0A185194860076535C /* libUIKit.so in Copy Files (libs) */ = {isa = PBXBuildFile; fileRef = 43ECCF09185194480076535C /* libUIKit.so */; };
 		43ECCF0B1851B50A0076535C /* TNAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 431F17D51826432A006FCF12 /* TNAppDelegate.m */; };
+		43F91D401987E90C009E154D /* TNLayerTestViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 43F91D3F1987E90C009E154D /* TNLayerTestViewController.m */; };
+		43F91D411987E90C009E154D /* TNLayerTestViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 43F91D3F1987E90C009E154D /* TNLayerTestViewController.m */; };
+		43F91D461987EA33009E154D /* TNLayerTransformTestViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 43F91D451987EA33009E154D /* TNLayerTransformTestViewController.m */; };
+		43F91D471987EA33009E154D /* TNLayerTransformTestViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 43F91D451987EA33009E154D /* TNLayerTransformTestViewController.m */; };
 		43F962F11982596500530F4F /* libTNJavaHelper.so in Copy Files (libs) */ = {isa = PBXBuildFile; fileRef = 43F962EF1982595000530F4F /* libTNJavaHelper.so */; };
 		43F962F51982599400530F4F /* TNMediaPlayerTestViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 43F962F41982599400530F4F /* TNMediaPlayerTestViewController.m */; };
 		43F962F61982599400530F4F /* TNMediaPlayerTestViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 43F962F41982599400530F4F /* TNMediaPlayerTestViewController.m */; };
@@ -218,6 +222,10 @@
 		43E7C989196E50470067C3A7 /* TNCGTestViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TNCGTestViewController.m; sourceTree = "<group>"; };
 		43ECCF08185194200076535C /* libdispatch.so */ = {isa = PBXFileReference; lastKnownFileType = file; name = libdispatch.so; path = "../../Products/android/android-toolchain-arm/sysroot/usr/lib/libdispatch.so"; sourceTree = "<group>"; };
 		43ECCF09185194480076535C /* libUIKit.so */ = {isa = PBXFileReference; lastKnownFileType = file; name = libUIKit.so; path = "../../Products/android/android-toolchain-arm/sysroot/usr/lib/libUIKit.so"; sourceTree = "<group>"; };
+		43F91D3E1987E90C009E154D /* TNLayerTestViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TNLayerTestViewController.h; sourceTree = "<group>"; };
+		43F91D3F1987E90C009E154D /* TNLayerTestViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TNLayerTestViewController.m; sourceTree = "<group>"; };
+		43F91D441987EA33009E154D /* TNLayerTransformTestViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TNLayerTransformTestViewController.h; sourceTree = "<group>"; };
+		43F91D451987EA33009E154D /* TNLayerTransformTestViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TNLayerTransformTestViewController.m; sourceTree = "<group>"; };
 		43F962EF1982595000530F4F /* libTNJavaHelper.so */ = {isa = PBXFileReference; lastKnownFileType = file; name = libTNJavaHelper.so; path = "../../Products/android/android-toolchain-arm/sysroot/usr/lib/libTNJavaHelper.so"; sourceTree = "<group>"; };
 		43F962F31982599400530F4F /* TNMediaPlayerTestViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TNMediaPlayerTestViewController.h; sourceTree = "<group>"; };
 		43F962F41982599400530F4F /* TNMediaPlayerTestViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TNMediaPlayerTestViewController.m; sourceTree = "<group>"; };
@@ -487,6 +495,10 @@
 			children = (
 				43E7C97A196C40C70067C3A7 /* TNShapeLayerTestViewController.h */,
 				43E7C97B196C40C70067C3A7 /* TNShapeLayerTestViewController.m */,
+				43F91D3E1987E90C009E154D /* TNLayerTestViewController.h */,
+				43F91D3F1987E90C009E154D /* TNLayerTestViewController.m */,
+				43F91D441987EA33009E154D /* TNLayerTransformTestViewController.h */,
+				43F91D451987EA33009E154D /* TNLayerTransformTestViewController.m */,
 			);
 			name = Layer;
 			sourceTree = "<group>";
@@ -663,9 +675,11 @@
 				431F17D61826432A006FCF12 /* TNAppDelegate.m in Sources */,
 				43E7C97C196C40C70067C3A7 /* TNShapeLayerTestViewController.m in Sources */,
 				43F962F51982599400530F4F /* TNMediaPlayerTestViewController.m in Sources */,
+				43F91D401987E90C009E154D /* TNLayerTestViewController.m in Sources */,
 				43B6B6541913B9AB005D09ED /* TNScrollTestViewController.m in Sources */,
 				43081F8F1967F19500355FC5 /* TNLabelTestViewController.m in Sources */,
 				43098C301978FC45005A97A1 /* TNPresentedContentViewController.m in Sources */,
+				43F91D461987EA33009E154D /* TNLayerTransformTestViewController.m in Sources */,
 				43098C7F197ACB24005A97A1 /* TNCTView.m in Sources */,
 				43E7C98A196E50470067C3A7 /* TNCGTestViewController.m in Sources */,
 				43081FA51968170000355FC5 /* TNViewTestViewController.m in Sources */,
@@ -690,9 +704,11 @@
 				432FF2B218574AD9005486C5 /* TNCustomView.m in Sources */,
 				43E7C97D196C40CA0067C3A7 /* TNShapeLayerTestViewController.m in Sources */,
 				43F962F61982599400530F4F /* TNMediaPlayerTestViewController.m in Sources */,
+				43F91D411987E90C009E154D /* TNLayerTestViewController.m in Sources */,
 				43EBAA7518AB5573005DDD8D /* TNViewController.m in Sources */,
 				43E3428318F5730600463092 /* TNScrollTestViewController.m in Sources */,
 				43098C311978FC45005A97A1 /* TNPresentedContentViewController.m in Sources */,
+				43F91D471987EA33009E154D /* TNLayerTransformTestViewController.m in Sources */,
 				43098C80197ACB24005A97A1 /* TNCTView.m in Sources */,
 				43E7C98B196E50470067C3A7 /* TNCGTestViewController.m in Sources */,
 				43081FA61968170000355FC5 /* TNViewTestViewController.m in Sources */,

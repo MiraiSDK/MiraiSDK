@@ -15,11 +15,6 @@
 
 @implementation TNShapeLayerTestViewController
 
-+ (void)load
-{
-    [self regisiterTestClass:self];
-}
-
 + (NSString *)testName
 {
     return @"Shape Layer Test";
