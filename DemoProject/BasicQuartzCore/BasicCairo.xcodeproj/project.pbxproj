@@ -40,6 +40,12 @@
 		4327E2411850692900F17F96 /* libQuartzCore.so in Copy Files (libs) */ = {isa = PBXBuildFile; fileRef = 4327E2401850691D00F17F96 /* libQuartzCore.so */; };
 		432FF2B018574966005486C5 /* TNCustomView.m in Sources */ = {isa = PBXBuildFile; fileRef = 432FF2AF18574966005486C5 /* TNCustomView.m */; };
 		432FF2B218574AD9005486C5 /* TNCustomView.m in Sources */ = {isa = PBXBuildFile; fileRef = 432FF2AF18574966005486C5 /* TNCustomView.m */; };
+		434DAE3F19911F2C00DE5C14 /* TNGestureRecognizerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 434DAE3E19911F2C00DE5C14 /* TNGestureRecognizerViewController.m */; };
+		434DAE4019911F2C00DE5C14 /* TNGestureRecognizerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 434DAE3E19911F2C00DE5C14 /* TNGestureRecognizerViewController.m */; };
+		434DAE451991203D00DE5C14 /* TNRotationTestViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 434DAE441991203D00DE5C14 /* TNRotationTestViewController.m */; };
+		434DAE461991203D00DE5C14 /* TNRotationTestViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 434DAE441991203D00DE5C14 /* TNRotationTestViewController.m */; };
+		434DAE491991206B00DE5C14 /* TNPinchAndRotationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 434DAE481991206B00DE5C14 /* TNPinchAndRotationViewController.m */; };
+		434DAE4A1991206B00DE5C14 /* TNPinchAndRotationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 434DAE481991206B00DE5C14 /* TNPinchAndRotationViewController.m */; };
 		4383FF4C184B4EFE004E88C2 /* libobjc.so in Copy Files (libs) */ = {isa = PBXBuildFile; fileRef = 4383FF4B184B4EFB004E88C2 /* libobjc.so */; };
 		438406301881571F000D092C /* CoreText.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4384062F1881571F000D092C /* CoreText.framework */; };
 		4384063618815805000D092C /* libCoreText.so in Copy Files (libs) */ = {isa = PBXBuildFile; fileRef = 43840635188157FB000D092C /* libCoreText.so */; };
@@ -52,6 +58,10 @@
 		43B6B6531913B9A8005D09ED /* TNImageTestViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 43E3426B18F433D800463092 /* TNImageTestViewController.m */; };
 		43B6B6541913B9AB005D09ED /* TNScrollTestViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 43E3428218F5730600463092 /* TNScrollTestViewController.m */; };
 		43B6B6551913B9B8005D09ED /* TNTestViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 43E3428618F573F000463092 /* TNTestViewController.m */; };
+		43DD64B41990BD07000884BA /* TNTouchsTestViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 43DD64B31990BD06000884BA /* TNTouchsTestViewController.m */; };
+		43DD64B51990BD07000884BA /* TNTouchsTestViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 43DD64B31990BD06000884BA /* TNTouchsTestViewController.m */; };
+		43DD64BD1990DAEE000884BA /* TNPinchTestViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 43DD64BC1990DAEE000884BA /* TNPinchTestViewController.m */; };
+		43DD64BE1990DAEE000884BA /* TNPinchTestViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 43DD64BC1990DAEE000884BA /* TNPinchTestViewController.m */; };
 		43DFBA531851DABE00BA269F /* libgnustep-corebase.so in Copy Files (libs) */ = {isa = PBXBuildFile; fileRef = 43DFBA521851D9F200BA269F /* libgnustep-corebase.so */; };
 		43E3426E18F436E900463092 /* TNImageTestViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 43E3426B18F433D800463092 /* TNImageTestViewController.m */; };
 		43E3428318F5730600463092 /* TNScrollTestViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 43E3428218F5730600463092 /* TNScrollTestViewController.m */; };
@@ -200,6 +210,12 @@
 		4327E2401850691D00F17F96 /* libQuartzCore.so */ = {isa = PBXFileReference; lastKnownFileType = file; name = libQuartzCore.so; path = "../../Products/android/android-toolchain-arm/sysroot/usr/lib/libQuartzCore.so"; sourceTree = "<group>"; };
 		432FF2AE18574966005486C5 /* TNCustomView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TNCustomView.h; sourceTree = "<group>"; };
 		432FF2AF18574966005486C5 /* TNCustomView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TNCustomView.m; sourceTree = "<group>"; };
+		434DAE3D19911F2C00DE5C14 /* TNGestureRecognizerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TNGestureRecognizerViewController.h; sourceTree = "<group>"; };
+		434DAE3E19911F2C00DE5C14 /* TNGestureRecognizerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TNGestureRecognizerViewController.m; sourceTree = "<group>"; };
+		434DAE431991203D00DE5C14 /* TNRotationTestViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TNRotationTestViewController.h; sourceTree = "<group>"; };
+		434DAE441991203D00DE5C14 /* TNRotationTestViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TNRotationTestViewController.m; sourceTree = "<group>"; };
+		434DAE471991206B00DE5C14 /* TNPinchAndRotationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TNPinchAndRotationViewController.h; sourceTree = "<group>"; };
+		434DAE481991206B00DE5C14 /* TNPinchAndRotationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TNPinchAndRotationViewController.m; sourceTree = "<group>"; };
 		4383FF4B184B4EFB004E88C2 /* libobjc.so */ = {isa = PBXFileReference; lastKnownFileType = file; name = libobjc.so; path = "../../Products/android/android-toolchain-arm/sysroot/usr/lib/libobjc.so"; sourceTree = "<group>"; };
 		4384062F1881571F000D092C /* CoreText.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreText.framework; path = System/Library/Frameworks/CoreText.framework; sourceTree = SDKROOT; };
 		43840634188157F5000D092C /* libCoreGraphics.so */ = {isa = PBXFileReference; lastKnownFileType = file; name = libCoreGraphics.so; path = "../../Products/android/android-toolchain-arm/sysroot/usr/lib/libCoreGraphics.so"; sourceTree = "<group>"; };
@@ -209,6 +225,10 @@
 		439A73D418E918AD00B1BE40 /* TNButtonTestViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TNButtonTestViewController.h; sourceTree = "<group>"; };
 		439A73D518E918AD00B1BE40 /* TNButtonTestViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TNButtonTestViewController.m; sourceTree = "<group>"; };
 		43AF1E2C18A9EE24002BC090 /* UIKit.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = UIKit.xcodeproj; path = "../../../Mirai-UIKit/UIKit.xcodeproj"; sourceTree = "<group>"; };
+		43DD64B21990BD06000884BA /* TNTouchsTestViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TNTouchsTestViewController.h; sourceTree = "<group>"; };
+		43DD64B31990BD06000884BA /* TNTouchsTestViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TNTouchsTestViewController.m; sourceTree = "<group>"; };
+		43DD64BB1990DAEE000884BA /* TNPinchTestViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TNPinchTestViewController.h; sourceTree = "<group>"; };
+		43DD64BC1990DAEE000884BA /* TNPinchTestViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TNPinchTestViewController.m; sourceTree = "<group>"; };
 		43DFBA521851D9F200BA269F /* libgnustep-corebase.so */ = {isa = PBXFileReference; lastKnownFileType = file; name = "libgnustep-corebase.so"; path = "../../Products/android/android-toolchain-arm/sysroot/usr/lib/libgnustep-corebase.so"; sourceTree = "<group>"; };
 		43E3426A18F433D800463092 /* TNImageTestViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TNImageTestViewController.h; sourceTree = "<group>"; };
 		43E3426B18F433D800463092 /* TNImageTestViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TNImageTestViewController.m; sourceTree = "<group>"; };
@@ -268,6 +288,8 @@
 				43E3428618F573F000463092 /* TNTestViewController.m */,
 				43E7C988196E50470067C3A7 /* TNCGTestViewController.h */,
 				43E7C989196E50470067C3A7 /* TNCGTestViewController.m */,
+				43DD64B81990DAD7000884BA /* GestureRecognizer */,
+				43DD64AF1990BCF2000884BA /* Touch */,
 				43F962F21982597800530F4F /* MediaPlayer */,
 				43098C77197ACAB8005A97A1 /* CoreText */,
 				43098C271978C1EE005A97A1 /* ViewController */,
@@ -490,6 +512,30 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
+		43DD64AF1990BCF2000884BA /* Touch */ = {
+			isa = PBXGroup;
+			children = (
+				43DD64B21990BD06000884BA /* TNTouchsTestViewController.h */,
+				43DD64B31990BD06000884BA /* TNTouchsTestViewController.m */,
+			);
+			name = Touch;
+			sourceTree = "<group>";
+		};
+		43DD64B81990DAD7000884BA /* GestureRecognizer */ = {
+			isa = PBXGroup;
+			children = (
+				434DAE3D19911F2C00DE5C14 /* TNGestureRecognizerViewController.h */,
+				434DAE3E19911F2C00DE5C14 /* TNGestureRecognizerViewController.m */,
+				434DAE471991206B00DE5C14 /* TNPinchAndRotationViewController.h */,
+				434DAE481991206B00DE5C14 /* TNPinchAndRotationViewController.m */,
+				43DD64BB1990DAEE000884BA /* TNPinchTestViewController.h */,
+				43DD64BC1990DAEE000884BA /* TNPinchTestViewController.m */,
+				434DAE431991203D00DE5C14 /* TNRotationTestViewController.h */,
+				434DAE441991203D00DE5C14 /* TNRotationTestViewController.m */,
+			);
+			name = GestureRecognizer;
+			sourceTree = "<group>";
+		};
 		43E7C979196C40AA0067C3A7 /* Layer */ = {
 			isa = PBXGroup;
 			children = (
@@ -665,6 +711,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				43B6B6531913B9A8005D09ED /* TNImageTestViewController.m in Sources */,
+				43DD64BD1990DAEE000884BA /* TNPinchTestViewController.m in Sources */,
 				431F17DC1826432A006FCF12 /* TNViewController.m in Sources */,
 				43B6B6551913B9B8005D09ED /* TNTestViewController.m in Sources */,
 				43B6B6511913B9A6005D09ED /* TNButtonTestViewController.m in Sources */,
@@ -674,9 +721,11 @@
 				43081FA11968130300355FC5 /* TNAlertViewTestViewController.m in Sources */,
 				431F17D61826432A006FCF12 /* TNAppDelegate.m in Sources */,
 				43E7C97C196C40C70067C3A7 /* TNShapeLayerTestViewController.m in Sources */,
+				43DD64B41990BD07000884BA /* TNTouchsTestViewController.m in Sources */,
 				43F962F51982599400530F4F /* TNMediaPlayerTestViewController.m in Sources */,
 				43F91D401987E90C009E154D /* TNLayerTestViewController.m in Sources */,
 				43B6B6541913B9AB005D09ED /* TNScrollTestViewController.m in Sources */,
+				434DAE491991206B00DE5C14 /* TNPinchAndRotationViewController.m in Sources */,
 				43081F8F1967F19500355FC5 /* TNLabelTestViewController.m in Sources */,
 				43098C301978FC45005A97A1 /* TNPresentedContentViewController.m in Sources */,
 				43F91D461987EA33009E154D /* TNLayerTransformTestViewController.m in Sources */,
@@ -684,6 +733,8 @@
 				43E7C98A196E50470067C3A7 /* TNCGTestViewController.m in Sources */,
 				43081FA51968170000355FC5 /* TNViewTestViewController.m in Sources */,
 				43098C2B1978C21C005A97A1 /* TNVCTestViewController.m in Sources */,
+				434DAE451991203D00DE5C14 /* TNRotationTestViewController.m in Sources */,
+				434DAE3F19911F2C00DE5C14 /* TNGestureRecognizerViewController.m in Sources */,
 				431F17D21826432A006FCF12 /* main.m in Sources */,
 				43081F97196811ED00355FC5 /* TNAnimationTestViewController.m in Sources */,
 			);
@@ -694,6 +745,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				43E3426E18F436E900463092 /* TNImageTestViewController.m in Sources */,
+				43DD64BE1990DAEE000884BA /* TNPinchTestViewController.m in Sources */,
 				43ECCF0B1851B50A0076535C /* TNAppDelegate.m in Sources */,
 				43E3428718F573F000463092 /* TNTestViewController.m in Sources */,
 				43081F9C1968129700355FC5 /* TNTableViewTestController.m in Sources */,
@@ -703,9 +755,11 @@
 				43081FA21968130300355FC5 /* TNAlertViewTestViewController.m in Sources */,
 				432FF2B218574AD9005486C5 /* TNCustomView.m in Sources */,
 				43E7C97D196C40CA0067C3A7 /* TNShapeLayerTestViewController.m in Sources */,
+				43DD64B51990BD07000884BA /* TNTouchsTestViewController.m in Sources */,
 				43F962F61982599400530F4F /* TNMediaPlayerTestViewController.m in Sources */,
 				43F91D411987E90C009E154D /* TNLayerTestViewController.m in Sources */,
 				43EBAA7518AB5573005DDD8D /* TNViewController.m in Sources */,
+				434DAE4A1991206B00DE5C14 /* TNPinchAndRotationViewController.m in Sources */,
 				43E3428318F5730600463092 /* TNScrollTestViewController.m in Sources */,
 				43098C311978FC45005A97A1 /* TNPresentedContentViewController.m in Sources */,
 				43F91D471987EA33009E154D /* TNLayerTransformTestViewController.m in Sources */,
@@ -713,6 +767,8 @@
 				43E7C98B196E50470067C3A7 /* TNCGTestViewController.m in Sources */,
 				43081FA61968170000355FC5 /* TNViewTestViewController.m in Sources */,
 				43098C2C1978C21C005A97A1 /* TNVCTestViewController.m in Sources */,
+				434DAE461991203D00DE5C14 /* TNRotationTestViewController.m in Sources */,
+				434DAE4019911F2C00DE5C14 /* TNGestureRecognizerViewController.m in Sources */,
 				43081F931967F41C00355FC5 /* TNLabelTestViewController.m in Sources */,
 				431F17FE18264507006FCF12 /* main.m in Sources */,
 			);

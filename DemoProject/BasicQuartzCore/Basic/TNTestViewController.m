@@ -8,8 +8,8 @@
 
 #import "TNTestViewController.h"
 
-@interface TNTestViewController ()
-
+@interface TNTestViewController () <UITableViewDelegate,UITableViewDataSource>
+@property (nonatomic, strong) NSArray *subTests;
 @end
 
 @implementation TNTestViewController
@@ -33,6 +33,11 @@ static NSMutableArray *testClasses = nil;
 + (NSArray *)tests
 {
     return testClasses;
+}
+
++ (NSArray *)subTests
+{
+    return nil;
 }
 
 + (NSString *)testName
@@ -59,6 +64,52 @@ static NSMutableArray *testClasses = nil;
         descLabel.text = desc;
         [self.view addSubview:descLabel];
     }
+    
+    self.subTests = [[self class] subTests];
+    if (self.subTests) {
+        UITableView *tableView = [[UITableView alloc] initWithFrame:self.view.bounds];
+        tableView.autoresizingMask = UIViewAutoresizingFlexibleTopMargin | UIViewAutoresizingFlexibleLeftMargin | UIViewAutoresizingFlexibleBottomMargin | UIViewAutoresizingFlexibleRightMargin | UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
+        tableView.delegate = self;
+        tableView.dataSource = self;
+        tableView.rowHeight = 100.0f;
+        [self.view addSubview:tableView];
+    }
+}
+
+#pragma mark - Table view data source
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
+{
+    return 1;
+}
+
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
+{
+    return self.subTests.count;
+}
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    static NSString *CellIdentifier = @"Cell";
+    
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
+    if (cell == nil) {
+        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
+    }
+    
+    Class testClass = self.subTests[indexPath.row];
+    cell.textLabel.text = [testClass testName];
+    
+    return cell;
+}
+
+#pragma mark - Table view delegate
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    Class testClass = self.subTests[indexPath.row];
+    
+    UIViewController *vc = [[testClass alloc] init];
+    [self.navigationController pushViewController:vc animated:YES];
 }
 
 @end

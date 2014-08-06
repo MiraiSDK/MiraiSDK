@@ -15,4 +15,5 @@
 + (NSArray *)tests;
 + (void)regisiterTestClass:(Class)cls;
 
++ (NSArray *)subTests;
 @end
