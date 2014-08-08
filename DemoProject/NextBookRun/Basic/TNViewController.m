@@ -73,9 +73,9 @@
                 NSLog(@"title:%@ chapters:%@",book.bookTitle,book.chapters);
                 NBBookViewController *vc = [[NBBookViewController alloc] initWithBook:book];
                 
-//                NBBookNavigationController *nav = [[NBBookNavigationController alloc] initWithContentViewController:vc];
-//                nav.delegate = self;
-                [self presentViewController:vc animated:YES completion:nil];
+                NBBookNavigationController *nav = [[NBBookNavigationController alloc] initWithContentViewController:vc];
+                nav.bookNaviDelegate = self;
+                [self presentViewController:nav animated:YES completion:nil];
             }];
         }
     }
