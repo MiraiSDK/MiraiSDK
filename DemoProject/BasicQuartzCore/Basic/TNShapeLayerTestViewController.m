@@ -28,7 +28,7 @@
     
     CAShapeLayer *shape = [CAShapeLayer layer];
     shape.frame = CGRectMake(50, 50, 200, 200);
-    shape.fillColor = CGColorCreateGenericRGB(0, 1, 0, 1);
+    shape.fillColor = [UIColor colorWithRed:0 green:1 blue:0 alpha:1].CGColor;
     CGPathRef pathCG = path.CGPath;
     shape.borderWidth = 1;
     shape.borderColor = [UIColor redColor].CGColor;

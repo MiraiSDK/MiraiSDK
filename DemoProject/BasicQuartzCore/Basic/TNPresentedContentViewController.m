@@ -17,7 +17,15 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    self.view.backgroundColor = [UIColor purpleColor];
+    self.view.backgroundColor = [UIColor yellowColor];
+    
+    UIView *v = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 100, 100)];
+    v.backgroundColor = [UIColor redColor];
+    [self.view addSubview:v];
+    
+    UIView *v1 = [[UIView alloc] initWithFrame:self.view.bounds];
+    v1.backgroundColor = [UIColor greenColor];
+    v1.autoresizesSubviews = UIViewAutoresizingFlexibleTopMargin | UIViewAutoresizingFlexibleLeftMargin | UIViewAutoresizingFlexibleBottomMargin | UIViewAutoresizingFlexibleRightMargin | UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
     
     UIBarButtonItem *left = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemCancel target:self action:@selector(didPressedCancelItem:)];
     self.navigationItem.leftBarButtonItems = @[left];
@@ -30,4 +38,8 @@
     }
 }
 
+- (NSUInteger)supportedInterfaceOrientations
+{
+    return UIInterfaceOrientationMaskLandscape;
+}
 @end

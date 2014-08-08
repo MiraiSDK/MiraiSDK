@@ -28,7 +28,7 @@
     [super viewDidLoad];
     
     self.title = @"Main";
-    self.navigationItem.title = @"ItemMain";
+    self.navigationItem.title = @"Tests";
     self.view.backgroundColor = [UIColor whiteColor];
     
     self.tests = [TNTestViewController tests];

@@ -10,7 +10,7 @@
 
 #import "TNAppDelegate.h"
 
-#ifdef ANDROID
+#ifdef __ANDROID__
 #import <android/log.h>
 //#import "CGContext-private.h"
 #define  LOG_TAG    "BasicCairo"
@@ -26,7 +26,7 @@ int main(int argc, char * argv[])
 }
 
 
-#ifdef ANDROID
+#ifdef __ANDROID__
 
 @interface TNAndroidLauncher : NSObject
 @end

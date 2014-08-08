@@ -7,6 +7,7 @@
 //
 
 #import "TNCTView.h"
+#import <CoreText/CoreText.h>
 
 @implementation TNCTView
 

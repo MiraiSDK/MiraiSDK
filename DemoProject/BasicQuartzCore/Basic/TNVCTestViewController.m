@@ -42,20 +42,26 @@
     tableView.dataSource = self;
     [self.view addSubview:tableView];
     
-    self.tests = @[@"presentViewController with nav"];
-    
-    
-}
+    self.tests = @[
+                   [TNTestCase testCaseWithName:@"presentViewController with nav" action:^{
+                       // present nav
+                       TNPresentedContentViewController * vc = [[TNPresentedContentViewController alloc] init];
+                       vc.delegate = self;
+                       UINavigationController *nav = [[UINavigationController alloc] initWithRootViewController:vc];
+                       [self presentViewController:nav animated:YES completion:nil];
+                   }],
 
-- (void)testWithIndex:(NSInteger)idx
-{
-    if (idx == 0) {
-        // present nav
-        TNPresentedContentViewController * vc = [[TNPresentedContentViewController alloc] init];
-        vc.delegate = self;
-        UINavigationController *nav = [[UINavigationController alloc] initWithRootViewController:vc];
-        [self presentViewController:nav animated:YES completion:nil];
-    }
+                   [TNTestCase testCaseWithName:@"NavigationBar Show/Hidden" action:^{
+                       [self.navigationController setNavigationBarHidden:!self.navigationController.isNavigationBarHidden];
+                   }],
+
+                   [TNTestCase testCaseWithName:@"NavigationBar Show/Hidden animated" action:^{
+                       [self.navigationController setNavigationBarHidden:!self.navigationController.isNavigationBarHidden animated:YES];
+                   }],
+                   
+                   ];
+    
+    
 }
 
 - (void)presentedContentViewControllerDidCancel:(TNPresentedContentViewController *)vc animated:(BOOL)animated
@@ -82,7 +88,7 @@
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
     }
     
-    cell.textLabel.text = self.tests[indexPath.row];
+    cell.textLabel.text = [self.tests[indexPath.row] name];
     
     return cell;
 }
@@ -91,7 +97,8 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    [self testWithIndex:indexPath.row];
+    TNTestCase *t = self.tests[indexPath.row];
+    t.action();
 }
 
 -(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath

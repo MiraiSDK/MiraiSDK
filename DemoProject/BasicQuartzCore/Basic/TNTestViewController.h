@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "TNTestCase.h"
 
 @interface TNTestViewController : UIViewController
 + (NSString *)testName;
