@@ -1,0 +1,3 @@
+[submodule "Mirai-Foundation"]
+	path = Mirai-Foundation
+	url = git@github.com:tinyfool/Mirai-Foundation.git
