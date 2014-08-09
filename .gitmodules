@@ -4,3 +4,6 @@
 [submodule "Mirai-Toolchains"]
 	path = Mirai-Toolchains
 	url = git@github.com:tinyfool/Mirai-Toolchains.git
+[submodule "Mirai-CoreFoundation"]
+	path = Mirai-CoreFoundation
+	url = git@github.com:tinyfool/Mirai-CoreFoundation.git
