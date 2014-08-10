@@ -7,3 +7,6 @@
 [submodule "Mirai-CoreFoundation"]
 	path = Mirai-CoreFoundation
 	url = git@github.com:tinyfool/Mirai-CoreFoundation.git
+[submodule "Mirai-CoreGraphics"]
+	path = Mirai-CoreGraphics
+	url = git@github.com:tinyfool/Mirai-CoreGraphics.git
