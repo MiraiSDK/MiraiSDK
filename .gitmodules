@@ -19,3 +19,6 @@
 [submodule "Mirai-QuartzCore"]
 	path = Mirai-QuartzCore
 	url = git@github.com:tinyfool/Mirai-QuartzCore.git
+[submodule "Mirai-UIKit"]
+	path = Mirai-UIKit
+	url = git@github.com:tinyfool/Mirai-UIKit.git
