@@ -16,3 +16,6 @@
 [submodule "Mirai-OpenGLES"]
 	path = Mirai-OpenGLES
 	url = git@github.com:tinyfool/Mirai-OpenGLES.git
+[submodule "Mirai-QuartzCore"]
+	path = Mirai-QuartzCore
+	url = git@github.com:tinyfool/Mirai-QuartzCore.git
