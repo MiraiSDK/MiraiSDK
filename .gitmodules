@@ -22,3 +22,6 @@
 [submodule "Mirai-UIKit"]
 	path = Mirai-UIKit
 	url = git@github.com:tinyfool/Mirai-UIKit.git
+[submodule "Mirai-MediaPlayer"]
+	path = Mirai-MediaPlayer
+	url = git@github.com:tinyfool/Mirai-MediaPlayer.git
