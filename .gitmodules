@@ -1,15 +1,27 @@
-[submodule "Projects/QuartzCore/QuartzCore"]
-	path = Projects/QuartzCore/QuartzCore
-	url = git@github.com:tinyfool/QuartzCore.git
-[submodule "Projects/CoreGraphics"]
-	path = Projects/CoreGraphics
+[submodule "Mirai-Foundation"]
+	path = Mirai-Foundation
+	url = git@github.com:tinyfool/Mirai-Foundation.git
+[submodule "Mirai-Toolchains"]
+	path = Mirai-Toolchains
+	url = git@github.com:tinyfool/Mirai-Toolchains.git
+[submodule "Mirai-CoreFoundation"]
+	path = Mirai-CoreFoundation
+	url = git@github.com:tinyfool/Mirai-CoreFoundation.git
+[submodule "Mirai-CoreGraphics"]
+	path = Mirai-CoreGraphics
 	url = git@github.com:tinyfool/Mirai-CoreGraphics.git
-[submodule "Projects/CoreText"]
-	path = Projects/CoreText
+[submodule "Mirai-CoreText"]
+	path = Mirai-CoreText
 	url = git@github.com:tinyfool/Mirai-CoreText.git
-[submodule "Projects/Foundation"]
-	path = Projects/Foundation
-	url = https://github.com/tinyfool/Mirai-Foundation.git
-[submodule "Projects/CoreFoundation"]
-	path = Projects/CoreFoundation
-	url = https://github.com/tinyfool/Mirai-CoreFoundation.git
+[submodule "Mirai-OpenGLES"]
+	path = Mirai-OpenGLES
+	url = git@github.com:tinyfool/Mirai-OpenGLES.git
+[submodule "Mirai-QuartzCore"]
+	path = Mirai-QuartzCore
+	url = git@github.com:tinyfool/Mirai-QuartzCore.git
+[submodule "Mirai-UIKit"]
+	path = Mirai-UIKit
+	url = git@github.com:tinyfool/Mirai-UIKit.git
+[submodule "Mirai-MediaPlayer"]
+	path = Mirai-MediaPlayer
+	url = git@github.com:tinyfool/Mirai-MediaPlayer.git
