@@ -638,7 +638,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "pushd \"$TARGET_BUILD_DIR/../\"\n/Users/chyhfj/.SDK/Android/android-ndk-r9/ndk-build\npopd";
+			shellScript = "set -e\npushd \"$TARGET_BUILD_DIR/../\"\nPATH=$(bash -l -c 'echo $PATH')\nndk-build\npopd";
 		};
 /* End PBXShellScriptBuildPhase section */
 
