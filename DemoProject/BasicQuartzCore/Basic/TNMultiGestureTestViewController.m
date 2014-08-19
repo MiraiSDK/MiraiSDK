@@ -9,6 +9,10 @@
 #import "TNMultiGestureTestViewController.h"
 #import <UIKit/UIGestureRecognizerSubclass.h>
 
+@interface UIGestureRecognizer ()
+-(BOOL)_isExcludedByGesture:(UIGestureRecognizer *)ges;
+@end
+
 NSString* NSStringFromGesState(UIGestureRecognizerState state)
 {
     switch (state) {
@@ -30,26 +34,35 @@ NSString* NSStringFromGesState(UIGestureRecognizerState state)
 @interface TNTapGestureRecognizer : UITapGestureRecognizer
 @end
 @implementation TNTapGestureRecognizer
+- (BOOL)_isExcludedByGesture:(UIGestureRecognizer *)ges
+{
+    BOOL excluded = [super _isExcludedByGesture:ges];
+    NSLog(@"<%p> %s:<%p,%@> -> %@ ",self,__PRETTY_FUNCTION__, ges,ges.class,excluded?@"YES":@"NO");
+    return excluded;
+}
+
 - (void)setState:(UIGestureRecognizerState)state
 {
-    NSLog(@"%s %@",__PRETTY_FUNCTION__, NSStringFromGesState(state));
+    NSLog(@"<%p>%s %@",self,__PRETTY_FUNCTION__, NSStringFromGesState(state));
     [super setState:state];
 }
 - (void)reset
 {
-    NSLog(@"%s",__PRETTY_FUNCTION__);
+    NSLog(@"<%p>%s",self,__PRETTY_FUNCTION__);
     [super reset];
 }
 - (BOOL)canPreventGestureRecognizer:(UIGestureRecognizer *)preventedGestureRecognizer
 {
-    NSLog(@"%s",__PRETTY_FUNCTION__);
-    return [super canPreventGestureRecognizer:preventedGestureRecognizer];
+    BOOL can = [super canPreventGestureRecognizer:preventedGestureRecognizer];
+    NSLog(@"<%p>%s:<%p,%@> ->%@",self,__PRETTY_FUNCTION__, preventedGestureRecognizer,preventedGestureRecognizer.class,can?@"YES":@"NO");
+    return can;
 }
 
 - (BOOL)canBePreventedByGestureRecognizer:(UIGestureRecognizer *)preventingGestureRecognizer
 {
-    NSLog(@"%s",__PRETTY_FUNCTION__);
-    return [super canBePreventedByGestureRecognizer:preventingGestureRecognizer];
+    BOOL can = [super canBePreventedByGestureRecognizer:preventingGestureRecognizer];
+    NSLog(@"<%p>%s:<%p,%@> ->%@",self,__PRETTY_FUNCTION__, preventingGestureRecognizer,preventingGestureRecognizer.class,can?@"YES":@"NO");
+    return can;
 }
 - (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event
 {
@@ -77,6 +90,13 @@ NSString* NSStringFromGesState(UIGestureRecognizerState state)
 @interface TNSwipeGestureRecognizer : UISwipeGestureRecognizer
 @end
 @implementation TNSwipeGestureRecognizer
+- (BOOL)_isExcludedByGesture:(UIGestureRecognizer *)ges
+{
+    BOOL excluded = [super _isExcludedByGesture:ges];
+    NSLog(@"%s:<%p,%@> -> %@ ",__PRETTY_FUNCTION__, ges,ges.class,excluded?@"YES":@"NO");
+    return excluded;
+}
+
 - (void)setState:(UIGestureRecognizerState)state
 {
     NSLog(@"%s %@",__PRETTY_FUNCTION__, NSStringFromGesState(state));
@@ -89,13 +109,13 @@ NSString* NSStringFromGesState(UIGestureRecognizerState state)
 }
 - (BOOL)canPreventGestureRecognizer:(UIGestureRecognizer *)preventedGestureRecognizer
 {
-    NSLog(@"%s",__PRETTY_FUNCTION__);
+    NSLog(@"%s:<%p,%@> ",__PRETTY_FUNCTION__, preventedGestureRecognizer,preventedGestureRecognizer.class);
     return [super canPreventGestureRecognizer:preventedGestureRecognizer];
 }
 
 - (BOOL)canBePreventedByGestureRecognizer:(UIGestureRecognizer *)preventingGestureRecognizer
 {
-    NSLog(@"%s",__PRETTY_FUNCTION__);
+    NSLog(@"%s:<%p,%@> ",__PRETTY_FUNCTION__, preventingGestureRecognizer,preventingGestureRecognizer.class);
     return [super canBePreventedByGestureRecognizer:preventingGestureRecognizer];
 }
 - (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event
@@ -124,6 +144,13 @@ NSString* NSStringFromGesState(UIGestureRecognizerState state)
 @interface TNLongPressGestureRecognizer : UILongPressGestureRecognizer
 @end
 @implementation TNLongPressGestureRecognizer
+- (BOOL)_isExcludedByGesture:(UIGestureRecognizer *)ges
+{
+    BOOL excluded = [super _isExcludedByGesture:ges];
+    NSLog(@"%s:<%p,%@> -> %@ ",__PRETTY_FUNCTION__, ges,ges.class,excluded?@"YES":@"NO");
+    return excluded;
+}
+
 - (void)setState:(UIGestureRecognizerState)state
 {
     NSLog(@"%s %@",__PRETTY_FUNCTION__, NSStringFromGesState(state));
@@ -136,13 +163,13 @@ NSString* NSStringFromGesState(UIGestureRecognizerState state)
 }
 - (BOOL)canPreventGestureRecognizer:(UIGestureRecognizer *)preventedGestureRecognizer
 {
-    NSLog(@"%s",__PRETTY_FUNCTION__);
+    NSLog(@"%s:<%p,%@> ",__PRETTY_FUNCTION__, preventedGestureRecognizer,preventedGestureRecognizer.class);
     return [super canPreventGestureRecognizer:preventedGestureRecognizer];
 }
 
 - (BOOL)canBePreventedByGestureRecognizer:(UIGestureRecognizer *)preventingGestureRecognizer
 {
-    NSLog(@"%s",__PRETTY_FUNCTION__);
+    NSLog(@"%s:<%p,%@> ",__PRETTY_FUNCTION__, preventingGestureRecognizer,preventingGestureRecognizer.class);
     return [super canBePreventedByGestureRecognizer:preventingGestureRecognizer];
 }
 - (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event
@@ -171,6 +198,13 @@ NSString* NSStringFromGesState(UIGestureRecognizerState state)
 @interface TNRotationGestureRecognizer : UIRotationGestureRecognizer
 @end
 @implementation TNRotationGestureRecognizer
+- (BOOL)_isExcludedByGesture:(UIGestureRecognizer *)ges
+{
+    BOOL excluded = [super _isExcludedByGesture:ges];
+    NSLog(@"%s:<%p,%@> -> %@ ",__PRETTY_FUNCTION__, ges,ges.class,excluded?@"YES":@"NO");
+    return excluded;
+}
+
 - (void)setState:(UIGestureRecognizerState)state
 {
     NSLog(@"%s %@",__PRETTY_FUNCTION__, NSStringFromGesState(state));
@@ -183,13 +217,13 @@ NSString* NSStringFromGesState(UIGestureRecognizerState state)
 }
 - (BOOL)canPreventGestureRecognizer:(UIGestureRecognizer *)preventedGestureRecognizer
 {
-    NSLog(@"%s",__PRETTY_FUNCTION__);
+    NSLog(@"%s:<%p,%@> ",__PRETTY_FUNCTION__, preventedGestureRecognizer,preventedGestureRecognizer.class);
     return [super canPreventGestureRecognizer:preventedGestureRecognizer];
 }
 
 - (BOOL)canBePreventedByGestureRecognizer:(UIGestureRecognizer *)preventingGestureRecognizer
 {
-    NSLog(@"%s",__PRETTY_FUNCTION__);
+    NSLog(@"%s:<%p,%@> ",__PRETTY_FUNCTION__, preventingGestureRecognizer,preventingGestureRecognizer.class);
     return [super canBePreventedByGestureRecognizer:preventingGestureRecognizer];
 }
 - (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event
@@ -230,13 +264,13 @@ NSString* NSStringFromGesState(UIGestureRecognizerState state)
 }
 - (BOOL)canPreventGestureRecognizer:(UIGestureRecognizer *)preventedGestureRecognizer
 {
-    NSLog(@"%s",__PRETTY_FUNCTION__);
+    NSLog(@"%s:<%p,%@> ",__PRETTY_FUNCTION__, preventedGestureRecognizer,preventedGestureRecognizer.class);
     return [super canPreventGestureRecognizer:preventedGestureRecognizer];
 }
 
 - (BOOL)canBePreventedByGestureRecognizer:(UIGestureRecognizer *)preventingGestureRecognizer
 {
-    NSLog(@"%s",__PRETTY_FUNCTION__);
+    NSLog(@"%s:<%p,%@> ",__PRETTY_FUNCTION__, preventingGestureRecognizer,preventingGestureRecognizer.class);
     return [super canBePreventedByGestureRecognizer:preventingGestureRecognizer];
 }
 - (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event
@@ -277,13 +311,13 @@ NSString* NSStringFromGesState(UIGestureRecognizerState state)
 }
 - (BOOL)canPreventGestureRecognizer:(UIGestureRecognizer *)preventedGestureRecognizer
 {
-    NSLog(@"%s",__PRETTY_FUNCTION__);
+    NSLog(@"%s:<%p,%@> ",__PRETTY_FUNCTION__, preventedGestureRecognizer,preventedGestureRecognizer.class);
     return [super canPreventGestureRecognizer:preventedGestureRecognizer];
 }
 
 - (BOOL)canBePreventedByGestureRecognizer:(UIGestureRecognizer *)preventingGestureRecognizer
 {
-    NSLog(@"%s",__PRETTY_FUNCTION__);
+    NSLog(@"%s:<%p,%@> ",__PRETTY_FUNCTION__, preventingGestureRecognizer,preventingGestureRecognizer.class);
     return [super canBePreventedByGestureRecognizer:preventingGestureRecognizer];
 }
 - (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event
@@ -310,7 +344,7 @@ NSString* NSStringFromGesState(UIGestureRecognizerState state)
 @end
 
 #pragma mark -
-@interface TNMultiGestureTestViewController ()
+@interface TNMultiGestureTestViewController () <UIGestureRecognizerDelegate>
 
 @end
 
@@ -321,33 +355,56 @@ NSString* NSStringFromGesState(UIGestureRecognizerState state)
     return @"Multi Gesture";
 }
 
+#if 0
+#define TNTapGestureRecognizer UITapGestureRecognizer
+#define TNRotationGestureRecognizer UIRotationGestureRecognizer
+#define TNPinchGestureRecognizer UIPinchGestureRecognizer
+#define TNLongPressGestureRecognizer UILongPressGestureRecognizer
+#define TNSwipeGestureRecognizer UISwipeGestureRecognizer
+#define TNPanGestureRecognizer UIPanGestureRecognizer
+#endif
+
 - (void)viewDidLoad
 {
     [super viewDidLoad];
     
+    UIView *red = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 100, 100)];
+    red.backgroundColor = [UIColor redColor];
+    [self.view addSubview:red];
+    
     UITapGestureRecognizer *tap = [[TNTapGestureRecognizer alloc] initWithTarget:self action:@selector(handle_tap:)];
+    tap.delegate = self;
     [self.view addGestureRecognizer:tap];
     
     UIRotationGestureRecognizer *rotation = [[TNRotationGestureRecognizer alloc] initWithTarget:self action:@selector(handle_rotation:)];
-    [self.view addGestureRecognizer:rotation];
+//    [self.view addGestureRecognizer:rotation];
     
     UIPinchGestureRecognizer *pinch = [[TNPinchGestureRecognizer alloc] initWithTarget:self action:@selector(handle_pinch:)];
-    [self.view addGestureRecognizer:pinch];
+//    [self.view addGestureRecognizer:pinch];
     
     UILongPressGestureRecognizer *longPress = [[TNLongPressGestureRecognizer alloc] initWithTarget:self action:@selector(handle_longpress:)];
-    [self.view addGestureRecognizer:longPress];
+//    [self.view addGestureRecognizer:longPress];
     
 //    UIPanGestureRecognizer *pan = [[TNPanGestureRecognizer alloc] initWithTarget:self action:@selector(handle_pan:)];
 //    [self.view addGestureRecognizer:pan];
     
     UISwipeGestureRecognizer *swipe = [[TNSwipeGestureRecognizer alloc] initWithTarget:self action:@selector(handle_swip:)];
-    [self.view addGestureRecognizer:swipe];
+//    [self.view addGestureRecognizer:swipe];
     
+    TNTapGestureRecognizer *tap2 = [[TNTapGestureRecognizer alloc] initWithTarget:self action:@selector(handle_tap2:)];
+    tap2.delegate = self;
+    [red addGestureRecognizer:tap2];
+    
+}
+
+- (void)handle_tap2:(UITapGestureRecognizer *)ges
+{
+    NSLog(@"%s: ges:%p %@",__PRETTY_FUNCTION__,ges,NSStringFromGesState(ges.state));
 }
 
 - (void)handle_tap:(UITapGestureRecognizer *)ges
 {
-    NSLog(@"%s: %@",__PRETTY_FUNCTION__,NSStringFromGesState(ges.state));
+    NSLog(@"%s: ges:%p %@",__PRETTY_FUNCTION__,ges, NSStringFromGesState(ges.state));
 }
 
 - (void)handle_rotation:(UIRotationGestureRecognizer *)ges
@@ -396,4 +453,24 @@ NSString* NSStringFromGesState(UIGestureRecognizerState state)
     NSLog(@"%s",__PRETTY_FUNCTION__);
     [super touchesCancelled:touches withEvent:event];
 }
+
+- (BOOL)gestureRecognizerShouldBegin:(UIGestureRecognizer *)gestureRecognizer
+{
+    NSLog(@"%s gesture:%@",__PRETTY_FUNCTION__,gestureRecognizer);
+    return YES;
+}
+
+- (BOOL)gestureRecognizer:(UIGestureRecognizer *)gestureRecognizer shouldReceiveTouch:(UITouch *)touch
+{
+    NSLog(@"%s gesture:%@ touch:%@",__PRETTY_FUNCTION__,gestureRecognizer,touch);
+    return YES;
+}
+
+- (BOOL)gestureRecognizer:(UIGestureRecognizer *)gestureRecognizer shouldRecognizeSimultaneouslyWithGestureRecognizer:(UIGestureRecognizer *)otherGestureRecognizer
+{
+    NSLog(@"%s gesture:<%p %@> other:<%p %@>",__PRETTY_FUNCTION__,gestureRecognizer,gestureRecognizer.class, otherGestureRecognizer,otherGestureRecognizer.class);
+    return YES;
+}
+
+
 @end

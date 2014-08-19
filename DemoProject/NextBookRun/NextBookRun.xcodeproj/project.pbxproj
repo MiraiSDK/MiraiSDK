@@ -16,28 +16,29 @@
 		431F17FE18264507006FCF12 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 431F17D11826432A006FCF12 /* main.m */; };
 		431F183F18265125006FCF12 /* InfoPlist.strings in Copy Files (assets) */ = {isa = PBXBuildFile; fileRef = 431F17CE1826432A006FCF12 /* InfoPlist.strings */; };
 		432077E1185313EA00166514 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 432077E0185313EA00166514 /* QuartzCore.framework */; };
-		4327E1BE184C531300F17F96 /* libgnustep-base.so in Copy Files (libs) */ = {isa = PBXBuildFile; fileRef = 4327E1BD184C530800F17F96 /* libgnustep-base.so */; };
-		4327E1C0184C86CC00F17F96 /* libgnustl_shared.so in Copy Files (libs) */ = {isa = PBXBuildFile; fileRef = 4327E1BF184C86BF00F17F96 /* libgnustl_shared.so */; };
-		4327E2411850692900F17F96 /* libQuartzCore.so in Copy Files (libs) */ = {isa = PBXBuildFile; fileRef = 4327E2401850691D00F17F96 /* libQuartzCore.so */; };
+		432B3A2C19A1B0D100CB177A /* libTNJavaHelper.so in Copy Files (libs) */ = {isa = PBXBuildFile; fileRef = 432B3A2B19A1B09E00CB177A /* libTNJavaHelper.so */; };
+		432B3A2D19A1B0D100CB177A /* libCoreText.so in Copy Files (libs) */ = {isa = PBXBuildFile; fileRef = 432B3A2A19A1B09400CB177A /* libCoreText.so */; };
+		432B3A2E19A1B0D100CB177A /* libCoreGraphics.so in Copy Files (libs) */ = {isa = PBXBuildFile; fileRef = 432B3A2919A1B08900CB177A /* libCoreGraphics.so */; };
+		432B3A2F19A1B0D100CB177A /* libMediaPlayer.so in Copy Files (libs) */ = {isa = PBXBuildFile; fileRef = 432B3A2819A1B07E00CB177A /* libMediaPlayer.so */; };
+		432B3A3019A1B0D100CB177A /* libQuartzCore.so in Copy Files (libs) */ = {isa = PBXBuildFile; fileRef = 432B3A2719A1B05D00CB177A /* libQuartzCore.so */; };
+		432B3A3119A1B0D100CB177A /* libOpenGLES.so in Copy Files (libs) */ = {isa = PBXBuildFile; fileRef = 432B3A2619A1B05600CB177A /* libOpenGLES.so */; };
+		432B3A3219A1B0D100CB177A /* libUIKit.so in Copy Files (libs) */ = {isa = PBXBuildFile; fileRef = 432B3A2419A1B03B00CB177A /* libUIKit.so */; };
+		432B3A3319A1B0D100CB177A /* libdispatch.so in Copy Files (libs) */ = {isa = PBXBuildFile; fileRef = 432B3A2319A1B03100CB177A /* libdispatch.so */; };
+		432B3A3419A1B0D100CB177A /* libgnustep-base.so in Copy Files (libs) */ = {isa = PBXBuildFile; fileRef = 432B3A2119A1B02100CB177A /* libgnustep-base.so */; };
+		432B3A3519A1B0D100CB177A /* libgnustep-corebase.so in Copy Files (libs) */ = {isa = PBXBuildFile; fileRef = 432B3A2219A1B02100CB177A /* libgnustep-corebase.so */; };
+		432B3A3619A1B0D100CB177A /* libgnustl_shared.so in Copy Files (libs) */ = {isa = PBXBuildFile; fileRef = 432B3A2519A1B04B00CB177A /* libgnustl_shared.so */; };
+		432B3A3719A1B0D100CB177A /* libobjc.so in Copy Files (libs) */ = {isa = PBXBuildFile; fileRef = 432B3A2019A1B01000CB177A /* libobjc.so */; };
 		4336783B18F2904D00F1D556 /* TNSecondViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4336783918F28FB300F1D556 /* TNSecondViewController.m */; };
-		4383FF4C184B4EFE004E88C2 /* libobjc.so in Copy Files (libs) */ = {isa = PBXBuildFile; fileRef = 4383FF4B184B4EFB004E88C2 /* libobjc.so */; };
 		438406301881571F000D092C /* CoreText.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4384062F1881571F000D092C /* CoreText.framework */; };
-		4384063618815805000D092C /* libCoreText.so in Copy Files (libs) */ = {isa = PBXBuildFile; fileRef = 43840635188157FB000D092C /* libCoreText.so */; };
-		4384063718815806000D092C /* libCoreGraphics.so in Copy Files (libs) */ = {isa = PBXBuildFile; fileRef = 43840634188157F5000D092C /* libCoreGraphics.so */; };
 		4384064918816CA4000D092C /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 431F17C71826432A006FCF12 /* CoreGraphics.framework */; };
-		439487EC1893B7F6004F8636 /* libOpenGLES.so in Copy Files (libs) */ = {isa = PBXBuildFile; fileRef = 439487EA1893B7E6004F8636 /* libOpenGLES.so */; };
 		43B6B6501913A244005D09ED /* libNextBookKit.so in Copy Files (libs) */ = {isa = PBXBuildFile; fileRef = 43B6B64F1913A237005D09ED /* libNextBookKit.so */; };
 		43C2010618ED4AFC00490D59 /* MainHActivity.java in Sources */ = {isa = PBXBuildFile; fileRef = 43C2010518ED4AFC00490D59 /* MainHActivity.java */; };
 		43C2010818ED4B0400490D59 /* AndroidManifest.xml in Resources */ = {isa = PBXBuildFile; fileRef = 43C2010718ED4B0400490D59 /* AndroidManifest.xml */; };
 		43C2010A18ED4B1600490D59 /* Android.mk in Resources */ = {isa = PBXBuildFile; fileRef = 43C2010918ED4B1600490D59 /* Android.mk */; };
 		43C2011518ED528100490D59 /* NextBookKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 43C2011418ED528100490D59 /* NextBookKit.framework */; };
-		43CA2A201954324F00B92F2C /* libMediaPlayer.so in Copy Files (libs) */ = {isa = PBXBuildFile; fileRef = 43CA2A1F1954324300B92F2C /* libMediaPlayer.so */; };
-		43DFBA531851DABE00BA269F /* libgnustep-corebase.so in Copy Files (libs) */ = {isa = PBXBuildFile; fileRef = 43DFBA521851D9F200BA269F /* libgnustep-corebase.so */; };
 		43EBAA7518AB5573005DDD8D /* TNViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 431F17DB1826432A006FCF12 /* TNViewController.m */; };
 		43ECCF051851936B0076535C /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 431F17C91826432A006FCF12 /* UIKit.framework */; };
-		43ECCF0A185194860076535C /* libUIKit.so in Copy Files (libs) */ = {isa = PBXBuildFile; fileRef = 43ECCF09185194480076535C /* libUIKit.so */; };
 		43ECCF0B1851B50A0076535C /* TNAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 431F17D51826432A006FCF12 /* TNAppDelegate.m */; };
-		43F91D3B19879729009E154D /* libTNJavaHelper.so in Copy Files (libs) */ = {isa = PBXBuildFile; fileRef = 43F91D3A198796EA009E154D /* libTNJavaHelper.so */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -58,18 +59,19 @@
 			dstPath = "";
 			dstSubfolderSpec = 6;
 			files = (
-				4327E1C0184C86CC00F17F96 /* libgnustl_shared.so in Copy Files (libs) */,
-				43DFBA531851DABE00BA269F /* libgnustep-corebase.so in Copy Files (libs) */,
-				43ECCF0A185194860076535C /* libUIKit.so in Copy Files (libs) */,
-				4383FF4C184B4EFE004E88C2 /* libobjc.so in Copy Files (libs) */,
-				43CA2A201954324F00B92F2C /* libMediaPlayer.so in Copy Files (libs) */,
-				43F91D3B19879729009E154D /* libTNJavaHelper.so in Copy Files (libs) */,
-				4327E2411850692900F17F96 /* libQuartzCore.so in Copy Files (libs) */,
-				4384063618815805000D092C /* libCoreText.so in Copy Files (libs) */,
-				4384063718815806000D092C /* libCoreGraphics.so in Copy Files (libs) */,
+				432B3A2C19A1B0D100CB177A /* libTNJavaHelper.so in Copy Files (libs) */,
+				432B3A2D19A1B0D100CB177A /* libCoreText.so in Copy Files (libs) */,
+				432B3A2E19A1B0D100CB177A /* libCoreGraphics.so in Copy Files (libs) */,
+				432B3A2F19A1B0D100CB177A /* libMediaPlayer.so in Copy Files (libs) */,
+				432B3A3019A1B0D100CB177A /* libQuartzCore.so in Copy Files (libs) */,
+				432B3A3119A1B0D100CB177A /* libOpenGLES.so in Copy Files (libs) */,
+				432B3A3219A1B0D100CB177A /* libUIKit.so in Copy Files (libs) */,
+				432B3A3319A1B0D100CB177A /* libdispatch.so in Copy Files (libs) */,
+				432B3A3419A1B0D100CB177A /* libgnustep-base.so in Copy Files (libs) */,
+				432B3A3519A1B0D100CB177A /* libgnustep-corebase.so in Copy Files (libs) */,
+				432B3A3619A1B0D100CB177A /* libgnustl_shared.so in Copy Files (libs) */,
+				432B3A3719A1B0D100CB177A /* libobjc.so in Copy Files (libs) */,
 				43B6B6501913A244005D09ED /* libNextBookKit.so in Copy Files (libs) */,
-				439487EC1893B7F6004F8636 /* libOpenGLES.so in Copy Files (libs) */,
-				4327E1BE184C531300F17F96 /* libgnustep-base.so in Copy Files (libs) */,
 			);
 			name = "Copy Files (libs)";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -94,27 +96,27 @@
 		431F180818264507006FCF12 /* libNextBookRun.so */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.dylib"; includeInIndex = 0; path = libNextBookRun.so; sourceTree = BUILT_PRODUCTS_DIR; };
 		431F184018265403006FCF12 /* android-main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "android-main.m"; path = "../../../../Development/SyoujoSDK/android/share/android/jni/android-main.m"; sourceTree = "<group>"; };
 		432077E0185313EA00166514 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
-		4327E1BD184C530800F17F96 /* libgnustep-base.so */ = {isa = PBXFileReference; lastKnownFileType = file; name = "libgnustep-base.so"; path = "../../Products/android/android-toolchain-arm/sysroot/usr/lib/libgnustep-base.so"; sourceTree = "<group>"; };
-		4327E1BF184C86BF00F17F96 /* libgnustl_shared.so */ = {isa = PBXFileReference; lastKnownFileType = file; name = libgnustl_shared.so; path = "../../Products/android/android-toolchain-arm/sysroot/usr/lib/libgnustl_shared.so"; sourceTree = "<group>"; };
-		4327E2401850691D00F17F96 /* libQuartzCore.so */ = {isa = PBXFileReference; lastKnownFileType = file; name = libQuartzCore.so; path = "../../Products/android/android-toolchain-arm/sysroot/usr/lib/libQuartzCore.so"; sourceTree = "<group>"; };
+		432B3A2019A1B01000CB177A /* libobjc.so */ = {isa = PBXFileReference; lastKnownFileType = file; name = libobjc.so; path = "../../toolchain/android/android-toolchain-arm/sysroot/usr/lib/libobjc.so"; sourceTree = "<group>"; };
+		432B3A2119A1B02100CB177A /* libgnustep-base.so */ = {isa = PBXFileReference; lastKnownFileType = file; name = "libgnustep-base.so"; path = "../../toolchain/android/android-toolchain-arm/sysroot/usr/lib/libgnustep-base.so"; sourceTree = "<group>"; };
+		432B3A2219A1B02100CB177A /* libgnustep-corebase.so */ = {isa = PBXFileReference; lastKnownFileType = file; name = "libgnustep-corebase.so"; path = "../../toolchain/android/android-toolchain-arm/sysroot/usr/lib/libgnustep-corebase.so"; sourceTree = "<group>"; };
+		432B3A2319A1B03100CB177A /* libdispatch.so */ = {isa = PBXFileReference; lastKnownFileType = file; name = libdispatch.so; path = "../../toolchain/android/android-toolchain-arm/sysroot/usr/lib/libdispatch.so"; sourceTree = "<group>"; };
+		432B3A2419A1B03B00CB177A /* libUIKit.so */ = {isa = PBXFileReference; lastKnownFileType = file; name = libUIKit.so; path = "../../toolchain/android/android-toolchain-arm/sysroot/usr/lib/libUIKit.so"; sourceTree = "<group>"; };
+		432B3A2519A1B04B00CB177A /* libgnustl_shared.so */ = {isa = PBXFileReference; lastKnownFileType = file; name = libgnustl_shared.so; path = "../../toolchain/android/android-toolchain-arm/sysroot/usr/lib/libgnustl_shared.so"; sourceTree = "<group>"; };
+		432B3A2619A1B05600CB177A /* libOpenGLES.so */ = {isa = PBXFileReference; lastKnownFileType = file; name = libOpenGLES.so; path = "../../toolchain/android/android-toolchain-arm/sysroot/usr/lib/libOpenGLES.so"; sourceTree = "<group>"; };
+		432B3A2719A1B05D00CB177A /* libQuartzCore.so */ = {isa = PBXFileReference; lastKnownFileType = file; name = libQuartzCore.so; path = "../../toolchain/android/android-toolchain-arm/sysroot/usr/lib/libQuartzCore.so"; sourceTree = "<group>"; };
+		432B3A2819A1B07E00CB177A /* libMediaPlayer.so */ = {isa = PBXFileReference; lastKnownFileType = file; name = libMediaPlayer.so; path = "../../toolchain/android/android-toolchain-arm/sysroot/usr/lib/libMediaPlayer.so"; sourceTree = "<group>"; };
+		432B3A2919A1B08900CB177A /* libCoreGraphics.so */ = {isa = PBXFileReference; lastKnownFileType = file; name = libCoreGraphics.so; path = "../../toolchain/android/android-toolchain-arm/sysroot/usr/lib/libCoreGraphics.so"; sourceTree = "<group>"; };
+		432B3A2A19A1B09400CB177A /* libCoreText.so */ = {isa = PBXFileReference; lastKnownFileType = file; name = libCoreText.so; path = "../../toolchain/android/android-toolchain-arm/sysroot/usr/lib/libCoreText.so"; sourceTree = "<group>"; };
+		432B3A2B19A1B09E00CB177A /* libTNJavaHelper.so */ = {isa = PBXFileReference; lastKnownFileType = file; name = libTNJavaHelper.so; path = "../../toolchain/android/android-toolchain-arm/sysroot/usr/lib/libTNJavaHelper.so"; sourceTree = "<group>"; };
 		4336783818F28FB300F1D556 /* TNSecondViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TNSecondViewController.h; sourceTree = "<group>"; };
 		4336783918F28FB300F1D556 /* TNSecondViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TNSecondViewController.m; sourceTree = "<group>"; };
-		4383FF4B184B4EFB004E88C2 /* libobjc.so */ = {isa = PBXFileReference; lastKnownFileType = file; name = libobjc.so; path = "../../Products/android/android-toolchain-arm/sysroot/usr/lib/libobjc.so"; sourceTree = "<group>"; };
 		4384062F1881571F000D092C /* CoreText.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreText.framework; path = System/Library/Frameworks/CoreText.framework; sourceTree = SDKROOT; };
-		43840634188157F5000D092C /* libCoreGraphics.so */ = {isa = PBXFileReference; lastKnownFileType = file; name = libCoreGraphics.so; path = "../../Products/android/android-toolchain-arm/sysroot/usr/lib/libCoreGraphics.so"; sourceTree = "<group>"; };
-		43840635188157FB000D092C /* libCoreText.so */ = {isa = PBXFileReference; lastKnownFileType = file; name = libCoreText.so; path = "../../Products/android/android-toolchain-arm/sysroot/usr/lib/libCoreText.so"; sourceTree = "<group>"; };
-		439487EA1893B7E6004F8636 /* libOpenGLES.so */ = {isa = PBXFileReference; lastKnownFileType = file; name = libOpenGLES.so; path = "../../Products/android/android-toolchain-arm/sysroot/usr/lib/libOpenGLES.so"; sourceTree = "<group>"; };
 		43B6B64F1913A237005D09ED /* libNextBookKit.so */ = {isa = PBXFileReference; lastKnownFileType = file; name = libNextBookKit.so; path = "../../../../Library/Developer/Xcode/DerivedData/NextBook-fazhihlfhvtlsefbywpdmafzmkye/Build/Products/Debug/libNextBookKit.so"; sourceTree = "<group>"; };
 		43C2010518ED4AFC00490D59 /* MainHActivity.java */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.java; name = MainHActivity.java; path = "NextBookRun-android/src/org/tiny4/NextBookRun/MainHActivity.java"; sourceTree = "<group>"; };
 		43C2010718ED4B0400490D59 /* AndroidManifest.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; name = AndroidManifest.xml; path = "NextBookRun-android/AndroidManifest.xml"; sourceTree = "<group>"; };
 		43C2010918ED4B1600490D59 /* Android.mk */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = Android.mk; path = "NextBookRun-android/jni/Android.mk"; sourceTree = "<group>"; };
 		43C2011418ED528100490D59 /* NextBookKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = NextBookKit.framework; path = Support/NextBookKit.framework; sourceTree = "<group>"; };
 		43C2011618ED538100490D59 /* Simple.ibooks */ = {isa = PBXFileReference; lastKnownFileType = file; path = Simple.ibooks; sourceTree = "<group>"; };
-		43CA2A1F1954324300B92F2C /* libMediaPlayer.so */ = {isa = PBXFileReference; lastKnownFileType = file; name = libMediaPlayer.so; path = "../../Products/android/android-toolchain-arm/sysroot/usr/lib/libMediaPlayer.so"; sourceTree = "<group>"; };
-		43DFBA521851D9F200BA269F /* libgnustep-corebase.so */ = {isa = PBXFileReference; lastKnownFileType = file; name = "libgnustep-corebase.so"; path = "../../Products/android/android-toolchain-arm/sysroot/usr/lib/libgnustep-corebase.so"; sourceTree = "<group>"; };
-		43ECCF08185194200076535C /* libdispatch.so */ = {isa = PBXFileReference; lastKnownFileType = file; name = libdispatch.so; path = "../../Products/android/android-toolchain-arm/sysroot/usr/lib/libdispatch.so"; sourceTree = "<group>"; };
-		43ECCF09185194480076535C /* libUIKit.so */ = {isa = PBXFileReference; lastKnownFileType = file; name = libUIKit.so; path = "../../Products/android/android-toolchain-arm/sysroot/usr/lib/libUIKit.so"; sourceTree = "<group>"; };
-		43F91D3A198796EA009E154D /* libTNJavaHelper.so */ = {isa = PBXFileReference; lastKnownFileType = file; name = libTNJavaHelper.so; path = "../../Products/android/android-toolchain-arm/sysroot/usr/lib/libTNJavaHelper.so"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -218,18 +220,18 @@
 			isa = PBXGroup;
 			children = (
 				43B6B64F1913A237005D09ED /* libNextBookKit.so */,
-				43F91D3A198796EA009E154D /* libTNJavaHelper.so */,
-				43840635188157FB000D092C /* libCoreText.so */,
-				43CA2A1F1954324300B92F2C /* libMediaPlayer.so */,
-				43840634188157F5000D092C /* libCoreGraphics.so */,
-				4327E2401850691D00F17F96 /* libQuartzCore.so */,
-				43DFBA521851D9F200BA269F /* libgnustep-corebase.so */,
-				4327E1BF184C86BF00F17F96 /* libgnustl_shared.so */,
-				43ECCF08185194200076535C /* libdispatch.so */,
-				439487EA1893B7E6004F8636 /* libOpenGLES.so */,
-				43ECCF09185194480076535C /* libUIKit.so */,
-				4327E1BD184C530800F17F96 /* libgnustep-base.so */,
-				4383FF4B184B4EFB004E88C2 /* libobjc.so */,
+				432B3A2B19A1B09E00CB177A /* libTNJavaHelper.so */,
+				432B3A2A19A1B09400CB177A /* libCoreText.so */,
+				432B3A2919A1B08900CB177A /* libCoreGraphics.so */,
+				432B3A2819A1B07E00CB177A /* libMediaPlayer.so */,
+				432B3A2719A1B05D00CB177A /* libQuartzCore.so */,
+				432B3A2619A1B05600CB177A /* libOpenGLES.so */,
+				432B3A2419A1B03B00CB177A /* libUIKit.so */,
+				432B3A2319A1B03100CB177A /* libdispatch.so */,
+				432B3A2119A1B02100CB177A /* libgnustep-base.so */,
+				432B3A2219A1B02100CB177A /* libgnustep-corebase.so */,
+				432B3A2519A1B04B00CB177A /* libgnustl_shared.so */,
+				432B3A2019A1B01000CB177A /* libobjc.so */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -335,7 +337,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "pushd \"$TARGET_BUILD_DIR/../\"\n/Users/chyhfj/.SDK/Android/android-ndk-r9/ndk-build\npopd";
+			shellScript = "set -e\npushd \"$TARGET_BUILD_DIR/../\"\nPATH=$(bash -l -c 'echo $PATH')\nndk-build\npopd";
 		};
 /* End PBXShellScriptBuildPhase section */
 
