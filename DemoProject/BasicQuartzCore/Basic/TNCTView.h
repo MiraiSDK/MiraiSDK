@@ -9,5 +9,6 @@
 #import <UIKit/UIKit.h>
 
 @interface TNCTView : UIView
+@property (nonatomic, strong) NSAttributedString *attributedString;
 
 @end
