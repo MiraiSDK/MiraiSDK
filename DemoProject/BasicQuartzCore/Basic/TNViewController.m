@@ -31,7 +31,9 @@
     self.navigationItem.title = @"Tests";
     self.view.backgroundColor = [UIColor whiteColor];
     
-    self.tests = [TNTestViewController tests];
+    self.tests = [[TNTestViewController tests] sortedArrayUsingComparator:^NSComparisonResult(Class c1, Class c2) {
+        return [[c1 testName] compare:[c2 testName]];
+    }];
     
 //    UILabel *tapCountLabel = [[UILabel alloc] initWithFrame:CGRectMake(400, 10, 300, 150)];
 //    tapCountLabel.text = @"tap cout: 0";

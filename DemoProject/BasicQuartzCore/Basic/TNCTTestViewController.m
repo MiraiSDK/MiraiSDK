@@ -8,6 +8,7 @@
 
 #import "TNCTTestViewController.h"
 #import "TNCTView.h"
+#import <CoreText/CoreText.h>
 
 @interface TNCTTestViewController ()
 @property (nonatomic, strong) TNCTView *ctView;
@@ -79,7 +80,11 @@
 - (NSAttributedString *)attributedStringWithFontSize:(CGFloat)size
 {
     CTFontDescriptorRef desc = CTFontDescriptorCreateWithAttributes((__bridge CFDictionaryRef)([self fontAttributes]));
-    
+    CTTextAlignment alignment = kCTTextAlignmentCenter;
+    CTParagraphStyleSetting settings[] = {
+        kCTParagraphStyleSpecifierAlignment,sizeof(CTTextAlignment),&alignment
+    };
+    CTParagraphStyleRef style = CTParagraphStyleCreate(settings, 1);
     CTFontRef font = CTFontCreateWithFontDescriptor(desc, size, NULL);
     
     UIColor *color = [UIColor blueColor];
@@ -89,7 +94,9 @@
     NSMutableAttributedString *att= [[NSMutableAttributedString alloc] initWithString:@"　@不吃葱花教:很小的时候，没有适合自己的枕头，一直枕着母亲的手臂睡觉，一年又一年，那该有多难受...\n" attributes:@{
                                                                                                                                                             (NSString *)kCTFontAttributeName:TN_ARC_BRIDGE font,
                                                                                                                                                             (NSString *)kCTKernAttributeName:@(-0.02),
-                                                                                                                                                            (NSString *)                                                                                                                                                                                                                                                                                                           kCTForegroundColorAttributeName:TN_ARC_BRIDGE textColor.CGColor                                                          }];
+                                                                                                                                                            (NSString *)                                                                                                                                                                                                                                                                                                           kCTForegroundColorAttributeName:TN_ARC_BRIDGE textColor.CGColor,
+                                                                                 (NSString *)                                                                           kCTParagraphStyleAttributeName: TN_ARC_BRIDGE style
+                                                                                                                                                            }];
     
     
     NSAttributedString *att1 = [[NSAttributedString alloc] initWithString:@"@张苏沛:初三的时候，晚上睡很晚，曾经一度晚上两三点才睡觉，当时没有电热毯，是我妈每天晚上先睡我床上为我暖被窝，等我写完作业，她才回她的房间睡。早上我一般是六点起床，我妈五点半就起来了，下楼给我买饭然后端上来给我吃，或者早起在家里自己给我做，从来没有塞给我几块钱让我下楼自己买。\n" attributes:@{
