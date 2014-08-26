@@ -57,8 +57,6 @@
 		434DAE4A1991206B00DE5C14 /* TNPinchAndRotationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 434DAE481991206B00DE5C14 /* TNPinchAndRotationViewController.m */; };
 		438406301881571F000D092C /* CoreText.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4384062F1881571F000D092C /* CoreText.framework */; };
 		4384064918816CA4000D092C /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 431F17C71826432A006FCF12 /* CoreGraphics.framework */; };
-		438462E3188ADE1A006DA1AA /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 438462E2188ADE1A006DA1AA /* UIKit.framework */; };
-		439487EC1893B7F6004F8636 /* libOpenGLES.so in Copy Files (libs) */ = {isa = PBXBuildFile; fileRef = 439487EA1893B7E6004F8636 /* libOpenGLES.so */; };
 		43972D7319932A7500EDD603 /* TNRunloopTestViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 43972D7219932A7500EDD603 /* TNRunloopTestViewController.m */; };
 		43972D7419932A7500EDD603 /* TNRunloopTestViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 43972D7219932A7500EDD603 /* TNRunloopTestViewController.m */; };
 		43972D7719934A7800EDD603 /* TNTestCase.m in Sources */ = {isa = PBXBuildFile; fileRef = 43972D7619934A7800EDD603 /* TNTestCase.m */; };
@@ -72,6 +70,8 @@
 		43B6B6531913B9A8005D09ED /* TNImageTestViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 43E3426B18F433D800463092 /* TNImageTestViewController.m */; };
 		43B6B6541913B9AB005D09ED /* TNScrollTestViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 43E3428218F5730600463092 /* TNScrollTestViewController.m */; };
 		43B6B6551913B9B8005D09ED /* TNTestViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 43E3428618F573F000463092 /* TNTestViewController.m */; };
+		43CAE9DC19AC779100B0AA8F /* 34912115.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 43CAE9DA19AC779100B0AA8F /* 34912115.jpg */; };
+		43CAE9DD19AC779100B0AA8F /* kiniromosaic001.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 43CAE9DB19AC779100B0AA8F /* kiniromosaic001.jpg */; };
 		43DD64B41990BD07000884BA /* TNTouchsTestViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 43DD64B31990BD06000884BA /* TNTouchsTestViewController.m */; };
 		43DD64B51990BD07000884BA /* TNTouchsTestViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 43DD64B31990BD06000884BA /* TNTouchsTestViewController.m */; };
 		43DD64BD1990DAEE000884BA /* TNPinchTestViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 43DD64BC1990DAEE000884BA /* TNPinchTestViewController.m */; };
@@ -209,10 +209,6 @@
 		434DAE471991206B00DE5C14 /* TNPinchAndRotationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TNPinchAndRotationViewController.h; sourceTree = "<group>"; };
 		434DAE481991206B00DE5C14 /* TNPinchAndRotationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TNPinchAndRotationViewController.m; sourceTree = "<group>"; };
 		4384062F1881571F000D092C /* CoreText.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreText.framework; path = System/Library/Frameworks/CoreText.framework; sourceTree = SDKROOT; };
-		43840634188157F5000D092C /* libCoreGraphics.so */ = {isa = PBXFileReference; lastKnownFileType = file; name = libCoreGraphics.so; path = "../../Products/android/android-toolchain-arm/sysroot/usr/lib/libCoreGraphics.so"; sourceTree = "<group>"; };
-		43840635188157FB000D092C /* libCoreText.so */ = {isa = PBXFileReference; lastKnownFileType = file; name = libCoreText.so; path = "../../Products/android/android-toolchain-arm/sysroot/usr/lib/libCoreText.so"; sourceTree = "<group>"; };
-		438462E2188ADE1A006DA1AA /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS7.0.sdk/System/Library/Frameworks/UIKit.framework; sourceTree = DEVELOPER_DIR; };
-		439487EA1893B7E6004F8636 /* libOpenGLES.so */ = {isa = PBXFileReference; lastKnownFileType = file; name = libOpenGLES.so; path = "../../Products/android/android-toolchain-arm/sysroot/usr/lib/libOpenGLES.so"; sourceTree = "<group>"; };
 		43972D7119932A7500EDD603 /* TNRunloopTestViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TNRunloopTestViewController.h; sourceTree = "<group>"; };
 		43972D7219932A7500EDD603 /* TNRunloopTestViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TNRunloopTestViewController.m; sourceTree = "<group>"; };
 		43972D7519934A7800EDD603 /* TNTestCase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TNTestCase.h; sourceTree = "<group>"; };
@@ -223,6 +219,8 @@
 		43972E111995044C00EDD603 /* TNMultiGestureTestViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TNMultiGestureTestViewController.m; sourceTree = "<group>"; };
 		439A73D418E918AD00B1BE40 /* TNButtonTestViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TNButtonTestViewController.h; sourceTree = "<group>"; };
 		439A73D518E918AD00B1BE40 /* TNButtonTestViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TNButtonTestViewController.m; sourceTree = "<group>"; };
+		43CAE9DA19AC779100B0AA8F /* 34912115.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 34912115.jpg; sourceTree = "<group>"; };
+		43CAE9DB19AC779100B0AA8F /* kiniromosaic001.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = kiniromosaic001.jpg; sourceTree = "<group>"; };
 		43DD64B21990BD06000884BA /* TNTouchsTestViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TNTouchsTestViewController.h; sourceTree = "<group>"; };
 		43DD64B31990BD06000884BA /* TNTouchsTestViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TNTouchsTestViewController.m; sourceTree = "<group>"; };
 		43DD64BB1990DAEE000884BA /* TNPinchTestViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TNPinchTestViewController.h; sourceTree = "<group>"; };
@@ -456,6 +454,8 @@
 		431F17CC1826432A006FCF12 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				43CAE9DA19AC779100B0AA8F /* 34912115.jpg */,
+				43CAE9DB19AC779100B0AA8F /* kiniromosaic001.jpg */,
 				431F17CD1826432A006FCF12 /* Basic-Info.plist */,
 				431F17CE1826432A006FCF12 /* InfoPlist.strings */,
 				431F17D11826432A006FCF12 /* main.m */,
@@ -510,15 +510,6 @@
 				43972D7219932A7500EDD603 /* TNRunloopTestViewController.m */,
 			);
 			name = Runloop;
-			sourceTree = "<group>";
-		};
-		43AF1E2D18A9EE24002BC090 /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				43AF1E3218A9EE24002BC090 /* UIKit.framework */,
-				43AF1E3418A9EE24002BC090 /* UIKitTests.xctest */,
-			);
-			name = Products;
 			sourceTree = "<group>";
 		};
 		43DD64AF1990BCF2000884BA /* Touch */ = {
@@ -668,6 +659,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				431F17D01826432A006FCF12 /* InfoPlist.strings in Resources */,
+				43CAE9DC19AC779100B0AA8F /* 34912115.jpg in Resources */,
+				43CAE9DD19AC779100B0AA8F /* kiniromosaic001.jpg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

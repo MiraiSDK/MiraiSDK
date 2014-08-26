@@ -32,7 +32,7 @@
     tableView.autoresizingMask = UIViewAutoresizingFlexibleTopMargin | UIViewAutoresizingFlexibleLeftMargin | UIViewAutoresizingFlexibleBottomMargin | UIViewAutoresizingFlexibleRightMargin | UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
     tableView.delegate = self;
     tableView.dataSource = self;
-    tableView.rowHeight = 100;
+    tableView.rowHeight = 200;
     self.tableView = tableView;
     [self.view addSubview:tableView];
 }
@@ -58,12 +58,14 @@
     }
     
     cell.textLabel.text = [NSString stringWithFormat:@"Cell %d",indexPath.row];
+    UIImage *image = nil;
     if (indexPath.row % 2 == 0) {
-        cell.imageView.image = [UIImage imageNamed:@"kiniromosaic001"];
+        image = [UIImage imageNamed:@"kiniromosaic001.jpg"];
     } else {
-        cell.imageView.image = [UIImage imageNamed:@"34912115"];
-
+        image = [UIImage imageNamed:@"34912115.jpg"];
     }
+    
+    cell.imageView.image = image;
     
     return cell;
 }
