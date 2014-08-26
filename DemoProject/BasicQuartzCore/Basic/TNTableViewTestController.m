@@ -58,6 +58,12 @@
     }
     
     cell.textLabel.text = [NSString stringWithFormat:@"Cell %d",indexPath.row];
+    if (indexPath.row % 2 == 0) {
+        cell.imageView.image = [UIImage imageNamed:@"kiniromosaic001"];
+    } else {
+        cell.imageView.image = [UIImage imageNamed:@"34912115"];
+
+    }
     
     return cell;
 }
