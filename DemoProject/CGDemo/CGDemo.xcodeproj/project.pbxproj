@@ -1,0 +1,680 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		0408724A1997C54B00348AFC /* libMediaPlayer.so in Copy Files (libs) */ = {isa = PBXBuildFile; fileRef = 040872451997C51600348AFC /* libMediaPlayer.so */; };
+		0408724B1997C55100348AFC /* libTNJavaHelper.so in Copy Files (libs) */ = {isa = PBXBuildFile; fileRef = 040872461997C52000348AFC /* libTNJavaHelper.so */; };
+		0408724C1997C55300348AFC /* libCoreText.so in Copy Files (libs) */ = {isa = PBXBuildFile; fileRef = 040872471997C52800348AFC /* libCoreText.so */; };
+		0408724D1997C55B00348AFC /* libCoreGraphics.so in Copy Files (libs) */ = {isa = PBXBuildFile; fileRef = 040872481997C53000348AFC /* libCoreGraphics.so */; };
+		0408724E1997C55B00348AFC /* libQuartzCore.so in Copy Files (libs) */ = {isa = PBXBuildFile; fileRef = 040872491997C53A00348AFC /* libQuartzCore.so */; };
+		0408724F1997C55B00348AFC /* libgnustep-corebase.so in Copy Files (libs) */ = {isa = PBXBuildFile; fileRef = 040872431997C4FF00348AFC /* libgnustep-corebase.so */; };
+		040872501997C55B00348AFC /* libgnustl_shared.so in Copy Files (libs) */ = {isa = PBXBuildFile; fileRef = 040872441997C50900348AFC /* libgnustl_shared.so */; };
+		040872511997C55B00348AFC /* libdispatch.so in Copy Files (libs) */ = {isa = PBXBuildFile; fileRef = 0408723E1997C49200348AFC /* libdispatch.so */; };
+		040872521997C55B00348AFC /* libOpenGLES.so in Copy Files (libs) */ = {isa = PBXBuildFile; fileRef = 040872421997C4F200348AFC /* libOpenGLES.so */; };
+		040872531997C55B00348AFC /* libUIKit.so in Copy Files (libs) */ = {isa = PBXBuildFile; fileRef = 040872411997C4E900348AFC /* libUIKit.so */; };
+		040872541997C55B00348AFC /* libgnustep-base.so in Copy Files (libs) */ = {isa = PBXBuildFile; fileRef = 040872401997C4DA00348AFC /* libgnustep-base.so */; };
+		040872551997C55B00348AFC /* libobjc.so in Copy Files (libs) */ = {isa = PBXBuildFile; fileRef = 0408723F1997C4D000348AFC /* libobjc.so */; };
+		43013A551923509900EC5B20 /* CoreFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 43013A541923509900EC5B20 /* CoreFoundation.framework */; };
+		43098C7B197ACAE6005A97A1 /* TNCTTestViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 43098C7A197ACAE6005A97A1 /* TNCTTestViewController.m */; };
+		43098C7C197ACAE6005A97A1 /* TNCTTestViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 43098C7A197ACAE6005A97A1 /* TNCTTestViewController.m */; };
+		43098C7F197ACB24005A97A1 /* TNCTView.m in Sources */ = {isa = PBXBuildFile; fileRef = 43098C7E197ACB24005A97A1 /* TNCTView.m */; };
+		43098C80197ACB24005A97A1 /* TNCTView.m in Sources */ = {isa = PBXBuildFile; fileRef = 43098C7E197ACB24005A97A1 /* TNCTView.m */; };
+		431F17C61826432A006FCF12 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 431F17C51826432A006FCF12 /* Foundation.framework */; };
+		431F17C81826432A006FCF12 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 431F17C71826432A006FCF12 /* CoreGraphics.framework */; };
+		431F17D01826432A006FCF12 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 431F17CE1826432A006FCF12 /* InfoPlist.strings */; };
+		431F17D21826432A006FCF12 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 431F17D11826432A006FCF12 /* main.m */; };
+		431F17D61826432A006FCF12 /* TNAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 431F17D51826432A006FCF12 /* TNAppDelegate.m */; };
+		431F17DC1826432A006FCF12 /* TNViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 431F17DB1826432A006FCF12 /* TNViewController.m */; };
+		431F17FE18264507006FCF12 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 431F17D11826432A006FCF12 /* main.m */; };
+		431F183F18265125006FCF12 /* InfoPlist.strings in Copy Files (assets) */ = {isa = PBXBuildFile; fileRef = 431F17CE1826432A006FCF12 /* InfoPlist.strings */; };
+		432077E1185313EA00166514 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 432077E0185313EA00166514 /* QuartzCore.framework */; };
+		438406301881571F000D092C /* CoreText.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4384062F1881571F000D092C /* CoreText.framework */; };
+		4384064918816CA4000D092C /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 431F17C71826432A006FCF12 /* CoreGraphics.framework */; };
+		43972D7719934A7800EDD603 /* TNTestCase.m in Sources */ = {isa = PBXBuildFile; fileRef = 43972D7619934A7800EDD603 /* TNTestCase.m */; };
+		43972D7819934A7800EDD603 /* TNTestCase.m in Sources */ = {isa = PBXBuildFile; fileRef = 43972D7619934A7800EDD603 /* TNTestCase.m */; };
+		43B6B6531913B9A8005D09ED /* TNImageTestViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 43E3426B18F433D800463092 /* TNImageTestViewController.m */; };
+		43B6B6551913B9B8005D09ED /* TNTestViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 43E3428618F573F000463092 /* TNTestViewController.m */; };
+		43E3426E18F436E900463092 /* TNImageTestViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 43E3426B18F433D800463092 /* TNImageTestViewController.m */; };
+		43E3428718F573F000463092 /* TNTestViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 43E3428618F573F000463092 /* TNTestViewController.m */; };
+		43E7C98A196E50470067C3A7 /* TNCGTestViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 43E7C989196E50470067C3A7 /* TNCGTestViewController.m */; };
+		43E7C98B196E50470067C3A7 /* TNCGTestViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 43E7C989196E50470067C3A7 /* TNCGTestViewController.m */; };
+		43EBAA7518AB5573005DDD8D /* TNViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 431F17DB1826432A006FCF12 /* TNViewController.m */; };
+		43ECCF051851936B0076535C /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 431F17C91826432A006FCF12 /* UIKit.framework */; };
+		43ECCF0B1851B50A0076535C /* TNAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 431F17D51826432A006FCF12 /* TNAppDelegate.m */; };
+		43F962F819825A1600530F4F /* MediaPlayer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 43F962F719825A1600530F4F /* MediaPlayer.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		04ADB2DF1998C01A005833EF /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 04ADB2DA1998C01A005833EF /* UIKit.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 43718E6918517B7B00850F08;
+			remoteInfo = UIKit;
+		};
+		04ADB2E11998C01A005833EF /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 04ADB2DA1998C01A005833EF /* UIKit.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 43718E8018517B7B00850F08;
+			remoteInfo = UIKitTests;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		431F1838182650B5006FCF12 /* Copy Files (assets) */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "$(SOURCE_ROOT)/$(PRODUCT_NAME)-android/assets/Resources";
+			dstSubfolderSpec = 0;
+			files = (
+				431F183F18265125006FCF12 /* InfoPlist.strings in Copy Files (assets) */,
+			);
+			name = "Copy Files (assets)";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		431F1839182650D4006FCF12 /* Copy Files (libs) */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 6;
+			files = (
+				0408724D1997C55B00348AFC /* libCoreGraphics.so in Copy Files (libs) */,
+				0408724E1997C55B00348AFC /* libQuartzCore.so in Copy Files (libs) */,
+				0408724F1997C55B00348AFC /* libgnustep-corebase.so in Copy Files (libs) */,
+				040872501997C55B00348AFC /* libgnustl_shared.so in Copy Files (libs) */,
+				040872511997C55B00348AFC /* libdispatch.so in Copy Files (libs) */,
+				040872521997C55B00348AFC /* libOpenGLES.so in Copy Files (libs) */,
+				040872531997C55B00348AFC /* libUIKit.so in Copy Files (libs) */,
+				040872541997C55B00348AFC /* libgnustep-base.so in Copy Files (libs) */,
+				040872551997C55B00348AFC /* libobjc.so in Copy Files (libs) */,
+				0408724A1997C54B00348AFC /* libMediaPlayer.so in Copy Files (libs) */,
+				0408724B1997C55100348AFC /* libTNJavaHelper.so in Copy Files (libs) */,
+				0408724C1997C55300348AFC /* libCoreText.so in Copy Files (libs) */,
+			);
+			name = "Copy Files (libs)";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		0408723E1997C49200348AFC /* libdispatch.so */ = {isa = PBXFileReference; lastKnownFileType = file; name = libdispatch.so; path = "../../toolchain/android/android-toolchain-arm/sysroot/usr/lib/libdispatch.so"; sourceTree = "<group>"; };
+		0408723F1997C4D000348AFC /* libobjc.so */ = {isa = PBXFileReference; lastKnownFileType = file; name = libobjc.so; path = "../../toolchain/android/android-toolchain-arm/sysroot/usr/lib/libobjc.so"; sourceTree = "<group>"; };
+		040872401997C4DA00348AFC /* libgnustep-base.so */ = {isa = PBXFileReference; lastKnownFileType = file; name = "libgnustep-base.so"; path = "../../toolchain/android/android-toolchain-arm/sysroot/usr/lib/libgnustep-base.so"; sourceTree = "<group>"; };
+		040872411997C4E900348AFC /* libUIKit.so */ = {isa = PBXFileReference; lastKnownFileType = file; name = libUIKit.so; path = "../../toolchain/android/android-toolchain-arm/sysroot/usr/lib/libUIKit.so"; sourceTree = "<group>"; };
+		040872421997C4F200348AFC /* libOpenGLES.so */ = {isa = PBXFileReference; lastKnownFileType = file; name = libOpenGLES.so; path = "../../toolchain/android/android-toolchain-arm/sysroot/usr/lib/libOpenGLES.so"; sourceTree = "<group>"; };
+		040872431997C4FF00348AFC /* libgnustep-corebase.so */ = {isa = PBXFileReference; lastKnownFileType = file; name = "libgnustep-corebase.so"; path = "../../toolchain/android/android-toolchain-arm/sysroot/usr/lib/libgnustep-corebase.so"; sourceTree = "<group>"; };
+		040872441997C50900348AFC /* libgnustl_shared.so */ = {isa = PBXFileReference; lastKnownFileType = file; name = libgnustl_shared.so; path = "../../toolchain/android/android-toolchain-arm/sysroot/usr/lib/libgnustl_shared.so"; sourceTree = "<group>"; };
+		040872451997C51600348AFC /* libMediaPlayer.so */ = {isa = PBXFileReference; lastKnownFileType = file; name = libMediaPlayer.so; path = "../../toolchain/android/android-toolchain-arm/sysroot/usr/lib/libMediaPlayer.so"; sourceTree = "<group>"; };
+		040872461997C52000348AFC /* libTNJavaHelper.so */ = {isa = PBXFileReference; lastKnownFileType = file; name = libTNJavaHelper.so; path = "../../toolchain/android/android-toolchain-arm/sysroot/usr/lib/libTNJavaHelper.so"; sourceTree = "<group>"; };
+		040872471997C52800348AFC /* libCoreText.so */ = {isa = PBXFileReference; lastKnownFileType = file; name = libCoreText.so; path = "../../toolchain/android/android-toolchain-arm/sysroot/usr/lib/libCoreText.so"; sourceTree = "<group>"; };
+		040872481997C53000348AFC /* libCoreGraphics.so */ = {isa = PBXFileReference; lastKnownFileType = file; name = libCoreGraphics.so; path = "../../toolchain/android/android-toolchain-arm/sysroot/usr/lib/libCoreGraphics.so"; sourceTree = "<group>"; };
+		040872491997C53A00348AFC /* libQuartzCore.so */ = {isa = PBXFileReference; lastKnownFileType = file; name = libQuartzCore.so; path = "../../toolchain/android/android-toolchain-arm/sysroot/usr/lib/libQuartzCore.so"; sourceTree = "<group>"; };
+		04ADB2DA1998C01A005833EF /* UIKit.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = UIKit.xcodeproj; path = "../../Mirai-UIKit/UIKit.xcodeproj"; sourceTree = "<group>"; };
+		4301394D19225B6300EC5B20 /* Android.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Android.xcconfig; sourceTree = "<group>"; };
+		43013A541923509900EC5B20 /* CoreFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreFoundation.framework; path = System/Library/Frameworks/CoreFoundation.framework; sourceTree = SDKROOT; };
+		43098C79197ACAE6005A97A1 /* TNCTTestViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TNCTTestViewController.h; sourceTree = "<group>"; };
+		43098C7A197ACAE6005A97A1 /* TNCTTestViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TNCTTestViewController.m; sourceTree = "<group>"; };
+		43098C7D197ACB24005A97A1 /* TNCTView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TNCTView.h; sourceTree = "<group>"; };
+		43098C7E197ACB24005A97A1 /* TNCTView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TNCTView.m; sourceTree = "<group>"; };
+		431F17C21826432A006FCF12 /* CGDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CGDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		431F17C51826432A006FCF12 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		431F17C71826432A006FCF12 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		431F17C91826432A006FCF12 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		431F17CD1826432A006FCF12 /* Basic-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Basic-Info.plist"; sourceTree = "<group>"; };
+		431F17CF1826432A006FCF12 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		431F17D11826432A006FCF12 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		431F17D31826432A006FCF12 /* Basic-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Basic-Prefix.pch"; sourceTree = "<group>"; };
+		431F17D41826432A006FCF12 /* TNAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TNAppDelegate.h; sourceTree = "<group>"; };
+		431F17D51826432A006FCF12 /* TNAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TNAppDelegate.m; sourceTree = "<group>"; };
+		431F17DA1826432A006FCF12 /* TNViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TNViewController.h; sourceTree = "<group>"; };
+		431F17DB1826432A006FCF12 /* TNViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TNViewController.m; sourceTree = "<group>"; };
+		431F17E41826432A006FCF12 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
+		431F180818264507006FCF12 /* libCGDemo.so */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.dylib"; includeInIndex = 0; path = libCGDemo.so; sourceTree = BUILT_PRODUCTS_DIR; };
+		432077E0185313EA00166514 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		4384062F1881571F000D092C /* CoreText.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreText.framework; path = System/Library/Frameworks/CoreText.framework; sourceTree = SDKROOT; };
+		43972D7519934A7800EDD603 /* TNTestCase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TNTestCase.h; sourceTree = "<group>"; };
+		43972D7619934A7800EDD603 /* TNTestCase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TNTestCase.m; sourceTree = "<group>"; };
+		43CAE9D219AC5A2E00B0AA8F /* MainHActivity.java */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.java; name = MainHActivity.java; path = "CGDemo-android/src/org/tiny4/CGDemo/MainHActivity.java"; sourceTree = "<group>"; };
+		43CAE9D519AC5A3D00B0AA8F /* AndroidManifest.xml */ = {isa = PBXFileReference; lastKnownFileType = text.xml; name = AndroidManifest.xml; path = "CGDemo-android/AndroidManifest.xml"; sourceTree = "<group>"; };
+		43CAE9D619AC5A4D00B0AA8F /* Android.mk */ = {isa = PBXFileReference; lastKnownFileType = text; name = Android.mk; path = "CGDemo-android/jni/Android.mk"; sourceTree = "<group>"; };
+		43E3426A18F433D800463092 /* TNImageTestViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TNImageTestViewController.h; sourceTree = "<group>"; };
+		43E3426B18F433D800463092 /* TNImageTestViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TNImageTestViewController.m; sourceTree = "<group>"; };
+		43E3428518F573F000463092 /* TNTestViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TNTestViewController.h; sourceTree = "<group>"; };
+		43E3428618F573F000463092 /* TNTestViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TNTestViewController.m; sourceTree = "<group>"; };
+		43E7C988196E50470067C3A7 /* TNCGTestViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TNCGTestViewController.h; sourceTree = "<group>"; };
+		43E7C989196E50470067C3A7 /* TNCGTestViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TNCGTestViewController.m; sourceTree = "<group>"; };
+		43F962F719825A1600530F4F /* MediaPlayer.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MediaPlayer.framework; path = System/Library/Frameworks/MediaPlayer.framework; sourceTree = SDKROOT; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		431F17BF1826432A006FCF12 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				431F17C81826432A006FCF12 /* CoreGraphics.framework in Frameworks */,
+				431F17C61826432A006FCF12 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		431F17FF18264507006FCF12 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				43F962F819825A1600530F4F /* MediaPlayer.framework in Frameworks */,
+				43ECCF051851936B0076535C /* UIKit.framework in Frameworks */,
+				43013A551923509900EC5B20 /* CoreFoundation.framework in Frameworks */,
+				4384064918816CA4000D092C /* CoreGraphics.framework in Frameworks */,
+				438406301881571F000D092C /* CoreText.framework in Frameworks */,
+				432077E1185313EA00166514 /* QuartzCore.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		04ADB2DB1998C01A005833EF /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				04ADB2E01998C01A005833EF /* UIKit.framework */,
+				04ADB2E21998C01A005833EF /* UIKitTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		43081F8A1967F16100355FC5 /* Tests */ = {
+			isa = PBXGroup;
+			children = (
+				43972D7519934A7800EDD603 /* TNTestCase.h */,
+				43972D7619934A7800EDD603 /* TNTestCase.m */,
+				43E3428518F573F000463092 /* TNTestViewController.h */,
+				43E3428618F573F000463092 /* TNTestViewController.m */,
+				43CAE9D719AC5C1A00B0AA8F /* CoreGraphics */,
+				43098C77197ACAB8005A97A1 /* CoreText */,
+				43081F911967F1C200355FC5 /* UIImage */,
+			);
+			name = Tests;
+			sourceTree = "<group>";
+		};
+		43081F911967F1C200355FC5 /* UIImage */ = {
+			isa = PBXGroup;
+			children = (
+				43E3426A18F433D800463092 /* TNImageTestViewController.h */,
+				43E3426B18F433D800463092 /* TNImageTestViewController.m */,
+			);
+			name = UIImage;
+			sourceTree = "<group>";
+		};
+		43098C77197ACAB8005A97A1 /* CoreText */ = {
+			isa = PBXGroup;
+			children = (
+				43098C79197ACAE6005A97A1 /* TNCTTestViewController.h */,
+				43098C7A197ACAE6005A97A1 /* TNCTTestViewController.m */,
+				43098C7D197ACB24005A97A1 /* TNCTView.h */,
+				43098C7E197ACB24005A97A1 /* TNCTView.m */,
+			);
+			name = CoreText;
+			sourceTree = "<group>";
+		};
+		431F17B91826432A006FCF12 = {
+			isa = PBXGroup;
+			children = (
+				431F17CB1826432A006FCF12 /* CGDemo */,
+				431F17C41826432A006FCF12 /* Frameworks */,
+				431F17C31826432A006FCF12 /* Products */,
+				431F180A18264528006FCF12 /* SimpleView-Android */,
+			);
+			sourceTree = "<group>";
+		};
+		431F17C31826432A006FCF12 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				431F17C21826432A006FCF12 /* CGDemo.app */,
+				431F180818264507006FCF12 /* libCGDemo.so */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		431F17C41826432A006FCF12 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				04ADB2DA1998C01A005833EF /* UIKit.xcodeproj */,
+				43F962F719825A1600530F4F /* MediaPlayer.framework */,
+				43013A541923509900EC5B20 /* CoreFoundation.framework */,
+				4384062F1881571F000D092C /* CoreText.framework */,
+				432077E0185313EA00166514 /* QuartzCore.framework */,
+				431F17C51826432A006FCF12 /* Foundation.framework */,
+				431F17C71826432A006FCF12 /* CoreGraphics.framework */,
+				431F17C91826432A006FCF12 /* UIKit.framework */,
+				431F17E41826432A006FCF12 /* XCTest.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		431F17CB1826432A006FCF12 /* CGDemo */ = {
+			isa = PBXGroup;
+			children = (
+				431F17D41826432A006FCF12 /* TNAppDelegate.h */,
+				431F17D51826432A006FCF12 /* TNAppDelegate.m */,
+				431F17DA1826432A006FCF12 /* TNViewController.h */,
+				431F17DB1826432A006FCF12 /* TNViewController.m */,
+				43081F8A1967F16100355FC5 /* Tests */,
+				431F17CC1826432A006FCF12 /* Supporting Files */,
+			);
+			name = CGDemo;
+			path = Basic;
+			sourceTree = "<group>";
+		};
+		431F17CC1826432A006FCF12 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				431F17CD1826432A006FCF12 /* Basic-Info.plist */,
+				431F17CE1826432A006FCF12 /* InfoPlist.strings */,
+				431F17D11826432A006FCF12 /* main.m */,
+				431F17D31826432A006FCF12 /* Basic-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		431F180A18264528006FCF12 /* SimpleView-Android */ = {
+			isa = PBXGroup;
+			children = (
+				4301394D19225B6300EC5B20 /* Android.xcconfig */,
+				43CAE9D619AC5A4D00B0AA8F /* Android.mk */,
+				43CAE9D519AC5A3D00B0AA8F /* AndroidManifest.xml */,
+				43CAE9D219AC5A2E00B0AA8F /* MainHActivity.java */,
+				431F182718264D96006FCF12 /* Frameworks */,
+				431F182818264DA8006FCF12 /* Platform sources */,
+			);
+			name = "SimpleView-Android";
+			sourceTree = "<group>";
+		};
+		431F182718264D96006FCF12 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				040872451997C51600348AFC /* libMediaPlayer.so */,
+				040872461997C52000348AFC /* libTNJavaHelper.so */,
+				040872471997C52800348AFC /* libCoreText.so */,
+				040872481997C53000348AFC /* libCoreGraphics.so */,
+				040872491997C53A00348AFC /* libQuartzCore.so */,
+				040872431997C4FF00348AFC /* libgnustep-corebase.so */,
+				040872441997C50900348AFC /* libgnustl_shared.so */,
+				0408723E1997C49200348AFC /* libdispatch.so */,
+				040872421997C4F200348AFC /* libOpenGLES.so */,
+				040872411997C4E900348AFC /* libUIKit.so */,
+				040872401997C4DA00348AFC /* libgnustep-base.so */,
+				0408723F1997C4D000348AFC /* libobjc.so */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		431F182818264DA8006FCF12 /* Platform sources */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = "Platform sources";
+			sourceTree = "<group>";
+		};
+		43CAE9D719AC5C1A00B0AA8F /* CoreGraphics */ = {
+			isa = PBXGroup;
+			children = (
+				43E7C988196E50470067C3A7 /* TNCGTestViewController.h */,
+				43E7C989196E50470067C3A7 /* TNCGTestViewController.m */,
+			);
+			name = CoreGraphics;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		431F17C11826432A006FCF12 /* CGDemo */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 431F17F41826432A006FCF12 /* Build configuration list for PBXNativeTarget "CGDemo" */;
+			buildPhases = (
+				431F17BE1826432A006FCF12 /* Sources */,
+				431F17BF1826432A006FCF12 /* Frameworks */,
+				431F17C01826432A006FCF12 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = CGDemo;
+			productName = SimpleView;
+			productReference = 431F17C21826432A006FCF12 /* CGDemo.app */;
+			productType = "com.apple.product-type.application";
+		};
+		431F17FA18264507006FCF12 /* CGDemo-Android */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 431F180518264507006FCF12 /* Build configuration list for PBXNativeTarget "CGDemo-Android" */;
+			buildPhases = (
+				431F17FB18264507006FCF12 /* Sources */,
+				431F17FF18264507006FCF12 /* Frameworks */,
+				431F1838182650B5006FCF12 /* Copy Files (assets) */,
+				431F1839182650D4006FCF12 /* Copy Files (libs) */,
+				432FF27118570A58005486C5 /* ShellScript */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "CGDemo-Android";
+			productName = SimpleView;
+			productReference = 431F180818264507006FCF12 /* libCGDemo.so */;
+			productType = "com.apple.product-type.library.dynamic";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		431F17BA1826432A006FCF12 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				CLASSPREFIX = TN;
+				LastUpgradeCheck = 0500;
+				ORGANIZATIONNAME = "Shanghai Tinynetwork";
+			};
+			buildConfigurationList = 431F17BD1826432A006FCF12 /* Build configuration list for PBXProject "CGDemo" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 431F17B91826432A006FCF12;
+			productRefGroup = 431F17C31826432A006FCF12 /* Products */;
+			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = 04ADB2DB1998C01A005833EF /* Products */;
+					ProjectRef = 04ADB2DA1998C01A005833EF /* UIKit.xcodeproj */;
+				},
+			);
+			projectRoot = "";
+			targets = (
+				431F17C11826432A006FCF12 /* CGDemo */,
+				431F17FA18264507006FCF12 /* CGDemo-Android */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXReferenceProxy section */
+		04ADB2E01998C01A005833EF /* UIKit.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = UIKit.framework;
+			remoteRef = 04ADB2DF1998C01A005833EF /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		04ADB2E21998C01A005833EF /* UIKitTests.xctest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = UIKitTests.xctest;
+			remoteRef = 04ADB2E11998C01A005833EF /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+/* End PBXReferenceProxy section */
+
+/* Begin PBXResourcesBuildPhase section */
+		431F17C01826432A006FCF12 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				431F17D01826432A006FCF12 /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		432FF27118570A58005486C5 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "set -e\npushd \"$TARGET_BUILD_DIR/../\"\nPATH=$(bash -l -c 'echo $PATH')\nndk-build\npopd";
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		431F17BE1826432A006FCF12 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				43B6B6531913B9A8005D09ED /* TNImageTestViewController.m in Sources */,
+				431F17DC1826432A006FCF12 /* TNViewController.m in Sources */,
+				43B6B6551913B9B8005D09ED /* TNTestViewController.m in Sources */,
+				43098C7B197ACAE6005A97A1 /* TNCTTestViewController.m in Sources */,
+				431F17D61826432A006FCF12 /* TNAppDelegate.m in Sources */,
+				43972D7719934A7800EDD603 /* TNTestCase.m in Sources */,
+				43098C7F197ACB24005A97A1 /* TNCTView.m in Sources */,
+				43E7C98A196E50470067C3A7 /* TNCGTestViewController.m in Sources */,
+				431F17D21826432A006FCF12 /* main.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		431F17FB18264507006FCF12 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				43E3426E18F436E900463092 /* TNImageTestViewController.m in Sources */,
+				43ECCF0B1851B50A0076535C /* TNAppDelegate.m in Sources */,
+				43E3428718F573F000463092 /* TNTestViewController.m in Sources */,
+				43098C7C197ACAE6005A97A1 /* TNCTTestViewController.m in Sources */,
+				43EBAA7518AB5573005DDD8D /* TNViewController.m in Sources */,
+				43972D7819934A7800EDD603 /* TNTestCase.m in Sources */,
+				43098C80197ACB24005A97A1 /* TNCTView.m in Sources */,
+				43E7C98B196E50470067C3A7 /* TNCGTestViewController.m in Sources */,
+				431F17FE18264507006FCF12 /* main.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		431F17CE1826432A006FCF12 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				431F17CF1826432A006FCF12 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		431F17F21826432A006FCF12 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx0.0;
+			};
+			name = Debug;
+		};
+		431F17F31826432A006FCF12 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				SDKROOT = macosx0.0;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		431F17F51826432A006FCF12 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Basic/Basic-Prefix.pch";
+				INFOPLIST_FILE = "Basic/Basic-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
+				PRODUCT_NAME = CGDemo;
+				SDKROOT = iphoneos;
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		431F17F61826432A006FCF12 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Basic/Basic-Prefix.pch";
+				INFOPLIST_FILE = "Basic/Basic-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
+				PRODUCT_NAME = CGDemo;
+				SDKROOT = iphoneos;
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+		431F180618264507006FCF12 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 4301394D19225B6300EC5B20 /* Android.xcconfig */;
+			buildSettings = {
+				ADDITIONAL_SDKS = "";
+				CLANG_ENABLE_MODULES = NO;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				DEPLOYMENT_LOCATION = YES;
+				DSTROOT = /;
+				EXECUTABLE_EXTENSION = so;
+				EXECUTABLE_PREFIX = lib;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "";
+				INFOPLIST_FILE = "Basic-Info.plist";
+				INSTALL_PATH = "$(SOURCE_ROOT)/$(PRODUCT_NAME)-android/jni";
+				LD_DEPENDENCY_INFO_FILE = "";
+				LIBRARY_SEARCH_PATHS = "$(inherited)";
+				MACH_O_TYPE = mh_dylib;
+				PRODUCT_NAME = CGDemo;
+				SDKROOT = macosx0.0;
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		431F180718264507006FCF12 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 4301394D19225B6300EC5B20 /* Android.xcconfig */;
+			buildSettings = {
+				ADDITIONAL_SDKS = "";
+				CLANG_ENABLE_MODULES = NO;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				DEPLOYMENT_LOCATION = YES;
+				DSTROOT = /;
+				EXECUTABLE_EXTENSION = so;
+				EXECUTABLE_PREFIX = lib;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "";
+				INFOPLIST_FILE = "Basic-Info.plist";
+				INSTALL_PATH = "$(SOURCE_ROOT)/$(PRODUCT_NAME)-android/jni";
+				LD_DEPENDENCY_INFO_FILE = "";
+				LIBRARY_SEARCH_PATHS = "$(inherited)";
+				MACH_O_TYPE = mh_dylib;
+				PRODUCT_NAME = CGDemo;
+				SDKROOT = macosx0.0;
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		431F17BD1826432A006FCF12 /* Build configuration list for PBXProject "CGDemo" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				431F17F21826432A006FCF12 /* Debug */,
+				431F17F31826432A006FCF12 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		431F17F41826432A006FCF12 /* Build configuration list for PBXNativeTarget "CGDemo" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				431F17F51826432A006FCF12 /* Debug */,
+				431F17F61826432A006FCF12 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		431F180518264507006FCF12 /* Build configuration list for PBXNativeTarget "CGDemo-Android" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				431F180618264507006FCF12 /* Debug */,
+				431F180718264507006FCF12 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 431F17BA1826432A006FCF12 /* Project object */;
+}
