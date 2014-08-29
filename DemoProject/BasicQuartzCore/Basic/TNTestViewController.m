@@ -72,7 +72,7 @@ static NSMutableArray *testClasses = nil;
         tableView.delegate = self;
         tableView.dataSource = self;
         tableView.rowHeight = 100.0f;
-        [self.view addSubview:tableView];
+        [self.view insertSubview:tableView atIndex:0];
     }
 }
 
