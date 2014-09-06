@@ -12,6 +12,8 @@
 
 @interface TNPresentedContentViewController : UIViewController
 @property (nonatomic, weak) id <TNPresentedContentViewControllerDelegate> delegate;
+@property (nonatomic, assign) NSUInteger orientation;
+
 
 @end
 

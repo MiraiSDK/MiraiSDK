@@ -10,6 +10,17 @@
 
 #import "TNPresentedContentViewController.h"
 
+@interface TNNavigationController : UINavigationController
+
+@end
+@implementation TNNavigationController
+
+- (NSUInteger)supportedInterfaceOrientations
+{
+    return self.topViewController.supportedInterfaceOrientations;
+}
+
+@end
 @interface TNVCTestViewController () <UITableViewDataSource,UITableViewDelegate,TNPresentedContentViewControllerDelegate>
 @property (nonatomic, strong) UITableView *tableView;
 @property (nonatomic, strong) NSArray *tests;
@@ -45,10 +56,7 @@
     self.tests = @[
                    [TNTestCase testCaseWithName:@"presentViewController with nav" action:^{
                        // present nav
-                       TNPresentedContentViewController * vc = [[TNPresentedContentViewController alloc] init];
-                       vc.delegate = self;
-                       UINavigationController *nav = [[UINavigationController alloc] initWithRootViewController:vc];
-                       [self presentViewController:nav animated:YES completion:nil];
+                       [self presentVCWithOrientation:UIInterfaceOrientationMaskLandscape];
                    }],
 
                    [TNTestCase testCaseWithName:@"NavigationBar Show/Hidden" action:^{
@@ -59,9 +67,36 @@
                        [self.navigationController setNavigationBarHidden:!self.navigationController.isNavigationBarHidden animated:YES];
                    }],
                    
+                   [TNTestCase testCaseWithName:@"presentViewController with portrait nav" action:^{
+                       // present nav
+                       [self presentVCWithOrientation:UIInterfaceOrientationMaskPortrait];
+                   }],
+
+//                   [TNTestCase testCaseWithName:@"presentViewController with nav" action:^{
+//                       // present nav
+//                       [self presentVCWithOrientation:UIInterfaceOrientationMaskLandscape];
+//                   }],
+//
+//                   [TNTestCase testCaseWithName:@"presentViewController with nav" action:^{
+//                       // present nav
+//                       [self presentVCWithOrientation:UIInterfaceOrientationMaskLandscape];
+//                   }],
+
                    ];
     
     
+}
+
+
+- (void)presentVCWithOrientation:(NSUInteger)orientation
+{
+    // present nav
+    TNPresentedContentViewController * vc = [[TNPresentedContentViewController alloc] init];
+    vc.delegate = self;
+    vc.orientation = orientation;
+    TNNavigationController *nav = [[TNNavigationController alloc] initWithRootViewController:vc];
+    [self presentViewController:nav animated:YES completion:nil];
+
 }
 
 - (void)presentedContentViewControllerDidCancel:(TNPresentedContentViewController *)vc animated:(BOOL)animated
