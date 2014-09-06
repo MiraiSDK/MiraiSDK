@@ -21,7 +21,8 @@
 {
     [NSThread setCurrentThreadAsMainThread];
     
-    self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
+    
+    self.window = [[UIWindow alloc] initWithFrame:CGRectMake(0, 0, 768, 1024)];
     
     TNViewController *vc = [[TNViewController alloc] initWithNibName:nil bundle:nil];
     UINavigationController *nav = [[UINavigationController alloc] initWithRootViewController:vc];

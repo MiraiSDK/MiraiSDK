@@ -22,8 +22,6 @@
 
 @property (nonatomic, strong) NBBook *book;
 
-@property (nonatomic, strong) NSArray *bookNames;
-
 @end
 
 @implementation TNViewController
@@ -49,12 +47,7 @@
     
     [NBBookLib authWithDeveloperID:@"" key:@""];
 
-    self.bookNames = @[@"t1",
-                       @"landscape",
-                       @"portrait",
-                       @"manziwenzai"];
-
-//    [self reloadData];
+    [self reloadData];
 
     self.title = [self.baseURL lastPathComponent];
     UIBarButtonItem *reload = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemRefresh target:self action:@selector(didPressedReloadItem:)];
@@ -91,15 +84,12 @@
         
     } onCompletion:^(NBBook *book){
 //        [MBProgressHUD hideHUDForView:self.view animated:NO];
-        //        book.additionDictionary = @{@"template":@{@"name":@"陈勇辉",@"date":@"2013年9月1日",@"address":@"世纪大道100号上海环球金融中心24楼北区"}};
         NBBookViewController *bookVC = [[NBBookViewController alloc] initWithBook:book];
         NSIndexPath *indexPath = [NSIndexPath indexPathForPage:0 inSection:0 inChapter:0];
         [bookVC setDisplayPageAtIndexPath:indexPath animated:YES];
         
         NBBookNavigationController *bookNav =[[NBBookNavigationController alloc] initWithContentViewController:bookVC];
         bookNav.bookNaviDelegate = self;
-        //        bookNav.scaleFeatureEnabled = YES;
-        //        bookNav.notesFeatureEnabled = YES;
         
         [self presentViewController:bookNav animated:YES completion:nil];
     }];
@@ -122,15 +112,18 @@
 //    NSArray *urls = [[NSFileManager defaultManager] contentsOfDirectoryAtURL:url includingPropertiesForKeys:@[] options:0 error:nil];
     NSError *error = nil;
    NSArray *paths = [[NSFileManager defaultManager] contentsOfDirectoryAtPath:url.path error:&error];
-    NSLog(@"paths:%@ error:%@",paths,error);
     
-    NSString *aPath = [[NSBundle mainBundle] pathForResource:@"t1" ofType:@"ibooks"];
-    NSLog(@"test path:%@",aPath);
+    NSMutableArray *urls = [NSMutableArray array];
+    for (NSString *fileName in paths) {
+        NSURL *aFile = [url URLByAppendingPathComponent:fileName];
+        [urls addObject:aFile];
+    }
+    
 //    urls = [urls sortedArrayUsingComparator:^NSComparisonResult(NSURL *obj1, NSURL *obj2) {
 ////        return [obj1.absoluteString localizedStandardCompare:obj2.absoluteString];
 //        return [obj1.absoluteString compare:obj2.absoluteString];
 //    }];
-//    self.booksURLs = urls;
+    self.booksURLs = urls;
 }
 
 - (void)handle_applicationDidBecomeActive:(NSNotification *)notify
@@ -232,45 +225,6 @@
 //    }];
 //}
 
-
-#pragma mark -
-- (NSString *)pathForBookName:(NSString *)name
-{
-    return [[NSBundle mainBundle] pathForResource:name ofType:@"ibooks"];
-}
-
-- (void)loadBookAtPath:(NSString *)path
-{
-    NSLog(@"book path:%@",path);
-
-    if (path) {
-        NSLog(@"will init book");
-        NBBook *book = [[NBBook alloc] initWithContentsOfFile:path];
-        NSLog(@"book:%@",book);
-        
-        if ([book isReadyForOpen]) {
-            NSLog(@"book:%@",book);
-            NSLog(@"title:%@ chapters:%@",book.bookTitle,book.chapters);
-            NBBookViewController *vc = [[NBBookViewController alloc] initWithBook:book];
-            [self presentViewController:vc animated:YES completion:nil];
-            
-        } else {
-            
-            [book prepareForOpenOnProcessing:^(NSInteger idx, NSInteger total) {
-                NSLog(@"Book loading %d/%d",idx,total);
-            } onCompletion:^(NBBook *book) {
-                NSLog(@"prepare completion.");
-                NSLog(@"book:%@",book);
-                NSLog(@"title:%@ chapters:%@",book.bookTitle,book.chapters);
-                NBBookViewController *vc = [[NBBookViewController alloc] initWithBook:book];
-                
-                NBBookNavigationController *nav = [[NBBookNavigationController alloc] initWithContentViewController:vc];
-                nav.bookNaviDelegate = self;
-                [self presentViewController:nav animated:YES completion:nil];
-            }];
-        }
-    }
-}
 #pragma mark - Table view data source
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
@@ -279,7 +233,7 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return self.bookNames.count;
+    return self.booksURLs.count;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -291,10 +245,6 @@
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
     }
     
-    cell.textLabel.text = self.bookNames[indexPath.row];
-    return cell;
-
-    /*
     NSURL *url = self.booksURLs[indexPath.row];
 
     if (![self isBookURL:url]) {
@@ -310,17 +260,14 @@
     cell.textLabel.text = [url lastPathComponent];
     
     return cell;
-     */
 }
 
 #pragma mark - Table view delegate
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    NSString *name = self.bookNames[indexPath.row];
-    NSString *path = [self pathForBookName:name];
-    
-    [self loadBookAtPath:path];
+    NSURL *url = self.booksURLs[indexPath.row];
+    [self openBookAtURL:url];
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath

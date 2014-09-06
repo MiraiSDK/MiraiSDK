@@ -36,6 +36,7 @@
 		43C2010818ED4B0400490D59 /* AndroidManifest.xml in Resources */ = {isa = PBXBuildFile; fileRef = 43C2010718ED4B0400490D59 /* AndroidManifest.xml */; };
 		43C2010A18ED4B1600490D59 /* Android.mk in Resources */ = {isa = PBXBuildFile; fileRef = 43C2010918ED4B1600490D59 /* Android.mk */; };
 		43C2011518ED528100490D59 /* NextBookKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 43C2011418ED528100490D59 /* NextBookKit.framework */; };
+		43CAEA5119B0B49000B0AA8F /* libObjectiveZip.so in Copy Files (libs) */ = {isa = PBXBuildFile; fileRef = 43CAEA5019B0B45700B0AA8F /* libObjectiveZip.so */; };
 		43EBAA7518AB5573005DDD8D /* TNViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 431F17DB1826432A006FCF12 /* TNViewController.m */; };
 		43ECCF051851936B0076535C /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 431F17C91826432A006FCF12 /* UIKit.framework */; };
 		43ECCF0B1851B50A0076535C /* TNAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 431F17D51826432A006FCF12 /* TNAppDelegate.m */; };
@@ -65,6 +66,7 @@
 				432B3A2F19A1B0D100CB177A /* libMediaPlayer.so in Copy Files (libs) */,
 				432B3A3019A1B0D100CB177A /* libQuartzCore.so in Copy Files (libs) */,
 				432B3A3119A1B0D100CB177A /* libOpenGLES.so in Copy Files (libs) */,
+				43CAEA5119B0B49000B0AA8F /* libObjectiveZip.so in Copy Files (libs) */,
 				432B3A3219A1B0D100CB177A /* libUIKit.so in Copy Files (libs) */,
 				432B3A3319A1B0D100CB177A /* libdispatch.so in Copy Files (libs) */,
 				432B3A3419A1B0D100CB177A /* libgnustep-base.so in Copy Files (libs) */,
@@ -117,6 +119,7 @@
 		43C2010918ED4B1600490D59 /* Android.mk */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = Android.mk; path = "NextBookRun-android/jni/Android.mk"; sourceTree = "<group>"; };
 		43C2011418ED528100490D59 /* NextBookKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = NextBookKit.framework; path = Support/NextBookKit.framework; sourceTree = "<group>"; };
 		43C2011618ED538100490D59 /* Simple.ibooks */ = {isa = PBXFileReference; lastKnownFileType = file; path = Simple.ibooks; sourceTree = "<group>"; };
+		43CAEA5019B0B45700B0AA8F /* libObjectiveZip.so */ = {isa = PBXFileReference; lastKnownFileType = file; name = libObjectiveZip.so; path = "../../toolchain/android/android-toolchain-arm/sysroot/usr/lib/libObjectiveZip.so"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -220,6 +223,7 @@
 			isa = PBXGroup;
 			children = (
 				43B6B64F1913A237005D09ED /* libNextBookKit.so */,
+				43CAEA5019B0B45700B0AA8F /* libObjectiveZip.so */,
 				432B3A2B19A1B09E00CB177A /* libTNJavaHelper.so */,
 				432B3A2A19A1B09400CB177A /* libCoreText.so */,
 				432B3A2919A1B08900CB177A /* libCoreGraphics.so */,
