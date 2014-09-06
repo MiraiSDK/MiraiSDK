@@ -56,6 +56,11 @@ LOCAL_SRC_FILES := libQuartzCore.so
 include $(PREBUILT_SHARED_LIBRARY)
 
 include $(CLEAR_VARS)
+LOCAL_MODULE    := ObjectiveZip
+LOCAL_SRC_FILES := libObjectiveZip.so
+include $(PREBUILT_SHARED_LIBRARY)
+
+include $(CLEAR_VARS)
 LOCAL_MODULE    := UIKit
 LOCAL_SRC_FILES := libUIKit.so
 include $(PREBUILT_SHARED_LIBRARY)

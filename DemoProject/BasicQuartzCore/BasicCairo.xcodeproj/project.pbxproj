@@ -76,6 +76,7 @@
 		43CAE9E619ADA0F300B0AA8F /* TNScrollViewPagingTestViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 43CAE9E419ADA0F300B0AA8F /* TNScrollViewPagingTestViewController.m */; };
 		43CAE9F519B01E0200B0AA8F /* TNRGBATestViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 43CAE9F419B01E0200B0AA8F /* TNRGBATestViewController.m */; };
 		43CAE9F619B01E0200B0AA8F /* TNRGBATestViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 43CAE9F419B01E0200B0AA8F /* TNRGBATestViewController.m */; };
+		43CAEA4F19B0AE5800B0AA8F /* libObjectiveZip.so in Copy Files (libs) */ = {isa = PBXBuildFile; fileRef = 43CAEA4E19B0AE4400B0AA8F /* libObjectiveZip.so */; };
 		43DD64B41990BD07000884BA /* TNTouchsTestViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 43DD64B31990BD06000884BA /* TNTouchsTestViewController.m */; };
 		43DD64B51990BD07000884BA /* TNTouchsTestViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 43DD64B31990BD06000884BA /* TNTouchsTestViewController.m */; };
 		43DD64BD1990DAEE000884BA /* TNPinchTestViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 43DD64BC1990DAEE000884BA /* TNPinchTestViewController.m */; };
@@ -146,6 +147,7 @@
 				0408724A1997C54B00348AFC /* libMediaPlayer.so in Copy Files (libs) */,
 				0408724B1997C55100348AFC /* libTNJavaHelper.so in Copy Files (libs) */,
 				0408724C1997C55300348AFC /* libCoreText.so in Copy Files (libs) */,
+				43CAEA4F19B0AE5800B0AA8F /* libObjectiveZip.so in Copy Files (libs) */,
 			);
 			name = "Copy Files (libs)";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -229,6 +231,7 @@
 		43CAE9E419ADA0F300B0AA8F /* TNScrollViewPagingTestViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TNScrollViewPagingTestViewController.m; sourceTree = "<group>"; };
 		43CAE9F319B01E0200B0AA8F /* TNRGBATestViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TNRGBATestViewController.h; sourceTree = "<group>"; };
 		43CAE9F419B01E0200B0AA8F /* TNRGBATestViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TNRGBATestViewController.m; sourceTree = "<group>"; };
+		43CAEA4E19B0AE4400B0AA8F /* libObjectiveZip.so */ = {isa = PBXFileReference; lastKnownFileType = file; name = libObjectiveZip.so; path = "../../toolchain/android/android-toolchain-arm/sysroot/usr/lib/libObjectiveZip.so"; sourceTree = "<group>"; };
 		43DD64B21990BD06000884BA /* TNTouchsTestViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TNTouchsTestViewController.h; sourceTree = "<group>"; };
 		43DD64B31990BD06000884BA /* TNTouchsTestViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TNTouchsTestViewController.m; sourceTree = "<group>"; };
 		43DD64BB1990DAEE000884BA /* TNPinchTestViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TNPinchTestViewController.h; sourceTree = "<group>"; };
@@ -492,6 +495,7 @@
 			isa = PBXGroup;
 			children = (
 				040872451997C51600348AFC /* libMediaPlayer.so */,
+				43CAEA4E19B0AE4400B0AA8F /* libObjectiveZip.so */,
 				040872461997C52000348AFC /* libTNJavaHelper.so */,
 				040872471997C52800348AFC /* libCoreText.so */,
 				040872481997C53000348AFC /* libCoreGraphics.so */,
@@ -876,7 +880,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Basic/Basic-Prefix.pch";
 				INFOPLIST_FILE = "Basic/Basic-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
 				PRODUCT_NAME = BasicCairo;
 				SDKROOT = iphoneos;
 				WRAPPER_EXTENSION = app;
@@ -890,7 +894,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Basic/Basic-Prefix.pch";
 				INFOPLIST_FILE = "Basic/Basic-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
 				PRODUCT_NAME = BasicCairo;
 				SDKROOT = iphoneos;
 				WRAPPER_EXTENSION = app;
