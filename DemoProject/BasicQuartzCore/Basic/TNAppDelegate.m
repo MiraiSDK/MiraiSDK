@@ -65,9 +65,48 @@
 //        LOGI("running dispatch");
 //    });
 //    LOGI("end dispatch");
+
+    NSLog(@"main bundle path:%@",[[NSBundle mainBundle] bundlePath]);
+
+    [self logPathSettings:NSUserDomainMask];
+    
     return YES;
 }
-							
+
+- (void)logPathSettings:(NSSearchPathDomainMask)mask
+{
+    NSLog(@"domain:%d",mask);
+    NSLog(@"NSDocumentDirectory:%@",[[NSFileManager defaultManager] URLsForDirectory:NSDocumentDirectory inDomains:mask]);
+    NSLog(@"NSLibraryDirectory:%@",[[NSFileManager defaultManager] URLsForDirectory:NSLibraryDirectory inDomains:mask]);
+    NSLog(@"NSCachesDirectory:%@",[[NSFileManager defaultManager] URLsForDirectory:NSCachesDirectory inDomains:mask]);
+    NSLog(@"NSApplicationDirectory:%@",[[NSFileManager defaultManager] URLsForDirectory:NSApplicationDirectory inDomains:mask]);
+    NSLog(@"NSUserDirectory:%@",[[NSFileManager defaultManager] URLsForDirectory:NSUserDirectory inDomains:mask]);
+    NSLog(@"NSDocumentationDirectory:%@",[[NSFileManager defaultManager] URLsForDirectory:NSDocumentationDirectory inDomains:mask]);
+    NSLog(@"NSDesktopDirectory:%@",[[NSFileManager defaultManager] URLsForDirectory:NSDesktopDirectory inDomains:mask]);
+    NSLog(@"NSApplicationSupportDirectory:%@",[[NSFileManager defaultManager] URLsForDirectory:NSApplicationSupportDirectory inDomains:mask]);
+    NSLog(@"NSDownloadsDirectory:%@",[[NSFileManager defaultManager] URLsForDirectory:NSDownloadsDirectory inDomains:mask]);
+
+    NSLog(@"NSDemoApplicationDirectory:%@",[[NSFileManager defaultManager] URLsForDirectory:NSDemoApplicationDirectory inDomains:mask]);
+    NSLog(@"NSDeveloperApplicationDirectory:%@",[[NSFileManager defaultManager] URLsForDirectory:NSDeveloperApplicationDirectory inDomains:mask]);
+    NSLog(@"NSAdminApplicationDirectory:%@",[[NSFileManager defaultManager] URLsForDirectory:NSAdminApplicationDirectory inDomains:mask]);
+
+    NSLog(@"NSDeveloperDirectory:%@",[[NSFileManager defaultManager] URLsForDirectory:NSDeveloperDirectory inDomains:mask]);
+//    NSLog(@"NSAutosavedInformationDirectory:%@",[[NSFileManager defaultManager] URLsForDirectory:NSAutosavedInformationDirectory inDomains:mask]);
+
+//    NSLog(@"NSInputMethodsDirectory:%@",[[NSFileManager defaultManager] URLsForDirectory:NSInputMethodsDirectory inDomains:mask]);
+//    NSLog(@"NSMoviesDirectory:%@",[[NSFileManager defaultManager] URLsForDirectory:NSMoviesDirectory inDomains:mask]);
+//    NSLog(@"NSMusicDirectory:%@",[[NSFileManager defaultManager] URLsForDirectory:NSMusicDirectory inDomains:mask]);
+//    NSLog(@"NSPicturesDirectory:%@",[[NSFileManager defaultManager] URLsForDirectory:NSPicturesDirectory inDomains:mask]);
+//    NSLog(@"NSPrinterDescriptionDirectory:%@",[[NSFileManager defaultManager] URLsForDirectory:NSPrinterDescriptionDirectory inDomains:mask]);
+//    NSLog(@"NSSharedPublicDirectory:%@",[[NSFileManager defaultManager] URLsForDirectory:NSSharedPublicDirectory inDomains:mask]);
+//
+//    NSLog(@"NSPreferencePanesDirectory:%@",[[NSFileManager defaultManager] URLsForDirectory:NSPreferencePanesDirectory inDomains:mask]);
+//    NSLog(@"NSItemReplacementDirectory:%@",[[NSFileManager defaultManager] URLsForDirectory:NSItemReplacementDirectory inDomains:mask]);
+    NSLog(@"NSAllApplicationsDirectory:%@",[[NSFileManager defaultManager] URLsForDirectory:NSAllApplicationsDirectory inDomains:mask]);
+    NSLog(@"NSAllLibrariesDirectory:%@",[[NSFileManager defaultManager] URLsForDirectory:NSAllLibrariesDirectory inDomains:mask]);
+
+}
+
 - (void)applicationWillResignActive:(UIApplication *)application
 {
     // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.
