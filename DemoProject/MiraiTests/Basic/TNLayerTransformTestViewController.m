@@ -10,7 +10,7 @@
 #import <QuartzCore/QuartzCore.h>
 
 @interface TNLayerTransformTestViewController ()
-
+@property (nonatomic, strong) CALayer *layer;
 @end
 
 @implementation TNLayerTransformTestViewController
@@ -19,24 +19,39 @@
 {
     return @"Layer Transform";
 }
+
 - (void)viewDidLoad
 {
     [super viewDidLoad];
     
+    [self layerTest1];
+    
+    UIBarButtonItem *item = [[UIBarButtonItem alloc] initWithTitle:@"Test" style:UIBarButtonItemStyleBordered target:self action:@selector(didPressedButton:)];
+    self.navigationItem.rightBarButtonItems = @[item];
+}
+
+- (void)didPressedButton:(id)sender
+{
+    CATransform3D t = CATransform3DIsIdentity(self.layer.transform) ? CATransform3DMakeScale(2, 2, 1) : CATransform3DIdentity;
+    self.layer.transform = t;
+}
+
+- (void)layerTest0
+{
     // first test CGAf
     CGAffineTransform scale = CGAffineTransformMakeScale(0.5, 0.5);
     CGRect rect = CGRectMake(10, 10, 100, 100);
     CGRect rect1 = CGRectApplyAffineTransform(rect, scale);
     NSLog(@"test CGRectApplyAffineTransform: %@",NSStringFromCGAffineTransform(scale));
     NSLog(@"before:%@, after:%@",NSStringFromCGRect(rect),NSStringFromCGRect(rect1));
-
+    
     
     
     UIView *v1 = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 100, 100)];
     v1.backgroundColor = [UIColor greenColor];
     [self.view addSubview:v1];
     
-
+    
     UIView *v = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 100, 100)];
     v.backgroundColor = [UIColor redColor];
     [self.view addSubview:v];
@@ -65,41 +80,40 @@
     CGRect ff = CGRectApplyAffineTransform(originFrame, ii);
     
     NSLog(@"debug frame:%@",NSStringFromCGRect(ff));
-
     
-//    CALayer *layer = [CALayer layer];
-//    layer.frame = CGRectMake(0, 0, 100, 100);
-//    layer.backgroundColor = [UIColor redColor].CGColor;
-//    [self.view.layer addSublayer:layer];
-//    
-//    NSLog(@"layer before: frame:%@ position:%@ bounds:%@",NSStringFromCGRect(layer.frame),NSStringFromCGPoint(layer.position),NSStringFromCGRect(layer.bounds));
-//    layer.affineTransform = CGAffineTransformMakeScale(0.5, 0.5);
-//    
-//    NSLog(@"layer after: frame:%@ position:%@ bounds:%@",NSStringFromCGRect(layer.frame),NSStringFromCGPoint(layer.position),NSStringFromCGRect(layer.bounds));
-//    CGRect r1 = layer.frame;
-//    r1.origin = CGPointZero;
-//    layer.frame = r1;
-//    NSLog(@"layer set frame after: frame:%@ position:%@ bounds:%@",NSStringFromCGRect(layer.frame),NSStringFromCGPoint(layer.position),NSStringFromCGRect(layer.bounds));
-
-
     
+    //    CALayer *layer = [CALayer layer];
+    //    layer.frame = CGRectMake(0, 0, 100, 100);
+    //    layer.backgroundColor = [UIColor redColor].CGColor;
+    //    [self.view.layer addSublayer:layer];
+    //
+    //    NSLog(@"layer before: frame:%@ position:%@ bounds:%@",NSStringFromCGRect(layer.frame),NSStringFromCGPoint(layer.position),NSStringFromCGRect(layer.bounds));
+    //    layer.affineTransform = CGAffineTransformMakeScale(0.5, 0.5);
+    //
+    //    NSLog(@"layer after: frame:%@ position:%@ bounds:%@",NSStringFromCGRect(layer.frame),NSStringFromCGPoint(layer.position),NSStringFromCGRect(layer.bounds));
+    //    CGRect r1 = layer.frame;
+    //    r1.origin = CGPointZero;
+    //    layer.frame = r1;
+    //    NSLog(@"layer set frame after: frame:%@ position:%@ bounds:%@",NSStringFromCGRect(layer.frame),NSStringFromCGPoint(layer.position),NSStringFromCGRect(layer.bounds));
+
 }
 
-- (void)didReceiveMemoryWarning
+- (void)layerTest1
 {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+    CALayer *layer1 = [CALayer layer];
+    layer1.backgroundColor = [UIColor redColor].CGColor;
+    layer1.frame = CGRectMake(50, 100, 200, 200);
+    layer1.masksToBounds = YES;
+    
+    CALayer *layer2 = [CALayer layer];
+    
+    layer2.frame = CGRectInset(layer1.bounds, -50, -50);
+    layer2.backgroundColor = [[UIColor greenColor] colorWithAlphaComponent:0.5].CGColor;
+    [layer1 addSublayer:layer2];
+    
+    
+    self.layer = layer1;
+    [self.view.layer addSublayer:layer1];
 }
-
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
-{
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
 
 @end
