@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-        package="org.tiny4.BasicCairo"
+        package="org.tiny4.MiraiTests"
         android:versionCode="1"
         android:versionName="1.0">
 

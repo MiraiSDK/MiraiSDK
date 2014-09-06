@@ -71,7 +71,7 @@ LOCAL_SRC_FILES := libMediaPlayer.so
 include $(PREBUILT_SHARED_LIBRARY)
 
 include $(CLEAR_VARS)
-LOCAL_MODULE    := BasicCairo
-LOCAL_SRC_FILES := libBasicCairo.so
+LOCAL_MODULE    := MiraiTests
+LOCAL_SRC_FILES := libMiraiTests.so
 include $(PREBUILT_SHARED_LIBRARY)
 

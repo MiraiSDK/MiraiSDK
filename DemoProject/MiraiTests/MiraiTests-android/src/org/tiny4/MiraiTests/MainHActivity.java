@@ -1,4 +1,4 @@
-package org.tiny4.BasicCairo;
+package org.tiny4.MiraiTests;
 
 import org.tiny4.CocoaActivity.CocoaActivity;
 
@@ -27,7 +27,7 @@ public class MainHActivity extends CocoaActivity
         System.loadLibrary ("ObjectiveZip");
         System.loadLibrary ("UIKit");
         System.loadLibrary ("MediaPlayer");
-        System.loadLibrary ("BasicCairo");
+        System.loadLibrary ("MiraiTests");
     }
     
     @Override
