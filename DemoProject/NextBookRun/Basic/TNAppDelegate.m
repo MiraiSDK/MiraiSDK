@@ -19,8 +19,11 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
-    [NSThread setCurrentThreadAsMainThread];
-    
+//    [NSThread setCurrentThreadAsMainThread];
+#if __ANDROID__
+    [[UIScreen mainScreen] setScreenMode:UIScreenSizeModePad scale:0];
+#endif
+
     
     self.window = [[UIWindow alloc] initWithFrame:CGRectMake(0, 0, 768, 1024)];
     

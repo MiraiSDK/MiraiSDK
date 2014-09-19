@@ -108,7 +108,7 @@
 //    BOOL isSymbolicLink = [value boolValue];
 //    NSURL *url = isSymbolicLink ? [self.baseURL URLByResolvingSymlinksInPath] : self.baseURL;
     NSURL *url = self.baseURL;
-    
+    NSLog(@"list books in %@",self.baseURL);
 //    NSArray *urls = [[NSFileManager defaultManager] contentsOfDirectoryAtURL:url includingPropertiesForKeys:@[] options:0 error:nil];
     NSError *error = nil;
    NSArray *paths = [[NSFileManager defaultManager] contentsOfDirectoryAtPath:url.path error:&error];
