@@ -9,6 +9,7 @@
 #import "TNVCTestViewController.h"
 
 #import "TNPresentedContentViewController.h"
+#import "TNPresentTestViewController.h"
 
 @interface TNNavigationController : UINavigationController
 
@@ -21,7 +22,7 @@
 }
 
 @end
-@interface TNVCTestViewController () <UITableViewDataSource,UITableViewDelegate,TNPresentedContentViewControllerDelegate>
+@interface TNVCTestViewController () <UITableViewDataSource,UITableViewDelegate,TNPresentedContentViewControllerDelegate,TNPresentTestViewControllerDelegate>
 @property (nonatomic, strong) UITableView *tableView;
 @property (nonatomic, strong) NSArray *tests;
 @end
@@ -72,10 +73,12 @@
                        [self presentVCWithOrientation:UIInterfaceOrientationMaskPortrait];
                    }],
 
-//                   [TNTestCase testCaseWithName:@"presentViewController with nav" action:^{
-//                       // present nav
-//                       [self presentVCWithOrientation:UIInterfaceOrientationMaskLandscape];
-//                   }],
+                   [TNTestCase testCaseWithName:@"present test" action:^{
+                       TNPresentTestViewController *vc = [[TNPresentTestViewController alloc] init];
+                       vc.delegate = self;
+                       UINavigationController *nav = [[UINavigationController alloc] initWithRootViewController:vc];
+                       [self presentViewController:nav animated:YES completion:nil];
+                   }],
 //
 //                   [TNTestCase testCaseWithName:@"presentViewController with nav" action:^{
 //                       // present nav
@@ -97,6 +100,11 @@
     TNNavigationController *nav = [[TNNavigationController alloc] initWithRootViewController:vc];
     [self presentViewController:nav animated:YES completion:nil];
 
+}
+
+- (void)presentTestViewControllerDidCancel:(TNPresentTestViewController *)vc animated:(BOOL)animated
+{
+    [self dismissViewControllerAnimated:animated completion:nil];
 }
 
 - (void)presentedContentViewControllerDidCancel:(TNPresentedContentViewController *)vc animated:(BOOL)animated
