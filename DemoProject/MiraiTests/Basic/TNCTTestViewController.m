@@ -32,17 +32,19 @@
 {
     [super viewDidLoad];
     
-    NSAttributedString *att = [self attributedStringWithFontSize:17];
+    NSAttributedString *att = [self attributedStringWithFontSize:27];
 
-    TNCTView *v = [[TNCTView alloc] initWithFrame:self.view.bounds];
+    CGRect rect = CGRectInset(self.view.bounds, 0, 120);
+    TNCTView *v = [[TNCTView alloc] initWithFrame:rect];
     v.attributedString = att;
+//    [self.view addSubview:v];
     v.hidden = YES;
-    [self.view addSubview:v];
     self.ctView = v;
     
-    UIImageView *imageView = [[UIImageView alloc] initWithFrame:self.view.bounds];
-    imageView.image = [self imageForAttributedString:att];
+    UIImageView *imageView = [[UIImageView alloc] initWithFrame:rect];
+    imageView.image = [self imageForAttributedString:att size:rect.size];
     [self.view addSubview:imageView];
+    self.imageView = imageView;
     
     UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(handle_tap:)];
     [self.view addGestureRecognizer:tap];
@@ -52,19 +54,23 @@
 - (void)handle_tap:(UITapGestureRecognizer *)tap
 {
     if (self.ctView.isHidden) {
+        [self.view addSubview:self.ctView];
+        [self.imageView removeFromSuperview];
         self.ctView.hidden = NO;
         self.imageView.hidden = YES;
     } else {
+        [self.view addSubview:self.imageView];
+        [self.ctView removeFromSuperview];
         self.ctView.hidden = YES;
         self.imageView.hidden = NO;
     }
 }
 
-- (UIImage *)imageForAttributedString:(NSAttributedString *)attr
+- (UIImage *)imageForAttributedString:(NSAttributedString *)attr size:(CGSize)size
 {
-    UIGraphicsBeginImageContextWithOptions(self.view.bounds.size, YES, 0);
+    UIGraphicsBeginImageContextWithOptions(size, YES, 0);
     
-    [attr drawInRect:self.view.bounds];
+    [attr drawInRect:CGRectMake(0, 0, size.width, size.height)];
     
     UIImage *image = UIGraphicsGetImageFromCurrentImageContext();
     UIGraphicsEndImageContext();

@@ -12,6 +12,7 @@
 #import "TNPinchAndRotationViewController.h"
 #import "TNTapGestureTestViewController.h"
 #import "TNMultiGestureTestViewController.h"
+#import "TNPanGestureTestViewController.h"
 
 @interface TNGestureRecognizerViewController () <UITableViewDataSource,UITableViewDelegate>
 @property (nonatomic, strong) NSArray *subTests;
@@ -37,6 +38,7 @@
              [TNPinchAndRotationViewController class],
              [TNTapGestureTestViewController class],
              [TNMultiGestureTestViewController class],
+             [TNPanGestureTestViewController class],
              ];
 }
 
