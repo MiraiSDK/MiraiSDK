@@ -267,7 +267,14 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     NSURL *url = self.booksURLs[indexPath.row];
-    [self openBookAtURL:url];
+    if ([self isBookURL:url]) {
+        [self openBookAtURL:url];
+    } else {
+        TNViewController *nextLevel = [[[self class] alloc] init];
+        nextLevel.baseURL = url;
+        
+        [self.navigationController pushViewController:nextLevel animated:YES];
+    }
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
