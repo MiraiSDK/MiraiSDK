@@ -98,8 +98,8 @@
     [self testNumberedKeyPath:@"position.x" expectedValue:@(l.position.x) forLayer:l];
     [self testNumberedKeyPath:@"position.y" expectedValue:@(l.position.y) forLayer:l];
     
-//    [self testNumberedKeyPath:@"shadowOffset.width" expectedValue:@(l.shadowOffset.width) forLayer:l];
-//    [self testNumberedKeyPath:@"shadowOffset.height" expectedValue:@(l.shadowOffset.height) forLayer:l];
+    [self testNumberedKeyPath:@"shadowOffset.width" expectedValue:@(l.shadowOffset.width) forLayer:l];
+    [self testNumberedKeyPath:@"shadowOffset.height" expectedValue:@(l.shadowOffset.height) forLayer:l];
     
     [self testPointedKeyPath:@"bounds.origin" expectedValue:l.bounds.origin forLayer:l];
     [self testNumberedKeyPath:@"bounds.origin.x" expectedValue:@(l.bounds.origin.x) forLayer:l];
