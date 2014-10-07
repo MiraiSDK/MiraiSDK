@@ -26,6 +26,7 @@
     
     
     [self getterTest];
+    [self setterTest];
 }
 
 - (void)testNumberedKeyPath:(NSString *)keyPath expectedValue:(NSNumber *)expectedValue forLayer:(CALayer *)l
@@ -112,6 +113,114 @@
 
 - (void)setterTest
 {
+    NSLog(@"keypath set value test");
+    CALayer *l = [CALayer layer];
+    
+    CGPoint position = CGPointMake(12, 13);
+    [l setValue:@(position.x) forKeyPath:@"position.x"];
+    [l setValue:@(position.y) forKeyPath:@"position.y"];
+    
+    if (! CGPointEqualToPoint(l.position, position) ) {
+        NSLog(@"position set test failed");
+    }
+    
+    CGSize shadowOffset = CGSizeMake(11, 22);
+    [l setValue:@(shadowOffset.width) forKeyPath:@"shadowOffset.width"];
+    [l setValue:@(shadowOffset.height) forKeyPath:@"shadowOffset.height"];
+    if (! CGSizeEqualToSize(l.shadowOffset, shadowOffset)) {
+        NSLog(@"shadowoffset set test failed");
+    }
+    
+    CGRect rect1 = CGRectMake(1, 2, 3, 4);
+    [l setValue:@(rect1.origin.x) forKeyPath:@"bounds.origin.x"];
+    [l setValue:@(rect1.origin.y) forKeyPath:@"bounds.origin.y"];
+    [l setValue:@(rect1.size.width) forKeyPath:@"bounds.size.width"];
+    [l setValue:@(rect1.size.height) forKeyPath:@"bounds.size.height"];
+    if (! CGRectEqualToRect(l.bounds, rect1)) {
+        NSLog(@"bounds set test failed");
+    }
+    l.bounds = CGRectZero;
+    
+    [l setValue:[NSValue valueWithCGPoint:rect1.origin] forKeyPath:@"bounds.origin"];
+    [l setValue:[NSValue valueWithCGSize:rect1.size] forKeyPath:@"bounds.size"];
+    if (! CGRectEqualToRect(l.bounds, rect1)) {
+        NSLog(@"bounds origin&size set test failed");
+    }
+    
+    CGFloat scaleX = 2;
+    CGFloat scaleY = 3;
+    CGFloat scaleZ = 4;
+    
+    [l setValue:@(scaleX) forKeyPath:@"transform.scale.x"];
+    [l setValue:@(scaleY) forKeyPath:@"transform.scale.y"];
+    [l setValue:@(scaleZ) forKeyPath:@"transform.scale.z"];
+    
+    CGFloat translationX = 5;
+    CGFloat translationY = 6;
+    CGFloat translationZ = 7;
+    
+    [l setValue:@(translationX) forKeyPath:@"transform.translation.x"];
+    [l setValue:@(translationY) forKeyPath:@"transform.translation.y"];
+    [l setValue:@(translationZ) forKeyPath:@"transform.translation.z"];
+    
+    CATransform3D t = l.transform;
+    
+    if (! (t.m11 == scaleX &&
+           t.m22 == scaleY &&
+           t.m33 == scaleZ &&
+           t.m41 == translationX &&
+           t.m42 == translationY &&
+           t.m43 == translationZ)) {
+        NSLog(@"transform test 1 failed");
+        NSLog(@"expected scaleX:%f value:%f",scaleX,t.m11);
+        NSLog(@"expected scaleY:%f value:%f",scaleY,t.m22);
+        NSLog(@"expected scaleZ:%f value:%f",scaleZ,t.m33);
+        
+        NSLog(@"expected translationX:%f value:%f",translationX,t.m41);
+        NSLog(@"expected translationY:%f value:%f",translationY,t.m42);
+        NSLog(@"expected translationZ:%f value:%f",translationZ,t.m43);
+    }
+    
+    CGSize translation = CGSizeMake(8, 9);
+    [l setValue:[NSValue valueWithCGSize:translation] forKeyPath:@"transform.translation"];
+    if (l.transform.m41 != translation.width ||
+        l.transform.m42 != translation.height) {
+        NSLog(@"transform.translation test failed");
+    }
+    
+    l.transform = CATransform3DIdentity;
+    
+    CGFloat rotationX = 0.1;
+    CGFloat rotationY = 0.2;
+    CGFloat rotationZ = 0.3;
+    
+    [l setValue:@(rotationX) forKeyPath:@"transform.rotation.x"];
+    [l setValue:@(rotationY) forKeyPath:@"transform.rotation.y"];
+    [l setValue:@(rotationZ) forKeyPath:@"transform.rotation.z"];
+    
+    CGFloat rotationX1 = [[l valueForKeyPath:@"transform.rotation.x"] floatValue];
+    CGFloat rotationY1 = [[l valueForKeyPath:@"transform.rotation.y"] floatValue];
+    CGFloat rotationZ1 = [[l valueForKeyPath:@"transform.rotation.z"] floatValue];
+    if (rotationX != rotationX1 ||
+        rotationY != rotationY1 ||
+        rotationZ != rotationZ1) {
+        NSLog(@"rotationX:%f value:%f",rotationX,rotationX1);
+        NSLog(@"rotationY:%f value:%f",rotationY,rotationY1);
+        NSLog(@"rotationZ:%f value:%f",rotationZ,rotationZ1);
+    }
+
+    CATransform3D t2 = l.transform;
+    
+    CGFloat rotation = 0.4;
+    [l setValue:@(rotation) forKeyPath:@"transform.rotation"];
+    CGFloat rotation1 = [[l valueForKeyPath:@"transform.rotation"] floatValue];
+    if (rotation != rotation1) {
+        NSLog(@"rotation:%f value:%f",rotation,rotation1);
+    }
+    
+    CATransform3D t3 = l.transform;
+    
+    NSLog(@"done");
     
 }
 @end
