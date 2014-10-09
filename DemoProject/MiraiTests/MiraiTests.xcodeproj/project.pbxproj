@@ -51,6 +51,8 @@
 		432077E1185313EA00166514 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 432077E0185313EA00166514 /* QuartzCore.framework */; };
 		432FF2B018574966005486C5 /* TNCustomView.m in Sources */ = {isa = PBXBuildFile; fileRef = 432FF2AF18574966005486C5 /* TNCustomView.m */; };
 		432FF2B218574AD9005486C5 /* TNCustomView.m in Sources */ = {isa = PBXBuildFile; fileRef = 432FF2AF18574966005486C5 /* TNCustomView.m */; };
+		4345707819E6857A00BF1CA8 /* TNCGImageResultViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4345707719E6857A00BF1CA8 /* TNCGImageResultViewController.m */; };
+		4345707919E6857A00BF1CA8 /* TNCGImageResultViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4345707719E6857A00BF1CA8 /* TNCGImageResultViewController.m */; };
 		434DAE3F19911F2C00DE5C14 /* TNGestureRecognizerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 434DAE3E19911F2C00DE5C14 /* TNGestureRecognizerViewController.m */; };
 		434DAE4019911F2C00DE5C14 /* TNGestureRecognizerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 434DAE3E19911F2C00DE5C14 /* TNGestureRecognizerViewController.m */; };
 		434DAE451991203D00DE5C14 /* TNRotationTestViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 434DAE441991203D00DE5C14 /* TNRotationTestViewController.m */; };
@@ -72,7 +74,7 @@
 		43A8F07119DEF67500AF4CAD /* NBRadialGradientLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 43A8F06F19DEF67500AF4CAD /* NBRadialGradientLayer.m */; };
 		43A8F07619DEF6A600AF4CAD /* TNPCTestViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 43A8F07519DEF6A600AF4CAD /* TNPCTestViewController.m */; };
 		43A8F07719DEF6A600AF4CAD /* TNPCTestViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 43A8F07519DEF6A600AF4CAD /* TNPCTestViewController.m */; };
-		43A8F07A19DEFECA00AF4CAD /* TNNotARCSubclass.m in Sources */ = {isa = PBXBuildFile; fileRef = 43A8F07919DEFECA00AF4CAD /* TNNotARCSubclass.m */; };
+		43A8F07A19DEFECA00AF4CAD /* TNNotARCSubclass.m in Sources */ = {isa = PBXBuildFile; fileRef = 43A8F07919DEFECA00AF4CAD /* TNNotARCSubclass.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		43A8F07B19DEFECA00AF4CAD /* TNNotARCSubclass.m in Sources */ = {isa = PBXBuildFile; fileRef = 43A8F07919DEFECA00AF4CAD /* TNNotARCSubclass.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		43A8F08219E01D6D00AF4CAD /* NBSSAnimation.m in Sources */ = {isa = PBXBuildFile; fileRef = 43A8F08119E01D6D00AF4CAD /* NBSSAnimation.m */; };
 		43A8F08319E01D6D00AF4CAD /* NBSSAnimation.m in Sources */ = {isa = PBXBuildFile; fileRef = 43A8F08119E01D6D00AF4CAD /* NBSSAnimation.m */; };
@@ -224,6 +226,8 @@
 		4344054719BB0E1E00B4DADE /* MainHActivity.java */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.java; name = MainHActivity.java; path = "MiraiTests-android/src/org/tiny4/MiraiTests/MainHActivity.java"; sourceTree = "<group>"; };
 		4344054A19BB0E2900B4DADE /* AndroidManifest.xml */ = {isa = PBXFileReference; lastKnownFileType = text.xml; name = AndroidManifest.xml; path = "MiraiTests-android/AndroidManifest.xml"; sourceTree = "<group>"; };
 		4344054B19BB0E3D00B4DADE /* Android.mk */ = {isa = PBXFileReference; lastKnownFileType = text; name = Android.mk; path = "MiraiTests-android/jni/Android.mk"; sourceTree = "<group>"; };
+		4345707619E6857A00BF1CA8 /* TNCGImageResultViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TNCGImageResultViewController.h; sourceTree = "<group>"; };
+		4345707719E6857A00BF1CA8 /* TNCGImageResultViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TNCGImageResultViewController.m; sourceTree = "<group>"; };
 		434DAE3D19911F2C00DE5C14 /* TNGestureRecognizerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TNGestureRecognizerViewController.h; sourceTree = "<group>"; };
 		434DAE3E19911F2C00DE5C14 /* TNGestureRecognizerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TNGestureRecognizerViewController.m; sourceTree = "<group>"; };
 		434DAE431991203D00DE5C14 /* TNRotationTestViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TNRotationTestViewController.h; sourceTree = "<group>"; };
@@ -325,8 +329,6 @@
 				43972D7619934A7800EDD603 /* TNTestCase.m */,
 				43E3428518F573F000463092 /* TNTestViewController.h */,
 				43E3428618F573F000463092 /* TNTestViewController.m */,
-				43E7C988196E50470067C3A7 /* TNCGTestViewController.h */,
-				43E7C989196E50470067C3A7 /* TNCGTestViewController.m */,
 				43A8F07419DEF6A600AF4CAD /* TNPCTestViewController.h */,
 				43A8F07519DEF6A600AF4CAD /* TNPCTestViewController.m */,
 				43A8F07819DEFECA00AF4CAD /* TNNotARCSubclass.h */,
@@ -335,6 +337,7 @@
 				43A8F06F19DEF67500AF4CAD /* NBRadialGradientLayer.m */,
 				43A8F08019E01D6D00AF4CAD /* NBSSAnimation.h */,
 				43A8F08119E01D6D00AF4CAD /* NBSSAnimation.m */,
+				4345707319E6850A00BF1CA8 /* CoreGraphics */,
 				43CAE9F219B01DBC00B0AA8F /* ColorChannel */,
 				43972D6E19932A5B00EDD603 /* Runloop */,
 				43DD64B81990DAD7000884BA /* GestureRecognizer */,
@@ -553,6 +556,17 @@
 			children = (
 			);
 			name = "Platform sources";
+			sourceTree = "<group>";
+		};
+		4345707319E6850A00BF1CA8 /* CoreGraphics */ = {
+			isa = PBXGroup;
+			children = (
+				43E7C988196E50470067C3A7 /* TNCGTestViewController.h */,
+				43E7C989196E50470067C3A7 /* TNCGTestViewController.m */,
+				4345707619E6857A00BF1CA8 /* TNCGImageResultViewController.h */,
+				4345707719E6857A00BF1CA8 /* TNCGImageResultViewController.m */,
+			);
+			name = CoreGraphics;
 			sourceTree = "<group>";
 		};
 		43972D6E19932A5B00EDD603 /* Runloop */ = {
@@ -778,6 +792,7 @@
 				43972E0C19936F6100EDD603 /* TNTapGestureTestViewController.m in Sources */,
 				43E7C97C196C40C70067C3A7 /* TNShapeLayerTestViewController.m in Sources */,
 				43DD64B41990BD07000884BA /* TNTouchsTestViewController.m in Sources */,
+				4345707819E6857A00BF1CA8 /* TNCGImageResultViewController.m in Sources */,
 				4308707019CE89A600DEEAC0 /* TNPanGestureTestViewController.m in Sources */,
 				43D475C719C985C500B6E475 /* TNPresentTestViewController.m in Sources */,
 				43A8F07A19DEFECA00AF4CAD /* TNNotARCSubclass.m in Sources */,
@@ -825,6 +840,7 @@
 				43972E0D19936F6100EDD603 /* TNTapGestureTestViewController.m in Sources */,
 				43E7C97D196C40CA0067C3A7 /* TNShapeLayerTestViewController.m in Sources */,
 				43DD64B51990BD07000884BA /* TNTouchsTestViewController.m in Sources */,
+				4345707919E6857A00BF1CA8 /* TNCGImageResultViewController.m in Sources */,
 				4308707119CE89A600DEEAC0 /* TNPanGestureTestViewController.m in Sources */,
 				43D475C819C985C500B6E475 /* TNPresentTestViewController.m in Sources */,
 				43A8F07B19DEFECA00AF4CAD /* TNNotARCSubclass.m in Sources */,
