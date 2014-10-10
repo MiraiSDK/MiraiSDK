@@ -8,6 +8,7 @@
 
 #import "TNScrollTestViewController.h"
 #import "TNScrollViewPagingTestViewController.h"
+#import "TNClipsToBoundsTestViewController.h"
 
 @interface TNScrollTestViewController ()
 
@@ -31,6 +32,7 @@
 {
     return @[
              [TNScrollViewPagingTestViewController class],
+             [TNClipsToBoundsTestViewController class],
              ];
 }
 
