@@ -37,6 +37,9 @@
                      [TNTestCase testCaseWithName:@"Tiled" action:^{
                          [weakSelf showImage:[weakSelf testTiled]];
                      }],
+                     [TNTestCase testCaseWithName:@"ClipBoundingBox" action:^{
+                         [weakSelf boundingBox];
+                     }],
                      ];
     
     UITableView *table = [[UITableView alloc] initWithFrame:self.view.bounds];
@@ -46,6 +49,29 @@
     [self.view addSubview:table];
 }
 
+- (void)boundingBox
+{
+    UIGraphicsBeginImageContextWithOptions(CGSizeMake(500, 500), YES, 0);
+    CGContextRef ctx = UIGraphicsGetCurrentContext();
+    CGRect box1 = CGContextGetClipBoundingBox(ctx);
+    
+//    CGContextAddRect(ctx, CGRectMake(20, 20, 30, 30));
+//    CGContextClip(ctx);
+    CGContextClipToRect(ctx, CGRectMake(20, 20, 30, 30));
+    CGRect box3 = CGContextGetClipBoundingBox(ctx);
+
+//    CGContextAddRect(ctx, CGRectMake(30, 30, 30, 30));
+//    CGContextClip(ctx);
+    CGContextClipToRect(ctx, CGRectMake(30, 30, 30, 30));
+    CGRect box4 = CGContextGetClipBoundingBox(ctx);
+
+    NSLog(@"box 1:%@",NSStringFromCGRect(box1));
+//    NSLog(@"box 2:%@",NSStringFromCGRect(box2));
+    NSLog(@"box 3:%@",NSStringFromCGRect(box3));
+    NSLog(@"box 4:%@",NSStringFromCGRect(box4));
+
+    UIGraphicsEndImageContext();
+}
 - (void)showImage:(UIImage *)image
 {
     TNCGImageResultViewController *result = [[TNCGImageResultViewController alloc] init];
