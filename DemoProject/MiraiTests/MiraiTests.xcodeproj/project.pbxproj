@@ -63,6 +63,8 @@
 		434DAE4A1991206B00DE5C14 /* TNPinchAndRotationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 434DAE481991206B00DE5C14 /* TNPinchAndRotationViewController.m */; };
 		438406301881571F000D092C /* CoreText.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4384062F1881571F000D092C /* CoreText.framework */; };
 		4384064918816CA4000D092C /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 431F17C71826432A006FCF12 /* CoreGraphics.framework */; };
+		4392238B19EFB7DA00C8420A /* TNScrollViewNestingTestViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4392238A19EFB7DA00C8420A /* TNScrollViewNestingTestViewController.m */; };
+		4392238C19EFB7DA00C8420A /* TNScrollViewNestingTestViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4392238A19EFB7DA00C8420A /* TNScrollViewNestingTestViewController.m */; };
 		43972D7319932A7500EDD603 /* TNRunloopTestViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 43972D7219932A7500EDD603 /* TNRunloopTestViewController.m */; };
 		43972D7419932A7500EDD603 /* TNRunloopTestViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 43972D7219932A7500EDD603 /* TNRunloopTestViewController.m */; };
 		43972D7719934A7800EDD603 /* TNTestCase.m in Sources */ = {isa = PBXBuildFile; fileRef = 43972D7619934A7800EDD603 /* TNTestCase.m */; };
@@ -239,6 +241,8 @@
 		434DAE471991206B00DE5C14 /* TNPinchAndRotationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TNPinchAndRotationViewController.h; sourceTree = "<group>"; };
 		434DAE481991206B00DE5C14 /* TNPinchAndRotationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TNPinchAndRotationViewController.m; sourceTree = "<group>"; };
 		4384062F1881571F000D092C /* CoreText.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreText.framework; path = System/Library/Frameworks/CoreText.framework; sourceTree = SDKROOT; };
+		4392238919EFB7DA00C8420A /* TNScrollViewNestingTestViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TNScrollViewNestingTestViewController.h; sourceTree = "<group>"; };
+		4392238A19EFB7DA00C8420A /* TNScrollViewNestingTestViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TNScrollViewNestingTestViewController.m; sourceTree = "<group>"; };
 		43972D7119932A7500EDD603 /* TNRunloopTestViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TNRunloopTestViewController.h; sourceTree = "<group>"; };
 		43972D7219932A7500EDD603 /* TNRunloopTestViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TNRunloopTestViewController.m; sourceTree = "<group>"; };
 		43972D7519934A7800EDD603 /* TNTestCase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TNTestCase.h; sourceTree = "<group>"; };
@@ -394,6 +398,8 @@
 			children = (
 				43E3428118F5730600463092 /* TNScrollTestViewController.h */,
 				43E3428218F5730600463092 /* TNScrollTestViewController.m */,
+				4392238919EFB7DA00C8420A /* TNScrollViewNestingTestViewController.h */,
+				4392238A19EFB7DA00C8420A /* TNScrollViewNestingTestViewController.m */,
 				4345707E19E6B80B00BF1CA8 /* TNClipsToBoundsTestViewController.h */,
 				4345707F19E6B80B00BF1CA8 /* TNClipsToBoundsTestViewController.m */,
 				43CAE9E319ADA0F300B0AA8F /* TNScrollViewPagingTestViewController.h */,
@@ -783,6 +789,7 @@
 			files = (
 				43972E121995044C00EDD603 /* TNMultiGestureTestViewController.m in Sources */,
 				43B6B6531913B9A8005D09ED /* TNImageTestViewController.m in Sources */,
+				4392238B19EFB7DA00C8420A /* TNScrollViewNestingTestViewController.m in Sources */,
 				43CAE9E519ADA0F300B0AA8F /* TNScrollViewPagingTestViewController.m in Sources */,
 				43DD64BD1990DAEE000884BA /* TNPinchTestViewController.m in Sources */,
 				4345708019E6B80B00BF1CA8 /* TNClipsToBoundsTestViewController.m in Sources */,
@@ -832,6 +839,7 @@
 			files = (
 				43972E131995044C00EDD603 /* TNMultiGestureTestViewController.m in Sources */,
 				43E3426E18F436E900463092 /* TNImageTestViewController.m in Sources */,
+				4392238C19EFB7DA00C8420A /* TNScrollViewNestingTestViewController.m in Sources */,
 				43CAE9E619ADA0F300B0AA8F /* TNScrollViewPagingTestViewController.m in Sources */,
 				43DD64BE1990DAEE000884BA /* TNPinchTestViewController.m in Sources */,
 				4345708119E6B80B00BF1CA8 /* TNClipsToBoundsTestViewController.m in Sources */,
