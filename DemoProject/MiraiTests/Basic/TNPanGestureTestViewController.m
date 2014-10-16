@@ -32,8 +32,13 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    
+    UIView *red = [[UIView alloc] initWithFrame:CGRectMake(100, 200, 400, 400)];
+    red.backgroundColor = [UIColor redColor];
+    [self.view addSubview:red];
+    
     UIPanGestureRecognizer *pan = [[UIPanGestureRecognizer alloc] initWithTarget:self action:@selector(handle_pan:)];
-    [self.view addGestureRecognizer:pan];
+    [red addGestureRecognizer:pan];
 
 }
 

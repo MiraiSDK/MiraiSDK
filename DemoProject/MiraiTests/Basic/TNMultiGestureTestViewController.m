@@ -368,7 +368,7 @@ NSString* NSStringFromGesState(UIGestureRecognizerState state)
 {
     [super viewDidLoad];
     
-    UIView *red = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 100, 100)];
+    UIView *red = [[UIView alloc] initWithFrame:CGRectMake(0, 100, 200, 200)];
     red.backgroundColor = [UIColor redColor];
     [self.view addSubview:red];
     
