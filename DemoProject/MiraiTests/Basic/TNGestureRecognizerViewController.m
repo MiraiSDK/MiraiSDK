@@ -13,6 +13,7 @@
 #import "TNTapGestureTestViewController.h"
 #import "TNMultiGestureTestViewController.h"
 #import "TNPanGestureTestViewController.h"
+#import "TNTouchesCancelTestViewController.h"
 
 @interface TNGestureRecognizerViewController () <UITableViewDataSource,UITableViewDelegate>
 @property (nonatomic, strong) NSArray *subTests;
@@ -39,6 +40,7 @@
              [TNTapGestureTestViewController class],
              [TNMultiGestureTestViewController class],
              [TNPanGestureTestViewController class],
+             [TNTouchesCancelTestViewController class],
              ];
 }
 

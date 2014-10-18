@@ -61,6 +61,8 @@
 		434DAE461991203D00DE5C14 /* TNRotationTestViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 434DAE441991203D00DE5C14 /* TNRotationTestViewController.m */; };
 		434DAE491991206B00DE5C14 /* TNPinchAndRotationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 434DAE481991206B00DE5C14 /* TNPinchAndRotationViewController.m */; };
 		434DAE4A1991206B00DE5C14 /* TNPinchAndRotationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 434DAE481991206B00DE5C14 /* TNPinchAndRotationViewController.m */; };
+		436D4A5919F241A600F6F8F9 /* TNTouchesCancelTestViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 436D4A5819F241A600F6F8F9 /* TNTouchesCancelTestViewController.m */; };
+		436D4A5A19F241A600F6F8F9 /* TNTouchesCancelTestViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 436D4A5819F241A600F6F8F9 /* TNTouchesCancelTestViewController.m */; };
 		438406301881571F000D092C /* CoreText.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4384062F1881571F000D092C /* CoreText.framework */; };
 		4384064918816CA4000D092C /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 431F17C71826432A006FCF12 /* CoreGraphics.framework */; };
 		4392238B19EFB7DA00C8420A /* TNScrollViewNestingTestViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4392238A19EFB7DA00C8420A /* TNScrollViewNestingTestViewController.m */; };
@@ -240,6 +242,8 @@
 		434DAE441991203D00DE5C14 /* TNRotationTestViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TNRotationTestViewController.m; sourceTree = "<group>"; };
 		434DAE471991206B00DE5C14 /* TNPinchAndRotationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TNPinchAndRotationViewController.h; sourceTree = "<group>"; };
 		434DAE481991206B00DE5C14 /* TNPinchAndRotationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TNPinchAndRotationViewController.m; sourceTree = "<group>"; };
+		436D4A5719F241A600F6F8F9 /* TNTouchesCancelTestViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TNTouchesCancelTestViewController.h; sourceTree = "<group>"; };
+		436D4A5819F241A600F6F8F9 /* TNTouchesCancelTestViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TNTouchesCancelTestViewController.m; sourceTree = "<group>"; };
 		4384062F1881571F000D092C /* CoreText.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreText.framework; path = System/Library/Frameworks/CoreText.framework; sourceTree = SDKROOT; };
 		4392238919EFB7DA00C8420A /* TNScrollViewNestingTestViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TNScrollViewNestingTestViewController.h; sourceTree = "<group>"; };
 		4392238A19EFB7DA00C8420A /* TNScrollViewNestingTestViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TNScrollViewNestingTestViewController.m; sourceTree = "<group>"; };
@@ -634,6 +638,8 @@
 				43972E111995044C00EDD603 /* TNMultiGestureTestViewController.m */,
 				4308706E19CE89A600DEEAC0 /* TNPanGestureTestViewController.h */,
 				4308706F19CE89A600DEEAC0 /* TNPanGestureTestViewController.m */,
+				436D4A5719F241A600F6F8F9 /* TNTouchesCancelTestViewController.h */,
+				436D4A5819F241A600F6F8F9 /* TNTouchesCancelTestViewController.m */,
 			);
 			name = GestureRecognizer;
 			sourceTree = "<group>";
@@ -799,6 +805,7 @@
 				43B6B6511913B9A6005D09ED /* TNButtonTestViewController.m in Sources */,
 				43081F9B1968129200355FC5 /* TNTableViewTestController.m in Sources */,
 				43A8F08219E01D6D00AF4CAD /* NBSSAnimation.m in Sources */,
+				436D4A5919F241A600F6F8F9 /* TNTouchesCancelTestViewController.m in Sources */,
 				43098C7B197ACAE6005A97A1 /* TNCTTestViewController.m in Sources */,
 				432FF2B018574966005486C5 /* TNCustomView.m in Sources */,
 				43081FA11968130300355FC5 /* TNAlertViewTestViewController.m in Sources */,
@@ -849,6 +856,7 @@
 				43081F9C1968129700355FC5 /* TNTableViewTestController.m in Sources */,
 				43081F9D196812A000355FC5 /* TNAnimationTestViewController.m in Sources */,
 				43A8F08319E01D6D00AF4CAD /* NBSSAnimation.m in Sources */,
+				436D4A5A19F241A600F6F8F9 /* TNTouchesCancelTestViewController.m in Sources */,
 				43098C7C197ACAE6005A97A1 /* TNCTTestViewController.m in Sources */,
 				439A73D818E9195600B1BE40 /* TNButtonTestViewController.m in Sources */,
 				43081FA21968130300355FC5 /* TNAlertViewTestViewController.m in Sources */,
