@@ -1,0 +1,826 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		0408724A1997C54B00348AFC /* libMediaPlayer.so in Copy Files (libs) */ = {isa = PBXBuildFile; fileRef = 040872451997C51600348AFC /* libMediaPlayer.so */; };
+		0408724B1997C55100348AFC /* libTNJavaHelper.so in Copy Files (libs) */ = {isa = PBXBuildFile; fileRef = 040872461997C52000348AFC /* libTNJavaHelper.so */; };
+		0408724C1997C55300348AFC /* libCoreText.so in Copy Files (libs) */ = {isa = PBXBuildFile; fileRef = 040872471997C52800348AFC /* libCoreText.so */; };
+		0408724D1997C55B00348AFC /* libCoreGraphics.so in Copy Files (libs) */ = {isa = PBXBuildFile; fileRef = 040872481997C53000348AFC /* libCoreGraphics.so */; };
+		0408724E1997C55B00348AFC /* libQuartzCore.so in Copy Files (libs) */ = {isa = PBXBuildFile; fileRef = 040872491997C53A00348AFC /* libQuartzCore.so */; };
+		0408724F1997C55B00348AFC /* libgnustep-corebase.so in Copy Files (libs) */ = {isa = PBXBuildFile; fileRef = 040872431997C4FF00348AFC /* libgnustep-corebase.so */; };
+		040872501997C55B00348AFC /* libgnustl_shared.so in Copy Files (libs) */ = {isa = PBXBuildFile; fileRef = 040872441997C50900348AFC /* libgnustl_shared.so */; };
+		040872511997C55B00348AFC /* libdispatch.so in Copy Files (libs) */ = {isa = PBXBuildFile; fileRef = 0408723E1997C49200348AFC /* libdispatch.so */; };
+		040872521997C55B00348AFC /* libOpenGLES.so in Copy Files (libs) */ = {isa = PBXBuildFile; fileRef = 040872421997C4F200348AFC /* libOpenGLES.so */; };
+		040872531997C55B00348AFC /* libUIKit.so in Copy Files (libs) */ = {isa = PBXBuildFile; fileRef = 040872411997C4E900348AFC /* libUIKit.so */; };
+		040872541997C55B00348AFC /* libgnustep-base.so in Copy Files (libs) */ = {isa = PBXBuildFile; fileRef = 040872401997C4DA00348AFC /* libgnustep-base.so */; };
+		040872551997C55B00348AFC /* libobjc.so in Copy Files (libs) */ = {isa = PBXBuildFile; fileRef = 0408723F1997C4D000348AFC /* libobjc.so */; };
+		43013A551923509900EC5B20 /* CoreFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 43013A541923509900EC5B20 /* CoreFoundation.framework */; };
+		431F17C61826432A006FCF12 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 431F17C51826432A006FCF12 /* Foundation.framework */; };
+		431F17C81826432A006FCF12 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 431F17C71826432A006FCF12 /* CoreGraphics.framework */; };
+		431F17D01826432A006FCF12 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 431F17CE1826432A006FCF12 /* InfoPlist.strings */; };
+		431F17D21826432A006FCF12 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 431F17D11826432A006FCF12 /* main.m */; };
+		431F17D61826432A006FCF12 /* TNAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 431F17D51826432A006FCF12 /* TNAppDelegate.m */; };
+		431F17DC1826432A006FCF12 /* TNViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 431F17DB1826432A006FCF12 /* TNViewController.m */; };
+		431F17FE18264507006FCF12 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 431F17D11826432A006FCF12 /* main.m */; };
+		431F183F18265125006FCF12 /* InfoPlist.strings in Copy Files (assets) */ = {isa = PBXBuildFile; fileRef = 431F17CE1826432A006FCF12 /* InfoPlist.strings */; };
+		432077E1185313EA00166514 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 432077E0185313EA00166514 /* QuartzCore.framework */; };
+		436D4A8819F4D5BF00F6F8F9 /* TNButtonDemoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 436D4A8319F4D5BF00F6F8F9 /* TNButtonDemoViewController.m */; };
+		436D4A8919F4D5BF00F6F8F9 /* TNButtonDemoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 436D4A8319F4D5BF00F6F8F9 /* TNButtonDemoViewController.m */; };
+		436D4A8A19F4D5BF00F6F8F9 /* TNDemoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 436D4A8519F4D5BF00F6F8F9 /* TNDemoViewController.m */; };
+		436D4A8B19F4D5BF00F6F8F9 /* TNDemoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 436D4A8519F4D5BF00F6F8F9 /* TNDemoViewController.m */; };
+		436D4A8C19F4D5BF00F6F8F9 /* TNLabelDemoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 436D4A8719F4D5BF00F6F8F9 /* TNLabelDemoViewController.m */; };
+		436D4A8D19F4D5BF00F6F8F9 /* TNLabelDemoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 436D4A8719F4D5BF00F6F8F9 /* TNLabelDemoViewController.m */; };
+		436D4A9019F4D5DF00F6F8F9 /* TNImageDemoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 436D4A8F19F4D5DF00F6F8F9 /* TNImageDemoViewController.m */; };
+		436D4A9119F4D5DF00F6F8F9 /* TNImageDemoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 436D4A8F19F4D5DF00F6F8F9 /* TNImageDemoViewController.m */; };
+		436D4A9419F4D6D900F6F8F9 /* TNScrollViewDemoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 436D4A9319F4D6D900F6F8F9 /* TNScrollViewDemoViewController.m */; };
+		436D4A9519F4D6D900F6F8F9 /* TNScrollViewDemoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 436D4A9319F4D6D900F6F8F9 /* TNScrollViewDemoViewController.m */; };
+		436D4A9819F4D6EB00F6F8F9 /* TNTableViewDemoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 436D4A9719F4D6EB00F6F8F9 /* TNTableViewDemoViewController.m */; };
+		436D4A9919F4D6EB00F6F8F9 /* TNTableViewDemoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 436D4A9719F4D6EB00F6F8F9 /* TNTableViewDemoViewController.m */; };
+		436D4A9C19F4D6FB00F6F8F9 /* TNWebViewDemoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 436D4A9B19F4D6FB00F6F8F9 /* TNWebViewDemoViewController.m */; };
+		436D4A9D19F4D6FB00F6F8F9 /* TNWebViewDemoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 436D4A9B19F4D6FB00F6F8F9 /* TNWebViewDemoViewController.m */; };
+		436D4AA019F4D70E00F6F8F9 /* TNNavigationDemoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 436D4A9F19F4D70E00F6F8F9 /* TNNavigationDemoViewController.m */; };
+		436D4AA119F4D70E00F6F8F9 /* TNNavigationDemoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 436D4A9F19F4D70E00F6F8F9 /* TNNavigationDemoViewController.m */; };
+		436D4AA419F4D73600F6F8F9 /* TNTabBarControllerDemoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 436D4AA319F4D73600F6F8F9 /* TNTabBarControllerDemoViewController.m */; };
+		436D4AA519F4D73600F6F8F9 /* TNTabBarControllerDemoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 436D4AA319F4D73600F6F8F9 /* TNTabBarControllerDemoViewController.m */; };
+		436D4AA719F4D99A00F6F8F9 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 436D4AA619F4D99A00F6F8F9 /* Default-568h@2x.png */; };
+		436D4AAC19F5105000F6F8F9 /* TNAlertViewDemoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 436D4AAB19F5105000F6F8F9 /* TNAlertViewDemoViewController.m */; };
+		436D4AAD19F5105000F6F8F9 /* TNAlertViewDemoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 436D4AAB19F5105000F6F8F9 /* TNAlertViewDemoViewController.m */; };
+		436D4AB219F510F400F6F8F9 /* TNPickerViewDemoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 436D4AB119F510F400F6F8F9 /* TNPickerViewDemoViewController.m */; };
+		436D4AB319F510F400F6F8F9 /* TNPickerViewDemoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 436D4AB119F510F400F6F8F9 /* TNPickerViewDemoViewController.m */; };
+		436D4AB619F5110700F6F8F9 /* TNSwitchDemoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 436D4AB519F5110700F6F8F9 /* TNSwitchDemoViewController.m */; };
+		436D4AB719F5110700F6F8F9 /* TNSwitchDemoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 436D4AB519F5110700F6F8F9 /* TNSwitchDemoViewController.m */; };
+		436D4ABA19F5111B00F6F8F9 /* TNStepperDemoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 436D4AB919F5111B00F6F8F9 /* TNStepperDemoViewController.m */; };
+		436D4ABB19F5111B00F6F8F9 /* TNStepperDemoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 436D4AB919F5111B00F6F8F9 /* TNStepperDemoViewController.m */; };
+		436D4ABE19F5113500F6F8F9 /* TNSegmentedControlDemoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 436D4ABD19F5113500F6F8F9 /* TNSegmentedControlDemoViewController.m */; };
+		436D4ABF19F5113500F6F8F9 /* TNSegmentedControlDemoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 436D4ABD19F5113500F6F8F9 /* TNSegmentedControlDemoViewController.m */; };
+		436D4AC219F5114400F6F8F9 /* TNTextFieldDemoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 436D4AC119F5114400F6F8F9 /* TNTextFieldDemoViewController.m */; };
+		436D4AC319F5114400F6F8F9 /* TNTextFieldDemoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 436D4AC119F5114400F6F8F9 /* TNTextFieldDemoViewController.m */; };
+		436D4AC619F5115000F6F8F9 /* TNTextViewDemoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 436D4AC519F5115000F6F8F9 /* TNTextViewDemoViewController.m */; };
+		436D4AC719F5115000F6F8F9 /* TNTextViewDemoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 436D4AC519F5115000F6F8F9 /* TNTextViewDemoViewController.m */; };
+		436D4ACA19F5264100F6F8F9 /* TNSliderDemoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 436D4AC919F5264100F6F8F9 /* TNSliderDemoViewController.m */; };
+		436D4ACB19F5264100F6F8F9 /* TNSliderDemoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 436D4AC919F5264100F6F8F9 /* TNSliderDemoViewController.m */; };
+		436D4ACE19F5273300F6F8F9 /* TNDatePickerDemoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 436D4ACD19F5273300F6F8F9 /* TNDatePickerDemoViewController.m */; };
+		436D4ACF19F5273300F6F8F9 /* TNDatePickerDemoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 436D4ACD19F5273300F6F8F9 /* TNDatePickerDemoViewController.m */; };
+		436D4AD119F529AC00F6F8F9 /* 34912115.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 436D4AD019F529AC00F6F8F9 /* 34912115.jpg */; };
+		436D4B0219F54BDE00F6F8F9 /* TNTableViewControllerDemoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 436D4B0119F54BDE00F6F8F9 /* TNTableViewControllerDemoViewController.m */; };
+		436D4B0319F54BDE00F6F8F9 /* TNTableViewControllerDemoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 436D4B0119F54BDE00F6F8F9 /* TNTableViewControllerDemoViewController.m */; };
+		436D4B0619F54C6A00F6F8F9 /* TNSearchControllerDemoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 436D4B0519F54C6A00F6F8F9 /* TNSearchControllerDemoViewController.m */; };
+		436D4B0719F54C6A00F6F8F9 /* TNSearchControllerDemoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 436D4B0519F54C6A00F6F8F9 /* TNSearchControllerDemoViewController.m */; };
+		438406301881571F000D092C /* CoreText.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4384062F1881571F000D092C /* CoreText.framework */; };
+		4384064918816CA4000D092C /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 431F17C71826432A006FCF12 /* CoreGraphics.framework */; };
+		43972D7719934A7800EDD603 /* TNTestCase.m in Sources */ = {isa = PBXBuildFile; fileRef = 43972D7619934A7800EDD603 /* TNTestCase.m */; };
+		43972D7819934A7800EDD603 /* TNTestCase.m in Sources */ = {isa = PBXBuildFile; fileRef = 43972D7619934A7800EDD603 /* TNTestCase.m */; };
+		43B6B6551913B9B8005D09ED /* TNTestViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 43E3428618F573F000463092 /* TNTestViewController.m */; };
+		43CAE9DC19AC779100B0AA8F /* 34912115.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 43CAE9DA19AC779100B0AA8F /* 34912115.jpg */; };
+		43CAE9DD19AC779100B0AA8F /* kiniromosaic001.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 43CAE9DB19AC779100B0AA8F /* kiniromosaic001.jpg */; };
+		43CAEA4F19B0AE5800B0AA8F /* libObjectiveZip.so in Copy Files (libs) */ = {isa = PBXBuildFile; fileRef = 43CAEA4E19B0AE4400B0AA8F /* libObjectiveZip.so */; };
+		43E3428718F573F000463092 /* TNTestViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 43E3428618F573F000463092 /* TNTestViewController.m */; };
+		43EBAA7518AB5573005DDD8D /* TNViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 431F17DB1826432A006FCF12 /* TNViewController.m */; };
+		43ECCF051851936B0076535C /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 431F17C91826432A006FCF12 /* UIKit.framework */; };
+		43ECCF0B1851B50A0076535C /* TNAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 431F17D51826432A006FCF12 /* TNAppDelegate.m */; };
+		43F962F819825A1600530F4F /* MediaPlayer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 43F962F719825A1600530F4F /* MediaPlayer.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		04ADB2DF1998C01A005833EF /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 04ADB2DA1998C01A005833EF /* UIKit.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 43718E6918517B7B00850F08;
+			remoteInfo = UIKit;
+		};
+		04ADB2E11998C01A005833EF /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 04ADB2DA1998C01A005833EF /* UIKit.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 43718E8018517B7B00850F08;
+			remoteInfo = UIKitTests;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		431F1838182650B5006FCF12 /* Copy Files (assets) */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "$(SOURCE_ROOT)/$(PRODUCT_NAME)-android/assets/Resources";
+			dstSubfolderSpec = 0;
+			files = (
+				431F183F18265125006FCF12 /* InfoPlist.strings in Copy Files (assets) */,
+			);
+			name = "Copy Files (assets)";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		431F1839182650D4006FCF12 /* Copy Files (libs) */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 6;
+			files = (
+				0408724D1997C55B00348AFC /* libCoreGraphics.so in Copy Files (libs) */,
+				0408724E1997C55B00348AFC /* libQuartzCore.so in Copy Files (libs) */,
+				0408724F1997C55B00348AFC /* libgnustep-corebase.so in Copy Files (libs) */,
+				040872501997C55B00348AFC /* libgnustl_shared.so in Copy Files (libs) */,
+				040872511997C55B00348AFC /* libdispatch.so in Copy Files (libs) */,
+				040872521997C55B00348AFC /* libOpenGLES.so in Copy Files (libs) */,
+				040872531997C55B00348AFC /* libUIKit.so in Copy Files (libs) */,
+				040872541997C55B00348AFC /* libgnustep-base.so in Copy Files (libs) */,
+				040872551997C55B00348AFC /* libobjc.so in Copy Files (libs) */,
+				0408724A1997C54B00348AFC /* libMediaPlayer.so in Copy Files (libs) */,
+				0408724B1997C55100348AFC /* libTNJavaHelper.so in Copy Files (libs) */,
+				0408724C1997C55300348AFC /* libCoreText.so in Copy Files (libs) */,
+				43CAEA4F19B0AE5800B0AA8F /* libObjectiveZip.so in Copy Files (libs) */,
+			);
+			name = "Copy Files (libs)";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		0408723E1997C49200348AFC /* libdispatch.so */ = {isa = PBXFileReference; lastKnownFileType = file; name = libdispatch.so; path = "../../toolchain/android/android-toolchain-arm/sysroot/usr/lib/libdispatch.so"; sourceTree = "<group>"; };
+		0408723F1997C4D000348AFC /* libobjc.so */ = {isa = PBXFileReference; lastKnownFileType = file; name = libobjc.so; path = "../../toolchain/android/android-toolchain-arm/sysroot/usr/lib/libobjc.so"; sourceTree = "<group>"; };
+		040872401997C4DA00348AFC /* libgnustep-base.so */ = {isa = PBXFileReference; lastKnownFileType = file; name = "libgnustep-base.so"; path = "../../toolchain/android/android-toolchain-arm/sysroot/usr/lib/libgnustep-base.so"; sourceTree = "<group>"; };
+		040872411997C4E900348AFC /* libUIKit.so */ = {isa = PBXFileReference; lastKnownFileType = file; name = libUIKit.so; path = "../../toolchain/android/android-toolchain-arm/sysroot/usr/lib/libUIKit.so"; sourceTree = "<group>"; };
+		040872421997C4F200348AFC /* libOpenGLES.so */ = {isa = PBXFileReference; lastKnownFileType = file; name = libOpenGLES.so; path = "../../toolchain/android/android-toolchain-arm/sysroot/usr/lib/libOpenGLES.so"; sourceTree = "<group>"; };
+		040872431997C4FF00348AFC /* libgnustep-corebase.so */ = {isa = PBXFileReference; lastKnownFileType = file; name = "libgnustep-corebase.so"; path = "../../toolchain/android/android-toolchain-arm/sysroot/usr/lib/libgnustep-corebase.so"; sourceTree = "<group>"; };
+		040872441997C50900348AFC /* libgnustl_shared.so */ = {isa = PBXFileReference; lastKnownFileType = file; name = libgnustl_shared.so; path = "../../toolchain/android/android-toolchain-arm/sysroot/usr/lib/libgnustl_shared.so"; sourceTree = "<group>"; };
+		040872451997C51600348AFC /* libMediaPlayer.so */ = {isa = PBXFileReference; lastKnownFileType = file; name = libMediaPlayer.so; path = "../../toolchain/android/android-toolchain-arm/sysroot/usr/lib/libMediaPlayer.so"; sourceTree = "<group>"; };
+		040872461997C52000348AFC /* libTNJavaHelper.so */ = {isa = PBXFileReference; lastKnownFileType = file; name = libTNJavaHelper.so; path = "../../toolchain/android/android-toolchain-arm/sysroot/usr/lib/libTNJavaHelper.so"; sourceTree = "<group>"; };
+		040872471997C52800348AFC /* libCoreText.so */ = {isa = PBXFileReference; lastKnownFileType = file; name = libCoreText.so; path = "../../toolchain/android/android-toolchain-arm/sysroot/usr/lib/libCoreText.so"; sourceTree = "<group>"; };
+		040872481997C53000348AFC /* libCoreGraphics.so */ = {isa = PBXFileReference; lastKnownFileType = file; name = libCoreGraphics.so; path = "../../toolchain/android/android-toolchain-arm/sysroot/usr/lib/libCoreGraphics.so"; sourceTree = "<group>"; };
+		040872491997C53A00348AFC /* libQuartzCore.so */ = {isa = PBXFileReference; lastKnownFileType = file; name = libQuartzCore.so; path = "../../toolchain/android/android-toolchain-arm/sysroot/usr/lib/libQuartzCore.so"; sourceTree = "<group>"; };
+		04ADB2DA1998C01A005833EF /* UIKit.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = UIKit.xcodeproj; path = "../../Mirai-UIKit/UIKit.xcodeproj"; sourceTree = "<group>"; };
+		4301394D19225B6300EC5B20 /* Android.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Android.xcconfig; sourceTree = "<group>"; };
+		43013A541923509900EC5B20 /* CoreFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreFoundation.framework; path = System/Library/Frameworks/CoreFoundation.framework; sourceTree = SDKROOT; };
+		431F17C21826432A006FCF12 /* MiraiDemos.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MiraiDemos.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		431F17C51826432A006FCF12 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		431F17C71826432A006FCF12 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		431F17C91826432A006FCF12 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		431F17CD1826432A006FCF12 /* Basic-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Basic-Info.plist"; sourceTree = "<group>"; };
+		431F17CF1826432A006FCF12 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		431F17D11826432A006FCF12 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		431F17D31826432A006FCF12 /* Basic-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Basic-Prefix.pch"; sourceTree = "<group>"; };
+		431F17D41826432A006FCF12 /* TNAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TNAppDelegate.h; sourceTree = "<group>"; };
+		431F17D51826432A006FCF12 /* TNAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TNAppDelegate.m; sourceTree = "<group>"; };
+		431F17DA1826432A006FCF12 /* TNViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TNViewController.h; sourceTree = "<group>"; };
+		431F17DB1826432A006FCF12 /* TNViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TNViewController.m; sourceTree = "<group>"; };
+		431F17E41826432A006FCF12 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
+		431F180818264507006FCF12 /* libMiraiDemos.so */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.dylib"; includeInIndex = 0; path = libMiraiDemos.so; sourceTree = BUILT_PRODUCTS_DIR; };
+		432077E0185313EA00166514 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		436D4A6B19F4CC3600F6F8F9 /* AndroidManifest.xml */ = {isa = PBXFileReference; lastKnownFileType = text.xml; name = AndroidManifest.xml; path = "MiraiDemos-android/AndroidManifest.xml"; sourceTree = "<group>"; };
+		436D4A6C19F4CC4200F6F8F9 /* Android.mk */ = {isa = PBXFileReference; lastKnownFileType = text; name = Android.mk; path = "MiraiDemos-android/jni/Android.mk"; sourceTree = "<group>"; };
+		436D4A6D19F4CC5600F6F8F9 /* MainHActivity.java */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.java; name = MainHActivity.java; path = "MiraiDemos-android/src/org/tiny4/MiraiDemos/MainHActivity.java"; sourceTree = "<group>"; };
+		436D4A8219F4D5BF00F6F8F9 /* TNButtonDemoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TNButtonDemoViewController.h; sourceTree = "<group>"; };
+		436D4A8319F4D5BF00F6F8F9 /* TNButtonDemoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TNButtonDemoViewController.m; sourceTree = "<group>"; };
+		436D4A8419F4D5BF00F6F8F9 /* TNDemoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TNDemoViewController.h; sourceTree = "<group>"; };
+		436D4A8519F4D5BF00F6F8F9 /* TNDemoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TNDemoViewController.m; sourceTree = "<group>"; };
+		436D4A8619F4D5BF00F6F8F9 /* TNLabelDemoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TNLabelDemoViewController.h; sourceTree = "<group>"; };
+		436D4A8719F4D5BF00F6F8F9 /* TNLabelDemoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TNLabelDemoViewController.m; sourceTree = "<group>"; };
+		436D4A8E19F4D5DF00F6F8F9 /* TNImageDemoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TNImageDemoViewController.h; sourceTree = "<group>"; };
+		436D4A8F19F4D5DF00F6F8F9 /* TNImageDemoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TNImageDemoViewController.m; sourceTree = "<group>"; };
+		436D4A9219F4D6D900F6F8F9 /* TNScrollViewDemoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TNScrollViewDemoViewController.h; sourceTree = "<group>"; };
+		436D4A9319F4D6D900F6F8F9 /* TNScrollViewDemoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TNScrollViewDemoViewController.m; sourceTree = "<group>"; };
+		436D4A9619F4D6EB00F6F8F9 /* TNTableViewDemoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TNTableViewDemoViewController.h; sourceTree = "<group>"; };
+		436D4A9719F4D6EB00F6F8F9 /* TNTableViewDemoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TNTableViewDemoViewController.m; sourceTree = "<group>"; };
+		436D4A9A19F4D6FB00F6F8F9 /* TNWebViewDemoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TNWebViewDemoViewController.h; sourceTree = "<group>"; };
+		436D4A9B19F4D6FB00F6F8F9 /* TNWebViewDemoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TNWebViewDemoViewController.m; sourceTree = "<group>"; };
+		436D4A9E19F4D70E00F6F8F9 /* TNNavigationDemoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TNNavigationDemoViewController.h; sourceTree = "<group>"; };
+		436D4A9F19F4D70E00F6F8F9 /* TNNavigationDemoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TNNavigationDemoViewController.m; sourceTree = "<group>"; };
+		436D4AA219F4D73600F6F8F9 /* TNTabBarControllerDemoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TNTabBarControllerDemoViewController.h; sourceTree = "<group>"; };
+		436D4AA319F4D73600F6F8F9 /* TNTabBarControllerDemoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TNTabBarControllerDemoViewController.m; sourceTree = "<group>"; };
+		436D4AA619F4D99A00F6F8F9 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
+		436D4AAA19F5105000F6F8F9 /* TNAlertViewDemoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TNAlertViewDemoViewController.h; sourceTree = "<group>"; };
+		436D4AAB19F5105000F6F8F9 /* TNAlertViewDemoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TNAlertViewDemoViewController.m; sourceTree = "<group>"; };
+		436D4AB019F510F400F6F8F9 /* TNPickerViewDemoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TNPickerViewDemoViewController.h; sourceTree = "<group>"; };
+		436D4AB119F510F400F6F8F9 /* TNPickerViewDemoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TNPickerViewDemoViewController.m; sourceTree = "<group>"; };
+		436D4AB419F5110700F6F8F9 /* TNSwitchDemoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TNSwitchDemoViewController.h; sourceTree = "<group>"; };
+		436D4AB519F5110700F6F8F9 /* TNSwitchDemoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TNSwitchDemoViewController.m; sourceTree = "<group>"; };
+		436D4AB819F5111B00F6F8F9 /* TNStepperDemoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TNStepperDemoViewController.h; sourceTree = "<group>"; };
+		436D4AB919F5111B00F6F8F9 /* TNStepperDemoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TNStepperDemoViewController.m; sourceTree = "<group>"; };
+		436D4ABC19F5113500F6F8F9 /* TNSegmentedControlDemoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TNSegmentedControlDemoViewController.h; sourceTree = "<group>"; };
+		436D4ABD19F5113500F6F8F9 /* TNSegmentedControlDemoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TNSegmentedControlDemoViewController.m; sourceTree = "<group>"; };
+		436D4AC019F5114400F6F8F9 /* TNTextFieldDemoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TNTextFieldDemoViewController.h; sourceTree = "<group>"; };
+		436D4AC119F5114400F6F8F9 /* TNTextFieldDemoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TNTextFieldDemoViewController.m; sourceTree = "<group>"; };
+		436D4AC419F5115000F6F8F9 /* TNTextViewDemoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TNTextViewDemoViewController.h; sourceTree = "<group>"; };
+		436D4AC519F5115000F6F8F9 /* TNTextViewDemoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TNTextViewDemoViewController.m; sourceTree = "<group>"; };
+		436D4AC819F5264100F6F8F9 /* TNSliderDemoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TNSliderDemoViewController.h; sourceTree = "<group>"; };
+		436D4AC919F5264100F6F8F9 /* TNSliderDemoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TNSliderDemoViewController.m; sourceTree = "<group>"; };
+		436D4ACC19F5273300F6F8F9 /* TNDatePickerDemoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TNDatePickerDemoViewController.h; sourceTree = "<group>"; };
+		436D4ACD19F5273300F6F8F9 /* TNDatePickerDemoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TNDatePickerDemoViewController.m; sourceTree = "<group>"; };
+		436D4AD019F529AC00F6F8F9 /* 34912115.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 34912115.jpg; sourceTree = "<group>"; };
+		436D4B0019F54BDE00F6F8F9 /* TNTableViewControllerDemoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TNTableViewControllerDemoViewController.h; sourceTree = "<group>"; };
+		436D4B0119F54BDE00F6F8F9 /* TNTableViewControllerDemoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TNTableViewControllerDemoViewController.m; sourceTree = "<group>"; };
+		436D4B0419F54C6A00F6F8F9 /* TNSearchControllerDemoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TNSearchControllerDemoViewController.h; sourceTree = "<group>"; };
+		436D4B0519F54C6A00F6F8F9 /* TNSearchControllerDemoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TNSearchControllerDemoViewController.m; sourceTree = "<group>"; };
+		4384062F1881571F000D092C /* CoreText.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreText.framework; path = System/Library/Frameworks/CoreText.framework; sourceTree = SDKROOT; };
+		43972D7519934A7800EDD603 /* TNTestCase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TNTestCase.h; sourceTree = "<group>"; };
+		43972D7619934A7800EDD603 /* TNTestCase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TNTestCase.m; sourceTree = "<group>"; };
+		43CAE9DA19AC779100B0AA8F /* 34912115.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 34912115.jpg; sourceTree = "<group>"; };
+		43CAE9DB19AC779100B0AA8F /* kiniromosaic001.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = kiniromosaic001.jpg; sourceTree = "<group>"; };
+		43CAEA4E19B0AE4400B0AA8F /* libObjectiveZip.so */ = {isa = PBXFileReference; lastKnownFileType = file; name = libObjectiveZip.so; path = "../../toolchain/android/android-toolchain-arm/sysroot/usr/lib/libObjectiveZip.so"; sourceTree = "<group>"; };
+		43E3428518F573F000463092 /* TNTestViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TNTestViewController.h; sourceTree = "<group>"; };
+		43E3428618F573F000463092 /* TNTestViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TNTestViewController.m; sourceTree = "<group>"; };
+		43F962F719825A1600530F4F /* MediaPlayer.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MediaPlayer.framework; path = System/Library/Frameworks/MediaPlayer.framework; sourceTree = SDKROOT; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		431F17BF1826432A006FCF12 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				431F17C81826432A006FCF12 /* CoreGraphics.framework in Frameworks */,
+				431F17C61826432A006FCF12 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		431F17FF18264507006FCF12 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				43F962F819825A1600530F4F /* MediaPlayer.framework in Frameworks */,
+				43ECCF051851936B0076535C /* UIKit.framework in Frameworks */,
+				43013A551923509900EC5B20 /* CoreFoundation.framework in Frameworks */,
+				4384064918816CA4000D092C /* CoreGraphics.framework in Frameworks */,
+				438406301881571F000D092C /* CoreText.framework in Frameworks */,
+				432077E1185313EA00166514 /* QuartzCore.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		04ADB2DB1998C01A005833EF /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				04ADB2E01998C01A005833EF /* UIKit.framework */,
+				04ADB2E21998C01A005833EF /* UIKitTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		43081F8A1967F16100355FC5 /* Tests */ = {
+			isa = PBXGroup;
+			children = (
+				43972D7519934A7800EDD603 /* TNTestCase.h */,
+				43972D7619934A7800EDD603 /* TNTestCase.m */,
+				43E3428518F573F000463092 /* TNTestViewController.h */,
+				43E3428618F573F000463092 /* TNTestViewController.m */,
+			);
+			name = Tests;
+			sourceTree = "<group>";
+		};
+		431F17B91826432A006FCF12 = {
+			isa = PBXGroup;
+			children = (
+				436D4A7419F4CF2700F6F8F9 /* MiraiDemos */,
+				431F17CB1826432A006FCF12 /* Basic */,
+				431F17C41826432A006FCF12 /* Frameworks */,
+				431F17C31826432A006FCF12 /* Products */,
+				431F180A18264528006FCF12 /* MiraiDemos-Android */,
+			);
+			sourceTree = "<group>";
+		};
+		431F17C31826432A006FCF12 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				431F17C21826432A006FCF12 /* MiraiDemos.app */,
+				431F180818264507006FCF12 /* libMiraiDemos.so */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		431F17C41826432A006FCF12 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				04ADB2DA1998C01A005833EF /* UIKit.xcodeproj */,
+				43F962F719825A1600530F4F /* MediaPlayer.framework */,
+				43013A541923509900EC5B20 /* CoreFoundation.framework */,
+				4384062F1881571F000D092C /* CoreText.framework */,
+				432077E0185313EA00166514 /* QuartzCore.framework */,
+				431F17C51826432A006FCF12 /* Foundation.framework */,
+				431F17C71826432A006FCF12 /* CoreGraphics.framework */,
+				431F17C91826432A006FCF12 /* UIKit.framework */,
+				431F17E41826432A006FCF12 /* XCTest.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		431F17CB1826432A006FCF12 /* Basic */ = {
+			isa = PBXGroup;
+			children = (
+				431F17D41826432A006FCF12 /* TNAppDelegate.h */,
+				431F17D51826432A006FCF12 /* TNAppDelegate.m */,
+				431F17DA1826432A006FCF12 /* TNViewController.h */,
+				431F17DB1826432A006FCF12 /* TNViewController.m */,
+				43081F8A1967F16100355FC5 /* Tests */,
+				431F17CC1826432A006FCF12 /* Supporting Files */,
+			);
+			path = Basic;
+			sourceTree = "<group>";
+		};
+		431F17CC1826432A006FCF12 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				43CAE9DA19AC779100B0AA8F /* 34912115.jpg */,
+				43CAE9DB19AC779100B0AA8F /* kiniromosaic001.jpg */,
+				431F17CD1826432A006FCF12 /* Basic-Info.plist */,
+				431F17CE1826432A006FCF12 /* InfoPlist.strings */,
+				431F17D11826432A006FCF12 /* main.m */,
+				431F17D31826432A006FCF12 /* Basic-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		431F180A18264528006FCF12 /* MiraiDemos-Android */ = {
+			isa = PBXGroup;
+			children = (
+				4301394D19225B6300EC5B20 /* Android.xcconfig */,
+				436D4A6C19F4CC4200F6F8F9 /* Android.mk */,
+				436D4A6B19F4CC3600F6F8F9 /* AndroidManifest.xml */,
+				436D4A6D19F4CC5600F6F8F9 /* MainHActivity.java */,
+				431F182718264D96006FCF12 /* Frameworks */,
+				431F182818264DA8006FCF12 /* Platform sources */,
+			);
+			name = "MiraiDemos-Android";
+			sourceTree = "<group>";
+		};
+		431F182718264D96006FCF12 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				040872451997C51600348AFC /* libMediaPlayer.so */,
+				43CAEA4E19B0AE4400B0AA8F /* libObjectiveZip.so */,
+				040872461997C52000348AFC /* libTNJavaHelper.so */,
+				040872471997C52800348AFC /* libCoreText.so */,
+				040872481997C53000348AFC /* libCoreGraphics.so */,
+				040872491997C53A00348AFC /* libQuartzCore.so */,
+				040872431997C4FF00348AFC /* libgnustep-corebase.so */,
+				040872441997C50900348AFC /* libgnustl_shared.so */,
+				0408723E1997C49200348AFC /* libdispatch.so */,
+				040872421997C4F200348AFC /* libOpenGLES.so */,
+				040872411997C4E900348AFC /* libUIKit.so */,
+				040872401997C4DA00348AFC /* libgnustep-base.so */,
+				0408723F1997C4D000348AFC /* libobjc.so */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		431F182818264DA8006FCF12 /* Platform sources */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = "Platform sources";
+			sourceTree = "<group>";
+		};
+		436D4A7419F4CF2700F6F8F9 /* MiraiDemos */ = {
+			isa = PBXGroup;
+			children = (
+				436D4AA619F4D99A00F6F8F9 /* Default-568h@2x.png */,
+				436D4AD019F529AC00F6F8F9 /* 34912115.jpg */,
+				436D4A8419F4D5BF00F6F8F9 /* TNDemoViewController.h */,
+				436D4A8519F4D5BF00F6F8F9 /* TNDemoViewController.m */,
+				436D4A8219F4D5BF00F6F8F9 /* TNButtonDemoViewController.h */,
+				436D4A8319F4D5BF00F6F8F9 /* TNButtonDemoViewController.m */,
+				436D4A8E19F4D5DF00F6F8F9 /* TNImageDemoViewController.h */,
+				436D4A8F19F4D5DF00F6F8F9 /* TNImageDemoViewController.m */,
+				436D4A9219F4D6D900F6F8F9 /* TNScrollViewDemoViewController.h */,
+				436D4A9319F4D6D900F6F8F9 /* TNScrollViewDemoViewController.m */,
+				436D4A9619F4D6EB00F6F8F9 /* TNTableViewDemoViewController.h */,
+				436D4A9719F4D6EB00F6F8F9 /* TNTableViewDemoViewController.m */,
+				436D4A9A19F4D6FB00F6F8F9 /* TNWebViewDemoViewController.h */,
+				436D4A9B19F4D6FB00F6F8F9 /* TNWebViewDemoViewController.m */,
+				436D4A9E19F4D70E00F6F8F9 /* TNNavigationDemoViewController.h */,
+				436D4A9F19F4D70E00F6F8F9 /* TNNavigationDemoViewController.m */,
+				436D4AA219F4D73600F6F8F9 /* TNTabBarControllerDemoViewController.h */,
+				436D4AA319F4D73600F6F8F9 /* TNTabBarControllerDemoViewController.m */,
+				436D4B0019F54BDE00F6F8F9 /* TNTableViewControllerDemoViewController.h */,
+				436D4B0119F54BDE00F6F8F9 /* TNTableViewControllerDemoViewController.m */,
+				436D4AAA19F5105000F6F8F9 /* TNAlertViewDemoViewController.h */,
+				436D4AAB19F5105000F6F8F9 /* TNAlertViewDemoViewController.m */,
+				436D4AB019F510F400F6F8F9 /* TNPickerViewDemoViewController.h */,
+				436D4AB119F510F400F6F8F9 /* TNPickerViewDemoViewController.m */,
+				436D4ACC19F5273300F6F8F9 /* TNDatePickerDemoViewController.h */,
+				436D4ACD19F5273300F6F8F9 /* TNDatePickerDemoViewController.m */,
+				436D4AB419F5110700F6F8F9 /* TNSwitchDemoViewController.h */,
+				436D4AB519F5110700F6F8F9 /* TNSwitchDemoViewController.m */,
+				436D4AB819F5111B00F6F8F9 /* TNStepperDemoViewController.h */,
+				436D4AB919F5111B00F6F8F9 /* TNStepperDemoViewController.m */,
+				436D4ABC19F5113500F6F8F9 /* TNSegmentedControlDemoViewController.h */,
+				436D4ABD19F5113500F6F8F9 /* TNSegmentedControlDemoViewController.m */,
+				436D4B0419F54C6A00F6F8F9 /* TNSearchControllerDemoViewController.h */,
+				436D4B0519F54C6A00F6F8F9 /* TNSearchControllerDemoViewController.m */,
+				436D4AC019F5114400F6F8F9 /* TNTextFieldDemoViewController.h */,
+				436D4AC119F5114400F6F8F9 /* TNTextFieldDemoViewController.m */,
+				436D4AC419F5115000F6F8F9 /* TNTextViewDemoViewController.h */,
+				436D4AC519F5115000F6F8F9 /* TNTextViewDemoViewController.m */,
+				436D4AC819F5264100F6F8F9 /* TNSliderDemoViewController.h */,
+				436D4AC919F5264100F6F8F9 /* TNSliderDemoViewController.m */,
+				436D4A7919F4CF4800F6F8F9 /* UILabel */,
+			);
+			path = MiraiDemos;
+			sourceTree = "<group>";
+		};
+		436D4A7919F4CF4800F6F8F9 /* UILabel */ = {
+			isa = PBXGroup;
+			children = (
+				436D4A8619F4D5BF00F6F8F9 /* TNLabelDemoViewController.h */,
+				436D4A8719F4D5BF00F6F8F9 /* TNLabelDemoViewController.m */,
+			);
+			name = UILabel;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		431F17C11826432A006FCF12 /* MiraiDemos */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 431F17F41826432A006FCF12 /* Build configuration list for PBXNativeTarget "MiraiDemos" */;
+			buildPhases = (
+				431F17BE1826432A006FCF12 /* Sources */,
+				431F17BF1826432A006FCF12 /* Frameworks */,
+				431F17C01826432A006FCF12 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = MiraiDemos;
+			productName = SimpleView;
+			productReference = 431F17C21826432A006FCF12 /* MiraiDemos.app */;
+			productType = "com.apple.product-type.application";
+		};
+		431F17FA18264507006FCF12 /* MiraiDemos-Android */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 431F180518264507006FCF12 /* Build configuration list for PBXNativeTarget "MiraiDemos-Android" */;
+			buildPhases = (
+				431F17FB18264507006FCF12 /* Sources */,
+				431F17FF18264507006FCF12 /* Frameworks */,
+				431F1838182650B5006FCF12 /* Copy Files (assets) */,
+				431F1839182650D4006FCF12 /* Copy Files (libs) */,
+				432FF27118570A58005486C5 /* ShellScript */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "MiraiDemos-Android";
+			productName = SimpleView;
+			productReference = 431F180818264507006FCF12 /* libMiraiDemos.so */;
+			productType = "com.apple.product-type.library.dynamic";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		431F17BA1826432A006FCF12 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				CLASSPREFIX = TN;
+				LastUpgradeCheck = 0500;
+				ORGANIZATIONNAME = "Shanghai Tinynetwork";
+				TargetAttributes = {
+					431F17C11826432A006FCF12 = {
+						DevelopmentTeam = ACP8RY35AR;
+					};
+				};
+			};
+			buildConfigurationList = 431F17BD1826432A006FCF12 /* Build configuration list for PBXProject "MiraiDemos" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 431F17B91826432A006FCF12;
+			productRefGroup = 431F17C31826432A006FCF12 /* Products */;
+			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = 04ADB2DB1998C01A005833EF /* Products */;
+					ProjectRef = 04ADB2DA1998C01A005833EF /* UIKit.xcodeproj */;
+				},
+			);
+			projectRoot = "";
+			targets = (
+				431F17C11826432A006FCF12 /* MiraiDemos */,
+				431F17FA18264507006FCF12 /* MiraiDemos-Android */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXReferenceProxy section */
+		04ADB2E01998C01A005833EF /* UIKit.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = UIKit.framework;
+			remoteRef = 04ADB2DF1998C01A005833EF /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		04ADB2E21998C01A005833EF /* UIKitTests.xctest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = UIKitTests.xctest;
+			remoteRef = 04ADB2E11998C01A005833EF /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+/* End PBXReferenceProxy section */
+
+/* Begin PBXResourcesBuildPhase section */
+		431F17C01826432A006FCF12 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				431F17D01826432A006FCF12 /* InfoPlist.strings in Resources */,
+				436D4AA719F4D99A00F6F8F9 /* Default-568h@2x.png in Resources */,
+				43CAE9DC19AC779100B0AA8F /* 34912115.jpg in Resources */,
+				43CAE9DD19AC779100B0AA8F /* kiniromosaic001.jpg in Resources */,
+				436D4AD119F529AC00F6F8F9 /* 34912115.jpg in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		432FF27118570A58005486C5 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "set -e\npushd \"$TARGET_BUILD_DIR/../\"\nPATH=$(bash -l -c 'echo $PATH')\nndk-build\npopd";
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		431F17BE1826432A006FCF12 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				436D4ACE19F5273300F6F8F9 /* TNDatePickerDemoViewController.m in Sources */,
+				436D4AA019F4D70E00F6F8F9 /* TNNavigationDemoViewController.m in Sources */,
+				431F17DC1826432A006FCF12 /* TNViewController.m in Sources */,
+				43B6B6551913B9B8005D09ED /* TNTestViewController.m in Sources */,
+				436D4A8C19F4D5BF00F6F8F9 /* TNLabelDemoViewController.m in Sources */,
+				436D4A9019F4D5DF00F6F8F9 /* TNImageDemoViewController.m in Sources */,
+				436D4A8A19F4D5BF00F6F8F9 /* TNDemoViewController.m in Sources */,
+				436D4B0219F54BDE00F6F8F9 /* TNTableViewControllerDemoViewController.m in Sources */,
+				436D4ABA19F5111B00F6F8F9 /* TNStepperDemoViewController.m in Sources */,
+				436D4A8819F4D5BF00F6F8F9 /* TNButtonDemoViewController.m in Sources */,
+				436D4AC619F5115000F6F8F9 /* TNTextViewDemoViewController.m in Sources */,
+				436D4AB219F510F400F6F8F9 /* TNPickerViewDemoViewController.m in Sources */,
+				431F17D61826432A006FCF12 /* TNAppDelegate.m in Sources */,
+				436D4AB619F5110700F6F8F9 /* TNSwitchDemoViewController.m in Sources */,
+				436D4ABE19F5113500F6F8F9 /* TNSegmentedControlDemoViewController.m in Sources */,
+				43972D7719934A7800EDD603 /* TNTestCase.m in Sources */,
+				436D4AA419F4D73600F6F8F9 /* TNTabBarControllerDemoViewController.m in Sources */,
+				436D4AC219F5114400F6F8F9 /* TNTextFieldDemoViewController.m in Sources */,
+				436D4A9819F4D6EB00F6F8F9 /* TNTableViewDemoViewController.m in Sources */,
+				436D4ACA19F5264100F6F8F9 /* TNSliderDemoViewController.m in Sources */,
+				436D4B0619F54C6A00F6F8F9 /* TNSearchControllerDemoViewController.m in Sources */,
+				436D4A9419F4D6D900F6F8F9 /* TNScrollViewDemoViewController.m in Sources */,
+				436D4A9C19F4D6FB00F6F8F9 /* TNWebViewDemoViewController.m in Sources */,
+				436D4AAC19F5105000F6F8F9 /* TNAlertViewDemoViewController.m in Sources */,
+				431F17D21826432A006FCF12 /* main.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		431F17FB18264507006FCF12 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				436D4ACF19F5273300F6F8F9 /* TNDatePickerDemoViewController.m in Sources */,
+				436D4AA119F4D70E00F6F8F9 /* TNNavigationDemoViewController.m in Sources */,
+				43ECCF0B1851B50A0076535C /* TNAppDelegate.m in Sources */,
+				43E3428718F573F000463092 /* TNTestViewController.m in Sources */,
+				436D4A8D19F4D5BF00F6F8F9 /* TNLabelDemoViewController.m in Sources */,
+				436D4A9119F4D5DF00F6F8F9 /* TNImageDemoViewController.m in Sources */,
+				436D4A8B19F4D5BF00F6F8F9 /* TNDemoViewController.m in Sources */,
+				436D4B0319F54BDE00F6F8F9 /* TNTableViewControllerDemoViewController.m in Sources */,
+				436D4ABB19F5111B00F6F8F9 /* TNStepperDemoViewController.m in Sources */,
+				436D4A8919F4D5BF00F6F8F9 /* TNButtonDemoViewController.m in Sources */,
+				436D4AC719F5115000F6F8F9 /* TNTextViewDemoViewController.m in Sources */,
+				436D4AB319F510F400F6F8F9 /* TNPickerViewDemoViewController.m in Sources */,
+				436D4AB719F5110700F6F8F9 /* TNSwitchDemoViewController.m in Sources */,
+				436D4ABF19F5113500F6F8F9 /* TNSegmentedControlDemoViewController.m in Sources */,
+				43EBAA7518AB5573005DDD8D /* TNViewController.m in Sources */,
+				43972D7819934A7800EDD603 /* TNTestCase.m in Sources */,
+				436D4AA519F4D73600F6F8F9 /* TNTabBarControllerDemoViewController.m in Sources */,
+				436D4AC319F5114400F6F8F9 /* TNTextFieldDemoViewController.m in Sources */,
+				436D4A9919F4D6EB00F6F8F9 /* TNTableViewDemoViewController.m in Sources */,
+				436D4ACB19F5264100F6F8F9 /* TNSliderDemoViewController.m in Sources */,
+				436D4B0719F54C6A00F6F8F9 /* TNSearchControllerDemoViewController.m in Sources */,
+				436D4A9519F4D6D900F6F8F9 /* TNScrollViewDemoViewController.m in Sources */,
+				436D4A9D19F4D6FB00F6F8F9 /* TNWebViewDemoViewController.m in Sources */,
+				436D4AAD19F5105000F6F8F9 /* TNAlertViewDemoViewController.m in Sources */,
+				431F17FE18264507006FCF12 /* main.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		431F17CE1826432A006FCF12 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				431F17CF1826432A006FCF12 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		431F17F21826432A006FCF12 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx0.0;
+			};
+			name = Debug;
+		};
+		431F17F31826432A006FCF12 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				SDKROOT = macosx0.0;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		431F17F51826432A006FCF12 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Basic/Basic-Prefix.pch";
+				INFOPLIST_FILE = "Basic/Basic-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				PRODUCT_NAME = MiraiDemos;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		431F17F61826432A006FCF12 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Basic/Basic-Prefix.pch";
+				INFOPLIST_FILE = "Basic/Basic-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				PRODUCT_NAME = MiraiDemos;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+		431F180618264507006FCF12 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 4301394D19225B6300EC5B20 /* Android.xcconfig */;
+			buildSettings = {
+				ADDITIONAL_SDKS = "";
+				CLANG_ENABLE_MODULES = NO;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				DEPLOYMENT_LOCATION = YES;
+				DSTROOT = /;
+				EXECUTABLE_EXTENSION = so;
+				EXECUTABLE_PREFIX = lib;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "";
+				INFOPLIST_FILE = "Basic-Info.plist";
+				INSTALL_PATH = "$(SOURCE_ROOT)/$(PRODUCT_NAME)-android/jni";
+				LD_DEPENDENCY_INFO_FILE = "";
+				LIBRARY_SEARCH_PATHS = "$(inherited)";
+				MACH_O_TYPE = mh_dylib;
+				PRODUCT_NAME = MiraiDemos;
+				SDKROOT = macosx0.0;
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		431F180718264507006FCF12 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 4301394D19225B6300EC5B20 /* Android.xcconfig */;
+			buildSettings = {
+				ADDITIONAL_SDKS = "";
+				CLANG_ENABLE_MODULES = NO;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				DEPLOYMENT_LOCATION = YES;
+				DSTROOT = /;
+				EXECUTABLE_EXTENSION = so;
+				EXECUTABLE_PREFIX = lib;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "";
+				INFOPLIST_FILE = "Basic-Info.plist";
+				INSTALL_PATH = "$(SOURCE_ROOT)/$(PRODUCT_NAME)-android/jni";
+				LD_DEPENDENCY_INFO_FILE = "";
+				LIBRARY_SEARCH_PATHS = "$(inherited)";
+				MACH_O_TYPE = mh_dylib;
+				PRODUCT_NAME = MiraiDemos;
+				SDKROOT = macosx0.0;
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		431F17BD1826432A006FCF12 /* Build configuration list for PBXProject "MiraiDemos" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				431F17F21826432A006FCF12 /* Debug */,
+				431F17F31826432A006FCF12 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		431F17F41826432A006FCF12 /* Build configuration list for PBXNativeTarget "MiraiDemos" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				431F17F51826432A006FCF12 /* Debug */,
+				431F17F61826432A006FCF12 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		431F180518264507006FCF12 /* Build configuration list for PBXNativeTarget "MiraiDemos-Android" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				431F180618264507006FCF12 /* Debug */,
+				431F180718264507006FCF12 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 431F17BA1826432A006FCF12 /* Project object */;
+}

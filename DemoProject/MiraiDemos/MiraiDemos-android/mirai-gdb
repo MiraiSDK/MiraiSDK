@@ -1,0 +1,4 @@
+#!/bin/bash
+
+./BreakPointsConvert ../MiraiDemos.xcodeproj/xcuserdata/chyhfj.xcuserdatad/xcdebugger/Breakpoints_v2.xcbkptlist ./obj/local/armeabi/gdbbreakpoint.setup
+ndk-gdb --start --exec=./obj/local/armeabi/gdbbreakpoint.setup
