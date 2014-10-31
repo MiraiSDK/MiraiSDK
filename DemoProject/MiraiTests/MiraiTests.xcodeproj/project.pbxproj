@@ -63,6 +63,8 @@
 		434DAE4A1991206B00DE5C14 /* TNPinchAndRotationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 434DAE481991206B00DE5C14 /* TNPinchAndRotationViewController.m */; };
 		436D4A5919F241A600F6F8F9 /* TNTouchesCancelTestViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 436D4A5819F241A600F6F8F9 /* TNTouchesCancelTestViewController.m */; };
 		436D4A5A19F241A600F6F8F9 /* TNTouchesCancelTestViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 436D4A5819F241A600F6F8F9 /* TNTouchesCancelTestViewController.m */; };
+		436D4A6019F25E5300F6F8F9 /* TNWebViewTestViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 436D4A5F19F25E5300F6F8F9 /* TNWebViewTestViewController.m */; };
+		436D4A6119F25E5300F6F8F9 /* TNWebViewTestViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 436D4A5F19F25E5300F6F8F9 /* TNWebViewTestViewController.m */; };
 		438406301881571F000D092C /* CoreText.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4384062F1881571F000D092C /* CoreText.framework */; };
 		4384064918816CA4000D092C /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 431F17C71826432A006FCF12 /* CoreGraphics.framework */; };
 		4392238B19EFB7DA00C8420A /* TNScrollViewNestingTestViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4392238A19EFB7DA00C8420A /* TNScrollViewNestingTestViewController.m */; };
@@ -244,6 +246,10 @@
 		434DAE481991206B00DE5C14 /* TNPinchAndRotationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TNPinchAndRotationViewController.m; sourceTree = "<group>"; };
 		436D4A5719F241A600F6F8F9 /* TNTouchesCancelTestViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TNTouchesCancelTestViewController.h; sourceTree = "<group>"; };
 		436D4A5819F241A600F6F8F9 /* TNTouchesCancelTestViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TNTouchesCancelTestViewController.m; sourceTree = "<group>"; };
+		436D4A5E19F25E5300F6F8F9 /* TNWebViewTestViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TNWebViewTestViewController.h; sourceTree = "<group>"; };
+		436D4A5F19F25E5300F6F8F9 /* TNWebViewTestViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TNWebViewTestViewController.m; sourceTree = "<group>"; };
+		43755F5519F7B95000DDF655 /* CocoaActivity.java */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.java; path = CocoaActivity.java; sourceTree = "<group>"; };
+		43755F5619F7B95000DDF655 /* MovieRender.java */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.java; path = MovieRender.java; sourceTree = "<group>"; };
 		4384062F1881571F000D092C /* CoreText.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreText.framework; path = System/Library/Frameworks/CoreText.framework; sourceTree = SDKROOT; };
 		4392238919EFB7DA00C8420A /* TNScrollViewNestingTestViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TNScrollViewNestingTestViewController.h; sourceTree = "<group>"; };
 		4392238A19EFB7DA00C8420A /* TNScrollViewNestingTestViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TNScrollViewNestingTestViewController.m; sourceTree = "<group>"; };
@@ -290,6 +296,8 @@
 		43E7C97B196C40C70067C3A7 /* TNShapeLayerTestViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TNShapeLayerTestViewController.m; sourceTree = "<group>"; };
 		43E7C988196E50470067C3A7 /* TNCGTestViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TNCGTestViewController.h; sourceTree = "<group>"; };
 		43E7C989196E50470067C3A7 /* TNCGTestViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TNCGTestViewController.m; sourceTree = "<group>"; };
+		43E845791A03702400DBABDE /* GLWebViewRender.java */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.java; path = GLWebViewRender.java; sourceTree = "<group>"; };
+		43E8457C1A03702E00DBABDE /* GLViewRender.java */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.java; path = GLViewRender.java; sourceTree = "<group>"; };
 		43F91D3E1987E90C009E154D /* TNLayerTestViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TNLayerTestViewController.h; sourceTree = "<group>"; };
 		43F91D3F1987E90C009E154D /* TNLayerTestViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TNLayerTestViewController.m; sourceTree = "<group>"; };
 		43F91D441987EA33009E154D /* TNLayerTransformTestViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TNLayerTransformTestViewController.h; sourceTree = "<group>"; };
@@ -297,6 +305,7 @@
 		43F962F31982599400530F4F /* TNMediaPlayerTestViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TNMediaPlayerTestViewController.h; sourceTree = "<group>"; };
 		43F962F41982599400530F4F /* TNMediaPlayerTestViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TNMediaPlayerTestViewController.m; sourceTree = "<group>"; };
 		43F962F719825A1600530F4F /* MediaPlayer.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MediaPlayer.framework; path = System/Library/Frameworks/MediaPlayer.framework; sourceTree = SDKROOT; };
+		43FC616019FB6319008229CB /* GLWebView.java */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.java; path = GLWebView.java; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -366,6 +375,7 @@
 				43081F921967F1CA00355FC5 /* UIScrollView */,
 				43081F94196811D800355FC5 /* Animation */,
 				43081F981968127D00355FC5 /* UITableView */,
+				436D4A5D19F25E4200F6F8F9 /* UIWebView */,
 			);
 			name = Tests;
 			sourceTree = "<group>";
@@ -537,6 +547,7 @@
 		431F180A18264528006FCF12 /* MiraiTests-Android */ = {
 			isa = PBXGroup;
 			children = (
+				43755F5419F7B95000DDF655 /* CocoaActivity */,
 				4301394D19225B6300EC5B20 /* Android.xcconfig */,
 				4344054B19BB0E3D00B4DADE /* Android.mk */,
 				4344054A19BB0E2900B4DADE /* AndroidManifest.xml */,
@@ -583,6 +594,28 @@
 				4345707719E6857A00BF1CA8 /* TNCGImageResultViewController.m */,
 			);
 			name = CoreGraphics;
+			sourceTree = "<group>";
+		};
+		436D4A5D19F25E4200F6F8F9 /* UIWebView */ = {
+			isa = PBXGroup;
+			children = (
+				436D4A5E19F25E5300F6F8F9 /* TNWebViewTestViewController.h */,
+				436D4A5F19F25E5300F6F8F9 /* TNWebViewTestViewController.m */,
+			);
+			name = UIWebView;
+			sourceTree = "<group>";
+		};
+		43755F5419F7B95000DDF655 /* CocoaActivity */ = {
+			isa = PBXGroup;
+			children = (
+				43E8457C1A03702E00DBABDE /* GLViewRender.java */,
+				43E845791A03702400DBABDE /* GLWebViewRender.java */,
+				43FC616019FB6319008229CB /* GLWebView.java */,
+				43755F5519F7B95000DDF655 /* CocoaActivity.java */,
+				43755F5619F7B95000DDF655 /* MovieRender.java */,
+			);
+			name = CocoaActivity;
+			path = "MiraiTests-android/src/org/tiny4/CocoaActivity";
 			sourceTree = "<group>";
 		};
 		43972D6E19932A5B00EDD603 /* Runloop */ = {
@@ -833,6 +866,7 @@
 				43A8F07019DEF67500AF4CAD /* NBRadialGradientLayer.m in Sources */,
 				43A8F07619DEF6A600AF4CAD /* TNPCTestViewController.m in Sources */,
 				434DAE451991203D00DE5C14 /* TNRotationTestViewController.m in Sources */,
+				436D4A6019F25E5300F6F8F9 /* TNWebViewTestViewController.m in Sources */,
 				43972D7319932A7500EDD603 /* TNRunloopTestViewController.m in Sources */,
 				434DAE3F19911F2C00DE5C14 /* TNGestureRecognizerViewController.m in Sources */,
 				431F17D21826432A006FCF12 /* main.m in Sources */,
@@ -884,6 +918,7 @@
 				43A8F07119DEF67500AF4CAD /* NBRadialGradientLayer.m in Sources */,
 				43A8F07719DEF6A600AF4CAD /* TNPCTestViewController.m in Sources */,
 				434DAE461991203D00DE5C14 /* TNRotationTestViewController.m in Sources */,
+				436D4A6119F25E5300F6F8F9 /* TNWebViewTestViewController.m in Sources */,
 				43972D7419932A7500EDD603 /* TNRunloopTestViewController.m in Sources */,
 				434DAE4019911F2C00DE5C14 /* TNGestureRecognizerViewController.m in Sources */,
 				43081F931967F41C00355FC5 /* TNLabelTestViewController.m in Sources */,
