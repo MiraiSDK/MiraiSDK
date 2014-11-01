@@ -8,7 +8,7 @@ import android.view.Surface;
 import android.webkit.WebChromeClient;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
-
+import android.webkit.WebSettings;
 
 /**
  * Created by Yonghui Chen on 10/23/14.
@@ -24,6 +24,11 @@ public class GLWebView extends WebView {
 
         setHorizontalScrollBarEnabled(false);
         setVerticalScrollBarEnabled(false);
+        
+        WebSettings s = getSettings();
+        s.setJavaScriptEnabled(true);
+        s.setDomStorageEnabled(true);
+        //s.setBuiltInZoomControls(true);
     }
 
     public void setRender(GLViewRender r) {
