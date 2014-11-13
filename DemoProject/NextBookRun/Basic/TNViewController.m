@@ -119,10 +119,10 @@
         [urls addObject:aFile];
     }
     
-//    urls = [urls sortedArrayUsingComparator:^NSComparisonResult(NSURL *obj1, NSURL *obj2) {
-////        return [obj1.absoluteString localizedStandardCompare:obj2.absoluteString];
-//        return [obj1.absoluteString compare:obj2.absoluteString];
-//    }];
+    urls = [urls sortedArrayUsingComparator:^NSComparisonResult(NSURL *obj1, NSURL *obj2) {
+//        return [obj1.absoluteString localizedStandardCompare:obj2.absoluteString];
+        return [obj1.absoluteString compare:obj2.absoluteString];
+    }];
     self.booksURLs = urls;
 }
 
