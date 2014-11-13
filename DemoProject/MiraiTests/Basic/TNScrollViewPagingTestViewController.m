@@ -8,7 +8,7 @@
 
 #import "TNScrollViewPagingTestViewController.h"
 
-@interface TNScrollViewPagingTestViewController ()
+@interface TNScrollViewPagingTestViewController () <UIScrollViewDelegate>
 
 @end
 
@@ -17,15 +17,6 @@
 + (NSString *)testName
 {
     return @"paging";
-}
-
-- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
-{
-    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
-    if (self) {
-        // Custom initialization
-    }
-    return self;
 }
 
 - (void)viewDidLoad
@@ -39,6 +30,7 @@
     UIScrollView *scrollView = [[UIScrollView alloc] initWithFrame:self.view.bounds];
     scrollView.contentSize = CGSizeMake(width * pageCount, height);
     scrollView.pagingEnabled = YES;
+    scrollView.delegate = self;
     [self.view addSubview:scrollView];
     
     for (int idx=0; idx<pageCount; idx++) {
@@ -50,5 +42,8 @@
     }
 }
 
-
+- (void)scrollViewDidScroll:(UIScrollView *)scrollView
+{
+    NSLog(@"%s",__PRETTY_FUNCTION__);
+}
 @end
