@@ -9,7 +9,7 @@
 #import "TNPanGestureTestViewController.h"
 
 @interface TNPanGestureTestViewController ()
-
+@property (nonatomic, strong) UIView *red;
 @end
 
 @implementation TNPanGestureTestViewController
@@ -19,16 +19,6 @@
     return @"Pan";
 }
 
-
-- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
-{
-    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
-    if (self) {
-        // Custom initialization
-    }
-    return self;
-}
-
 - (void)viewDidLoad
 {
     [super viewDidLoad];
@@ -36,16 +26,20 @@
     UIView *red = [[UIView alloc] initWithFrame:CGRectMake(100, 200, 400, 400)];
     red.backgroundColor = [UIColor redColor];
     [self.view addSubview:red];
+    self.red = red;
     
     UIPanGestureRecognizer *pan = [[UIPanGestureRecognizer alloc] initWithTarget:self action:@selector(handle_pan:)];
-    [red addGestureRecognizer:pan];
+    [self.view addGestureRecognizer:pan];
 
 }
 
 - (void)handle_pan:(UIPanGestureRecognizer *)pan
 {
-    CGPoint translation = [pan translationInView:pan.view];
-    NSLog(@"translation:%@",NSStringFromCGPoint(translation));
+//    CGPoint translation = [pan translationInView:pan.view];
+//    NSLog(@"translation:%@",NSStringFromCGPoint(translation));
+    CGPoint location = [pan locationInView:self.view];
+    self.red.center = location;
+    
 }
 
 - (void)didReceiveMemoryWarning
