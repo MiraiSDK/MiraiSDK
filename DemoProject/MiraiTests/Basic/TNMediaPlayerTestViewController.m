@@ -30,7 +30,12 @@
     [super viewDidLoad];
     self.view.backgroundColor = [UIColor greenColor];
     
+    
     NSURL *url = [[NSBundle mainBundle] URLForResource:@"jobs" withExtension:@"m4v"];
+    if (!url) {
+        NSURL *document = [[[NSFileManager defaultManager] URLsForDirectory:NSDocumentDirectory inDomains:NSUserDomainMask] lastObject];
+        url = [document URLByAppendingPathComponent:@"jobs.m4v"];
+    }
     MPMoviePlayerController *mpc = [[MPMoviePlayerController alloc] initWithContentURL:url];
     self.player = mpc;
     
