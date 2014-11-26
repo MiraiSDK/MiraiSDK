@@ -10,6 +10,7 @@
 #import "TNShapeLayerTestViewController.h"
 #import "TNLayerTransformTestViewController.h"
 #import "TNLayerKeyPathTestViewController.h"
+#import "TNLayerContentsGravityTestViewController.h"
 
 @interface TNLayerTestViewController () <UITableViewDataSource,UITableViewDelegate>
 @property (nonatomic, strong) NSArray *subTests;
@@ -33,6 +34,7 @@
     self.subTests = @[[TNShapeLayerTestViewController class],
                       [TNLayerTransformTestViewController class],
                       [TNLayerKeyPathTestViewController class],
+                      [TNLayerContentsGravityTestViewController class],
                       ];
     
     UITableView *tableView = [[UITableView alloc] initWithFrame:self.view.bounds];

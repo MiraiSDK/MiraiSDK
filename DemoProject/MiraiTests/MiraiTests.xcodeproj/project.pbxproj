@@ -40,6 +40,8 @@
 		43098C7C197ACAE6005A97A1 /* TNCTTestViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 43098C7A197ACAE6005A97A1 /* TNCTTestViewController.m */; };
 		43098C7F197ACB24005A97A1 /* TNCTView.m in Sources */ = {isa = PBXBuildFile; fileRef = 43098C7E197ACB24005A97A1 /* TNCTView.m */; };
 		43098C80197ACB24005A97A1 /* TNCTView.m in Sources */ = {isa = PBXBuildFile; fileRef = 43098C7E197ACB24005A97A1 /* TNCTView.m */; };
+		430CA15B1A231D620005CFD5 /* TNLayerContentsGravityTestViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 430CA15A1A231D620005CFD5 /* TNLayerContentsGravityTestViewController.m */; };
+		430CA15C1A231D620005CFD5 /* TNLayerContentsGravityTestViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 430CA15A1A231D620005CFD5 /* TNLayerContentsGravityTestViewController.m */; };
 		431F17C61826432A006FCF12 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 431F17C51826432A006FCF12 /* Foundation.framework */; };
 		431F17C81826432A006FCF12 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 431F17C71826432A006FCF12 /* CoreGraphics.framework */; };
 		431F17D01826432A006FCF12 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 431F17CE1826432A006FCF12 /* InfoPlist.strings */; };
@@ -51,6 +53,9 @@
 		432077E1185313EA00166514 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 432077E0185313EA00166514 /* QuartzCore.framework */; };
 		432FF2B018574966005486C5 /* TNCustomView.m in Sources */ = {isa = PBXBuildFile; fileRef = 432FF2AF18574966005486C5 /* TNCustomView.m */; };
 		432FF2B218574AD9005486C5 /* TNCustomView.m in Sources */ = {isa = PBXBuildFile; fileRef = 432FF2AF18574966005486C5 /* TNCustomView.m */; };
+		4341FB8B1A2458AB00E6990A /* ContentsGravity_300x400.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 4341FB881A2458AB00E6990A /* ContentsGravity_300x400.jpg */; };
+		4341FB8C1A2458AB00E6990A /* ContentsGravity_Large.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 4341FB891A2458AB00E6990A /* ContentsGravity_Large.jpg */; };
+		4341FB8D1A2458AB00E6990A /* ContentsGravity_Small.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 4341FB8A1A2458AB00E6990A /* ContentsGravity_Small.jpg */; };
 		4345707819E6857A00BF1CA8 /* TNCGImageResultViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4345707719E6857A00BF1CA8 /* TNCGImageResultViewController.m */; };
 		4345707919E6857A00BF1CA8 /* TNCGImageResultViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4345707719E6857A00BF1CA8 /* TNCGImageResultViewController.m */; };
 		4345708019E6B80B00BF1CA8 /* TNClipsToBoundsTestViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4345707F19E6B80B00BF1CA8 /* TNClipsToBoundsTestViewController.m */; };
@@ -214,6 +219,8 @@
 		43098C7A197ACAE6005A97A1 /* TNCTTestViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TNCTTestViewController.m; sourceTree = "<group>"; };
 		43098C7D197ACB24005A97A1 /* TNCTView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TNCTView.h; sourceTree = "<group>"; };
 		43098C7E197ACB24005A97A1 /* TNCTView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TNCTView.m; sourceTree = "<group>"; };
+		430CA1591A231D620005CFD5 /* TNLayerContentsGravityTestViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TNLayerContentsGravityTestViewController.h; sourceTree = "<group>"; };
+		430CA15A1A231D620005CFD5 /* TNLayerContentsGravityTestViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TNLayerContentsGravityTestViewController.m; sourceTree = "<group>"; };
 		431F17C21826432A006FCF12 /* MiraiTests.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MiraiTests.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		431F17C51826432A006FCF12 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		431F17C71826432A006FCF12 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -231,6 +238,9 @@
 		432077E0185313EA00166514 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		432FF2AE18574966005486C5 /* TNCustomView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TNCustomView.h; sourceTree = "<group>"; };
 		432FF2AF18574966005486C5 /* TNCustomView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TNCustomView.m; sourceTree = "<group>"; };
+		4341FB881A2458AB00E6990A /* ContentsGravity_300x400.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = ContentsGravity_300x400.jpg; sourceTree = "<group>"; };
+		4341FB891A2458AB00E6990A /* ContentsGravity_Large.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = ContentsGravity_Large.jpg; sourceTree = "<group>"; };
+		4341FB8A1A2458AB00E6990A /* ContentsGravity_Small.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = ContentsGravity_Small.jpg; sourceTree = "<group>"; };
 		4344054719BB0E1E00B4DADE /* MainHActivity.java */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.java; name = MainHActivity.java; path = "MiraiTests-android/src/org/tiny4/MiraiTests/MainHActivity.java"; sourceTree = "<group>"; };
 		4344054A19BB0E2900B4DADE /* AndroidManifest.xml */ = {isa = PBXFileReference; lastKnownFileType = text.xml; name = AndroidManifest.xml; path = "MiraiTests-android/AndroidManifest.xml"; sourceTree = "<group>"; };
 		4344054B19BB0E3D00B4DADE /* Android.mk */ = {isa = PBXFileReference; lastKnownFileType = text; name = Android.mk; path = "MiraiTests-android/jni/Android.mk"; sourceTree = "<group>"; };
@@ -688,6 +698,11 @@
 				43F91D451987EA33009E154D /* TNLayerTransformTestViewController.m */,
 				43A8F0D819E2451D00AF4CAD /* TNLayerKeyPathTestViewController.h */,
 				43A8F0D919E2451D00AF4CAD /* TNLayerKeyPathTestViewController.m */,
+				430CA1591A231D620005CFD5 /* TNLayerContentsGravityTestViewController.h */,
+				430CA15A1A231D620005CFD5 /* TNLayerContentsGravityTestViewController.m */,
+				4341FB881A2458AB00E6990A /* ContentsGravity_300x400.jpg */,
+				4341FB891A2458AB00E6990A /* ContentsGravity_Large.jpg */,
+				4341FB8A1A2458AB00E6990A /* ContentsGravity_Small.jpg */,
 			);
 			name = Layer;
 			sourceTree = "<group>";
@@ -797,8 +812,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4341FB8B1A2458AB00E6990A /* ContentsGravity_300x400.jpg in Resources */,
 				431F17D01826432A006FCF12 /* InfoPlist.strings in Resources */,
 				43CAE9DC19AC779100B0AA8F /* 34912115.jpg in Resources */,
+				4341FB8C1A2458AB00E6990A /* ContentsGravity_Large.jpg in Resources */,
+				4341FB8D1A2458AB00E6990A /* ContentsGravity_Small.jpg in Resources */,
 				43CAE9DD19AC779100B0AA8F /* kiniromosaic001.jpg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -843,6 +861,7 @@
 				432FF2B018574966005486C5 /* TNCustomView.m in Sources */,
 				43081FA11968130300355FC5 /* TNAlertViewTestViewController.m in Sources */,
 				431F17D61826432A006FCF12 /* TNAppDelegate.m in Sources */,
+				430CA15B1A231D620005CFD5 /* TNLayerContentsGravityTestViewController.m in Sources */,
 				43972E0C19936F6100EDD603 /* TNTapGestureTestViewController.m in Sources */,
 				43E7C97C196C40C70067C3A7 /* TNShapeLayerTestViewController.m in Sources */,
 				43DD64B41990BD07000884BA /* TNTouchsTestViewController.m in Sources */,
@@ -895,6 +914,7 @@
 				439A73D818E9195600B1BE40 /* TNButtonTestViewController.m in Sources */,
 				43081FA21968130300355FC5 /* TNAlertViewTestViewController.m in Sources */,
 				432FF2B218574AD9005486C5 /* TNCustomView.m in Sources */,
+				430CA15C1A231D620005CFD5 /* TNLayerContentsGravityTestViewController.m in Sources */,
 				43972E0D19936F6100EDD603 /* TNTapGestureTestViewController.m in Sources */,
 				43E7C97D196C40CA0067C3A7 /* TNShapeLayerTestViewController.m in Sources */,
 				43DD64B51990BD07000884BA /* TNTouchsTestViewController.m in Sources */,
