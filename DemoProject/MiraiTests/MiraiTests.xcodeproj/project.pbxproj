@@ -74,6 +74,8 @@
 		4384064918816CA4000D092C /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 431F17C71826432A006FCF12 /* CoreGraphics.framework */; };
 		4392238B19EFB7DA00C8420A /* TNScrollViewNestingTestViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4392238A19EFB7DA00C8420A /* TNScrollViewNestingTestViewController.m */; };
 		4392238C19EFB7DA00C8420A /* TNScrollViewNestingTestViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4392238A19EFB7DA00C8420A /* TNScrollViewNestingTestViewController.m */; };
+		4395FBF91A36D4A300C4C9C4 /* TNLayerOpacityTestViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4395FBF81A36D4A300C4C9C4 /* TNLayerOpacityTestViewController.m */; };
+		4395FBFA1A36D4A300C4C9C4 /* TNLayerOpacityTestViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4395FBF81A36D4A300C4C9C4 /* TNLayerOpacityTestViewController.m */; };
 		43972D7319932A7500EDD603 /* TNRunloopTestViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 43972D7219932A7500EDD603 /* TNRunloopTestViewController.m */; };
 		43972D7419932A7500EDD603 /* TNRunloopTestViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 43972D7219932A7500EDD603 /* TNRunloopTestViewController.m */; };
 		43972D7719934A7800EDD603 /* TNTestCase.m in Sources */ = {isa = PBXBuildFile; fileRef = 43972D7619934A7800EDD603 /* TNTestCase.m */; };
@@ -263,6 +265,8 @@
 		4384062F1881571F000D092C /* CoreText.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreText.framework; path = System/Library/Frameworks/CoreText.framework; sourceTree = SDKROOT; };
 		4392238919EFB7DA00C8420A /* TNScrollViewNestingTestViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TNScrollViewNestingTestViewController.h; sourceTree = "<group>"; };
 		4392238A19EFB7DA00C8420A /* TNScrollViewNestingTestViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TNScrollViewNestingTestViewController.m; sourceTree = "<group>"; };
+		4395FBF71A36D4A300C4C9C4 /* TNLayerOpacityTestViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TNLayerOpacityTestViewController.h; sourceTree = "<group>"; };
+		4395FBF81A36D4A300C4C9C4 /* TNLayerOpacityTestViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TNLayerOpacityTestViewController.m; sourceTree = "<group>"; };
 		43972D7119932A7500EDD603 /* TNRunloopTestViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TNRunloopTestViewController.h; sourceTree = "<group>"; };
 		43972D7219932A7500EDD603 /* TNRunloopTestViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TNRunloopTestViewController.m; sourceTree = "<group>"; };
 		43972D7519934A7800EDD603 /* TNTestCase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TNTestCase.h; sourceTree = "<group>"; };
@@ -692,6 +696,8 @@
 			children = (
 				43E7C97A196C40C70067C3A7 /* TNShapeLayerTestViewController.h */,
 				43E7C97B196C40C70067C3A7 /* TNShapeLayerTestViewController.m */,
+				4395FBF71A36D4A300C4C9C4 /* TNLayerOpacityTestViewController.h */,
+				4395FBF81A36D4A300C4C9C4 /* TNLayerOpacityTestViewController.m */,
 				43F91D3E1987E90C009E154D /* TNLayerTestViewController.h */,
 				43F91D3F1987E90C009E154D /* TNLayerTestViewController.m */,
 				43F91D441987EA33009E154D /* TNLayerTransformTestViewController.h */,
@@ -864,6 +870,7 @@
 				430CA15B1A231D620005CFD5 /* TNLayerContentsGravityTestViewController.m in Sources */,
 				43972E0C19936F6100EDD603 /* TNTapGestureTestViewController.m in Sources */,
 				43E7C97C196C40C70067C3A7 /* TNShapeLayerTestViewController.m in Sources */,
+				4395FBF91A36D4A300C4C9C4 /* TNLayerOpacityTestViewController.m in Sources */,
 				43DD64B41990BD07000884BA /* TNTouchsTestViewController.m in Sources */,
 				4345707819E6857A00BF1CA8 /* TNCGImageResultViewController.m in Sources */,
 				4308707019CE89A600DEEAC0 /* TNPanGestureTestViewController.m in Sources */,
@@ -917,6 +924,7 @@
 				430CA15C1A231D620005CFD5 /* TNLayerContentsGravityTestViewController.m in Sources */,
 				43972E0D19936F6100EDD603 /* TNTapGestureTestViewController.m in Sources */,
 				43E7C97D196C40CA0067C3A7 /* TNShapeLayerTestViewController.m in Sources */,
+				4395FBFA1A36D4A300C4C9C4 /* TNLayerOpacityTestViewController.m in Sources */,
 				43DD64B51990BD07000884BA /* TNTouchsTestViewController.m in Sources */,
 				4345707919E6857A00BF1CA8 /* TNCGImageResultViewController.m in Sources */,
 				4308707119CE89A600DEEAC0 /* TNPanGestureTestViewController.m in Sources */,

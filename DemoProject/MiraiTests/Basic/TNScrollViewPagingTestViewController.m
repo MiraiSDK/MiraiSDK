@@ -31,6 +31,10 @@
     scrollView.contentSize = CGSizeMake(width * pageCount, height);
     scrollView.pagingEnabled = YES;
     scrollView.delegate = self;
+    
+    scrollView.layer.borderWidth = 100;
+    scrollView.layer.borderColor = [UIColor redColor].CGColor;
+
     [self.view addSubview:scrollView];
     
     for (int idx=0; idx<pageCount; idx++) {

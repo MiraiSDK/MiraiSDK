@@ -35,12 +35,24 @@
     tableView.autoresizingMask = UIViewAutoresizingFlexibleTopMargin | UIViewAutoresizingFlexibleLeftMargin | UIViewAutoresizingFlexibleBottomMargin | UIViewAutoresizingFlexibleRightMargin | UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
     tableView.delegate = self;
     tableView.dataSource = self;
+#if __ANDROID__
+    tableView.rowHeight = 100;
+#endif
     [self.view addSubview:tableView];
     
-    self.tests = @[
-                   @[@"Test animation override", NSStringFromSelector(@selector(testAnimationOverride))],
-                   @[@"Test alpha animation", NSStringFromSelector(@selector(testAlphaAnimation))],
-                  ];
+    __weak typeof(self) weakSelf = self;
+    self.tests =
+  @[
+    [TNTestCase testCaseWithName:@"Test animation override" action:^{
+        [weakSelf testAnimationOverride];
+    }],
+    [TNTestCase testCaseWithName:@"Test alpha animation" action:^{
+        [weakSelf testAlphaAnimation];
+    }],
+    [TNTestCase testCaseWithName:@"Test group animation" action:^{
+        [weakSelf testGroupAnimation];
+    }],
+    ];
     
     //
     //    CALayer *quad = [CALayer layer];
@@ -125,6 +137,30 @@
     [v.layer addAnimation:ani2 forKey:@"position"];
 }
 
+- (void)testGroupAnimation
+{
+    UIView *v = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 100, 100)];
+    v.backgroundColor = [UIColor greenColor];
+    [self.view addSubview:v];
+
+    CAAnimationGroup *group = [CAAnimationGroup animation];
+    group.delegate = self;
+    group.duration = 4;
+    
+    CABasicAnimation *position = [CABasicAnimation animationWithKeyPath:@"position"];
+    position.toValue = [NSValue valueWithCGPoint:CGPointMake(200, 200)];
+    position.delegate = self;
+    position.duration = 10;
+    
+    CABasicAnimation *alpha = [CABasicAnimation animationWithKeyPath:@"opacity"];
+    alpha.toValue = @0;
+    alpha.duration = 5;
+    alpha.delegate = self;
+    
+    group.animations = @[position,alpha];
+    
+    [v.layer addAnimation:group forKey:@"group"];
+}
 - (void)animationDidStop:(CAAnimation *)anim finished:(BOOL)flag
 {
     NSLog(@"%s animation:%@ finished:%d",__PRETTY_FUNCTION__,anim,flag);
@@ -203,7 +239,8 @@
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
     }
     
-    cell.textLabel.text = self.tests[indexPath.row][0];
+    TNTestCase *tc = self.tests[indexPath.row];
+    cell.textLabel.text = tc.name;
     
     return cell;
 }
@@ -212,15 +249,10 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    NSArray *test = self.tests[indexPath.row];
-    SEL selector = NSSelectorFromString(test[1]);
-    if (selector && [self respondsToSelector:selector]) {
-        [self performSelector:selector];
+    TNTestCase *test = self.tests[indexPath.row];
+    if (test.action) {
+        test.action();
     }
 }
 
-- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    return 100;
-}
 @end

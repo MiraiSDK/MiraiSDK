@@ -10,9 +10,10 @@
 #import "TNCTView.h"
 #import <CoreText/CoreText.h>
 
-@interface TNCTTestViewController ()
+@interface TNCTTestViewController () <UITableViewDataSource,UITableViewDelegate>
 @property (nonatomic, strong) TNCTView *ctView;
 @property (nonatomic, strong) UIImageView *imageView;
+@property (nonatomic, strong) NSArray *actions;
 
 @end
 
@@ -34,22 +35,58 @@
     
     NSAttributedString *att = [self attributedStringWithFontSize:27];
 
+    
     CGRect rect = CGRectInset(self.view.bounds, 0, 120);
-    TNCTView *v = [[TNCTView alloc] initWithFrame:rect];
-    v.attributedString = att;
+//    TNCTView *v = [[TNCTView alloc] initWithFrame:rect];
+//    v.attributedString = att;
 //    [self.view addSubview:v];
-    v.hidden = YES;
-    self.ctView = v;
+//    v.hidden = YES;
+//    self.ctView = v;
+    
+    UIView *bg = [[UIView alloc] initWithFrame:rect];
+    bg.layer.borderWidth = 1;
+    bg.layer.borderColor = [UIColor redColor].CGColor;
+    [self.view addSubview:bg];
     
     UIImageView *imageView = [[UIImageView alloc] initWithFrame:rect];
-    imageView.image = [self imageForAttributedString:att size:rect.size];
+//    imageView.image = [self imageForAttributedString:att size:rect.size];
     [self.view addSubview:imageView];
     self.imageView = imageView;
     
-    UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(handle_tap:)];
-    [self.view addGestureRecognizer:tap];
     
+//    UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(handle_tap:)];
+//    [self.view addGestureRecognizer:tap];
+    
+    __weak typeof(self) weakSelf = self;
+    self.actions =
+  @[
+    [TNTestCase testCaseWithName:@"CTFrameDraw" action:^{
+        UIImage *image = [weakSelf imageCTFrameDrawForAttributedString:att size:rect.size];
+        imageView.image = image;
+
+    }],
+    [TNTestCase testCaseWithName:@"drawInRect" action:^{
+        UIImage *image = [weakSelf imageForAttributedString:att size:rect.size];
+        imageView.image = image;
+    }],
+    ];
+    
+    UITableView *tableView = [[UITableView alloc] initWithFrame:CGRectMake(0, CGRectGetMaxY(imageView.frame), rect.size.width, self.view.bounds.size.height - CGRectGetMaxY(imageView.frame))];
+    tableView.delegate = self;
+    tableView.dataSource = self;
+    
+    [self.view addSubview:tableView];
+    
+    
+    UIBarButtonItem *clearItem = [[UIBarButtonItem alloc] initWithTitle:@"Clear" style:UIBarButtonItemStyleBordered target:self action:@selector(didPressedClearItem:)];
+    self.navigationItem.rightBarButtonItems = @[clearItem];
 }
+
+- (void)didPressedClearItem:(id)sender
+{
+    self.imageView.image = nil;
+}
+
 
 - (void)handle_tap:(UITapGestureRecognizer *)tap
 {
@@ -66,6 +103,28 @@
     }
 }
 
+- (UIImage *)imageCTFrameDrawForAttributedString:(NSAttributedString *)attr size:(CGSize)size
+{
+    UIGraphicsBeginImageContextWithOptions(size, YES, 0);
+    CTFramesetterRef fr = CTFramesetterCreateWithAttributedString((__bridge CFAttributedStringRef)attr);
+    
+    CGContextRef ctx = UIGraphicsGetCurrentContext();
+    // Flip the coordinate system
+    CGContextSetTextMatrix(ctx, CGAffineTransformIdentity);
+    CGContextTranslateCTM(ctx, 0, size.height);
+    CGContextScaleCTM(ctx, 1.0, -1.0);
+
+    
+    CGRect rect = {CGPointZero, size};
+    CGPathRef path = CGPathCreateWithRect(rect, NULL);
+    CTFrameRef f = CTFramesetterCreateFrame(fr, CFRangeMake(0, 0), path, NULL);
+    CTFrameDraw(f, ctx);
+    
+    UIImage *image = UIGraphicsGetImageFromCurrentImageContext();
+    UIGraphicsEndImageContext();
+    return image;
+}
+
 - (UIImage *)imageForAttributedString:(NSAttributedString *)attr size:(CGSize)size
 {
     UIGraphicsBeginImageContextWithOptions(size, YES, 0);
@@ -76,6 +135,44 @@
     UIGraphicsEndImageContext();
     return image;
 }
+
+
+#pragma mark - Table view data source
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
+{
+    return 1;
+}
+
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
+{
+    return self.actions.count;
+}
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    static NSString *CellIdentifier = @"Cell";
+    
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
+    if (cell == nil) {
+        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
+    }
+    
+    TNTestCase *tc = self.actions[indexPath.row];
+    cell.textLabel.text = tc.name;
+    
+    return cell;
+}
+
+#pragma mark - Table view delegate
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    TNTestCase *tc = self.actions[indexPath.row];
+    if (tc.action) {
+        tc.action();
+    }
+}
+
 
 #pragma mark - Text
 #if __ANDROID__
