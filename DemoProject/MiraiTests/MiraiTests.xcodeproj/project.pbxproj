@@ -60,6 +60,8 @@
 		4345707919E6857A00BF1CA8 /* TNCGImageResultViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4345707719E6857A00BF1CA8 /* TNCGImageResultViewController.m */; };
 		4345708019E6B80B00BF1CA8 /* TNClipsToBoundsTestViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4345707F19E6B80B00BF1CA8 /* TNClipsToBoundsTestViewController.m */; };
 		4345708119E6B80B00BF1CA8 /* TNClipsToBoundsTestViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4345707F19E6B80B00BF1CA8 /* TNClipsToBoundsTestViewController.m */; };
+		434C5C391A3ECFD700FA1647 /* TNTextViewTestViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 434C5C381A3ECFD700FA1647 /* TNTextViewTestViewController.m */; };
+		434C5C3A1A3ECFD700FA1647 /* TNTextViewTestViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 434C5C381A3ECFD700FA1647 /* TNTextViewTestViewController.m */; };
 		434DAE3F19911F2C00DE5C14 /* TNGestureRecognizerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 434DAE3E19911F2C00DE5C14 /* TNGestureRecognizerViewController.m */; };
 		434DAE4019911F2C00DE5C14 /* TNGestureRecognizerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 434DAE3E19911F2C00DE5C14 /* TNGestureRecognizerViewController.m */; };
 		434DAE451991203D00DE5C14 /* TNRotationTestViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 434DAE441991203D00DE5C14 /* TNRotationTestViewController.m */; };
@@ -250,6 +252,8 @@
 		4345707719E6857A00BF1CA8 /* TNCGImageResultViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TNCGImageResultViewController.m; sourceTree = "<group>"; };
 		4345707E19E6B80B00BF1CA8 /* TNClipsToBoundsTestViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TNClipsToBoundsTestViewController.h; sourceTree = "<group>"; };
 		4345707F19E6B80B00BF1CA8 /* TNClipsToBoundsTestViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TNClipsToBoundsTestViewController.m; sourceTree = "<group>"; };
+		434C5C371A3ECFD700FA1647 /* TNTextViewTestViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TNTextViewTestViewController.h; sourceTree = "<group>"; };
+		434C5C381A3ECFD700FA1647 /* TNTextViewTestViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TNTextViewTestViewController.m; sourceTree = "<group>"; };
 		434DAE3D19911F2C00DE5C14 /* TNGestureRecognizerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TNGestureRecognizerViewController.h; sourceTree = "<group>"; };
 		434DAE3E19911F2C00DE5C14 /* TNGestureRecognizerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TNGestureRecognizerViewController.m; sourceTree = "<group>"; };
 		434DAE431991203D00DE5C14 /* TNRotationTestViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TNRotationTestViewController.h; sourceTree = "<group>"; };
@@ -372,6 +376,8 @@
 				43A8F06F19DEF67500AF4CAD /* NBRadialGradientLayer.m */,
 				43A8F08019E01D6D00AF4CAD /* NBSSAnimation.h */,
 				43A8F08119E01D6D00AF4CAD /* NBSSAnimation.m */,
+				434C5C371A3ECFD700FA1647 /* TNTextViewTestViewController.h */,
+				434C5C381A3ECFD700FA1647 /* TNTextViewTestViewController.m */,
 				4345707319E6850A00BF1CA8 /* CoreGraphics */,
 				43CAE9F219B01DBC00B0AA8F /* ColorChannel */,
 				43972D6E19932A5B00EDD603 /* Runloop */,
@@ -876,6 +882,7 @@
 				4308707019CE89A600DEEAC0 /* TNPanGestureTestViewController.m in Sources */,
 				43D475C719C985C500B6E475 /* TNPresentTestViewController.m in Sources */,
 				43A8F07A19DEFECA00AF4CAD /* TNNotARCSubclass.m in Sources */,
+				434C5C391A3ECFD700FA1647 /* TNTextViewTestViewController.m in Sources */,
 				43F962F51982599400530F4F /* TNMediaPlayerTestViewController.m in Sources */,
 				43A8F0DA19E2451D00AF4CAD /* TNLayerKeyPathTestViewController.m in Sources */,
 				43F91D401987E90C009E154D /* TNLayerTestViewController.m in Sources */,
@@ -930,6 +937,7 @@
 				4308707119CE89A600DEEAC0 /* TNPanGestureTestViewController.m in Sources */,
 				43D475C819C985C500B6E475 /* TNPresentTestViewController.m in Sources */,
 				43A8F07B19DEFECA00AF4CAD /* TNNotARCSubclass.m in Sources */,
+				434C5C3A1A3ECFD700FA1647 /* TNTextViewTestViewController.m in Sources */,
 				43F962F61982599400530F4F /* TNMediaPlayerTestViewController.m in Sources */,
 				43A8F0DB19E2451D00AF4CAD /* TNLayerKeyPathTestViewController.m in Sources */,
 				43F91D411987E90C009E154D /* TNLayerTestViewController.m in Sources */,
