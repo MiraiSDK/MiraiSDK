@@ -10,9 +10,15 @@ import android.util.Log;
 
 public class CocoaActivity extends NativeActivity
 {
-
+    private static String TAG = "CocoaActivity";
+    
     public native int nativeSupportedOrientation(int orientation);
 
+    private native void nativeOnTrimMemory(int level);
+    
+    public void onCreate(Bundle bundle) {
+        super.onCreate(bundle);
+    }
     public void onConfigurationChanged (Configuration newConfig)
     {
         super.onConfigurationChanged (newConfig);
@@ -25,5 +31,11 @@ public class CocoaActivity extends NativeActivity
         if (currentOrientation != orientation) {
             this.setRequestedOrientation(orientation);
         }
+    }
+    
+    public void onTrimMemory (int level)
+    {
+        Log.i(TAG,"onTrimMemory:"+ level);
+        nativeOnTrimMemory(level);
     }
 }

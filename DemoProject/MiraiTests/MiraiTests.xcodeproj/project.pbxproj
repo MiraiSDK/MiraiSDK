@@ -101,6 +101,8 @@
 		43B6B6531913B9A8005D09ED /* TNImageTestViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 43E3426B18F433D800463092 /* TNImageTestViewController.m */; };
 		43B6B6541913B9AB005D09ED /* TNScrollTestViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 43E3428218F5730600463092 /* TNScrollTestViewController.m */; };
 		43B6B6551913B9B8005D09ED /* TNTestViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 43E3428618F573F000463092 /* TNTestViewController.m */; };
+		43B78C251A4F00190037ABF3 /* TNMemoryTestViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 43B78C241A4F00190037ABF3 /* TNMemoryTestViewController.m */; };
+		43B78C261A4F00190037ABF3 /* TNMemoryTestViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 43B78C241A4F00190037ABF3 /* TNMemoryTestViewController.m */; };
 		43CAE9DC19AC779100B0AA8F /* 34912115.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 43CAE9DA19AC779100B0AA8F /* 34912115.jpg */; };
 		43CAE9DD19AC779100B0AA8F /* kiniromosaic001.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 43CAE9DB19AC779100B0AA8F /* kiniromosaic001.jpg */; };
 		43CAE9E519ADA0F300B0AA8F /* TNScrollViewPagingTestViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 43CAE9E419ADA0F300B0AA8F /* TNScrollViewPagingTestViewController.m */; };
@@ -291,6 +293,8 @@
 		43A8F08119E01D6D00AF4CAD /* NBSSAnimation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NBSSAnimation.m; sourceTree = "<group>"; };
 		43A8F0D819E2451D00AF4CAD /* TNLayerKeyPathTestViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TNLayerKeyPathTestViewController.h; sourceTree = "<group>"; };
 		43A8F0D919E2451D00AF4CAD /* TNLayerKeyPathTestViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TNLayerKeyPathTestViewController.m; sourceTree = "<group>"; };
+		43B78C231A4F00190037ABF3 /* TNMemoryTestViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TNMemoryTestViewController.h; sourceTree = "<group>"; };
+		43B78C241A4F00190037ABF3 /* TNMemoryTestViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TNMemoryTestViewController.m; sourceTree = "<group>"; };
 		43CAE9DA19AC779100B0AA8F /* 34912115.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 34912115.jpg; sourceTree = "<group>"; };
 		43CAE9DB19AC779100B0AA8F /* kiniromosaic001.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = kiniromosaic001.jpg; sourceTree = "<group>"; };
 		43CAE9E319ADA0F300B0AA8F /* TNScrollViewPagingTestViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TNScrollViewPagingTestViewController.h; sourceTree = "<group>"; };
@@ -378,6 +382,8 @@
 				43A8F08119E01D6D00AF4CAD /* NBSSAnimation.m */,
 				434C5C371A3ECFD700FA1647 /* TNTextViewTestViewController.h */,
 				434C5C381A3ECFD700FA1647 /* TNTextViewTestViewController.m */,
+				43B78C231A4F00190037ABF3 /* TNMemoryTestViewController.h */,
+				43B78C241A4F00190037ABF3 /* TNMemoryTestViewController.m */,
 				4345707319E6850A00BF1CA8 /* CoreGraphics */,
 				43CAE9F219B01DBC00B0AA8F /* ColorChannel */,
 				43972D6E19932A5B00EDD603 /* Runloop */,
@@ -869,6 +875,7 @@
 				43081F9B1968129200355FC5 /* TNTableViewTestController.m in Sources */,
 				43A8F08219E01D6D00AF4CAD /* NBSSAnimation.m in Sources */,
 				436D4A5919F241A600F6F8F9 /* TNTouchesCancelTestViewController.m in Sources */,
+				43B78C251A4F00190037ABF3 /* TNMemoryTestViewController.m in Sources */,
 				43098C7B197ACAE6005A97A1 /* TNCTTestViewController.m in Sources */,
 				432FF2B018574966005486C5 /* TNCustomView.m in Sources */,
 				43081FA11968130300355FC5 /* TNAlertViewTestViewController.m in Sources */,
@@ -924,6 +931,7 @@
 				43081F9D196812A000355FC5 /* TNAnimationTestViewController.m in Sources */,
 				43A8F08319E01D6D00AF4CAD /* NBSSAnimation.m in Sources */,
 				436D4A5A19F241A600F6F8F9 /* TNTouchesCancelTestViewController.m in Sources */,
+				43B78C261A4F00190037ABF3 /* TNMemoryTestViewController.m in Sources */,
 				43098C7C197ACAE6005A97A1 /* TNCTTestViewController.m in Sources */,
 				439A73D818E9195600B1BE40 /* TNButtonTestViewController.m in Sources */,
 				43081FA21968130300355FC5 /* TNAlertViewTestViewController.m in Sources */,
