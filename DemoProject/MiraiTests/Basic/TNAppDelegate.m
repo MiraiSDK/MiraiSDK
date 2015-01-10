@@ -16,6 +16,7 @@
 #define  LOGI(...)  __android_log_print(ANDROID_LOG_INFO,LOG_TAG,__VA_ARGS__)
 
 #import "TNCustomView.h"
+#import "TNRootViewController.h"
 
 @implementation TNAppDelegate
 //@synthesize window;
@@ -45,6 +46,8 @@
     TNViewController *vc = [[TNViewController alloc] initWithNibName:nil bundle:nil];
     UINavigationController *nav = [[UINavigationController alloc] initWithRootViewController:vc];
     self.window.rootViewController = nav;
+//    TNRootViewController *root = [[TNRootViewController alloc] init];
+//    self.window.rootViewController = root;
     
 //    TNCustomView *custom = [[TNCustomView alloc] initWithFrame:CGRectMake(0, 0, 300, 300)];
 //    [self.window addSubview:custom];

@@ -50,6 +50,11 @@ static NSMutableArray *testClasses = nil;
     return nil;
 }
 
+- (void)dealloc
+{
+    NSLog(@"%s",__PRETTY_FUNCTION__);
+}
+
 - (void)viewDidLoad
 {
     [super viewDidLoad];

@@ -72,6 +72,8 @@
 		436D4A5A19F241A600F6F8F9 /* TNTouchesCancelTestViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 436D4A5819F241A600F6F8F9 /* TNTouchesCancelTestViewController.m */; };
 		436D4A6019F25E5300F6F8F9 /* TNWebViewTestViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 436D4A5F19F25E5300F6F8F9 /* TNWebViewTestViewController.m */; };
 		436D4A6119F25E5300F6F8F9 /* TNWebViewTestViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 436D4A5F19F25E5300F6F8F9 /* TNWebViewTestViewController.m */; };
+		4371B36F1A53CA01002DDDE5 /* TNRootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4371B36E1A53CA01002DDDE5 /* TNRootViewController.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		4371B3701A53CA01002DDDE5 /* TNRootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4371B36E1A53CA01002DDDE5 /* TNRootViewController.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		438406301881571F000D092C /* CoreText.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4384062F1881571F000D092C /* CoreText.framework */; };
 		4384064918816CA4000D092C /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 431F17C71826432A006FCF12 /* CoreGraphics.framework */; };
 		4392238B19EFB7DA00C8420A /* TNScrollViewNestingTestViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4392238A19EFB7DA00C8420A /* TNScrollViewNestingTestViewController.m */; };
@@ -266,6 +268,8 @@
 		436D4A5819F241A600F6F8F9 /* TNTouchesCancelTestViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TNTouchesCancelTestViewController.m; sourceTree = "<group>"; };
 		436D4A5E19F25E5300F6F8F9 /* TNWebViewTestViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TNWebViewTestViewController.h; sourceTree = "<group>"; };
 		436D4A5F19F25E5300F6F8F9 /* TNWebViewTestViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TNWebViewTestViewController.m; sourceTree = "<group>"; };
+		4371B36D1A53CA01002DDDE5 /* TNRootViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TNRootViewController.h; sourceTree = "<group>"; };
+		4371B36E1A53CA01002DDDE5 /* TNRootViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TNRootViewController.m; sourceTree = "<group>"; };
 		43755F5519F7B95000DDF655 /* CocoaActivity.java */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.java; path = CocoaActivity.java; sourceTree = "<group>"; };
 		43755F5619F7B95000DDF655 /* MovieRender.java */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.java; path = MovieRender.java; sourceTree = "<group>"; };
 		4384062F1881571F000D092C /* CoreText.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreText.framework; path = System/Library/Frameworks/CoreText.framework; sourceTree = SDKROOT; };
@@ -551,6 +555,8 @@
 				431F17D51826432A006FCF12 /* TNAppDelegate.m */,
 				431F17DA1826432A006FCF12 /* TNViewController.h */,
 				431F17DB1826432A006FCF12 /* TNViewController.m */,
+				4371B36D1A53CA01002DDDE5 /* TNRootViewController.h */,
+				4371B36E1A53CA01002DDDE5 /* TNRootViewController.m */,
 				43081F8A1967F16100355FC5 /* Tests */,
 				431F17CC1826432A006FCF12 /* Supporting Files */,
 			);
@@ -900,6 +906,7 @@
 				43098C301978FC45005A97A1 /* TNPresentedContentViewController.m in Sources */,
 				43F91D461987EA33009E154D /* TNLayerTransformTestViewController.m in Sources */,
 				43098C7F197ACB24005A97A1 /* TNCTView.m in Sources */,
+				4371B36F1A53CA01002DDDE5 /* TNRootViewController.m in Sources */,
 				43E7C98A196E50470067C3A7 /* TNCGTestViewController.m in Sources */,
 				43081FA51968170000355FC5 /* TNViewTestViewController.m in Sources */,
 				43098C2B1978C21C005A97A1 /* TNVCTestViewController.m in Sources */,
@@ -956,6 +963,7 @@
 				43098C311978FC45005A97A1 /* TNPresentedContentViewController.m in Sources */,
 				43F91D471987EA33009E154D /* TNLayerTransformTestViewController.m in Sources */,
 				43098C80197ACB24005A97A1 /* TNCTView.m in Sources */,
+				4371B3701A53CA01002DDDE5 /* TNRootViewController.m in Sources */,
 				43E7C98B196E50470067C3A7 /* TNCGTestViewController.m in Sources */,
 				43081FA61968170000355FC5 /* TNViewTestViewController.m in Sources */,
 				43098C2C1978C21C005A97A1 /* TNVCTestViewController.m in Sources */,
