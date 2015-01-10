@@ -15,7 +15,7 @@
 {
     // Override point for customization after application launch.
 #if __ANDROID__
-    [[UIScreen mainScreen] setScreenMode:UIScreenSizeModePad scale:0];
+    [[UIScreen mainScreen] setScreenMode:UIScreenSizeModeDefault scale:0];
 #endif
     
     CGRect screenBounds = [[UIScreen mainScreen] bounds];
