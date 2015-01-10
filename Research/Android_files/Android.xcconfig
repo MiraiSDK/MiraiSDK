@@ -1,0 +1,29 @@
+//
+//  Android.xcconfig
+//  SimpleView
+//
+//  Created by Chen Yonghui on 11/3/13.
+//  Copyright (c) 2013 Shanghai Tinynetwork. All rights reserved.
+//
+SYMROOT = build-arm-google-android
+CODE_SIGN_IDENTITY[sdk=iphoneos*] =
+DEPLOYMENT_LOCATION = YES
+DSTROOT = /
+INSTALL_PATH = $(SOURCE_ROOT)/$(PRODUCT_NAME)-android/jni
+LD_DEPENDENCY_INFO_FILE =
+EXECUTABLE_EXTENSION = so
+EXECUTABLE_PREFIX = lib
+MACOSX_DEPLOYMENT_TARGET=
+
+WRAPPER_EXTENSION = app
+
+SDKROOT = macosx0.0
+MACH_O_TYPE = mh_dylib //change Mach-O Type to dynamic library
+
+
+ARCHFLAGS=-march=armv7-a -mfloat-abi=softfp -mfpu=vfpv3-d16
+ARCHLDFLAGS=-march=armv7-a -Wl,--fix-cortex-a8
+
+OTHER_CFLAGS = -march=armv7-a -mfloat-abi=softfp -mfpu=vfpv3-d16 -DANDROID $(inherited) -fobjc-nonfragile-abi -fblocks
+CLANG_ENABLE_MODULES = NO
+OTHER_LDFLAGS = -march=armv7-a -Wl,--fix-cortex-a8 -shared $(inherited) -Wl,-z,defs -landroid -lobjc -ldispatch -lgnustep-base -fconstant-class=NSConstantString -lm -llog -lz
