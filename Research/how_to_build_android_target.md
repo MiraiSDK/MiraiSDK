@@ -32,9 +32,37 @@ see [Android.mk](Android_files/Android.mk)
 
 ###3. copy CocoaActivity folder
 
+
 ###4. modify java file, 
 	
 1. add ``import org.tiny4.CocoaActivity.CocoaActivity; ``
 2. change super class to ``CocoaActivity``
 3. load library
 
+### 5. modify AndroidManifest.xml
+
+add to application
+
+```
+        android:hasCode="true"
+        android:theme="@android:style/Theme.NoTitleBar.Fullscreen"
+
+```
+
+add to activity
+
+```
+	<activity android:screenOrientation="sensor" android:configChanges="orientation|keyboardHidden|screenSize">
+
+	<meta-data android:name="android.app.lib_name" android:value="UIKit"/>
+
+```
+
+add permission
+
+```
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+```

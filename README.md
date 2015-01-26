@@ -19,10 +19,15 @@ This project are now divided into 9 sub-projects:
 * Mirai-UIKit
 * Mirai-MediaPlayer
 
-## Install Guide
+## Install Guide (build from source)
 
 1. clone this repository and all it's submodules
-2. run script ``Mirai-Toolchains/prepare.sh``
+2. change current directory by calling `cd Mirai-Toolchains`
+2. run script ``./prepare.sh``
+
+## Install Guide (binary package)
+
+* currently in processing.
 
 ## Usage
 
