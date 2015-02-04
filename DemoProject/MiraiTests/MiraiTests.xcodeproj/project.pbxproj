@@ -135,6 +135,8 @@
 		43F962F51982599400530F4F /* TNMediaPlayerTestViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 43F962F41982599400530F4F /* TNMediaPlayerTestViewController.m */; };
 		43F962F61982599400530F4F /* TNMediaPlayerTestViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 43F962F41982599400530F4F /* TNMediaPlayerTestViewController.m */; };
 		43F962F819825A1600530F4F /* MediaPlayer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 43F962F719825A1600530F4F /* MediaPlayer.framework */; };
+		D2C58E271A81265100D9B0E4 /* TNSwitchTestViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D2C58E261A81265100D9B0E4 /* TNSwitchTestViewController.m */; };
+		D2C58E281A81265100D9B0E4 /* TNSwitchTestViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D2C58E261A81265100D9B0E4 /* TNSwitchTestViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -332,6 +334,8 @@
 		43F962F41982599400530F4F /* TNMediaPlayerTestViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TNMediaPlayerTestViewController.m; sourceTree = "<group>"; };
 		43F962F719825A1600530F4F /* MediaPlayer.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MediaPlayer.framework; path = System/Library/Frameworks/MediaPlayer.framework; sourceTree = SDKROOT; };
 		43FC616019FB6319008229CB /* GLWebView.java */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.java; path = GLWebView.java; sourceTree = "<group>"; };
+		D2C58E251A81265100D9B0E4 /* TNSwitchTestViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TNSwitchTestViewController.h; sourceTree = "<group>"; };
+		D2C58E261A81265100D9B0E4 /* TNSwitchTestViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TNSwitchTestViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -394,6 +398,7 @@
 				43DD64B81990DAD7000884BA /* GestureRecognizer */,
 				43DD64AF1990BCF2000884BA /* Touch */,
 				43F962F21982597800530F4F /* MediaPlayer */,
+				D2C58E221A8125D300D9B0E4 /* UISwitch */,
 				43098C77197ACAB8005A97A1 /* CoreText */,
 				43098C271978C1EE005A97A1 /* ViewController */,
 				43E7C979196C40AA0067C3A7 /* Layer */,
@@ -740,6 +745,15 @@
 			name = MediaPlayer;
 			sourceTree = "<group>";
 		};
+		D2C58E221A8125D300D9B0E4 /* UISwitch */ = {
+			isa = PBXGroup;
+			children = (
+				D2C58E251A81265100D9B0E4 /* TNSwitchTestViewController.h */,
+				D2C58E261A81265100D9B0E4 /* TNSwitchTestViewController.m */,
+			);
+			name = UISwitch;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -894,6 +908,7 @@
 				4345707819E6857A00BF1CA8 /* TNCGImageResultViewController.m in Sources */,
 				4308707019CE89A600DEEAC0 /* TNPanGestureTestViewController.m in Sources */,
 				43D475C719C985C500B6E475 /* TNPresentTestViewController.m in Sources */,
+				D2C58E271A81265100D9B0E4 /* TNSwitchTestViewController.m in Sources */,
 				43A8F07A19DEFECA00AF4CAD /* TNNotARCSubclass.m in Sources */,
 				434C5C391A3ECFD700FA1647 /* TNTextViewTestViewController.m in Sources */,
 				43F962F51982599400530F4F /* TNMediaPlayerTestViewController.m in Sources */,
@@ -951,6 +966,7 @@
 				4345707919E6857A00BF1CA8 /* TNCGImageResultViewController.m in Sources */,
 				4308707119CE89A600DEEAC0 /* TNPanGestureTestViewController.m in Sources */,
 				43D475C819C985C500B6E475 /* TNPresentTestViewController.m in Sources */,
+				D2C58E281A81265100D9B0E4 /* TNSwitchTestViewController.m in Sources */,
 				43A8F07B19DEFECA00AF4CAD /* TNNotARCSubclass.m in Sources */,
 				434C5C3A1A3ECFD700FA1647 /* TNTextViewTestViewController.m in Sources */,
 				43F962F61982599400530F4F /* TNMediaPlayerTestViewController.m in Sources */,
