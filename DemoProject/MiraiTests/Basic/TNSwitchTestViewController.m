@@ -29,7 +29,7 @@
 {
     [super viewDidLoad];
     
-    CGRect rect = CGRectMake(45, 120, 300, 75);
+    CGRect rect = CGRectMake(45, 120, 172, 96);
     
     self.switchItem = [[UISwitch alloc] initWithFrame:rect];
     [self.switchItem addTarget:self
@@ -38,7 +38,7 @@
     
     [self.view addSubview:self.switchItem ];
     
-    UIBarButtonItem *item  = [[UIBarButtonItem alloc] initWithTitle:@"Set Switch YES" style:UIBarButtonItemStylePlain target:self action:@selector(_clickButton:)];
+    UIBarButtonItem *item  = [[UIBarButtonItem alloc] initWithTitle:@"Set Switch On" style:UIBarButtonItemStylePlain target:self action:@selector(_clickButton:)];
     self.navigationItem.rightBarButtonItems = @[item];
 }
 
@@ -56,9 +56,9 @@
 -(void) _changeSwitch:(id)sender
 {
     if([sender isOn]){
-        NSLog(@"Switch is ON");
+        NSLog(@"Switch is on");
     } else{
-        NSLog(@"Switch is OFF");
+        NSLog(@"Switch is off");
     }
 }
 
