@@ -16,6 +16,11 @@ EXECUTABLE_PREFIX = lib
 MACOSX_DEPLOYMENT_TARGET=
 
 WRAPPER_EXTENSION = app
-OTHER_CFLAGS = -DANDROID $(inherited) -fobjc-nonfragile-abi -fblocks
 CLANG_ENABLE_MODULES = NO
-OTHER_LDFLAGS = -shared $(inherited) -Wl,-z,defs -L/Users/chyhfj/Library/Developer/Xcode/DerivedData/NextBook-fazhihlfhvtlsefbywpdmafzmkye/Build/Products/Debug -lNextBookKit -landroid -lobjc -ldispatch -lgnustep-base -fconstant-class=NSConstantString -lm -llog -lz
+
+BASE_CFLAGS = -DANDROID -fobjc-nonfragile-abi -fblocks
+BASE_LDFLAGS = -shared -Wl,-z,defs -L$(INSTALL_PATH) -lNextBookKit -landroid -lobjc -ldispatch -lgnustep-base -fconstant-class=NSConstantString -lm -llog -lz
+
+OTHER_CFLAGS = $(inherited) $(BASE_CFLAGS)
+OTHER_LDFLAGS = $(inherited) $(BASE_LDFLAGS)
+
