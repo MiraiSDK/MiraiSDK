@@ -7,18 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		0408724A1997C54B00348AFC /* libMediaPlayer.so in Copy Files (libs) */ = {isa = PBXBuildFile; fileRef = 040872451997C51600348AFC /* libMediaPlayer.so */; };
-		0408724B1997C55100348AFC /* libTNJavaHelper.so in Copy Files (libs) */ = {isa = PBXBuildFile; fileRef = 040872461997C52000348AFC /* libTNJavaHelper.so */; };
-		0408724C1997C55300348AFC /* libCoreText.so in Copy Files (libs) */ = {isa = PBXBuildFile; fileRef = 040872471997C52800348AFC /* libCoreText.so */; };
-		0408724D1997C55B00348AFC /* libCoreGraphics.so in Copy Files (libs) */ = {isa = PBXBuildFile; fileRef = 040872481997C53000348AFC /* libCoreGraphics.so */; };
-		0408724E1997C55B00348AFC /* libQuartzCore.so in Copy Files (libs) */ = {isa = PBXBuildFile; fileRef = 040872491997C53A00348AFC /* libQuartzCore.so */; };
-		0408724F1997C55B00348AFC /* libgnustep-corebase.so in Copy Files (libs) */ = {isa = PBXBuildFile; fileRef = 040872431997C4FF00348AFC /* libgnustep-corebase.so */; };
-		040872501997C55B00348AFC /* libgnustl_shared.so in Copy Files (libs) */ = {isa = PBXBuildFile; fileRef = 040872441997C50900348AFC /* libgnustl_shared.so */; };
-		040872511997C55B00348AFC /* libdispatch.so in Copy Files (libs) */ = {isa = PBXBuildFile; fileRef = 0408723E1997C49200348AFC /* libdispatch.so */; };
-		040872521997C55B00348AFC /* libOpenGLES.so in Copy Files (libs) */ = {isa = PBXBuildFile; fileRef = 040872421997C4F200348AFC /* libOpenGLES.so */; };
-		040872531997C55B00348AFC /* libUIKit.so in Copy Files (libs) */ = {isa = PBXBuildFile; fileRef = 040872411997C4E900348AFC /* libUIKit.so */; };
-		040872541997C55B00348AFC /* libgnustep-base.so in Copy Files (libs) */ = {isa = PBXBuildFile; fileRef = 040872401997C4DA00348AFC /* libgnustep-base.so */; };
-		040872551997C55B00348AFC /* libobjc.so in Copy Files (libs) */ = {isa = PBXBuildFile; fileRef = 0408723F1997C4D000348AFC /* libobjc.so */; };
 		43013A551923509900EC5B20 /* CoreFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 43013A541923509900EC5B20 /* CoreFoundation.framework */; };
 		43081F8F1967F19500355FC5 /* TNLabelTestViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 43081F8E1967F19500355FC5 /* TNLabelTestViewController.m */; };
 		43081F931967F41C00355FC5 /* TNLabelTestViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 43081F8E1967F19500355FC5 /* TNLabelTestViewController.m */; };
@@ -111,7 +99,6 @@
 		43CAE9E619ADA0F300B0AA8F /* TNScrollViewPagingTestViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 43CAE9E419ADA0F300B0AA8F /* TNScrollViewPagingTestViewController.m */; };
 		43CAE9F519B01E0200B0AA8F /* TNRGBATestViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 43CAE9F419B01E0200B0AA8F /* TNRGBATestViewController.m */; };
 		43CAE9F619B01E0200B0AA8F /* TNRGBATestViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 43CAE9F419B01E0200B0AA8F /* TNRGBATestViewController.m */; };
-		43CAEA4F19B0AE5800B0AA8F /* libObjectiveZip.so in Copy Files (libs) */ = {isa = PBXBuildFile; fileRef = 43CAEA4E19B0AE4400B0AA8F /* libObjectiveZip.so */; };
 		43D475C719C985C500B6E475 /* TNPresentTestViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 43D475C619C985C500B6E475 /* TNPresentTestViewController.m */; };
 		43D475C819C985C500B6E475 /* TNPresentTestViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 43D475C619C985C500B6E475 /* TNPresentTestViewController.m */; };
 		43DD64B41990BD07000884BA /* TNTouchsTestViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 43DD64B31990BD06000884BA /* TNTouchsTestViewController.m */; };
@@ -174,19 +161,6 @@
 			dstPath = "";
 			dstSubfolderSpec = 6;
 			files = (
-				0408724D1997C55B00348AFC /* libCoreGraphics.so in Copy Files (libs) */,
-				0408724E1997C55B00348AFC /* libQuartzCore.so in Copy Files (libs) */,
-				0408724F1997C55B00348AFC /* libgnustep-corebase.so in Copy Files (libs) */,
-				040872501997C55B00348AFC /* libgnustl_shared.so in Copy Files (libs) */,
-				040872511997C55B00348AFC /* libdispatch.so in Copy Files (libs) */,
-				040872521997C55B00348AFC /* libOpenGLES.so in Copy Files (libs) */,
-				040872531997C55B00348AFC /* libUIKit.so in Copy Files (libs) */,
-				040872541997C55B00348AFC /* libgnustep-base.so in Copy Files (libs) */,
-				040872551997C55B00348AFC /* libobjc.so in Copy Files (libs) */,
-				0408724A1997C54B00348AFC /* libMediaPlayer.so in Copy Files (libs) */,
-				0408724B1997C55100348AFC /* libTNJavaHelper.so in Copy Files (libs) */,
-				0408724C1997C55300348AFC /* libCoreText.so in Copy Files (libs) */,
-				43CAEA4F19B0AE5800B0AA8F /* libObjectiveZip.so in Copy Files (libs) */,
 			);
 			name = "Copy Files (libs)";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -194,18 +168,6 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		0408723E1997C49200348AFC /* libdispatch.so */ = {isa = PBXFileReference; lastKnownFileType = file; name = libdispatch.so; path = "../../toolchain/android/android-toolchain-arm/sysroot/usr/lib/libdispatch.so"; sourceTree = "<group>"; };
-		0408723F1997C4D000348AFC /* libobjc.so */ = {isa = PBXFileReference; lastKnownFileType = file; name = libobjc.so; path = "../../toolchain/android/android-toolchain-arm/sysroot/usr/lib/libobjc.so"; sourceTree = "<group>"; };
-		040872401997C4DA00348AFC /* libgnustep-base.so */ = {isa = PBXFileReference; lastKnownFileType = file; name = "libgnustep-base.so"; path = "../../toolchain/android/android-toolchain-arm/sysroot/usr/lib/libgnustep-base.so"; sourceTree = "<group>"; };
-		040872411997C4E900348AFC /* libUIKit.so */ = {isa = PBXFileReference; lastKnownFileType = file; name = libUIKit.so; path = "../../toolchain/android/android-toolchain-arm/sysroot/usr/lib/libUIKit.so"; sourceTree = "<group>"; };
-		040872421997C4F200348AFC /* libOpenGLES.so */ = {isa = PBXFileReference; lastKnownFileType = file; name = libOpenGLES.so; path = "../../toolchain/android/android-toolchain-arm/sysroot/usr/lib/libOpenGLES.so"; sourceTree = "<group>"; };
-		040872431997C4FF00348AFC /* libgnustep-corebase.so */ = {isa = PBXFileReference; lastKnownFileType = file; name = "libgnustep-corebase.so"; path = "../../toolchain/android/android-toolchain-arm/sysroot/usr/lib/libgnustep-corebase.so"; sourceTree = "<group>"; };
-		040872441997C50900348AFC /* libgnustl_shared.so */ = {isa = PBXFileReference; lastKnownFileType = file; name = libgnustl_shared.so; path = "../../toolchain/android/android-toolchain-arm/sysroot/usr/lib/libgnustl_shared.so"; sourceTree = "<group>"; };
-		040872451997C51600348AFC /* libMediaPlayer.so */ = {isa = PBXFileReference; lastKnownFileType = file; name = libMediaPlayer.so; path = "../../toolchain/android/android-toolchain-arm/sysroot/usr/lib/libMediaPlayer.so"; sourceTree = "<group>"; };
-		040872461997C52000348AFC /* libTNJavaHelper.so */ = {isa = PBXFileReference; lastKnownFileType = file; name = libTNJavaHelper.so; path = "../../toolchain/android/android-toolchain-arm/sysroot/usr/lib/libTNJavaHelper.so"; sourceTree = "<group>"; };
-		040872471997C52800348AFC /* libCoreText.so */ = {isa = PBXFileReference; lastKnownFileType = file; name = libCoreText.so; path = "../../toolchain/android/android-toolchain-arm/sysroot/usr/lib/libCoreText.so"; sourceTree = "<group>"; };
-		040872481997C53000348AFC /* libCoreGraphics.so */ = {isa = PBXFileReference; lastKnownFileType = file; name = libCoreGraphics.so; path = "../../toolchain/android/android-toolchain-arm/sysroot/usr/lib/libCoreGraphics.so"; sourceTree = "<group>"; };
-		040872491997C53A00348AFC /* libQuartzCore.so */ = {isa = PBXFileReference; lastKnownFileType = file; name = libQuartzCore.so; path = "../../toolchain/android/android-toolchain-arm/sysroot/usr/lib/libQuartzCore.so"; sourceTree = "<group>"; };
 		04ADB2DA1998C01A005833EF /* UIKit.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = UIKit.xcodeproj; path = "../../Mirai-UIKit/UIKit.xcodeproj"; sourceTree = "<group>"; };
 		4301394D19225B6300EC5B20 /* Android.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Android.xcconfig; sourceTree = "<group>"; };
 		43013A541923509900EC5B20 /* CoreFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreFoundation.framework; path = System/Library/Frameworks/CoreFoundation.framework; sourceTree = SDKROOT; };
@@ -231,6 +193,8 @@
 		43098C7E197ACB24005A97A1 /* TNCTView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TNCTView.m; sourceTree = "<group>"; };
 		430CA1591A231D620005CFD5 /* TNLayerContentsGravityTestViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TNLayerContentsGravityTestViewController.h; sourceTree = "<group>"; };
 		430CA15A1A231D620005CFD5 /* TNLayerContentsGravityTestViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TNLayerContentsGravityTestViewController.m; sourceTree = "<group>"; };
+		4318E9541ADEDAD5007DACEB /* Android-arm.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = "Android-arm.xcconfig"; sourceTree = "<group>"; };
+		4318E9551ADEDAD5007DACEB /* Android-x86.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = "Android-x86.xcconfig"; sourceTree = "<group>"; };
 		431F17C21826432A006FCF12 /* MiraiTests.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MiraiTests.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		431F17C51826432A006FCF12 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		431F17C71826432A006FCF12 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -307,7 +271,6 @@
 		43CAE9E419ADA0F300B0AA8F /* TNScrollViewPagingTestViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TNScrollViewPagingTestViewController.m; sourceTree = "<group>"; };
 		43CAE9F319B01E0200B0AA8F /* TNRGBATestViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TNRGBATestViewController.h; sourceTree = "<group>"; };
 		43CAE9F419B01E0200B0AA8F /* TNRGBATestViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TNRGBATestViewController.m; sourceTree = "<group>"; };
-		43CAEA4E19B0AE4400B0AA8F /* libObjectiveZip.so */ = {isa = PBXFileReference; lastKnownFileType = file; name = libObjectiveZip.so; path = "../../toolchain/android/android-toolchain-arm/sysroot/usr/lib/libObjectiveZip.so"; sourceTree = "<group>"; };
 		43D475C519C985C500B6E475 /* TNPresentTestViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TNPresentTestViewController.h; sourceTree = "<group>"; };
 		43D475C619C985C500B6E475 /* TNPresentTestViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TNPresentTestViewController.m; sourceTree = "<group>"; };
 		43DD64B21990BD06000884BA /* TNTouchsTestViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TNTouchsTestViewController.h; sourceTree = "<group>"; };
@@ -586,6 +549,8 @@
 			children = (
 				43755F5419F7B95000DDF655 /* CocoaActivity */,
 				4301394D19225B6300EC5B20 /* Android.xcconfig */,
+				4318E9541ADEDAD5007DACEB /* Android-arm.xcconfig */,
+				4318E9551ADEDAD5007DACEB /* Android-x86.xcconfig */,
 				4344054B19BB0E3D00B4DADE /* Android.mk */,
 				4344054A19BB0E2900B4DADE /* AndroidManifest.xml */,
 				4344054719BB0E1E00B4DADE /* MainHActivity.java */,
@@ -598,19 +563,6 @@
 		431F182718264D96006FCF12 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				040872451997C51600348AFC /* libMediaPlayer.so */,
-				43CAEA4E19B0AE4400B0AA8F /* libObjectiveZip.so */,
-				040872461997C52000348AFC /* libTNJavaHelper.so */,
-				040872471997C52800348AFC /* libCoreText.so */,
-				040872481997C53000348AFC /* libCoreGraphics.so */,
-				040872491997C53A00348AFC /* libQuartzCore.so */,
-				040872431997C4FF00348AFC /* libgnustep-corebase.so */,
-				040872441997C50900348AFC /* libgnustl_shared.so */,
-				0408723E1997C49200348AFC /* libdispatch.so */,
-				040872421997C4F200348AFC /* libOpenGLES.so */,
-				040872411997C4E900348AFC /* libUIKit.so */,
-				040872401997C4DA00348AFC /* libgnustep-base.so */,
-				0408723F1997C4D000348AFC /* libobjc.so */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";

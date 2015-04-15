@@ -33,6 +33,7 @@ public class CocoaActivity extends NativeActivity
         }
     }
     
+	@Override
     public void onTrimMemory (int level)
     {
         Log.i(TAG,"onTrimMemory:"+ level);

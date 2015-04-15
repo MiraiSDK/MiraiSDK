@@ -16,10 +16,11 @@ EXECUTABLE_PREFIX = lib
 MACOSX_DEPLOYMENT_TARGET=
 
 WRAPPER_EXTENSION = app
-
-ARCHFLAGS=-march=armv7-a -mfloat-abi=softfp -mfpu=vfpv3-d16
-ARCHLDFLAGS=-march=armv7-a -Wl,--fix-cortex-a8
-
-OTHER_CFLAGS = -march=armv7-a -mfloat-abi=softfp -mfpu=vfpv3-d16 -DANDROID $(inherited) -fobjc-nonfragile-abi -fblocks
 CLANG_ENABLE_MODULES = NO
-OTHER_LDFLAGS = -march=armv7-a -Wl,--fix-cortex-a8 -shared $(inherited) -Wl,-z,defs -landroid -lobjc -ldispatch -lgnustep-base -fconstant-class=NSConstantString -lm -llog -lz
+
+BASE_CFLAGS = -DANDROID -fobjc-nonfragile-abi -fblocks
+BASE_LDFLAGS= -shared -Wl,-z,defs -landroid -lobjc -ldispatch -lgnustep-base -fconstant-class=NSConstantString -lm -llog -lz
+
+OTHER_CFLAGS = $(inherited) $(BASE_CFLAGS)
+OTHER_LDFLAGS = $(inherited) $(BASE_LDFLAGS)
+

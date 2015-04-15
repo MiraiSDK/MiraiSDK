@@ -1,0 +1,11 @@
+//
+//  Android-x86.xcconfig
+//  UIKitDemo
+//
+//  Created by Chen Yonghui on 3/30/15.
+//  Copyright (c) 2015 Shanghai TinyNetwork Inc. All rights reserved.
+//
+
+#include "Android.xcconfig"
+
+TOOLCHAIN_ARCH=x86
