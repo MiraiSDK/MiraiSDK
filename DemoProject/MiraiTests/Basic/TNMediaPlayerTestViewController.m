@@ -69,17 +69,23 @@
         self.player = nil;
     }
     
-    NSURL *url = [[NSBundle mainBundle] URLForResource:@"jobs" withExtension:@"m4v"];
-    if (!url) {
-        NSURL *document = [[[NSFileManager defaultManager] URLsForDirectory:NSDocumentDirectory inDomains:NSUserDomainMask] lastObject];
-        url = [document URLByAppendingPathComponent:@"jobs.m4v"];
-    }
+//    NSURL *url = [[NSBundle mainBundle] URLForResource:@"jobs" withExtension:@"m4v"];
+//    if (!url) {
+//        NSURL *document = [[[NSFileManager defaultManager] URLsForDirectory:NSDocumentDirectory inDomains:NSUserDomainMask] lastObject];
+//        url = [document URLByAppendingPathComponent:@"jobs.m4v"];
+    //    }
+    NSURL *url = [self _getAssetUrlFromAbsolutePath];
     MPMoviePlayerController *mpc = [[MPMoviePlayerController alloc] initWithContentURL:url];
     self.player = mpc;
     
     [self.view addSubview:mpc.view];
     
     [mpc play];
+}
+
+- (NSURL *)_getAssetUrlFromAbsolutePath
+{
+    return [[NSURL alloc] initWithString:@"file://localhost/storage/emulated/legacy/Android/data/org.tiny4.MiraiTests/org.tiny4.MiraiTests.app/funnydog.mp4"];
 }
 
 @end
