@@ -38,7 +38,6 @@
 - (void)_onClickDisplay:(id)sender
 {
     [self _resetPlayer];
-    [self.player play];
 }
 
 - (void)_resetPlayer
@@ -61,6 +60,7 @@
     NSURL *url = [TNMediaPlayerTestUitil URLWithResourceName:@"funnydog" withExtension:@"mp4"];
     MPMoviePlayerController *player = [[MPMoviePlayerController alloc] initWithContentURL:url];
     player.view.frame = CGRectMake(5, TopDistanceOfPlayer, self.view.bounds.size.width, 0.8*self.view.bounds.size.width);
+    [player prepareToPlay];
     return player;
 }
 
