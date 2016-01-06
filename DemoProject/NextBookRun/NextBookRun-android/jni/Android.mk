@@ -26,6 +26,11 @@ LOCAL_SRC_FILES := $(TN_LIBRARY_PATH)/libgnustep-base.so
 include $(PREBUILT_SHARED_LIBRARY)
 
 include $(CLEAR_VARS)
+LOCAL_MODULE    := AVFoundation
+LOCAL_SRC_FILES := $(TN_LIBRARY_PATH)/libAVFoundation.so
+include $(PREBUILT_SHARED_LIBRARY)
+
+include $(CLEAR_VARS)
 LOCAL_MODULE    := TNJavaHelper
 LOCAL_SRC_FILES := $(TN_LIBRARY_PATH)/libTNJavaHelper.so
 include $(PREBUILT_SHARED_LIBRARY)

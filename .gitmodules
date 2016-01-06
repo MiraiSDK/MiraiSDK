@@ -25,3 +25,6 @@
 [submodule "Mirai-MediaPlayer"]
 	path = Mirai-MediaPlayer
 	url = git@github.com:MiraiSDK/Mirai-MediaPlayer.git
+[submodule "Mirai-AVFoundation"]
+	path = Mirai-AVFoundation
+	url = git@github.com:MiraiSDK/Mirai-AVFoundation.git
