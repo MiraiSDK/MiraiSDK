@@ -28,3 +28,15 @@
 [submodule "Mirai-AVFoundation"]
 	path = Mirai-AVFoundation
 	url = git@github.com:MiraiSDK/Mirai-AVFoundation.git
+[submodule "Mirai-CommonCrypto"]
+	path = Mirai-CommonCrypto
+	url = git@github.com:MiraiSDK/Mirai-CommonCrypto.git
+[submodule "Mirai-ImageIO"]
+	path = Mirai-ImageIO
+	url = https://github.com/MiraiSDK/Mirai-ImageIO.git
+[submodule "Mirai-Security"]
+	path = Mirai-Security
+	url = https://github.com/MiraiSDK/Mirai-Security.git
+[submodule "Mirai-SystemConfiguration"]
+	path = Mirai-SystemConfiguration
+	url = https://github.com/MiraiSDK/Mirai-SystemConfiguration.git
