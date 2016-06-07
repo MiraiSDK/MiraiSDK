@@ -124,6 +124,17 @@
 		43F962F819825A1600530F4F /* MediaPlayer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 43F962F719825A1600530F4F /* MediaPlayer.framework */; };
 		D2C58E271A81265100D9B0E4 /* TNSwitchTestViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D2C58E261A81265100D9B0E4 /* TNSwitchTestViewController.m */; };
 		D2C58E281A81265100D9B0E4 /* TNSwitchTestViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D2C58E261A81265100D9B0E4 /* TNSwitchTestViewController.m */; };
+		D2D54C871AE3861200724396 /* funnydog.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = D2D54C861AE3861200724396 /* funnydog.mp4 */; };
+		D2E071661AEC7D15000C8728 /* TNPlayerDurationTestViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D2E071651AEC7D15000C8728 /* TNPlayerDurationTestViewController.m */; };
+		D2E071671AEC7D15000C8728 /* TNPlayerDurationTestViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D2E071651AEC7D15000C8728 /* TNPlayerDurationTestViewController.m */; };
+		D2E0716E1AEC7E9C000C8728 /* TNAbstractMediaPlayerTestViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D2E0716D1AEC7E9C000C8728 /* TNAbstractMediaPlayerTestViewController.m */; };
+		D2E0716F1AEC7E9C000C8728 /* TNAbstractMediaPlayerTestViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D2E0716D1AEC7E9C000C8728 /* TNAbstractMediaPlayerTestViewController.m */; };
+		D2F858FB1AE5D55E001B0F95 /* TNMediaPlayerListTestViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D2F858FA1AE5D55E001B0F95 /* TNMediaPlayerListTestViewController.m */; };
+		D2F858FC1AE5D55E001B0F95 /* TNMediaPlayerListTestViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D2F858FA1AE5D55E001B0F95 /* TNMediaPlayerListTestViewController.m */; };
+		D2F859031AE5D644001B0F95 /* TNMoviePlayerPlayerControlStyleTestViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D2F859021AE5D644001B0F95 /* TNMoviePlayerPlayerControlStyleTestViewController.m */; };
+		D2F859041AE5D644001B0F95 /* TNMoviePlayerPlayerControlStyleTestViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D2F859021AE5D644001B0F95 /* TNMoviePlayerPlayerControlStyleTestViewController.m */; };
+		D2F859071AE5D917001B0F95 /* TNMediaPlayerTestUitil.m in Sources */ = {isa = PBXBuildFile; fileRef = D2F859061AE5D917001B0F95 /* TNMediaPlayerTestUitil.m */; };
+		D2F859081AE5D917001B0F95 /* TNMediaPlayerTestUitil.m in Sources */ = {isa = PBXBuildFile; fileRef = D2F859061AE5D917001B0F95 /* TNMediaPlayerTestUitil.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -140,6 +151,20 @@
 			proxyType = 2;
 			remoteGlobalIDString = 43718E8018517B7B00850F08;
 			remoteInfo = UIKitTests;
+		};
+		D2D54C801AE34A3700724396 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D2D54C7B1AE34A3700724396 /* MediaPlayer.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 430138901921E68300EC5B20;
+			remoteInfo = MediaPlayer;
+		};
+		D2D54C821AE34A3700724396 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D2D54C7B1AE34A3700724396 /* MediaPlayer.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 430138C91921E6DE00EC5B20;
+			remoteInfo = "MediaPlayer-Android";
 		};
 /* End PBXContainerItemProxy section */
 
@@ -299,6 +324,18 @@
 		43FC616019FB6319008229CB /* GLWebView.java */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.java; path = GLWebView.java; sourceTree = "<group>"; };
 		D2C58E251A81265100D9B0E4 /* TNSwitchTestViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TNSwitchTestViewController.h; sourceTree = "<group>"; };
 		D2C58E261A81265100D9B0E4 /* TNSwitchTestViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TNSwitchTestViewController.m; sourceTree = "<group>"; };
+		D2D54C7B1AE34A3700724396 /* MediaPlayer.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = MediaPlayer.xcodeproj; path = "../../Mirai-MediaPlayer/MediaPlayer.xcodeproj"; sourceTree = "<group>"; };
+		D2D54C861AE3861200724396 /* funnydog.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = funnydog.mp4; sourceTree = "<group>"; };
+		D2E071641AEC7D15000C8728 /* TNPlayerDurationTestViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TNPlayerDurationTestViewController.h; sourceTree = "<group>"; };
+		D2E071651AEC7D15000C8728 /* TNPlayerDurationTestViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TNPlayerDurationTestViewController.m; sourceTree = "<group>"; };
+		D2E0716C1AEC7E9C000C8728 /* TNAbstractMediaPlayerTestViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TNAbstractMediaPlayerTestViewController.h; sourceTree = "<group>"; };
+		D2E0716D1AEC7E9C000C8728 /* TNAbstractMediaPlayerTestViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TNAbstractMediaPlayerTestViewController.m; sourceTree = "<group>"; };
+		D2F858F91AE5D55E001B0F95 /* TNMediaPlayerListTestViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TNMediaPlayerListTestViewController.h; sourceTree = "<group>"; };
+		D2F858FA1AE5D55E001B0F95 /* TNMediaPlayerListTestViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TNMediaPlayerListTestViewController.m; sourceTree = "<group>"; };
+		D2F859011AE5D644001B0F95 /* TNMoviePlayerPlayerControlStyleTestViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TNMoviePlayerPlayerControlStyleTestViewController.h; sourceTree = "<group>"; };
+		D2F859021AE5D644001B0F95 /* TNMoviePlayerPlayerControlStyleTestViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TNMoviePlayerPlayerControlStyleTestViewController.m; sourceTree = "<group>"; };
+		D2F859051AE5D917001B0F95 /* TNMediaPlayerTestUitil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TNMediaPlayerTestUitil.h; sourceTree = "<group>"; };
+		D2F859061AE5D917001B0F95 /* TNMediaPlayerTestUitil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TNMediaPlayerTestUitil.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -503,6 +540,7 @@
 		431F17C41826432A006FCF12 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				D2D54C7B1AE34A3700724396 /* MediaPlayer.xcodeproj */,
 				04ADB2DA1998C01A005833EF /* UIKit.xcodeproj */,
 				43F962F719825A1600530F4F /* MediaPlayer.framework */,
 				43013A541923509900EC5B20 /* CoreFoundation.framework */,
@@ -534,6 +572,7 @@
 		431F17CC1826432A006FCF12 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				D2D54C861AE3861200724396 /* funnydog.mp4 */,
 				43CAE9DA19AC779100B0AA8F /* 34912115.jpg */,
 				43CAE9DB19AC779100B0AA8F /* kiniromosaic001.jpg */,
 				431F17CD1826432A006FCF12 /* Basic-Info.plist */,
@@ -693,6 +732,16 @@
 			children = (
 				43F962F31982599400530F4F /* TNMediaPlayerTestViewController.h */,
 				43F962F41982599400530F4F /* TNMediaPlayerTestViewController.m */,
+				D2F858F91AE5D55E001B0F95 /* TNMediaPlayerListTestViewController.h */,
+				D2F858FA1AE5D55E001B0F95 /* TNMediaPlayerListTestViewController.m */,
+				D2F859011AE5D644001B0F95 /* TNMoviePlayerPlayerControlStyleTestViewController.h */,
+				D2F859021AE5D644001B0F95 /* TNMoviePlayerPlayerControlStyleTestViewController.m */,
+				D2F859051AE5D917001B0F95 /* TNMediaPlayerTestUitil.h */,
+				D2F859061AE5D917001B0F95 /* TNMediaPlayerTestUitil.m */,
+				D2E071641AEC7D15000C8728 /* TNPlayerDurationTestViewController.h */,
+				D2E071651AEC7D15000C8728 /* TNPlayerDurationTestViewController.m */,
+				D2E0716C1AEC7E9C000C8728 /* TNAbstractMediaPlayerTestViewController.h */,
+				D2E0716D1AEC7E9C000C8728 /* TNAbstractMediaPlayerTestViewController.m */,
 			);
 			name = MediaPlayer;
 			sourceTree = "<group>";
@@ -704,6 +753,15 @@
 				D2C58E261A81265100D9B0E4 /* TNSwitchTestViewController.m */,
 			);
 			name = UISwitch;
+			sourceTree = "<group>";
+		};
+		D2D54C7C1AE34A3700724396 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				D2D54C811AE34A3700724396 /* MediaPlayer.framework */,
+				D2D54C831AE34A3700724396 /* MediaPlayer.framework */,
+			);
+			name = Products;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -768,6 +826,10 @@
 			projectDirPath = "";
 			projectReferences = (
 				{
+					ProductGroup = D2D54C7C1AE34A3700724396 /* Products */;
+					ProjectRef = D2D54C7B1AE34A3700724396 /* MediaPlayer.xcodeproj */;
+				},
+				{
 					ProductGroup = 04ADB2DB1998C01A005833EF /* Products */;
 					ProjectRef = 04ADB2DA1998C01A005833EF /* UIKit.xcodeproj */;
 				},
@@ -795,6 +857,20 @@
 			remoteRef = 04ADB2E11998C01A005833EF /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
+		D2D54C811AE34A3700724396 /* MediaPlayer.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = MediaPlayer.framework;
+			remoteRef = D2D54C801AE34A3700724396 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		D2D54C831AE34A3700724396 /* MediaPlayer.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = MediaPlayer.framework;
+			remoteRef = D2D54C821AE34A3700724396 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
 /* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
@@ -804,6 +880,7 @@
 			files = (
 				4341FB8B1A2458AB00E6990A /* ContentsGravity_300x400.jpg in Resources */,
 				431F17D01826432A006FCF12 /* InfoPlist.strings in Resources */,
+				D2D54C871AE3861200724396 /* funnydog.mp4 in Resources */,
 				43CAE9DC19AC779100B0AA8F /* 34912115.jpg in Resources */,
 				4341FB8C1A2458AB00E6990A /* ContentsGravity_Large.jpg in Resources */,
 				4341FB8D1A2458AB00E6990A /* ContentsGravity_Small.jpg in Resources */,
@@ -837,6 +914,7 @@
 				43972E121995044C00EDD603 /* TNMultiGestureTestViewController.m in Sources */,
 				43B6B6531913B9A8005D09ED /* TNImageTestViewController.m in Sources */,
 				4392238B19EFB7DA00C8420A /* TNScrollViewNestingTestViewController.m in Sources */,
+				D2E071661AEC7D15000C8728 /* TNPlayerDurationTestViewController.m in Sources */,
 				43CAE9E519ADA0F300B0AA8F /* TNScrollViewPagingTestViewController.m in Sources */,
 				43DD64BD1990DAEE000884BA /* TNPinchTestViewController.m in Sources */,
 				4345708019E6B80B00BF1CA8 /* TNClipsToBoundsTestViewController.m in Sources */,
@@ -864,6 +942,7 @@
 				43A8F07A19DEFECA00AF4CAD /* TNNotARCSubclass.m in Sources */,
 				434C5C391A3ECFD700FA1647 /* TNTextViewTestViewController.m in Sources */,
 				43F962F51982599400530F4F /* TNMediaPlayerTestViewController.m in Sources */,
+				D2F859031AE5D644001B0F95 /* TNMoviePlayerPlayerControlStyleTestViewController.m in Sources */,
 				43A8F0DA19E2451D00AF4CAD /* TNLayerKeyPathTestViewController.m in Sources */,
 				43F91D401987E90C009E154D /* TNLayerTestViewController.m in Sources */,
 				43B6B6541913B9AB005D09ED /* TNScrollTestViewController.m in Sources */,
@@ -876,14 +955,17 @@
 				4371B36F1A53CA01002DDDE5 /* TNRootViewController.m in Sources */,
 				43E7C98A196E50470067C3A7 /* TNCGTestViewController.m in Sources */,
 				43081FA51968170000355FC5 /* TNViewTestViewController.m in Sources */,
+				D2F858FB1AE5D55E001B0F95 /* TNMediaPlayerListTestViewController.m in Sources */,
 				43098C2B1978C21C005A97A1 /* TNVCTestViewController.m in Sources */,
 				43A8F07019DEF67500AF4CAD /* NBRadialGradientLayer.m in Sources */,
 				43A8F07619DEF6A600AF4CAD /* TNPCTestViewController.m in Sources */,
 				434DAE451991203D00DE5C14 /* TNRotationTestViewController.m in Sources */,
 				436D4A6019F25E5300F6F8F9 /* TNWebViewTestViewController.m in Sources */,
+				D2F859071AE5D917001B0F95 /* TNMediaPlayerTestUitil.m in Sources */,
 				43972D7319932A7500EDD603 /* TNRunloopTestViewController.m in Sources */,
 				434DAE3F19911F2C00DE5C14 /* TNGestureRecognizerViewController.m in Sources */,
 				431F17D21826432A006FCF12 /* main.m in Sources */,
+				D2E0716E1AEC7E9C000C8728 /* TNAbstractMediaPlayerTestViewController.m in Sources */,
 				43081F97196811ED00355FC5 /* TNAnimationTestViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -895,6 +977,7 @@
 				43972E131995044C00EDD603 /* TNMultiGestureTestViewController.m in Sources */,
 				43E3426E18F436E900463092 /* TNImageTestViewController.m in Sources */,
 				4392238C19EFB7DA00C8420A /* TNScrollViewNestingTestViewController.m in Sources */,
+				D2E071671AEC7D15000C8728 /* TNPlayerDurationTestViewController.m in Sources */,
 				43CAE9E619ADA0F300B0AA8F /* TNScrollViewPagingTestViewController.m in Sources */,
 				43DD64BE1990DAEE000884BA /* TNPinchTestViewController.m in Sources */,
 				4345708119E6B80B00BF1CA8 /* TNClipsToBoundsTestViewController.m in Sources */,
@@ -922,6 +1005,7 @@
 				43A8F07B19DEFECA00AF4CAD /* TNNotARCSubclass.m in Sources */,
 				434C5C3A1A3ECFD700FA1647 /* TNTextViewTestViewController.m in Sources */,
 				43F962F61982599400530F4F /* TNMediaPlayerTestViewController.m in Sources */,
+				D2F859041AE5D644001B0F95 /* TNMoviePlayerPlayerControlStyleTestViewController.m in Sources */,
 				43A8F0DB19E2451D00AF4CAD /* TNLayerKeyPathTestViewController.m in Sources */,
 				43F91D411987E90C009E154D /* TNLayerTestViewController.m in Sources */,
 				43EBAA7518AB5573005DDD8D /* TNViewController.m in Sources */,
@@ -934,14 +1018,17 @@
 				4371B3701A53CA01002DDDE5 /* TNRootViewController.m in Sources */,
 				43E7C98B196E50470067C3A7 /* TNCGTestViewController.m in Sources */,
 				43081FA61968170000355FC5 /* TNViewTestViewController.m in Sources */,
+				D2F858FC1AE5D55E001B0F95 /* TNMediaPlayerListTestViewController.m in Sources */,
 				43098C2C1978C21C005A97A1 /* TNVCTestViewController.m in Sources */,
 				43A8F07119DEF67500AF4CAD /* NBRadialGradientLayer.m in Sources */,
 				43A8F07719DEF6A600AF4CAD /* TNPCTestViewController.m in Sources */,
 				434DAE461991203D00DE5C14 /* TNRotationTestViewController.m in Sources */,
 				436D4A6119F25E5300F6F8F9 /* TNWebViewTestViewController.m in Sources */,
+				D2F859081AE5D917001B0F95 /* TNMediaPlayerTestUitil.m in Sources */,
 				43972D7419932A7500EDD603 /* TNRunloopTestViewController.m in Sources */,
 				434DAE4019911F2C00DE5C14 /* TNGestureRecognizerViewController.m in Sources */,
 				43081F931967F41C00355FC5 /* TNLabelTestViewController.m in Sources */,
+				D2E0716F1AEC7E9C000C8728 /* TNAbstractMediaPlayerTestViewController.m in Sources */,
 				431F17FE18264507006FCF12 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
